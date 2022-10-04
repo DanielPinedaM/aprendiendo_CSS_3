@@ -1,0 +1,32 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    font-size: 3em;
+}
+
+p, span {
+    font-size: 1.5em;
+}
+
+/*
+entre el grupo de hermanos de parrafos <p> seleccionar el...
+
+PRIMERO
+
+<p :first-of-type>
+Especificidad: (0, 1, 1) */
+p:first-of-type {
+    color: red;
+}
+
+/* ULTIMO
+
+<p :last-of-type>
+Selector Specificity: (0, 1, 1) */
+p:last-of-type {
+    color: blue;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Formato de Texto</title>
+    </head>
+    <body>
+
+        <!--
+
+        dentro de un formulario <form> tengo 2 <input> de tipo texto
+        y un boton para enviar el formulario -->
+        <form action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co" method="POST">
+            <!-- el texto de value="" SI se puede editar -->
+            <input class="input_text" type="text" name="text_value" value="value, SI tengo un valor por defecto">
+            <!-- el texto de placeholder="" sera reemplazada por lo q el usuario escriba en el campo -->
+            <input class="input_text" type="text" name="text_placeholder" placeholder="placeholder, NO tengo un valor por defecto">
+            <button type="submit">Enviar</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+* {
+    color: black;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+cuando el usuario este DENTRO del rango numerico :in-range
+el color de fondo sera verde */
+input[type="number"]:in-range,
+input[type="date"]:in-range,
+input[type="time"]:in-range {
+    background-color: green;
+}
+
+/* y cuando este FUERA :out-of-range
+sera crimson (como una especie de rojo) */
+input[type="number"]:out-of-range,
+input[type="date"]:out-of-range,
+input[type="time"]:out-of-range {
+    background-color: crimson;
+}

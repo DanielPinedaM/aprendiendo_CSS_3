@@ -1,0 +1,74 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Centrar la imagen */
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #EEEDE7;
+
+    display: flex;
+                               /* Centrar ...       */
+    justify-content: center;   /* Horizontalmente   */
+    align-items: center;       /* Verticalmente     */
+}
+
+/*
+Sintaxis de box-shadow:
+
+offset-x	     desplazamiento horizontal ↔   (valor obligatorio)
+offset-y	     desplazamiento vertical ↕     (valor obligatorio)
+blur-radius	     Difuminado
+spread-radius	 Tamaño de la sombra
+color	         Color, por defecto es negro
+inset	         Determina si la sombra esta en el interior o exterior de la caja (Box Model)
+
+La parte izquierda de la tabla anterior NO son propiedades ni ningún otro código .css.
+Así es como aparece en la documentación oficial
+
+*/
+
+.box {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+    border: 2px solid black;
+
+    /* La sombra es una copia exacta de las medidas del elemento (Box Model)
+    Desplazamiento horizontal ↔ / Desplazamiento vertical ↕ */
+    /* box-shadow: 60px -16px; */
+
+    /* Desplazamiento horizontal ↔ / Desplazamiento vertical ↕ / color */
+    /* box-shadow: -60px -16px gold; */
+
+    /* Desplazamiento horizontal ↔ / Desplazamiento vertical ↕ / Difuminado / Color */
+    /* box-shadow: 10px 5px 5px steelblue; */
+
+    /* Este valor es especial porq agg cierta transparencia al elemento */
+    /* desplazamiento horizontal ↔ / desplazamiento vertical ↕ / difuminado / tamaño de la sombra / color */
+    /* box-shadow: 3px 20px 40px -14px rgba(0, 0, 0, .75); */
+
+    /* inset hace q la sombra este DENTRO de la caja (Box Model),
+    por defecto esta por FUERA  */
+    /* box-shadow: inset 3px 20px 40px -14px gold; */
+
+    /* desplazamiento horizontal ↔ / desplazamiento vertical ↕ / difuminado / Tamaño de la sombra / color / Meter la sombra dentro de la caja */
+    /* box-shadow: 3px 20px 40px -14px gold inset; */
+
+    /* Si hago que las esquinas sean redondeadas con border-radius:
+    entonces la sombra también tendrá la misma forma con las esquinas redondeadas: */
+    /* border-radius: 10px;
+    box-shadow: 10px -10px 5px crimson; */
+
+    /* Separando por comas los valores puedo hacer q una caja (Box Model)
+    tenga varias sombras (shadow) */
+    box-shadow: 100px 100px 0 0 crimson,
+                100px 0 darkblue,
+                0 100px darkgoldenrod,
+                0 100px  hotpink inset;
+}

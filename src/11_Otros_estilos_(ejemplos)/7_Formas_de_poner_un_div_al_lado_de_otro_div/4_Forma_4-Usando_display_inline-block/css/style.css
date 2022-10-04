@@ -1,0 +1,38 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_general {
+    width: 30rem; /* ancho */
+    height: 30rem; /* alto */
+
+    border: thick solid red;
+}
+.contenedor_1 {
+    width: 40%;
+    height: 40%;
+
+    border: thick solid blue;
+}
+.contenedor_2 {
+    width: 40%;
+    height: 40%;
+
+    border: thick solid green;
+}
+
+/* <element class=" contenedor_general">
+  …
+    <div> */
+.contenedor_general div {
+    display: inline-block; /* convierte a los <div> a elementos de linea
+                              pero deja un espacio en la mitad */
+}
+
+/* El problema de esto es que
+como los <div> se están tratando como elementos de línea
+entonces se vera un pequeño espacio entre ellos (cajas azul y verde)
+y sin importar que quite sus margen margin: 0; y relleno padding: 0;
+el espacio se seguirá viendo: */

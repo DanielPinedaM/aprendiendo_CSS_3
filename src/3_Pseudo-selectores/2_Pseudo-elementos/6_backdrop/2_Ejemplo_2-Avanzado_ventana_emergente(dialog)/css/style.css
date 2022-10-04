@@ -1,0 +1,26 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Ejemplo (codigo) tomado de la documentacion oficial de <dialog>
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#advanced_example
+
+
+seleccionar lo q esta ATRAS ::backdrop de la ventana emergente <dialog>
+
+<dialog ::backdrop>
+Especificidad: (0, 0, 2) */
+dialog::backdrop {
+    background-image: url("../../../../../../assets/images/full_background-image.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* imagen de fondo,
+    este fondo ocupara todo el viewport */
+
+    /* tambien podria escribir aqui otras propiedades CSS
+    q se mostraran en el fondo */
+}

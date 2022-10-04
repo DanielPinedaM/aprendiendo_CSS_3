@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            ¿Cuál es la Prioridad Entre las Propiedades flex-basis: VS width VS min-width VS max-width VS
+            height VS min-height VS max-height ?
+        </h1>
+        <a href="https://www.samanthaming.com/flexbox30/26-flex-basis-vs-widths/" target="_blank">
+            Samantha Ming - flex-basis: VS width: VS min-width: VS max-width:
+        </a>
+
+        <a href="https://mastery.games/post/the-difference-between-width-and-flex-basis/" target="_blank"
+            >Mastery Games</a
+        >
+
+        <br />
+        <hr />
+
+        <h2>flex-basis: auto; flex-direction: row; width: 250px;</h2>
+        <p>
+            Este es su valor por defecto. Funciona como un condicional, cuando SI se ha definido un ancho
+            width: y/o alto height: entonces este será el tamaño (medida) que tomaran los Flex Items Y
+            cuando NO se ha definido un ancho width: NI alto height: entonces los Flex Items ocuparan el
+            espacio de su contenido (imágenes, video, texto, etc.), es decir, que tendrá el mismo
+            comportamiento de flex-basis: content;
+        </p>
+        <div class="contenedor_flexbox flex_direction_row">
+            <div class="hijo_1">width: 250px;</div>
+        </div>
+
+        <br />
+
+        <h2>flex-basis: auto; flex-direction: row; min-width: 160px;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_direction_row">
+            <div class="hijo_2">min-width: 160px;</div>
+        </div>
+
+        <br />
+
+        <h2>flex-basis: 600px; flex-direction: row; max-width: 400px;</h2>
+        <p>el ANCHO MAXIMO del Flex Item es max-width: 400px;</p>
+        <p>lo q significa q el ancho NO puede sobrepasar los 400px</p>
+        <p>y como flex-basis: 600px; es MAYOR Q 400px</p>
+        <p>entonces el ancho es de 400px</p>
+        <p></p>
+        <div class="contenedor_flexbox flex_direction_row">
+            <div class="hijo_3">max-width: 400px;</div>
+        </div>
+
+        <h2>flex-basis: 200px; flex-direction: row; max-width: 600px;</h2>
+        <p>el ANCHO MAXIMO del Flex Item es max-width: 600px;</p>
+        <p>lo q significa q el ancho NO puede sobrepasar los 600px</p>
+        <p>y como flex-basis: 200px; es MENOR Q 600px</p>
+        <p>entonces el ancho es de 200px</p>
+        <div class="contenedor_flexbox flex_direction_row">
+            <div class="hijo_4">flex-basis: 200px;</div>
+        </div>
+
+        <br />
+    </body>
+</html>

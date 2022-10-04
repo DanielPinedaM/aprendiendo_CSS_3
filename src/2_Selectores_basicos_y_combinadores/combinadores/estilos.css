@@ -1,0 +1,138 @@
+/* 
+SELECTORES COMBINADORES
+*/
+
+/* 
+Descendiente:
+Selecciona los elementos del selector 2 que están dentro del selector 1.
+
+- Selecciona todas las etiquetas hijas que le especifique que estén dentro de una etiqueta contenedora (hijos, nietos, bisnietos…)
+
+- No selecciona la etiqueta padre (contenedora).
+*/
+/* .contenedor p {
+    font-size: 60px;
+}
+*/
+
+/* 
+Elemento Hijo Directo — selector1 > selector2
+Selecciona los elementos del selector 2 que son hijos directos del selector 1.
+
+- Selecciona solamente las etiquetas que sean hijas directas que esten dentro de una etiqueta contenedora
+
+- No selecciona nietos, bisnietos, etc…
+
+- No selecciona la etiqueta padre (contenedora).
+
+Ejemplo:
+Seleccionar el primer hijo directo que sea párrafo <p> y este dentro de class="contenedor"
+
+*/
+/* 
+.contenedor > p {
+    font-weight: 900;
+} 
+*/
+
+/* 
+seleccionar todos los nav que tengan una clase=contenedor 
+<nav class="contenedor">
+*/
+/* 
+nav.contenedor {
+    background: red;
+} 
+*/
+
+/* 
+seleccionar todos los nav que tengan una clase=contenedor titulo
+<nav class="contenedor" titulo>
+*/
+/* 
+nav.contenedor.titulo {
+    background: red;
+} 
+*/
+
+/* 
+Dentro de la etiqueta contenedora nav seleccionar todos 
+los elementos que tengan una class="contenedor"
+*/
+/* nav .contenedor {
+    background: red;
+} 
+*/
+
+/* 
+nav[class="contendor"] {
+    background: red;
+} 
+*/
+
+/* -------------------------------------------------------------- */
+
+/* RETOS */
+
+/* 
+Cambiar fuente (tipo de letra) de todos los <h2> y <h3> 
+*/
+h2,
+h3 {
+    font-family: cursive;
+}
+
+/* 
+Quitar el subrayado text-decoration: none; 
+de todas las etiquetas <a> q esten dentro de .contenedor 
+y ademas agg un color firebrick
+*/
+.contenedor a {
+    text-decoration: none;
+    color: firebrick;
+}
+
+/* 
+Agg font-size="20px" y pon negrita solo a los elementos <a> q sean hijos directos de .contenedor
+ */
+
+.contenedor > a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 
+Agg un color="gold" al elemento <p> q esta enseguida del elemento <h2>. Solo a ese elemento <p> (deben ser hermanos)
+
+elemento <p> q sea hermano de <h2>. Descendientes del mismo padre
+
+
+
+Hermano Adyacente — selector 1 + selector 2
+
+Ejemplo:
+        <section>
+            <h2 class="titulo">h2 class=titulo dentro de section</h2>
+            <!-- Este es el hermano siguiente q esta despues del <h2> -->
+            <p>parrafo 1 dentro de section</p>
+
+            <p>parrafo 2 dentro de section</p>
+        </section>
+
+* Seleccionar solamente el siguiente <p> que esta despues de <h2>. 
+* <h2> y <p> TIENEN q ser hermanos
+*/
+
+/* h2 + p {
+    color: gold;
+} */
+
+/* 
+Hermano General- selector1 ~ selector2
+
+* Seleccionar todos los <p> que esten despues del <h2>
+* <h2> y <p> TIENEN q ser hermanos
+*/
+h3 ~ p {
+    color:indigo;
+}

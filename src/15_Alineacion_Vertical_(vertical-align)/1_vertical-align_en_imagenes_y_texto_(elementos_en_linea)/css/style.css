@@ -1,0 +1,188 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=STvVq0ZDwZo
+
+CSS-Tricks (Trucos CSS) - vertical-align: Alineación Vertical ↕
+https://css-tricks.com/what-is-vertical-align/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    border: thick solid red;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.baseline,
+.middle,
+.super, sup,
+.sub, sub,
+.text-top, .text-bottom,
+.top, .bottom {
+    font-weight: 900;
+}
+
+.tamaño_letra {
+    font-size: 5rem;
+}
+
+/*
+vertical-align: baseline;
+El elemento Esta Escrito Sobre el Renglón (Valor por Defecto)
+
+El elemento está alineado con la línea de base del padre.
+Como es el valor por defecto,
+no importa si copio o no vertical-align: baseline;
+el resultado será el mismo.*/
+.baseline {
+    vertical-align: baseline;
+}
+
+/*
+vertical-align: middle;
+Ubicar el Elemento en la Mitad Vertical del Renglón (Centrar Verticalmente)
+
+El elemento está alineado con la línea de base más la mitad de la altura x del padre.
+El elemento se sitúa en la mitad del renglón verticalmente. */
+.middle {
+    width: 50px; /* ancho de la imagen */
+    vertical-align: middle;
+}
+
+/*
+vertical-align: super;
+Superíndice, el Elemento esta en la Parte de Arriba del Renglón, Similar a <sup> en HTML 5
+
+El elemento está alineado con la línea de base en superíndice (arriba) del padre. */
+.super {
+    vertical-align: super;
+}
+
+/*
+vertical-align: sub;
+Subíndice, el Elemento esta en la Parte de Abajo del Renglón, Similar a <sub> en HTML 5
+
+El elemento está alineado con la línea de base del subíndice (abajo) del padre. */
+.sub {
+    vertical-align: sub;
+}
+
+/*
+vertical-align: text-top;
+Situar Elemento en la Parte Mas Arriba del Texto (Renglón)
+
+vertical-align: text-top; es lo opuesto a vertical-align: text-bottom;
+
+vertical-align: text-top; es similar a vertical-align: super;
+
+vertical-align: text-top; sitúa el elemento en la parte más alta (arriba) de la fuente (renglón).
+Ejemplo: Supongamos que la letra “X” es la letra más alta de un texto
+entonces el elemento se situara en la parte de arriba de la “X”.
+
+El elemento está alineado con la parte superior de la fuente del elemento principal. */
+.text-top {
+    font-size: 3rem;
+    width: 40px; /* ancho de la imagen */
+    vertical-align: text-top;
+}
+
+/*
+vertical-align: text-bottom;
+Situar Elemento en la Parte Mas Abajo del Texto (Renglón)
+
+vertical-align: text-bottom; es lo opuesto a vertical-align: text-top;
+
+vertical-align: text-bottom; es similar a vertical-align: sub;
+
+vertical-align: text-bottom; sitúa el elemento en la parte más baja (abajo) de la fuente (renglón).
+Ejemplo: Supongamos que la letra “p” es la letra más baja de un texto
+entonces el elemento se situara en la parte de abajo de la “p”.
+
+El elemento está alineado con la parte inferior de la fuente del elemento principal.
+*/
+
+.text-bottom {
+    font-size: 3rem;
+    width: 40px; /* ancho de la imagen */
+    vertical-align: text-bottom;
+}
+
+/*
+vertical-align: top; y vertical-align: bottom;
+https://css-tricks.com/what-is-vertical-align/#top-bottom
+
+vertical-align: top; y vertical-align: bottom;
+funcionan de manera similar a
+vertical-align: text-top; y vertical-align: text-bottom; respectivamente
+pero no están limitados por el texto
+sino por cualquier otro elemento en línea (como otra imagen).
+Entonces, si hubiera dos imágenes en la misma línea (renglón), 
+de diferentes alturas y ambas más grandes que el texto de esa línea,
+sus partes superiores top; (o inferiores bottom;)
+se alinearían sin importar el tamaño del texto font-size: */
+
+.imagen_1 {
+    height: 200px;
+}
+
+.imagen_2 {
+    height: 100px;
+}
+
+.top {
+    vertical-align: top;
+}
+
+
+.imagen_3 {
+    height: 200px;
+}
+
+.imagen_4 {
+    height: 100px;
+/*  como el numero es negativo
+    entonces la imagen bajara verticalmente ↕ */
+    vertical-align: -80px;
+}
+
+.bottom {
+    vertical-align: bottom;
+}
+
+/*
+Definir la Alineación Vertical ↕ Usando Unidades de Medida y Porcentajes
+
+El elemento se mueve verticalmente ↕ ...
+- Si el numero es positivo se mueve hacia arriba ↑
+- Y si es negativo se mueve hacia abajo ↓ */
+
+.positivo, .negativo {
+    width: 40px; /* ancho de las imagenes */
+}
+
+.positivo {
+    /* el elemento se mueve hacia ARRIBA verticalmente
+    porq el numero (px) es POSITIVO */
+    vertical-align: 100px;
+}
+
+.negativo {
+    /* el elemento se mueve hacia ABAJO verticalmente
+    porq el numero (porcentaje %) es NEGATIVO */
+    vertical-align: -70%;
+}

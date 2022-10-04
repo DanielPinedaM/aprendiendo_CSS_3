@@ -1,0 +1,51 @@
+/*
+Jon Mircha - YouTube - Videos Responsive
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=5825s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    border: thick solid red; /* borde */
+    position: relative; /* posicionamiento relativo */
+    max-width: 100%; /* ocupar todo el ancho del dispositivo */
+    height: 0; /* el alto es cero, el alto depende del padding-bottom: */
+/*
+16:9 Proviene del Formato Widescreen (aspect ratio)
+
+Medidas del Viewport:
+16 = ancho ↔
+9 = alto ↕
+
+Regla de 3
+16 ----- 100%
+9 ------ x
+
+x = (9*100) / 16 = 56.25%
+
+Esta medida cambia dependiendo del tamaño de la pantalla (viewport) */
+    padding-bottom: 56.25%;
+}
+
+video {
+    position: absolute; /* posicionamiento absoluto */
+    /* el <video> ocupa TODO el espacio del .contenedor */
+    width: 100%; /* ancho */
+    height: 100%; /* alto */
+}

@@ -1,0 +1,30 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=n-vafPXo63k
+
+CSS-Tricks (Trucos CSS) - Antes ::before y después ::after
+https://css-tricks.com/almanac/selectors/a/after-and-before/ */
+
+/* ----------------------------------------------------------------------------- */
+
+body {
+    background-color: lightcoral; /* color de fondo de toda la pagina web */
+}
+
+.contenedor {
+    position: relative; /* posicionamiento relativo */
+}
+
+.contenedor::before {
+    /* tambien podria usar .contenedor::after */
+    content: ""; /* SIN contenido */
+
+    position: absolute; /* posicionamiento absoluto
+    cuando NO escribo el position: absolute; entonces NO puedo ver el circulo (no me funciona) */
+
+    /* aqui abajo escribo las otras propiedades CSS para darle estilos al elemento */
+    width: 100px; /* ancho */
+    height: 100px; /* alto */
+    background-color: crimson; /* color de fondo */
+    border-radius: 50%; /* borde redondeado - esto hace q la caja <div> tenga forma de circulo */
+}

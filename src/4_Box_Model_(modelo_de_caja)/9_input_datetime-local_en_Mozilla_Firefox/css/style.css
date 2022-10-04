@@ -1,0 +1,15 @@
+.contenedor_2 {
+    width: 260px; /* ancho */
+    border: 1px solid black;
+}
+
+#fecha {
+    margin-right: 0; /* derecha */
+    border-style: none
+}
+
+#hora {
+    margin-left: 0; /* izquierda */
+    border-style: none
+}
+

@@ -1,0 +1,55 @@
+/* Normalizar estilos con el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+html,
+body {
+    /* Hacer q el <body> y <html> ocupen todo el ancho y alto de la pagina web */
+    width: 100%;
+    height: 100vh;
+    background-color: #eeede7;
+    /* Centrar usando flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor_padre {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+    background-color: steelblue;
+}
+
+.contenedor_hijo {
+    width: auto; /* el cotenido NO se desborda */
+    height: 25%; /* El 25% de 200px es 50px */
+    margin-left: 50px; /* separar caja hija hacia la izquierda */
+    background-color: brown;
+}
+
+/* ------------------- */
+
+/* width: auto; y height: auto; NO sirven para hacer botones */
+
+/* 
+.boton {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: deeppink;
+    text-align: center;
+}
+
+.boton > a {
+    text-decoration: none;
+    color: black;
+    font-size: 10vw;
+}
+ */

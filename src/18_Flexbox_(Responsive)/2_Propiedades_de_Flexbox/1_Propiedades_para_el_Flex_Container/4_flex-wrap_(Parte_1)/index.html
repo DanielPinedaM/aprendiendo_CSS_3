@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>flex-wrap:</h1>
+        <p>Define si los Flex Items estan ubicados en una misma linea o en varias lineas</p>
+        <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/" target="_blank">CSS-Tricks</a>
+
+        <hr>
+
+        <h2>flex-wrap: nowrap;</h2>
+        <p>TODOS los Flex Items estan en la MISMA linea, esto puede ocasionar q los Flex Items se desborden, es decir, que se salgan de su contenedor padre el Flex Container (valor por defecto)</p>
+        <div class="contenedor_flexbox nowrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>flex-wrap: wrap;</h2>
+        <p>Los Flex Items pueden ocupar VARIAS lineas de arriba hacia abajo</p>
+        <div class="contenedor_flexbox wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>flex-wrap: wrap-reverse;</h2>
+        <p>Los Flex Items pueden ocupar VARIAS lineas de abajo hacia arriba</p>
+        <div class="contenedor_flexbox wrap_reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+    </body>
+</html>

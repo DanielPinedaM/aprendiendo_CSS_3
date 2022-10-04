@@ -1,0 +1,64 @@
+/* 
+La especificidad define q selectores tienen prioridad sobre otros. 
+La prioridad de los selectores tiene el siguiente orden:
+*/
+
+/* 
+<div>
+  …
+    <p>
+      …
+        <span>
+          …
+            <a :hover>
+
+(0,1,4) */
+div p span a:hover {
+    color: pink;
+}
+
+/* 
+<element class="section">
+  …
+    <span>
+      …
+        <a :hover>
+
+(0,2,2) */
+.section span a:hover {
+    color: green;
+}
+
+/*
+<element id="bienvenida">
+  …
+    <span>
+      …
+        <a :hover>
+
+(1,1,2) */
+#bienvenida span a:hover {
+    color: blueviolet;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/*
+<element id="bienvenida">
+  …
+    <element class="subsection">
+
+(1,1,0) */
+#bienvenida .subsection {
+    background: tomato;
+}
+
+/* 
+<div>
+  …
+    <div>
+
+(0,0,2) */
+div div {
+    background: blue;
+}

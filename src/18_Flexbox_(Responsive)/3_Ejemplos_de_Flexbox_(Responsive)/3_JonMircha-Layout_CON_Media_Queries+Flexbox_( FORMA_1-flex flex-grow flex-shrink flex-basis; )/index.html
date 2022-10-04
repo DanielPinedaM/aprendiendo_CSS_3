@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            <a href="https://www.youtube.com/watch?v=KoLOOETh0f4&t=793s" target="_blank">
+                Jon Mircha - Layout CON Media Queries + Flexbox (Responsive) (FORMA 1)
+            </a>
+        </h1>
+        <p>
+            En esta forma 1 uso
+            <code>flex: flex-grow flex-shrink flex-basis;</code>
+            para el ancho de los Flex Items
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- con este <div class="page_wrap">
+        centro horizontalmente todo el contenido de la pagina web,
+        tambien sirve para q a los lados izquierda y derecha
+        haya un espacio en blanco
+        y asi el contenido de la pagina web
+        NO ocupe todo el ancho del viewport-->
+        <div class="page_wrap">
+            <h2>
+                El # de columnas ↕ de Flex Items
+                cambia dependiendo del ancho ↔ del viewport
+            </h2>
+            <br>
+            <h2>
+
+            </h2>
+            <p>Como minimo 1 columna ↕ de Flex Items</p>
+            <p>y como maximo 6 columnas ↕ de Flex Items</p>
+            <div class="flex_container"> <!-- Contenedor de Flexbox (Flex Container) -->
+                <!--
+                Emmet abbreviation (abreviacion de Emmet de VS Code):
+                escribir 19 Flex Items enumerados del 1 al 19,
+                con la etiqueta div y la clase flex_item
+
+                div.flex_item*19{Item $}
+                -->
+                <div class="flex_item">Item 1</div>
+                <div class="flex_item">Item 2</div>
+                <div class="flex_item">Item 3</div>
+                <div class="flex_item">Item 4</div>
+                <div class="flex_item">Item 5</div>
+                <div class="flex_item">Item 6</div>
+                <div class="flex_item">Item 7</div>
+                <div class="flex_item">Item 8</div>
+                <div class="flex_item">Item 9</div>
+                <div class="flex_item">Item 10</div>
+                <div class="flex_item">Item 11</div>
+                <div class="flex_item">Item 12</div>
+                <div class="flex_item">Item 13</div>
+                <div class="flex_item">Item 14</div>
+                <div class="flex_item">Item 15</div>
+                <div class="flex_item">Item 16</div>
+                <div class="flex_item">Item 17</div>
+                <div class="flex_item">Item 18</div>
+                <div class="flex_item">Item 19</div>
+            </div>
+        </div>
+
+        <br><br>
+
+    </body>
+</html>

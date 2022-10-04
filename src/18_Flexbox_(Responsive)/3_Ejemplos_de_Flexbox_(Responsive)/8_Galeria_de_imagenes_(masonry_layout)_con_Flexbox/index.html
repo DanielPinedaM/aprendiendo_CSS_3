@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            Galeria de Imagenes Responsive
+        </h1>
+
+        <br>
+        <hr>
+        <br>
+
+        <div class="page_wrap">
+            <h2>
+                Masonry Layout
+            </h2>
+            <p>
+                "Masonry Layout" significa q
+                las imagenes son de DIFERENTES tamaños
+                anchoXalto
+            </p>
+
+            <br>
+
+            <h2>
+                Masonry Layout
+                Usando la Propiedad
+                <code>columns:</code>
+                (SIN Flexbox)
+            </h2>
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns" target="_blank">
+                Documentacion oficial de <code>columns:</code>
+            </a>
+
+            <br>
+
+            <a href="https://www.iloveimg.com/es/redimensionar-imagen/jpg-cambiar-tamano" target="_blank">
+                Redimensionar (cambiar el tamaño de las) imagenes
+            </a>
+
+            <br>
+            <br>
+
+            <p>
+                Este codigo lo saq de
+                <a href="https://css-tricks.com/seamless-responsive-photo-grid/" target="_blank">
+                    CSS-Tricks (Trucos CSS)
+                </a>
+                y lo modifiq para mejorarlo.
+            </p>
+            <br>
+            <p>
+                Cuando uso <code>columns:</code>
+                para q esto funcione:
+            </p>
+            <ol class="list_style_position_inside">
+                <li>
+                    Leer los comentarios de este index.html
+                </li>
+                <li>
+                    El ancho <code>width:</code>
+                    de las imagenes TIENE q ser el mismo,
+                    pero el alto <code>height:</code>
+                    si puede ser diferente.
+                    De esto me di cuenta cuando inspeccione elemento
+                    en las siguientes paginas web.
+                </li>
+            </ol>
+            <p>Ejemplos:</p>
+            <ul class="list_style_position_inside">
+                <li>
+                    <a href="https://co.pinterest.com/movistarnext/videojuegos/" target="_blank">
+                        Pinterest
+                    </a>
+                </li>
+                <li>
+                    <a href="https://unsplash.com/" target="_blank">
+                        Unsplash
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.pexels.com/" target="_blank">
+                        Pexels
+                    </a>
+                </li>
+            </ul>
+
+            <br>
+            <br>
+
+            <div class="masonry_layout">
+                <!--
+                TODAS las imagenes
+                TIENEN q estar dentro de un contenedor <div>,
+                esto se hace asi para ajustar las imagenes al contenedor_imagen
+                -->
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/416x601/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/416x601/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/416x601/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/416x601/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/416x601/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <!--
+                ADVERTENCIA - LEER ESTO:
+                Por alguna extraña razon cuando...
+                1) Hay 5 imagenes dentro del <div class="masonry_layout">
+                2) Todas las 5 imagenes tienen las mismas medidas anchoXalto
+                entonces las 4 columnas column-count: 4; de imagenes NO funcionan.
+                Para solucionar este error AL MENOS debe haber una imagen con un alto diferente -->
+                <div class="contenedor_imagen">
+                    <!-- IMAGEN CON MEDIDAS DIFERENTES
+                    en este ejemplo la siguiente imagen tiene 416x602
+                    y esta medida es diferente a la de las imagenes anteriores 416x601 -->
+                    <img src="https://source.unsplash.com/416x602/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="hero_image"></div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/236x350/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/236x350/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/236x350/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/236x350/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <img src="https://source.unsplash.com/236x350/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+
+                <div class="contenedor_imagen">
+                    <!-- IMAGEN CON MEDIDAS DIFERENTES -->
+                    <img src="https://source.unsplash.com/236x351/?" alt="error al mostrar la imagen" loading="lazy">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <h2>
+                Masonry Layout
+                Usando Flexbox
+            </h2>
+            <p>Este codigo lo saq de
+                <a href="https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-demo" target="_blank">
+                    CSS-Tricks (Trucos CSS)
+                </a>
+                y lo modifiq para mejorarlo.
+            </p>
+
+            <br>
+
+            <p class="negrita">ESTA ES LA MEJOR FORMA DE HACER LA GALERIA</p>
+
+            <br>
+
+            <p>
+                Cuando uso Flexbox
+                puedo acomodar las imagenes asi:
+            </p>
+            <ol class="list_style_position_inside">
+                <li>
+                    <p>
+                        TODAS las medidas anchoXalto
+                        de las imagenes <code>&#60;img&#62;</code>
+                        pueden ser DIFERENTES.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Intercambiar los anchoXalto de las imagenes.
+                    </p>
+                    <p>
+                        Ejemplo: Imagen 1 mide 683px X 1024px,
+                        imagen 2 al reves 1024px X 683px
+                        y asi sucesivamente.
+                    </p>
+                </li>
+            </ol>
+
+            <br>
+
+            <ul class="flex_container_gallery">
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/1024x683/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/1024x683/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <!--
+                Arreglar distribucion (ubicacion) de las imagenes
+
+                Agregando un <li> vacío aquí
+                para q la ultima foto
+                no se estire demasiado.
+                ¡Intenta eliminarlo y observa q sucede!
+                https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-last-row-stretchiness
+                -->
+                <li class="empty_item"></li>
+
+                <li class="full_flex_item">
+                    <div class="hero_image"></div>
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/1024x683/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/1024x683/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/683x1024/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <li>
+                    <img src="https://source.unsplash.com/1024x683/?" alt="error al mostrar la imagen" loading="lazy">
+                </li>
+
+                <!--
+                Arreglar distribucion (ubicacion) de las imagenes
+
+                Agregando un <li> vacío aquí
+                para q la ultima foto
+                no se estire demasiado.
+                ¡Intenta eliminarlo y observa q sucede!
+                https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-last-row-stretchiness
+                -->
+                <li class="empty_item"></li>
+            </ul>
+
+            <br>
+            <br>
+
+            <h2>
+                <a href="https://css-tricks.com/creating-a-modal-image-gallery-with-bootstrap-components/" target="_blank">
+                    CSS-Tricks (Trucos CSS) -
+                    Masonry Layout
+                    Usando Bootstrap
+                </a>
+            </h2>
+
+        </div>
+
+        <br>
+
+    </body>
+</html>

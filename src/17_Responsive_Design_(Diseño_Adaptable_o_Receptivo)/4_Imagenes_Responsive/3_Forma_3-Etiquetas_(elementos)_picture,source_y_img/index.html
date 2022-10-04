@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <!--
+            Jon Mircha - YouTube - Imagenes Responsive Usando la Etiqueta (Elemento) HTML <picture>
+            https://www.youtube.com/watch?v=udGrXWeJp1Y&t=5205s -->
+
+        <h1>Imagenes responsive usando la Etiqueta (Elemento) HTML picture</h1>
+
+        <!--
+        puedo ejecutar Media Queries CSS escritas directamente en el codigo HTML
+        para ello uso
+        <source media="(min-width: )" srcset="">
+
+        entonces...
+
+        Cuando el ancho del viewport es MENOR a 600px
+        se muestra la imagen del gato DORMIDO
+        <img src="../../../../assets/images/kitten-small.png" alt="kitten-small.png">
+
+        Desde 600px hasta 1023px
+        se muestra el gato DESPIERTO (SENTADO)
+        <source media="(min-width: 600px)" srcset="../../../../assets/images/kitten-medium.png">
+
+        DESPUES de 1024px
+        se muestra el gato ESTIRANDOSE
+        <source media="(min-width: 1024px)" srcset="../../../../assets/images/kitten-large.png">
+    -->
+
+        <source media="(min-width: )" srcset="">
+        <picture>
+            <source media="(min-width: 1024px)" srcset="../../../../assets/images/kitten-large.png">
+            <source media="(min-width: 600px)" srcset="../../../../assets/images/kitten-medium.png">
+            <img src="../../../../assets/images/kitten-small.png" alt="kitten-small.png">
+        </picture>
+
+        <br>
+
+        <!--
+        tambien puedo usar <source>
+        para mostrar diferentes formatos de imagen
+        dependiendo de la compatibilidad del navegador-->
+        <picture>
+            <source srcset="../../../../assets/images/butterfly.webp" type="image/webp">
+            <img src="../../../../assets/images/butterfly.jpg" alt="butterfly.jpg">
+        </picture>
+
+    </body>
+</html>

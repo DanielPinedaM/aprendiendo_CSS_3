@@ -1,0 +1,26 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=n-vafPXo63k
+
+CSS-Tricks (Trucos CSS) - Antes ::before y después ::after
+https://css-tricks.com/almanac/selectors/a/after-and-before/ */
+
+/* ----------------------------------------------------------------------------- */
+
+body {
+    background-color: lightcoral; /* color de fondo de toda la pagina web */
+}
+
+.elemento { /* esto selecciona el "...Hola mundo" q esta escrito dentro de <p class="elemento">... */
+    background-color: lightgreen; /* tiene un color de fondo lightgreen */
+}
+
+.elemento::before { /* texto ANTES del "...Hola mundo" */
+    content: "soy ::before (antes) y estoy al PRINCIPIO"; /* contenido */
+    background-color: crimson;
+}
+
+.elemento::after { /* texto DESPUES del "...Hola mundo" */
+    content: "Soy ::after (despues) y estoy al FINAL";
+    background-color: steelblue;
+}

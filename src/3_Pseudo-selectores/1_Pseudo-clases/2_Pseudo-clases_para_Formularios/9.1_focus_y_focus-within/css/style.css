@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+button,
+input,
+a {
+    font-size: 2rem;
+    margin: 10px;
+}
+
+button,
+input {
+    display: block;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/*
+:focus
+SOLAMENTE da estilos a un solo elemento q es en donde esta el focus
+*/
+
+/* :focus se activa cuando el usuario...
+da click sobre el elemento
+presiona la tecla tabulador
+toca el elemento (en pantallas tactiles)
+
+:focus seleciona UN SOLO elemento */
+
+.form_focus a:focus,
+.form_focus input:focus,
+.form_focus button:focus {
+    /* cuando el usuario se situe sobre el elemento el borde cambiara a azul */
+    border: thick solid steelblue;
+    /* quitar el estilo del contorno q el navegador da por defecto */
+    outline: none;
+}
+
+/* ------------------ */
+/*
+:focus-within
+da estilos a varios elementos al mismo tiempo
+y se activa cuando el usuario da click
+a cualquiera de los elementos del formulario
+
+al dar click a CUALQUIER elemento
+q este dentro del formulario <form>
+los estilos cambiaran
+
+estilos de la etiqueta CONTENEDORA <form>
+<element class="form_focus-within" :focus-within> */
+
+.form_focus-within:focus-within {
+    border: thick solid black;
+    padding: 20px;
+    background-color: lightpink;
+}
+
+/*
+estilos de las etiquetas
+que estan DENTRO de la etiqueta contenedora <form> */
+
+/* quitar el doble borde de los campos de texto */
+
+.form_focus-within a:focus-within,
+.form_focus-within input:focus-within,
+.form_focus-within button:focus-within {
+    outline: thick solid tomato;
+    outline: 0;
+}

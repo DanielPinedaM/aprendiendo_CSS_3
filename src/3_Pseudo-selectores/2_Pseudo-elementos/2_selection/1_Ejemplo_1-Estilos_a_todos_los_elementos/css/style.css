@@ -1,0 +1,25 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+seleccionar la imagen <img>
+de los dados
+
+<img>
+Especificidad: (0, 0, 1) */
+img {
+    width: 200px; /* ancho */
+}
+
+/* cuando el usuario SELECCIONE CUALQUIER elemento
+cambiarle el estilo
+
+<element ::selection>
+Especificidad: (0, 0, 1) */
+::selection {
+    background-color: crimson; /* color de fondo */
+}

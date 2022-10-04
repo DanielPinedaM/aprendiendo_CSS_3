@@ -1,0 +1,35 @@
+/*
+Jon Mircha - YouTube - iframe Responsive
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=6579s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    max-width: 1200px !important; /* breakpoints: unidades de medida estandar del tamaño de los dispositivos */
+    border: thick solid red; /* borde */
+}
+
+iframe {
+    max-width: 100% !important; /* ocupar TODO el ANCHO del contenedor */
+    height: auto !important; /* esto hace q la imagen no se deforme */
+    display: block !important; /* si quiero q el elemento multimedia ocupe TOTALMENTE el <div>
+                    entonces copio esto display: block;
+                    asi NO se vera un espacio en blanco en la parte de abajo */
+}

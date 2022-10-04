@@ -1,0 +1,33 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------- */
+
+.contenedor {
+    width: 300px;
+
+    border: 5px solid #1e88e5;
+    background-color: salmon;
+}
+
+.imagen {
+    width: 100%;
+    height: 100%;
+
+    object-fit: none; /* Conservar las Medidas Originales de la Imagen.
+                         La imagen del sol es pequeña */
+    object-position: top;
+    object-position: right;
+    object-position: bottom;
+    object-position: left;
+    object-position: top left;
+    object-position: top right;
+    object-position: bottom right;
+    object-position: bottom left;
+}

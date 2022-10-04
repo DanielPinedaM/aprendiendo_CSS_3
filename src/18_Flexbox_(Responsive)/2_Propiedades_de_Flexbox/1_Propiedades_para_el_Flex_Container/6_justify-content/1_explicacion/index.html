@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>justify-content:</h1>
+        <p>justify-content: define en que parte de Main Axis están ubicados los Flex Items.</p>
+        <p>Dependiendo del flex-direction: es decir, si los Flex Items están en filas ↔ o columnas ↕ la alineación es diferente.</p>
+        <p>Sirve para distribuir el espacio que queda entre cada uno de los Flex Items</p>
+        <p>Lo más común es que los Flex Items estén en filas ↔ flex-direction: row;</p>
+        <a href="https://www.samanthaming.com/flexbox30/12-justify-content-row/" target="_blank">justify-content: en filas  ↔</a>
+        <a href="https://www.samanthaming.com/flexbox30/13-justify-content-column/" target="_blank">justify-content: en columnas ↕</a>
+
+        <hr>
+
+        <h2>justify-content: flex-start; flex-direction: row;</h2>
+        <p>Valor por Defecto</p>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; ó flex-direction: row-reverse; entonces justify-content: flex-start; los sitúa a la izquierda</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; ó flex-direction: column-reverse; entonces los sitúa arriba.</p>
+        <div class="contenedor_flexbox flex_start_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: flex-end; flex-direction: row;</h2>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; ó flex-direction: row-reverse; entonces justify-content: flex-end; los sitúa a la derecha</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; ó flex-direction: column-reverse; entonces los sitúa abajo.</p>
+        <div class="contenedor_flexbox flex_end_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: center; flex-direction: row;</h2>
+        <p>Los Flex Items se centran en el Main Axis.</p>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; ó flex-direction: row-reverse; entonces justify-content: center; los centra horizontalmente ↔</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; ó flex-direction: column-reverse; entonces los centra verticalmente ↕</p>
+        <div class="contenedor_flexbox center_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: space-between; flex-direction: row;</h2>
+        <p>Los Flex Items se distribuyen uniformemente en la línea, el primer elemento está en la línea de inicio y el último elemento en la línea final.</p>
+        <p>No importa si son filas ↔ o columnas ↕ el primer y ultimo Flex Item de cada línea se van a juntar situándose lo más cerca posible del Flex Container.</p>
+        <div class="contenedor_flexbox space_between_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: space-around; flex-direction: row;</h2>
+        <p>Los Flex Items se distribuyen uniformemente en la línea con el mismo espacio a su alrededor</p>
+        <p>PERO</p>
+        <p>El espacio vacío antes del primero y después del último elemento es igual a la mitad del espacio entre cada par de Flex Items</p>
+        <div class="contenedor_flexbox space_around_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: space-evenly; flex-direction: row;</h2>
+        <p>Los Flex Items se distribuyen uniformemente en la línea y absolutamente TODOS los espacios que hay entre cada uno de los Flex Items incluyendo los espacios antes del primero y después del último elemento son IGUALES.</p>
+        <div class="contenedor_flexbox space_evenly_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: flex-start; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: flex-end; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: center; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox center_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: space-between; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: space-around; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>justify-content: space-evenly; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+    </body>
+</html>

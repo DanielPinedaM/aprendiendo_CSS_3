@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <div class="flex_container">
+            <div class="item no_width">Flex Item 1 = 100px</div>
+            <div class="item no_width">Flex Item 2 = 100px</div>
+            <div class="item no_width">Flex Item 3 = 100px</div>
+            El espacio disponible es esto q esta de morado = 700px
+        </div>
+
+        <div class="flex_container">
+            <div class="item">Flex Item 1 = 275px</div>
+            <div class="item">Flex Item 2 = 450px</div>
+            <div class="item">Flex Item 3 = 275px</div>
+        </div>
+
+        <pre>
+    DATOS:
+    ancho Flex Container = 1000px
+    ancho width: Flex Item 1, 2 y 3 = 100px (cada uno)
+    espacio disponible = (1000px ancho Flex Container)-(100px width: item 1 + 100px width: item 2 + 100px width: item 3) = 700px
+
+    flex-grow item 1 = 1
+    flex-grow item 2 = 2
+    flex-grow item 3 = 1
+    Total flex-grow = 1+2+1 = 4
+
+    CALCULAR flex-basis:
+    flex-basis: item 1 y 3 = [ (1 flex-grow/4 total flex grow) * 700 espacio disponible] + 100 width: Flex Item 1 y 3 = 275px
+    flex-basis: item 2 = [ (2 flex-grow/4 total flex grow) * 700 espacio disponible] + 100 width: Flex Item 2 = 450px
+        </pre>
+
+    </body>
+</html>

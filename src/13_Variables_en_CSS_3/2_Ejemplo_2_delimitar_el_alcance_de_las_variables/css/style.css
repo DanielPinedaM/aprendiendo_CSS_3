@@ -1,0 +1,65 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+/*
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*/
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+
+div {
+    width: 100px; /* ancho */
+    border: thick solid black; /* borde */
+    display: inline-block; /*Con esto puedo hacer que los <div>
+                            esten uno al lado del otro
+                            convertir elementos de bloq a linea
+                            Con las Propiedades ancho width: y alto height: del content */
+}
+
+
+/*
+las variables las puedo definir en cualquier selector,
+en este caso seleccione el elemento HTML:
+<element class="contenedor_1"> */
+.contenedor_1 { /*  */
+    /* Estas variables SOLAMENTE se pueden usar para la etiqueta <div class="contenedor_1">
+    y todo lo que haya dentro */
+    --color_rojo: red;
+    --color_azul: blue;
+
+    /* las variables se llaman (usan) con la funcion var(--); */
+    background-color: var(--color_rojo);
+}
+/*
+<element class="contenedor_1">
+  …
+    <p> */
+.contenedor_1 p {
+    /* como dentro de <div class="contenedor_1" hay un parrafo <p>
+    q dice "Contenedor 1"
+    entonces su color SI cambiara */
+    color: var(--color_azul);
+}
+.contenedor_2 {
+    /* el color de fondo de .contenedor_2 NO cambia
+    porq var(--color_rojo); SOLAMENTE se puede usar
+    en las etiquetas q estan dentro de <div class="contenedor_1"> */
+    background-color: var(--color_rojo);
+}
+
+
+
+
+
+
+
+

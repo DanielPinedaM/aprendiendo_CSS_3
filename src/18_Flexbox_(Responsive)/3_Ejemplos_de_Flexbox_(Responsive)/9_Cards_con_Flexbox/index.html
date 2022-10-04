@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            Cards con Flexbox (Responsive)
+        </h1>
+
+        <p>
+            Ejemplos:
+        </p>
+
+        <ul class="list_style_position_inside">
+            <li>
+                <a href="https://themes.shopify.com/themes/venture/styles/snowboards/preview" target="_blank">
+                    Shopify
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mercadolibre.com.co/" target="_blank">
+                    Mercado Libre
+                </a>
+            </li>
+            <li>
+                <a href="https://www.amazon.com/" target="_blank">
+                    Amazon
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linio.com.co/c/consolas-y-videojuegos/xbox-videojuegos" target="_blank">
+                    Linio
+                </a>
+            </li>
+        </ul>
+
+        <br>
+        <hr>
+        <br>
+
+        <div class="page_wrap">
+
+            <!--
+            De CSS-Tricks solamente copie el .html,
+            el .css lo hice yo
+            con lo q aprendi en curso de Flexbox de Jon Mircha
+
+            BARRA DE BUSQUEDA DE ROPA
+            https://css-tricks.com/designing-a-product-page-layout-with-flexbox/#aa-the-header-layout
+            -->
+            <form class="formulario_filtrar">
+                <nav class="nav_filtrar">
+
+                    <div class="contenedor_filtrar_ordenar">
+
+                        <div class="item_filtrar_ordenar">
+                            <label for="filtrar">Filtrar</label>
+                            <select name="opcion_filtrar" id="filtrar">
+                                <option value="/">Mostrar todo</option>
+                                <option value="/">otra opcion</option>
+                            </select>
+                        </div>
+
+                        <div class="item_filtrar_ordenar">
+                            <label for="ordenar">Ordenar</label>
+                            <select name="opcion_ordenar" id="ordenar">
+                                <option value="/">Destacados</option>
+                                <option value="/">otra opcion</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </nav>
+            </form>
+
+
+            <!--
+            CARDS
+            https://css-tricks.com/designing-a-product-page-layout-with-flexbox/#aa-the-products-layout
+            -->
+            <section class="contenedor_card">
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+
+                <!-- aqui abajo van mas cards -->
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#" class="card_enlace">
+                        <div class="card_imagen">
+                            <img src="https://source.unsplash.com/400x400/?jeans" alt="error al mostrar la imagen">
+                        </div>
+
+                        <div class="descripcion">
+                            <h5>Lorem ipsum</h5>
+                            <h6>$99.99</h6>
+                            <p>Lorem ipsum</p>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+        </div>
+
+        <br>
+        <br>
+
+    </body>
+</html>

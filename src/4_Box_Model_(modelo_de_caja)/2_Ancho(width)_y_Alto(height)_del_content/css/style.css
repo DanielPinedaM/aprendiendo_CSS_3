@@ -1,0 +1,32 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+/*
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*/
+
+body {
+    background: #bdc3c7;
+}
+
+.bloque,
+.linea {
+    background: #0fbcf9;
+    border: 1px solid #000;
+}
+
+.bloque {
+    /* SOLAMENTE los elementos en bloque
+    tienen ancho y alto */
+    width: 80px; /* ancho */
+    height: 40px; /* alto */
+}
+
+.linea {
+    /* Como los enlaces son elementos en linea 
+    entonces NO puedo definir su ancho y alto */
+    width: 1000px; /* ancho */
+    height: 1px /* alto */;
+}

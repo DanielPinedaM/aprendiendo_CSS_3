@@ -1,0 +1,24 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.lista  {
+    font-size: 2em; /* tamaño de la letra */
+}
+
+/*
+
+Seleccionar las posiciones PARES
+SIN importar el tipo de elemento
+
+ESTO... */
+.lista :nth-child(even){
+    color: red;
+}
+
+/* es lo mismo q esto: */
+.lista :nth-child(2n){
+    color: red;
+}

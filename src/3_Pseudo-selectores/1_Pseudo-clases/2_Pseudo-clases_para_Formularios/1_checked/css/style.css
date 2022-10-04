@@ -1,0 +1,38 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+p,
+label {
+    font-size: 2rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Seleccionar los inputs de tipo radio y checkbox junto con sus label
+input[type=""] + label
+
+<input type="radio">
+<label>
+
+<input type="checkbox">
+<label>
+
+Tambien seleccionar las etiquetas select que dentro tengan la etiqueta option
+<select>
+  …
+    <option :checked>
+
+Cuando seleccione una opcion entonces se aplicaran los estilos
+:checked */
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label,
+select option:checked {
+    color: indianred;
+    font-style: italic;
+}
+
+input[type="submit"] {
+    margin-top: 40px;
+}

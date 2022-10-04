@@ -1,0 +1,51 @@
+p {
+    margin: 0;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+hay 2 formas de darle estilos a la primera letra de un texto:
+
+
+
+FORMA 1 - Usando ::first-letter
+
+seleccionar la PRIMERA LETRA de TODOS los parrafos <p>
+
+<p ::first-letter>
+Especificidad: (0, 0, 2) */
+
+/*
+p::first-letter {
+    color: steelblue;
+    font-size: 4rem;
+    font-weight: 900;
+}
+*/
+
+/* ------------------------ */
+
+/*
+FORMA 2 - Poner un <span> a cada una de las primeras letras del texto y seleccionarla para darle estilos CSS
+                    <p><span class="primera_letra">H</span>ola mundo 1</p>
+                    <p><span class="primera_letra">H</span>Hola mundo 2</p>
+                    <p><span class="primera_letra">H</span>Hola mundo 3</p>
+
+
+
+Seleccionar la primera letra usando <span>
+
+<element class="primera_letra">
+Especificidad: (0, 1, 0) */
+.primera_letra {
+    color: crimson; /* color del texto */
+    font-size: 3rem; /* tanaño de la letra */
+    font-family: "Arial Black", Gadget, sans-serif; /* fuente (tipografia) del texto */
+    /* texto en 3D */
+    text-shadow: 0px 0px 0 rgb(243, 181, 0), 1px 1px 0 rgb(231, 169, 0), 2px 2px 0 rgb(219, 157, 0), 3px 3px 0 rgb(207, 145, 0), 4px 4px 0 rgb(195, 133, 0), 5px 5px 0 rgb(184, 122, 0), 6px 6px 0 rgb(172, 110, 0), 7px 7px 0 rgb(160, 98, 0), 8px 8px 0 rgb(148, 86, 0), 9px 9px 0 rgb(136, 74, 0), 10px 10px 0 rgb(124, 62, 0), 11px 11px 0 rgb(112, 50, 0), 12px 12px 0 rgb(100, 38, 0), 13px 13px 12px rgba(0, 0, 0, 0.6), 13px 13px 1px rgba(0, 0, 0, 0.5), 0px 0px 12px rgba(0, 0, 0, 0.2);
+}

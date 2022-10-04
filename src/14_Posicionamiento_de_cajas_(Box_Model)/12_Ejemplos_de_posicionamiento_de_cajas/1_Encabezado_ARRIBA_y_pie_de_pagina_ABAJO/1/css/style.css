@@ -1,0 +1,65 @@
+/*
+Este ejemplo lo saq de aqui
+
+Jon Mircha - YouTube - Encabezado <header> fixed VS sticky
+https://www.youtube.com/watch?v=K3xmRF8ab1o&t=32822s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+    padding-top: 50px; /* .encabezado */
+    padding-bottom: 50px; /* .pie_de_pagina */
+    /* margin: 0;
+    quitar el margen del <body>
+    es importante eliminar los estilos por defecto del navegador
+    para q no quede un espacio en blanco en el .encabezado  */
+}
+
+/*
+este .encabezado estara SIEMPRE en la parte de arriba de la pagina web
+sin importar q el usuario haga scroll */
+.encabezado { /* .encabezado <header> */
+    width: 100%; /* ocupar TODO 100% el ANCHO width: de la pagina web
+                    TIENES q usar 100% y NO puedes usar 100vw
+                    porq cuando usas 100vw se genera una barra de scroll
+                    en cambio con 100% NO hay barra de scroll */
+    height: 50px; /*Ambas medidas tienen q ser iguales
+                    para q el .encabezado no tape el contenido de la pagina web
+
+                    ENCABEZADO: height: 50px; = padding-top: 50px;
+                    PIE DE PAGINA: height: 50px; = padding-bottom: 50px;
+
+                    si quisiera tambien podria hacer el padding-top:
+                    con una medida UN POCO mayor a la del height: */
+    background-color:steelblue;
+/* posicionamiento fijo
+El Elemento se Mueve con Respecto al Viewport,
+se Queda Quieto (Fijo) en Donde lo Haya Posicionado
+y Puede Perder las Medidas del Box Model  */
+    position: fixed;
+    z-index: 9999; /* esto hace q el .encabezado SIEMPRE este por ENCIMA de TODOS los elementos */
+    /* ubicar .encabezado ARRIBA de la pagina web */
+    top: 0;
+    left: 0;
+}
+
+.pie_de_pagina {
+    width: 100%;
+    height: 50px;
+    background-color: lightcoral;
+    position: fixed;
+    z-index: 9999;
+    /* ubicar .pie_de_pagina ABAJO de la pagina web */
+    bottom: 0;
+    left: 0;
+}

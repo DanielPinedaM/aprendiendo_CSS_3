@@ -1,0 +1,60 @@
+/* -------------------- Reset CSS -------------------- */
+
+/*
+Este codigo esta basado en el Reset CSS de:
+- Meyer Web:    https://meyerweb.com/eric/tools/css/reset/
+- Jon Mircha:   https://jonmircha.com/assets/style.css
+*/
+
+*,         /* El asterisco * significa seleccionar todos los elemento (etiquetas) HTML */
+*::before, /* Insertar Contenido content: antes ::before */
+*::after { /* y despues ::after del elemento (etiqueta) HTML */
+    padding: 0; /* eliminar relleno: Espacio q hay ALREDEDOR del elemento, esta DENTRO del mismo */
+    margin: 0;  /* eliminar margen: Espacio q hay ENTRE los elementos, esta AFUERA */
+
+    border: 0;  /* eliminar linea q bordea (rodea) los elementos (etiquetas) HTML */
+    outline: 0;
+
+    font: inherit; /* eliminar los estilos CSS de la fuente por defecto del navegador */
+
+    box-sizing: border-box !important;/*Hacer q el tamaño total de la caja (Box Model)
+                                        siempre sea el
+                                        ancho width: y alto height:
+                                        del content
+                                        (modelo de caja alternativo) */
+}
+
+html {
+    font-size: 16px; /* asegurarme de q 1rem = 16px */
+
+    scroll-behavior: smooth !important;/*animacion de scroll
+                                        al dar click en enlaces <a>
+                                        q redirigen a secciones (partes)
+                                        dentro de la misma pagina web
+                                        https://css-tricks.com/almanac/properties/s/scroll-behavior/#aa-deeper-explanation */
+}
+
+body {
+    width: 100% !important; /* el <body> siempre tendra el mismo ancho width: q el ancho del viewport */
+
+    min-height: 100vh !important;/* alto minimo min-height: es el 100% del alto del viewport (pantalla) 100vh,
+                                    esto va hacer q la altura del <body>
+                                    sea igual a la altura de la pantalla (viewport)
+                                    y en caso de q el contenido se estire (cresca en altura),
+                                    entonces el <body> tambien crecera (Responsive),
+                                    por eso es min-height: y NO height:  */
+
+    overflow-x: hidden;/*ocultar el contenido hidden;
+                        q se desborde overflow
+                        del ancho -x del viewport (pantalla) */
+}
+
+/* todos los textos tienen el mismo espacio entre renglones o lineas (interlineado)
+Es 1.2 porq es el valor recomendado por la documentacion oficial de la MDN
+https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#values */
+html, body { line-height: 1.2; }
+
+table {
+    border-collapse: collapse !important;  /* juntar los bordes (casillas) de las tablas */
+    border-spacing: 0 !important;          /* eliminar espacio de las tablas entre cada una de las casillas */
+}

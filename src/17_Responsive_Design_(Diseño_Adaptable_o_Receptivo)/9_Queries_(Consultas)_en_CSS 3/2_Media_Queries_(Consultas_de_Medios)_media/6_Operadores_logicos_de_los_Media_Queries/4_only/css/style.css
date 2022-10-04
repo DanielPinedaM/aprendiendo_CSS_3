@@ -1,0 +1,42 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=vwwjrJq-EJI
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Operador Logico only
+only hace lo mismo que and
+la única diferencia es que only
+se usa para dar compatibilidad a navegadores antiguos (Internet Explorer).
+
+Cuando no se usa only en los navegadores antiguos la Media Query
+@media screen and (max-width: 500px) se ejecutaría como @media screen
+sin la medida del (max-width: 500px)
+por lo que se ejecutaría para todas las pantallas screen
+y no se estaría limitando el ancho máximo max-width:
+
+
+
+cambiar el color de fondo background-color: de toda la pagina web body {...}
+cuando el viewport tenga como ancho width: desde 320px hasta 480px */
+@media only screen /* only da compatibilidad a navegadores antiguos */
+    and (min-width: 320px)
+    and (max-width: 480px) {
+    body { background-color: red; }
+}

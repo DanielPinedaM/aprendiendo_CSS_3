@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <h1>align-items:</h1>
+        <p>Ambos <code>align-items:</code> y <code>align-content:</code> definen en que parte de Cross Axis están ubicados los Flex Items (esto se llama “alineación”).</p>
+        <p>Para ambos <code>align-items:</code> y <code>align-content:</code> se aplica esta regla. Dependiendo del <code>flex-direction:</code> es decir, si los Flex Items están en filas ↔ o columnas ↕ la alineación es diferente:</p>
+        <a href="https://www.samanthaming.com/flexbox30/15-align-items-row/" target="_blank">align-items: en filas  ↔</a>
+        <a href="https://www.samanthaming.com/flexbox30/17-align-items-column/" target="_blank">align-items: en columnas ↕</a>
+
+        <p class="no_margin">Cuando los Flex Items ocupan una sola línea <code>flex-wrap: nowrap;</code> entonces usar <code>align-items:</code></p>
+        <p class="no_margin">en cambio</p>
+        <p class="no_margin">si los Flex Items ocupan varias líneas <code>flex-wrap: wrap;</code> ó <code>flex-wrap: wrap-reverse;</code> usar <code>align-content:</code></p>
+
+        <hr>
+
+        <h2>align-items: stretch; flex-direction: row;</h2>
+        <p>Estirar los Flex Items para q ocupen todo el espacio disponible del Flex Container. Se respeta el ancho mínimo y ancho máximo del Flex Container (valor por defecto)</p>
+        <div class="contenedor_flexbox stretch_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: flex-start; flex-direction: row;</h2>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; entonces align-items: flex-start; los sitúa arriba</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; entonces los sitúa a la izquierda.</p>
+        <div class="contenedor_flexbox flex_start_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: flex-end; flex-direction: row;</h2>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; entonces align-items: flex-end; los sitúa abajo</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; entonces los sitúa a la derecha.</p>
+        <div class="contenedor_flexbox flex_end_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: center; flex-direction: row;</h2>
+        <p>Los Flex Items se centran en el Cross Axis.</p>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; entonces align-items: center; los centra verticalmente ↕</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; entonces los centra horizontalmente ↔</p>
+        <div class="contenedor_flexbox center_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: baseline; flex-direction: row;</h2>
+        <p>Los Flex Items se alinean en el renglón (línea base) sobre la que se escribe el texto</p>
+        <p>Cuando el tamaño de la letra font-size: del texto que está dentro de los Flex Items es el mismo, pareciera ser que align-items: flex-start; es lo mismo que align-items: baseline; pero en realidad NO son lo mismo. Si usas align-items: baseline; y tienes un tamaño de letra diferente para los Flex Items entonces puedes notar la diferencia.</p>
+        <div class="contenedor_flexbox baseline_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: stretch; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: flex-start; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: flex-end; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: center; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox center_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>align-items: baseline; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox baseline_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+    </body>
+</html>

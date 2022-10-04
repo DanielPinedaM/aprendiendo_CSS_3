@@ -1,0 +1,38 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ol {
+    font-size: 1.5em;
+}
+
+/*
+
+seleccionar TODOS los elementos (posiciones) q estan dentro de .contenedor
+
+ESTO...
+
+<element class="contenedor">
+  …
+    <element :nth-child>
+Especificidad: (0, 2, 1) */
+
+.contenedor :nth-child(n) {
+    color: red;
+}
+
+/* es lo mismo q esto:
+
+<element class="contenedor">
+  …
+    <element :nth-last-child>
+Especificidad: (0, 2, 1) */
+.contenedor :nth-last-child(n) {
+    color: red;
+}
+
+
+
+

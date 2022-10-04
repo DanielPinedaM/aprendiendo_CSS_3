@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Para rem La etiqueta <html> es la base (elemento raiz) -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Unidades de Medida en CSS 3</title>
+    </head>
+    <body>
+        <h1>Unidades de Medida en CSS 3</h1>
+        <hr />
+        <h2><code>rem</code> (Root EM)</h2>
+        <!-- a rem NO le importa quien es el padre ni el hijo, la base SIEMPRE sera la etiqueta <html> -->
+        <div class="rem_padre">
+            <p>
+                CONTENEDOR PADRE - Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Perferendis, laboriosam!
+            </p>
+            <div class="rem_hijo">
+                <p>
+                    CONTENEDOR HIJO - Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Perferendis, laboriosam!
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

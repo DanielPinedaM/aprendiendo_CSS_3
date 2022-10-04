@@ -1,0 +1,57 @@
+p, h2 {
+    margin: 0; /* quitar el margen a los parrafos <p> y subtitulos <h2 */
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    /* doy un ancho width: y borde al .contenedor
+    para q se pueda ver */
+    border: thick solid black;
+    width: 47rem;
+}
+
+/* el primer renglon de los parrafos
+ya NO esta de rojo
+porq lo he cambiado a color azul con ::first-line */
+
+.important {
+    /* !important tiene mayor especificidad q TODOS los selectores
+    PERO esto NO es asi cuando uso ::first-line */
+    color: red !important;
+}
+
+#selector_ID { /* especificidad: (1, 0, 0) */
+    color: red;
+}
+
+.selector_clases { /* especificidad: (0, 1, 0) */
+    color: red;
+}
+
+/* ::first-line ANULA la especificidad de TODOS los selectores
+eso significa q
+sin importar la especificidad q tengan los selectores anteriores
+el color de la primera linea sera azul */
+
+.important::first-line { /* ::first-line VS !important */
+    color: blue;
+}
+
+/* seleccionar el parrafo q esta despues del subtitulo q dice
+::first-line VS Estilos en linea style=""... */
+p[style]::first-line {
+    color: blue;
+}
+
+#selector_ID::first-line { /* ::first-line VS Selector de ID */
+    color: blue;
+}
+
+.selector_clases::first-line { /* ::first-line VS Selector de clases */
+    color: blue;
+}

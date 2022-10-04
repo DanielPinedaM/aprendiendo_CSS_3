@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- <html> tiene estilos (margin y padding) por defecto -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Cuando use normalize.css NO se solucionó el problema
+            de q los <div> ocupan espacios distintos y se seguia viendo el color de fondo del <body> -->
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Unidades de Medida en CSS 3</title>
+    </head>
+    <body> <!-- <body> tambien tiene estilos por defecto -->
+        <div class="viewport"> <!-- lo q esta aqui adentro es lo q quiero q ocupe toda la pagina web (landing page)-->
+            <p>Estoy DENTRO del contenedor</p>
+        </div>
+        <div class="fuera"> <!-- de aqui para abajo es el resto del contenido de mi pagina web -->
+            <p>Estoy FUERA del contenedor</p>
+        </div>
+    </body>
+</html>

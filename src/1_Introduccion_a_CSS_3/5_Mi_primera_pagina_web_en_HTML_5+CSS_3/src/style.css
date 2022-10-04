@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font: bold 14px sans-serif;
+}
+
+header,
+main,
+section,
+aside,
+nav,
+article,
+footer {
+    /* border: 1px solid black; */
+    display: block;
+}
+
+body {
+    text-align: center;
+    background: #e2ddcc;
+}
+
+.agrupar {
+    /* Ancho ↔ width y alto ↨ height */
+    width: 960px;
+    border: 1px solid black;
+    margin: 15px auto;
+    background: white;
+}
+
+.header {
+    background: #fffbb9;
+    border: 0.5px solid #999999;
+    padding: 20px;
+}
+
+.header h1 {
+    text-align: left;
+}
+
+.nav {
+    text-align: left;
+    background: #ccc;
+    padding: 5px 15px;
+}
+
+/* Modificar estilo para TODOS los <li> q esten dentro de <nav> */
+.nav li {
+    list-style: none;
+    padding: 5px;
+    font: bold 14px verdana;
+    display: inline-block;
+}
+
+article {
+    background: #fffbcc;
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+time {
+    color: #999;
+}
+
+.main {
+    margin: 20px;
+    width: 600px;
+    float: left;
+}
+
+.aside {
+    float: left;
+    margin: 20px 0;
+}
+
+.aside blockquote {
+    width: 200px;
+    border: 1px solid black;
+    padding: 50px;
+    background: #fffbcc;
+    margin-bottom: 10px;
+}
+
+article footer {
+    clear: both;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.autor {
+    clear: both;
+    text-align: left;
+    padding: 20px;
+    background: #726c6c;
+    color: white;
+}
+
+img {
+    width: 80px;
+    display: block;
+    margin: auto;
+}

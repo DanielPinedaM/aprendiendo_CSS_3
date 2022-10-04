@@ -1,0 +1,31 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ol {
+    font-size: 1.5em;
+}
+
+/*
+
+Seleccionar las 3 PRIMERAS
+
+<ol>
+  …
+    <li :nth-child>
+Especificidad: (0, 1, 2) */
+ol li:nth-child(-n+3) { /* -n+3 = 3, 2, 1 */
+    color: red; /* color del texto */
+}
+
+/* y 2 ULTIMAS posiciones de la lista
+
+<ol>
+  …
+    <li :nth-last-child>
+Especificidad: (0, 1, 2) */
+ol li:nth-last-child(-n+2) { /* -n+2 = 2, 1 */
+    color: blue;
+}

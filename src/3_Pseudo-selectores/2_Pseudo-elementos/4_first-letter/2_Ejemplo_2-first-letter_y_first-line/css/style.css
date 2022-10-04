@@ -1,0 +1,48 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+
+/*
+Si uso ::first-line en un mismo selector
+junto con ::first-letter entonces los estilos NO funcionan
+
+
+
+esto NO funciona */
+p::first-letter::first-line {
+    color: yellow;
+    font-size: 3em;
+}
+
+/* y esto otro TAMPOCO funciona */
+p::first-line::first-letter {
+    color: yellow;
+    font-size: 3em;
+}
+
+/* ------------ */
+
+/*
+para q funcionen se deben escribir en selectores por separado
+
+
+
+Cambiar Estilo a la Primera LINEA (RENGLON) ::first-line del Texto <p>
+
+<p ::first-line>
+Especificidad: (0, 0, 2) */
+p::first-line {
+    color:crimson;
+}
+
+/* Cambiar Estilo a la primera LETRA del Texto <p>
+
+<p ::first-letter>
+Especificidad: (0, 0, 2) */
+p::first-letter {
+    color: blue; /* color del texto */
+    font-size: 2em; /* tamaño de la letra */
+}

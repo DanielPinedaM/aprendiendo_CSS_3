@@ -1,0 +1,102 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Jon Mircha:
+https://www.youtube.com/watch?v=K3xmRF8ab1o&t=28966s
+
+eliminar estilos por defecto del navegador usando el selector universall */
+/* *,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.caja_absoluta {
+    width: 100px;
+    height: 50px;
+
+    background-color: tomato;
+
+    position: absolute;
+
+    /* --------------------- */
+/*
+    top: 0;
+    left: 0;
+*/
+    /* --------------------- */
+/*
+    right: 0;
+    bottom: 0;
+*/
+    /* --------------------- */
+/*
+    top: 100px;
+*/
+    /* --------------------- */
+
+    top: 100px;
+    left: 100px;
+
+}
+
+.padre_posicionado {
+    width: 300px;
+    height: 300px;
+    background-color: steelblue;
+
+    position: relative;
+
+    /* --------------------- */
+
+    /* --------------------- */
+/*
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+*/
+    /* --------------------- */
+
+    top: 50px;
+    left: 50px;
+}
+
+.caja_hija_absoluta {
+    background-color:lightcoral;
+
+    position: absolute;
+
+    /* --------------------- */
+/*
+    left: 0;
+    top: 0;
+*/
+    /* --------------------- */
+/*
+    left: -30px;
+    top: -50px;
+*/
+    /* --------------------- */
+
+    bottom: 0;
+    right: 0;
+
+    /* --------------------- */
+
+/*
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+*/
+
+    /* --------------------- */
+
+}

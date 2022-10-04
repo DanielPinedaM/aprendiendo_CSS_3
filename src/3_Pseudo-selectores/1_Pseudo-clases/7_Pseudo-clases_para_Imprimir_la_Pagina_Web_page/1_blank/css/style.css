@@ -1,0 +1,13 @@
+/*
+Documentacion oficial de :blank
+https://developer.mozilla.org/en-US/docs/Web/CSS/:blank */
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+textarea:blank {
+    border: 3px solid red;
+}

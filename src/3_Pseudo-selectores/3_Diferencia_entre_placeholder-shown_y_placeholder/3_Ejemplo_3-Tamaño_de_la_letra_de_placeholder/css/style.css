@@ -1,0 +1,24 @@
+/*
+CSS-Tricks (Trucos CSS) - Diferencia entre :placeholder-shown y ::placeholder
+https://css-tricks.com/almanac/selectors/p/placeholder/#the-difference-between-placeholder-shown-and-placeholder
+*/
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+
+/*
+
+Seleccionar TODOS los controles interactivos <input>
+
+<input>
+Especificidad: (0, 0, 1) */
+input {
+    width: 25rem; /* ancho */
+    font-size: 2rem; /* tamaño de la letra */
+    margin-bottom: 5px; /* margen hacia abajo para separar los elementos */
+    display: block; /* convertir de linea a bloq */
+}

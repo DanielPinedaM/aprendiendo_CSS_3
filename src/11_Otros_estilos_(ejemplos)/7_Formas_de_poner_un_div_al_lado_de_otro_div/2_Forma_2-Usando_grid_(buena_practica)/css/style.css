@@ -1,0 +1,32 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_grid {
+    width: 30rem; /* ancho */
+    height: 30rem; /* alto */
+
+    border: thick solid red;
+
+    display: grid; /* hacer q los <div> tengan las propiedades de grid */
+    grid-template-columns: 40% 40%; /* medidas de las columnas ↕ */
+    grid-template-rows: 40%; /* medidas de las filas ↔ */
+}
+
+.contenedor_1 {
+    border: thick solid blue;
+}
+
+.contenedor_2 {
+    border: thick solid green;
+}

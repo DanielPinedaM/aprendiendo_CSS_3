@@ -1,0 +1,155 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+*/
+
+body {
+    margin: 10px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.flex_container {
+    height: 30vh;
+    /* padding: 1rem; */
+    margin-bottom: 5rem; /* margen hacia abajo, esto separa los Flex Container */
+    border: thick solid #666;
+    background-color: #995db5;
+
+
+
+    /* usar Flexbox
+
+    display: flex;         hace q el Flex Container sea un elemento EN BLOQ
+    display: inline-flex;    "                                      " EN LINEA */
+
+    display: flex;
+    /* display: inline-flex; */
+
+    /* ------------------------- flex-direction: ------------------------- */
+
+    /* flex-direction: define si los Flex Items
+    están ubicados en filas (horizontal ↔) o
+    columnas (vertical ↕),
+    es la dirección hacia la cual están ubicados los Flex Items
+
+    Sirve para cambiar la orientación
+    del eje principal (Main Axis)
+    y eje transversal (Cross Axis): */
+
+    /* flex-direction: row; */              /* Fila → de Izquierda a Derecha (Valor por Defecto) */
+    /* flex-direction: row-reverse; */      /* Fila ← al Revés de Derecha a Izquierda */
+    /* flex-direction: column; */           /* Columna ↓ de Arriba Hacia Abajo */
+    /* flex-direction: column-reverse; */   /* Columna ↑ al Revés de Abajo Hacia Arriba */
+
+    /* ------------------------- flex-wrap: ------------------------- */
+
+    /* flex-wrap: define si los Flex Items están
+    ubicados en una misma línea o en varias líneas. */
+
+    /* flex-wrap: nowrap; */          /* En una Sola Línea (Valor por Defecto) */
+    /* flex-wrap: wrap; */            /* En Varias Líneas de Arriba Hacia Abajo ↓ */
+    /* flex-wrap: wrap-reverse; */    /* En Varias Líneas al Revés de Abajo Hacia Arriba ↑ */
+
+    /* ------------------------- flex-flow: flex-direction flex-wrap; ------------------------- */
+
+    /* flex-flow: es una propiedad abreviada (shorthand).
+    El orden de los Flex Items cambia dependiendo del flex-flow: flex-direction flex-wrap; */
+
+    flex-flow: row nowrap;
+    /* flex-flow: row wrap; */
+    /* flex-flow: row wrap-reverse; */
+    /* flex-flow: row-reverse nowrap; */
+    /* flex-flow: row-reverse wrap; */
+    /* flex-flow: row-reverse wrap-reverse; */
+    /* flex-flow: column nowrap; */
+    /* flex-flow: column wrap; */
+    /* flex-flow: column wrap-reverse; */
+    /* flex-flow: column-reverse nowrap; */
+    /* flex-flow: column-reverse wrap; */
+    /* flex-flow: column-reverse wrap-reverse; */
+
+    /* ------------------------- justify-content: ------------------------- */
+
+    /* justify-content: define en que parte
+    del eje principal (Main Axis)
+    están ubicados los Flex Items.  */
+
+    /* justify-content: flex-start; */       /* A la Izquierda ← en Fila ↔ y Arriba ↑ en Columna ↕ (Valor por Defecto) */
+    /* justify-content: flex-end; */         /* A la Derecha → en Fila ↔ y Abajo ↓ en Columna ↕ */
+    /* justify-content: center; */           /* Centrar Horizontalmente ↔ en Fila ↔ y Verticalmente ↕ en Columna ↕ */
+    /* justify-content: space-between; */    /* Primer Flex Item al Inicio y Ultimo Flex Item al Final */
+    /* justify-content: space-around; */     /* Espacio Entre los Flex Items es Igual pero el Espacio al Principio y Final de los Flex Items no es Igual  */
+    /* justify-content: space-evenly; */     /* Todos los Espacios Entre los Flex Items son Iguales */
+
+    /* -------------------------Alineación del Eje Transversal (Cross Axis)
+                                Diferencias y Similitudes Entre
+                                align-items: y align-content: ------------------------- */
+
+    /*
+    SIMILITUDES:
+    Ambos align-items: y align-content:
+    definen en q parte de Cross Axis
+    están ubicados los Flex Items (esto se llama “alineación”).
+
+    Para ambos align-items: y align-content: se aplica esta regla:
+    Dependiendo del flex-direction: es decir,
+    si los Flex Items están en filas ↔ o columnas ↕ la alineación es diferente
+
+    DIFERENCIAS:
+    Cuando los Flex Items ocupan una sola línea flex-wrap: nowrap; entonces usar align-items:
+    en cambio
+    si los Flex Items ocupan varias líneas flex-wrap: wrap; ó flex-wrap: wrap-reverse; usar align-content: */
+
+    /* ------------------------- align-items: ------------------------- */
+
+    /* align-items: Alinear Todos los Flex Items
+    en Una Sola Línea
+    (Sirve para flex-wrap: nowrap; )
+    (Alinear Elementos) */
+
+    /* align-items: stretch; */       /* Los Flex Items Ocupan Todo el Espacio Disponible del Flex Container (Valor por Defecto) */
+    align-items: flex-start;    /* Arriba ↑ en Fila ↔ e Izquierda ← en Columna ↕ */
+    /* align-items: flex-end; */      /* Abajo ↓ en Fila ↔ y a la Derecha → en Columna  ↕ */
+    /* align-items: center; */        /* Centrar Verticalmente ↕ en Fila ↔ y Horizontalmente ↔ en Columna ↕ */
+    /* align-items: baseline; */      /* Alinear Flex Items en el Renglón Donde se Escribe el Texto */
+}
+
+.item {
+    width: 20%; /*el ancho width: de cada uno de los Flex Items es del 20%
+                eso significa q (20% width: ) * (5 Flex Items) = 100%
+                por lo tanto dentro del Flex Container hay 5 columnas */
+    /* margin: 0.313rem;*/ /*PERO cuando le doy margin: a los Flex Items
+                            debido a q estos tienen una distancia de separacion
+                            entonces ya NO son 5 columnas */
+    /* height: 30%; */
+    border: thin solid crimson;
+    background-color: #f4941c;
+    font-size: 20px;
+}
+
+
+.item:nth-child(2),
+.item:nth-child(17) {
+    font-size: 300%;
+}

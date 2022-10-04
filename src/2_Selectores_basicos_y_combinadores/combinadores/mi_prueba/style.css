@@ -1,0 +1,117 @@
+/* 
+   SELECTORES COMBINADORES:
+*/
+
+/* 
+Hermano Adyacente — selector1 + selector2 {...}
+Seleccionar solamente el siguiente elemento que esta después del selector 1. El selector 1 y 2 tienen que ser hermanos (estar dentro de la misma etiqueta contenedora).
+
+- selector1 hermano NO seleccionado + selector2 hermano SIGUIENTE, SI seleccionado.
+
+Ejemplo:
+Seleccionar solamente el siguiente párrafo <p> que esta después del enlace <a> y sean hermanos:
+*/
+/* 
+a + p {
+    background: red;
+} 
+*/
+
+/* 
+Hermano General — selector1 ~ selector2 {...}
+Seleccionar todos los elementos que estén después del selector1. 
+El selector 1 y 2 tienen que ser hermanos 
+(estar dentro de la misma etiqueta contenedora).
+
+- selector1 hermano NO seleccionado + selector2 seleccionar TODOS los siguientes hermanos.
+
+- Se seleccionan todos los siguientes elementos hermanos.
+
+Ejemplo:
+Seleccionar todos los párrafos <p> que estén después del enlace <a> y sean hermanos:
+
+*/
+/* 
+a ~ p {
+    background: red;
+} 
+*/
+
+/* 
+Descendientes  — selector1 selector2 {...}
+Selecciona los elementos del selector 2 que están dentro del selector 1.
+
+- Selecciona todas las etiquetas hijas que le especifique que estén dentro de una etiqueta contenedora (hijos, nietos, bisnietos…)
+
+- No selecciona la etiqueta padre (contenedora).
+
+Ejemplo:
+Seleccionar todos los párrafos <p> que estén dentro de class="contenedor_1"
+*/
+/* 
+.contenedor_1 p{
+    background: red;
+} 
+*/
+
+/* 
+Elemento Hijo Directo  — selector1 > selector2 {...}
+Selecciona los elementos del selector 2 que son hijos directos del selector 1.
+
+- Selecciona solamente las etiquetas que sean hijas directas que esten dentro de una etiqueta contenedora
+
+- NO selecciona nietos, bisnietos, etc…
+
+- NO selecciona la etiqueta padre (contenedora).
+
+Ejemplo:
+Seleccionar el primer hijo directo que sea párrafo <p> y este dentro de id="contenedor_2"
+*/
+/* 
+#contenedor_2 > p {
+   text-align: center;
+} 
+*/
+
+/* Seleccionar class="contenedor_1" y class="contenedor_2" 
+
+Tambien puedo hacer lo mismo con los id o con cualquier otro tipo de elemento
+*/
+/* 
+.contenedor_1, .contenedor_2 {
+    background: red;
+}  
+*/
+
+/* 
+#id_1, #id_2 {
+    background: red;
+} 
+*/
+
+
+
+/* nav[class="contenedor"]{
+    background: red;
+}
+
+nav.contenedor{
+    background: blue;
+}  */
+
+
+
+
+
+/* 
+*[class] {
+    background: red;
+} 
+*/
+
+
+/* 
+*[class] {
+    background: red;
+} 
+*/

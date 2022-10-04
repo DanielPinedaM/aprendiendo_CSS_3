@@ -1,0 +1,47 @@
+/*
+Tutorial - Udemy - AlexCG Design - Media Queries
+https://youtu.be/-yE_BrbVPek
+
+CSS-Tricks (Trucos CSS) - Características del Viewport (Ventana Gráfica)
+https://css-tricks.com/a-complete-guide-to-css-media-queries/#viewport-page-characteristics
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    font-size: 2.5rem; /* tamaño de la letra */
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+}
+
+/* con el pseudo-elemento ::before muestro un mensaje en pantalla
+q me indica si se ha ejecutado o no la Media Query */
+p::before { content: "hasta el momento NO se han ejecutado Media Queries"; }
+
+/*
+orientation: es la orientacion (direccion)
+hacia la cual el usuario esta sosteniendo el dispositivo movil */
+@media screen and (orientation: landscape) {
+    p::before { content: "orientation: landscape - orientacion horizontal ↔ - ancho > alto"; }
+    body { background-color:lightsalmon; }
+}
+
+@media screen and (orientation: portrait) {
+    p::before { content: "orientation: portrait - orientacion vertical ↕ - alto > ancho"; }
+    body { background-color:lightskyblue };
+}
+

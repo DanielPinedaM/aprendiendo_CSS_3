@@ -1,0 +1,14 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.lista_viñetas ::marker {
+  /* contenido, este es el item <li> de la lista */
+  content:"🧡";
+}
+
+.lista_enumerada ::marker {
+  content:"👍"; /* emoticon (emoji) */
+}

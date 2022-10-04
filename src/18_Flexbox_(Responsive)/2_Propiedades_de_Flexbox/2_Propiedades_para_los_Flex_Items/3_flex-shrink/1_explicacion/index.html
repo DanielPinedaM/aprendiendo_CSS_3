@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>flex-shrink:</h1>
+        <p>Determina que tanto pueden encogerse (contraerse) los Flex Items.</p>
+        <p>Cuando el Flex Container NO tenga espacio sobrante (disponible), los Flex Items podrán disminuir su tamaño dependiendo del valor de <code>flex-shrink:</code></p>
+        <a href="https://www.samanthaming.com/flexbox30/23-flex-shrink/" target="_blank">Articulo - Ejemplo de flex-shrink:</a>
+        <a href="https://www.samanthaming.com/flexbox30/24-flex-shrink-calculation/" target="_blank">Articulo - ¿Cómo se Calcula flex-shrink: ?</a>
+
+        <hr>
+
+        <h2>flex-shrink: 1;</h2>
+        <p class="no_margin">Los Flex Items <span>SI</span> pueden reducir (encoger) su tamaño cuando el tamaño del Flex Container disminuye (valor por defecto)</p>
+        <p class="no_margin">en este caso como ambos Flex Items tienen el mismo valor de flex-shrink: 1;</p>
+        <p>entonces se encogeran lo mismo</p>
+        <div class="contenedor_flexbox caja_1">
+            <div><p>flex-shrink: 1;</p></div>
+            <div><p>flex-shrink: 1;</p></div>
+        </div>
+
+        <h2>flex-shrink: 0;</h2>
+        <p class="no_margin">Los Flex Items <span>NO</span> pueden reducir (encoger) su tamaño</p>
+        <p class="no_margin">Esto va a generar una barra de scroll horizontal en la pagina web</p>
+        <p>y PUEDE (no siempre, depende del min-width: del Flex Container) hacer q los Flex Items se desborden</p>
+        <div class="contenedor_flexbox caja_2">
+            <div><p>flex-shrink: 0;</p></div>
+            <div><p>flex-shrink: 0;</p></div>
+        </div>
+
+        <h2>flex-shrink: 2; y flex-shrink: 4;</h2>
+        <p class="no_margin">Cuanto mas GRANDE sea el numero de flex-shrink: MAS se pueden encoger los Flex Items</p>
+        <p class="no_margin">y cuanto mas MENOR sea el numero de flex-shrink: MENOS se pueden encoger los Flex Items</p>
+        <p class="no_margin">En este caso flex-shrink: 4; tiene el valor mas GRANDE (es el Flex Item mas pequeño)</p>
+        <p class="no_margin">y flex-shrink: 2; tiene el valor mas PEQUEÑO (es el Flex Item mas grande)</p>
+        <p>flex-shrink: 2; <span>NO</span> es el doble de flex-shrink: 4;</p>
+        <div class="contenedor_flexbox caja_3">
+            <div><p>flex-shrink: 2;</p></div>
+            <div><p>flex-shrink: 4;</p></div>
+        </div>
+
+    </body>
+</html>

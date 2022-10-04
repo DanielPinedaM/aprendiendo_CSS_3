@@ -1,0 +1,29 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    margin: 0; /* quitar margen a los parrafos <p> */
+    font-size: 2em; /* tamaño de la letra */
+}
+
+.contenedor { /* contenedor <div> */
+    width: 20em; /* ancho */
+    border: thick solid black; /* borde */
+}
+/*
+Cambiar el color de fondo background-color:
+cuando al usar el atributo HTML dir=""
+el texto este alineado a la...
+
+izquierda */
+.contenedor :dir(ltr) {
+    background-color: yellow;
+}
+
+/* derecha */
+.contenedor :dir(rtl) {
+    background-color: steelblue;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+        <!-- Dentro de un formulario <form> tengo inputs seleccionables
+            las opciones q estan marcadas por defecto tienen los atributos booleanos
+            checked y selected, eso sera seleccionado por :default -->
+        <form action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co" method="POST">
+            <!-- Selección Única: <input type="radio"> -->
+            <p>¿Dormiste bien anoche?</p>
+            <!-- opcion marcada por defecto con checked -->
+            <input type="radio" name="dormir" id="si" checked />
+            <label for="si">Si</label>
+            <input type="radio" name="dormir" id="no" />
+            <label for="no">No</label>
+            <hr />
+            <!-- Selección Múltiple: <input type="checkbox"> -->
+            <p>De estos colores selecciona al menos 2 de tus favoritos</p>
+            <!-- opcion marcada por defecto con checked -->
+            <input type="checkbox" name="colores" id="amarillo" checked />
+            <label for="amarillo">Amarillo</label>
+            <input type="checkbox" name="colores" id="azul" />
+            <label for="azul">Azul</label>
+            <!-- opcion marcada por defecto con checked -->
+            <input type="checkbox" name="colores" id="rojo" checked />
+            <label for="rojo">Rojo</label>
+            <hr />
+            <!--  ListBox con Selección Única: <select> -->
+            <p>¿Sabes matematicas?</p>
+            <select name="matematicas">
+                <!-- Normalmente la primera opcion q dice "seleccione una opcion"
+                    es la q esta seleccionada -->
+                <!-- opcion marcada por defecto con selected -->
+                <option value="" selected>Seleccione una opcion</option>
+                <option value="si">Si</option>
+                <option value="no">No</option>
+            </select>
+            <hr />
+            <!-- como este es el boton q envia el formulario
+                sera seleccionado por :default -->
+            <input class="enviar" type="submit" value="Enviar respuestas" />
+            <!-- este otro boton NO, :default SOLO selecciona un boton q envia el <form>
+                el primero q se encuentre q es el otro de arriba -->
+            <input type="submit" value="otro boton distinto" />
+        </form>
+    </body>
+</html>

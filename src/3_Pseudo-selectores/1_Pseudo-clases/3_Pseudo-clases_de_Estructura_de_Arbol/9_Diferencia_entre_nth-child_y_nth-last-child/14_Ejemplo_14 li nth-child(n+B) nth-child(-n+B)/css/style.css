@@ -1,0 +1,21 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ol {
+    font-size: 1.5em;
+}
+
+/*
+
+Seleccionar los items <li> (posiciones) de la lista 3 hasta 6
+
+<ol>
+  …
+    <li :nth-child=" ">
+Especificidad: (0, 2, 2) */
+ol li:nth-child(n+3):nth-child(-n+6) {
+    color: red; /* color del texto */
+}

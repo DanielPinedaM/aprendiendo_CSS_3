@@ -1,0 +1,53 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+ul,
+ol {
+    font-size: 2em;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* Cambiar a rojo el color del texto de las listas
+con viñetas (desordenada) <ul> y
+enumerada (ordenada) <ol>
+usando :is() y :where()
+
+<ul>
+  …
+    <li>
+Especificidad: (0, 0, 2)
+
+<ol>
+  …
+    <li>
+Especificidad: (0, 0, 2) */
+/*
+ul li,
+ol li {
+    color: red;
+}
+*/
+
+/*
+<element :is>
+  …
+    <li>
+Especificidad: (0, 1, 3)
+*/
+/*
+:is(ul, ol) li {
+    color:red;
+}
+*/
+
+/*
+<element :where>
+  …
+    <li>
+Especificidad: (0, 1, 3) */
+
+:where(ul, ol) li {
+    color: red;
+}

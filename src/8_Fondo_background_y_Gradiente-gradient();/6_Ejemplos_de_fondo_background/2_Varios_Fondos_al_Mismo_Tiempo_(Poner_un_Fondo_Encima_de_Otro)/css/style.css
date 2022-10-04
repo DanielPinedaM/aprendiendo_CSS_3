@@ -1,0 +1,21 @@
+/*
+¿Como Poner Varios Fondos al Mismo Tiempo (Poner un Fondo Encima de Otro)?
+
+Para poner un fondo encima de otro uso la propiedad background: separada por comas.
+*/
+
+/* body {
+    background: #eeede7;
+} */
+
+.contenedor {
+    width: 200px;
+    height: 200px;
+    border: 4px solid black;
+
+    /* Para poner un fondo encima de otro los separo por comas: */
+    background: url("/assets/images/spiderman-removebg.webp"), rgba(255, 0, 0, 0.4);
+
+    background-size: contain; /* Ajustar Fondo al Tamaño del Contenedor sin Ampliarlo */
+    background-repeat: no-repeat; /* NO Repetir Fondo */
+}

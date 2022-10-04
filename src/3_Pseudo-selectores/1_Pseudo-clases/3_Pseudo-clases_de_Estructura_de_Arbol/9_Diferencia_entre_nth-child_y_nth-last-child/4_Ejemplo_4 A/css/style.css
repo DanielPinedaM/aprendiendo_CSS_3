@@ -1,0 +1,36 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+table, td {
+    font-size: 1.5em;
+    border: thick solid black; /* Bordes (Líneas) border: de la tabla */
+    border-collapse: collapse; /* Juntar Bordes de la tabla */
+}
+/* Seleccionar la tercera casilla
+contando desde el PRINCIPIO
+(de arriba hacia abajo)
+<table>
+  …
+    <tr :nth-child>
+Especificidad: (0, 1, 2) */
+table tr:nth-child(3) { /* A = 3 */
+    color: red; /* color del texto */
+}
+/* Seleccionar la cuarta casilla
+contando desde el FINAL
+(de abajo hacia arriba)
+<table>
+  …
+    <tr :nth-last-child>
+Especificidad: (0, 1, 2) */
+table tr:nth-last-child(4) { /* A = 4 */
+    color: blue;
+}
+
+
+
+
+

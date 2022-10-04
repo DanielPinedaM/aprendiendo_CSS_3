@@ -1,0 +1,81 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 750px; /* ancho */
+    height: 360px; /* alto */
+
+    border: 1px solid black; /* borde */
+
+    /* Centrar Divisor de Contenido en Bloque <div> horizontal y verticalmente */
+    position: absolute;
+    top: 50%; /* arriba */
+    left: 50%; /* izquierda */
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* --------------------- */
+
+p {
+    font-family: sans-serif; /* Cambiar la Fuente (Tipografía) del Texto (Familia Tipográfica)
+                               font-stretch: no funciona con algunas fuentes font-family: */
+    font-size: 26px; /* Tamaño de la letra */
+}
+
+/* --------------------- */
+
+.font-stretch_normal {
+    font-stretch: normal; /* No importa si copio o no normal;
+                            el resultado sera el mismo
+                            porq es el valor por defecto */
+}
+
+/* --------------------- */
+
+.font-stretch_semi-condensed {
+    font-stretch: semi-condensed;
+}
+
+.font-stretch_condensed {
+    font-stretch: condensed;
+}
+
+.font-stretch_extra-condensed {
+    font-stretch: extra-condensed;
+}
+
+.font-stretch_ultra-condensed {
+    font-stretch: ultra-condensed;
+}
+
+/* --------------------- */
+
+.font-stretch_semi-expanded {
+    font-stretch: semi-expanded;
+}
+
+.font-stretch_expanded {
+    font-stretch: expanded;
+}
+
+.font-stretch_extra-expanded {
+    font-stretch: extra-expanded;
+}
+
+.font-stretch_ultra-expanded {
+    font-stretch: ultra-expanded;
+}
+
+/* --------------------- */
+
+.porcentaje {
+    font-stretch: 60%; /* aqui pueden ir porcentajes del 50% al 200% */
+}

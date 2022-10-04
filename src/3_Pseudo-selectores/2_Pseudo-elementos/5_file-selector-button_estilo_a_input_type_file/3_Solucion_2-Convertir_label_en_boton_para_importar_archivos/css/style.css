@@ -1,0 +1,42 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+seleccionar el boton q dice "Enviar archivo"
+
+<element class="enviar">
+Especificidad: (0, 1, 0) */
+.enviar {
+    margin-top: 1em; /* margen hacia arriba,
+                        esto deja un espacio entro  los 2 botones */
+    display: block; /* convertir elemento de linea a bloq */
+}
+
+/*
+
+seleccionar el <input type="file">
+
+<input type="file">
+especificidad: (0, 1, 1) */
+input[type="file"] {
+    display: none; /* esto hace que desaparezca el <input type="file"> */
+}
+
+/*
+Seleccionar el <label> q tiene la clase .boton_importar
+
+<element class="boton_importar">
+especificidad: (0, 1, 0) */
+.boton_importar {
+    /* usar estas propiedades CSS para darle aspecto de boton al <label> */
+    border: 2px solid #6c5ce7; /* borde */
+    padding: .2em .4em; /* relleno */
+    border-radius: .2em; /* borde redondeado */
+    background-color: #a29bfe; /* color de fondo */
+    cursor: pointer; /* cambiar estilo del cursor por una forma de mano
+                        cuando el usuario se situe sobre el boton (<label>) */
+}

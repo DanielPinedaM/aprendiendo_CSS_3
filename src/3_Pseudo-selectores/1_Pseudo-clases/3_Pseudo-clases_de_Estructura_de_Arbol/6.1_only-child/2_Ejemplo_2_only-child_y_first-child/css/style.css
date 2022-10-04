@@ -1,0 +1,22 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Puedo mezclar pseudo-clases
+para seleccionar un párrafo <p>
+con :only-child sin importar que tenga hermanos (no es hijo único)
+y que está dentro de un <div> anidado, es decir,
+un <div> que esta dentro de otro <div>
+
+<div class="contenedor">
+  …
+    <div :only-child>
+      …
+        <element :first-child>
+Especificidad: (0, 3, 2) */
+div.contenedor div:only-child :first-child {
+    color: red;
+}

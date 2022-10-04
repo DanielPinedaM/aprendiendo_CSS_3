@@ -1,0 +1,15 @@
+/*
+Documentacion oficial de left:
+https://developer.mozilla.org/en-US/docs/Web/CSS/:left
+*/
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* Selecciona cualquier página de la izquierda al imprimir */
+@page :left {
+    margin: 2in 3in;
+}

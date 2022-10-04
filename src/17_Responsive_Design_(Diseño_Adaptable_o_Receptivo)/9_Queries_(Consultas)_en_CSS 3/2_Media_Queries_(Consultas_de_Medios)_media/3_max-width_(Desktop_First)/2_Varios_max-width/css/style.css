@@ -1,0 +1,78 @@
+/*
+Este ejemplo lo saq de aqui
+
+Mobile First (Los Móviles Primero) min-width: y Desktop First (Los Escritorios Primero) max-width:
+https://joegalley.com/articles/mobile-first-vs-desktop-first-media-queries
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+max-width: se usa para Desktop First
+
+Lo q esta escrito FUERA de las @media
+se ejecuta DESDE 1201px en ADELANTE: 1202, 1203, 1204... */
+p {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+p::before { content: "hasta el momento NO se han ejecutado Media Queries" }
+
+/*
+como MAXIMO 1200px o MENOS
+como MAXIMO 1024px o MENOS
+y asi sucesivamente
+
+desde 1200px hasta 1025px */
+@media screen and (max-width: 1200px) { /* 1200, 1199, 1198... 1025 */
+    body { background-color:lightblue; }
+    p::before { content: "max-width: 1200px"; }
+}
+
+/* desde 1024px hasta 769px */
+@media screen and (max-width: 1024px) { /* 1024, 1023, 1022... 769 */
+    body { background-color:lightgray; }
+    p::before { content: "max-width: 1024px"; }
+}
+
+/* desde 768px hasta 601px */
+@media screen and (max-width: 768px) { /* 768, 767, 766... 601 */
+    body { background-color:lightslategray; }
+    p::before { content: "max-width: 768px"; }
+}
+
+/* desde 600px hasta 481px */
+@media screen and (max-width: 600px) { /* 600, 599, 598... 481 */
+    body { background-color:lightgreen; }
+    p::before { content: "max-width: 600px"; }
+}
+
+/* desde 480px hasta 321px */
+@media screen and (max-width: 480px) { /* 480, 479, 478... 321 */
+    body { background-color:coral; }
+    p::before { content: "max-width: 480px"; }
+}
+
+/* como MAXIMO 320px o MENOS */
+@media screen and (max-width: 320px) { /* 320, 319, 318... 0
+                                          viewpor <= 320px */
+    body { background-color: steelblue; }
+    p::before { content: "max-width: 320px"; }
+}

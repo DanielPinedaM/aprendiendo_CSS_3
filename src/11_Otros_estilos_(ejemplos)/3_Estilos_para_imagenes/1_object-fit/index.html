@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Imagenes en CSS</title>
+    </head>
+    <body>
+        <h1>Imagenes en CSS</h1>
+        <h2>Imagen original</h2>
+        <img src="/assets/images/object.webp" alt="object.webp" />
+
+        <br />
+        <hr />
+        <br />
+
+        <h2>Ajustar Imagen al Tamaño de un Contenedor <code>div</code></h2>
+        <!-- Tengo un contenedor <div> -->
+        <div class="contenedor">
+            <!--  Y dentro del contenedor SOLAMENTE hay una imagen <img> -->
+            <img
+                src="/assets/images/object.webp"
+                alt="object.webp"
+                class="adaptar_imagen_a_contenedor"
+            />
+        </div>
+
+        <br />
+        <hr />
+        <br />
+
+        <h2>(Valor por Defecto) <code>object-fit: fill;</code></h2>
+
+        <div class="contenedor">
+            <img
+                src="/assets/images/object.webp"
+                alt="object.webp"
+                class="object-fit_fill"
+            />
+        </div>
+
+        <br />
+        <hr />
+        <br />
+
+        <h2><code>object-fit: contain;</code></h2>
+
+        <div class="contenedor">
+            <img
+                src="/assets/images/object.webp"
+                alt="object.webp"
+                class="object-fit_contain"
+            />
+        </div>
+
+        <br />
+        <hr />
+        <br />
+
+        <h2><code>object-fit: cover;</code></h2>
+
+        <div class="contenedor">
+            <img
+                src="/assets/images/object.webp"
+                alt="object.webp"
+                class="object-fit_cover"
+            />
+        </div>
+
+        <br />
+        <hr />
+        <br />
+
+        <h2><code>object-fit: none;</code></h2>
+
+        <div class="contenedor">
+            <img
+                src="/assets/images/object.webp"
+                alt="object.webp"
+                class="object-fit_none"
+            />
+        </div>
+
+        <br />
+        <hr />
+        <br />
+
+        <h2><code>object-fit: scale-down;</code></h2>
+
+        <div class="contenedor">
+            <img
+                src="/assets/images/object.webp"
+                alt="object.webp"
+                class="object-fit_scale-down"
+            />
+        </div>
+    </body>
+</html>

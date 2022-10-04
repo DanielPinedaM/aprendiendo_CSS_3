@@ -1,0 +1,34 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    font-size: 3em;
+}
+
+p, span {
+    font-size: 2em;
+}
+
+/*
+seleccionar el ULTIMO parrafo <p>
+q esta dentro del articulo <article>
+
+<article>
+  …
+    <p :first-of-type>
+Especificidad: (0, 1, 2) */
+
+article p:last-of-type {
+    color: red;
+}
+
+
+/*
+seleccionar la ULTIMA POSICION
+entre un grupo de parrafos <p> (hermanos) */
+article p:nth-last-child(1) {
+    color: blue;
+}

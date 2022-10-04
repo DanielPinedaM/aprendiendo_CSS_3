@@ -1,0 +1,71 @@
+/* Forma 2 - Centrar Imagen Usando Flex */
+
+html,
+body {
+    /* Hacer q el cuerpo ocupe toda la ventana grafica */
+    height: 100%;
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    align-items: center;      /* centrar horizontalmete */
+    justify-content: center;  /* centrar verticalmente */
+}
+
+body {
+    background: steelblue;
+}
+
+/* ---------------------------- */
+
+/*
+Hacer que Cualquier Elemento Tenga Forma de
+Óvalo o Círculo
+
+border-radius: 100%
+border-radius: 50%
+*/
+
+/*
+Hacer q la imagen sea un ÓVALO
+El ancho width y alto height del contenido content deben ser DIFERENTES
+*/
+
+/*
+Hacer q la imagen sea un CIRCULO
+El ancho width y alto height del contenido content deben ser IGUALES
+*/
+
+.img_1 {
+    width: 400px; /* ancho */
+    height: 400px; /* alto */
+
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.img_2 {
+    width: 400px; /* ancho */
+    height: 250px; /* alto */
+
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+/*
+Para hacer q un elemento
+tenga forma de ovalo o circulo
+TIENE q ser un elemento de bloq
+*/
+
+.btn {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block; /* Convertir elemento de linea a bloque */
+    border-radius: 100%;
+}

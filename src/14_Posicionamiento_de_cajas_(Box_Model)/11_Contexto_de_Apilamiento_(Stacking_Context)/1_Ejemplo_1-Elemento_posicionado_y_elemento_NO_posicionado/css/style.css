@@ -1,0 +1,53 @@
+/*
+Los elementos posicionados (el valor de position: es diferente de static;) están adelante
+y los elementos NO posicionados position: static; están atrás.
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+div {
+    font-size: 2em;
+}
+
+.box_model {
+    width: 300px;
+    height: 300px;
+}
+
+.posicionado {
+    position: relative;
+    left: 100px;
+    top: 400px;
+    background-color: crimson;
+}
+
+.posicionado_2 {
+    position: relative;
+    left: 100px;
+    bottom: 200px;
+    background-color: crimson;
+}
+
+.NO_posicionado {
+    background-color: steelblue;
+/* debido a q los elementos posicionados estan ADELANTE
+y los NO posicionados estan ATRAS
+
+entonces sin importar el numero del z-index: que le defina al elemento .NO_posicionado
+el elemento .NO posicionado se seguira ubicando ATRAS */
+    z-index: 999; /* a pesar de q el valor del z-index es muy alto
+                     el elemento .NO_posicionado sigue estando ATRAS */
+}

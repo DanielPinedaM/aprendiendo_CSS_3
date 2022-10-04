@@ -1,0 +1,359 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p, a, ul, li { font-size: 20px; }
+
+p, hr,
+.flex_container {
+    /* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+img {
+    display: block;
+    /* centrar horizontalmente */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    border-collapse: collapse; /* juntar los bordes de la tabla */
+    /* border: thick solid black; */ /* borde alrededor de la tabla */
+    font-size: 23px;
+}
+
+table td {
+    border: thick solid black; /* borde a las casillas de la tabla */
+}
+
+.no_border {
+    border: 0;
+}
+
+.verde { background-color: #32de84; }
+
+.azul { background-color: steelblue; }
+
+.text_align_center { text-align: center; }
+
+.flex_container {
+    display: flex; /* usar flexbox */
+    /* padding: 20px; */ /* relleno padding: dar un espacio entre los Flex Items y el Flex Container */
+    max-width: 32rem; /*ancho maximo: Es lo maximo q pueden estirarse el Flex Container
+                        le doy 32rem para q queden 2 filas de <div>
+                        cada fila con 3 Flex Items */
+    /* height: auto; */ /* alto automatico para q no se desborden los Flex Items */
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91,
+        50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    /* gap: no siempre es la propiedad q define
+    la distancia de separacion entre los Flex Items,
+    entonces para q los FLex Items esten juntos
+    y SI se puedan separar los Flex Items usando gap:
+    defino todas las propiedades de alineacion en flex-start;
+
+    Lo q escribi antes lo puedes comprobar con CSS-Tricks
+    https://css-tricks.com/almanac/properties/g/gap/#aa-gutter-size-is-not-always-equal-to-the-gap-value */
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+
+    flex-wrap: wrap; /* los Flex Items pueden ocupar Varias Líneas de Arriba Hacia Abajo ↓ */
+}
+
+.flex_container div {
+    height: 8rem; /* ALTO de los Flex Items */
+    width: 8rem; /* ANCHO de los Flex Items */
+    flex-grow: 0; /* Los Flex Items ocupan el menor espacio posible dentro den Flex Container */
+    flex-shrink: 1; /* Los Flex Items SI pueden reducir (encoger) su tamaño */
+    /* margin: 5px; */ /* distancia de separacion entre cada una de las cajas */
+    font-size: 4rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53,
+        50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    /* centrar los numeros 1, 2, 3, 4, 5, 6
+    q estan dentro de los Flex Items */
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* gap: normal; y gap: 0; son lo mismo,
+ambos hacen q NO haya distancia de separacion entre los Flex Items */
+
+.normal_row {
+    /* no importa si copio esto o no,
+        el resultado es el mismo
+        porq es su valor por defecto */
+    flex-direction: row; /* Los Flex Iems se ubican en Fila →
+                            de Izquierda a Derecha */
+
+    /* Esto... */
+    gap: normal normal;
+
+    /* es lo mismo q esto: */
+    /* gap: normal; */
+
+    /*
+    row-gap: normal;
+    column-gap: normal;
+    */
+}
+
+.cero_row {
+    flex-direction: row;
+
+    /* Esto... */
+    gap: 0 0;
+
+    /* es lo mismo q esto: */
+    /* gap: 0; */
+
+    /*
+    row-gap: 0;
+    column-gap: 0;
+    */
+}
+
+.un_solo_valor_row {
+    max-width: 43rem;
+    flex-direction: row;
+
+    /* Esto... */
+    /* gap: 4rem 4rem; */
+
+    /* es lo mismo q esto: */
+    gap: 4rem;
+
+    /*
+    row-gap: 4rem;
+    column-gap: 4rem;
+    */
+}
+
+.dos_valores_row {
+    max-width: 43rem;
+    flex-direction: row;
+
+    /* Esto... */
+    gap: 2rem 4rem;
+
+    /* es lo mismo q esto: */
+    /*
+    row-gap: 2rem;
+    column-gap: 4rem;
+    */
+}
+
+.negativo_row {
+    /* Las propiedades...
+    gap:
+    row-gap:
+    column-gap:
+
+    NO aseptan numeros negativos (da error) */
+    flex-direction: row;
+
+    gap: -4rem !important;
+}
+
+.porcentaje_grid {
+    max-width: 43rem; /* ancho maximo del contenedor padre */
+
+    display: grid; /* usar Grid */
+    grid-template-columns: repeat(3, auto);/*3 columnas
+
+                                            auto los <div> hijos se ajustan
+                                            automaticamente al contenedor padre */
+
+    row-gap: 1rem; /*row-gap: en porcentaje usando Grid
+                    ocasiona desbordamiento (overflow)
+                    de los elementos <div> hijos
+
+                    Por lo anterior,
+                    row-gap: en Flexbox y Grid se debe definir en rem, em ó px */
+
+    /* Stack Overflow - como usar row-gap: en porcentaje
+    https://stackoverflow.com/questions/48214281/why-does-grid-gap-cause-an-overflow */
+    /* row-gap: 50%; */
+
+    column-gap: 20%; /* column-gap: en Flexbox y Grid
+                        SI se puede usar en porcentaje */
+}
+
+.porcentaje_flexbox_row {
+    /* height: 330px; */ /* en Responsive a los Flex Container
+                            NO se les define alto height: fijo (estatico, q no cambie),
+                            hacer esto es un ERROR */
+    max-width: 43rem;
+
+    display: flex; /* usar Flexbox */
+
+    flex-direction: row;
+
+    /* row-gap: 20%; *//*20% de 330px = 66px
+                        en este caso row-gap: 66px;
+
+                        row-gap: en porcentaje usando Flexbox
+                        NO funciona cuando no se define
+                        un alto height: al Flex Container */
+
+    row-gap: 1rem; /*Para Responsive,
+                    lo correcto en Flexbox y Grid es:
+                    - NO definir alto height: estatico al flex container
+                    - Definir row-gap: en px, em ó rem */
+
+    column-gap: 20%; /* column-gap: en Flexbox y Grid
+                        SI se puede usar en porcentaje */
+}
+
+/*
+CSS-Tricks (Trucos CSS) - gap: calc(); - Propiedad gap: con la funcion de CSS calc();
+https://css-tricks.com/almanac/properties/g/gap/#aa-using-the-calc-function-with-gap */
+.gap_calc_row {
+    display: flex; /* usar Flexbox
+                        aunq este mismo ejemplo
+                        se puede hacer con las propiedades de Grid */
+
+    max-width: 45vw;
+    flex-direction: row;
+
+    /*
+    Distancia entre FILAS ↔ row-gap:
+    se calcula con 5vh (5% del ALTO ↕ del viewport)
+
+    Distancia entre COLUMNAS ↕
+    se calcula con 5vw (5% del ANCHO ↔ del viewport)
+
+    calc() esta sumando...  5vh + 5px
+                            5vw + 5px
+
+    gap: row-gap column-gap; */
+    gap: calc(5vh + 5px) calc(5vw + 5px);
+
+    /* gap: calc(5vmin + 5px); */
+
+    /* gap: 5vh 5vw; */
+}
+
+.gap_row {
+    max-width: 43rem;
+    flex-direction: row;
+
+    gap: 1rem 4rem;
+}
+
+.gap_column {
+    max-width: 43rem;
+
+    /* cuando NO le definia un alto height: al Flex Container
+    y adicionalmente SI definia flex-direction: column;
+    entonces los Flex Items ocupaban una sola columna
+
+    NO SE si exista una forma de q
+    con flex-direction: column; y SIN definir un alto height: al Flex Container
+    los Flex Items ocupen varias columnas */
+    max-height: 50vh;
+
+    flex-direction: column;
+
+    gap: 1rem 4rem;
+}
+
+.margin_bottom_forma_incorrecta {
+    max-width: 32rem;
+    padding: 2.5%;/*el relleno padding:
+                    es lo q da un espacio alrededor de los Flex Items
+                    (separa el Flex Container de los Flex Items) */
+    flex-direction: column;
+}
+
+.margin_bottom_forma_incorrecta div {
+    width: 100%;
+
+    /* esto margin-bottom: es lo q genera el <p class="espacio_indeseado">ESPACIO INDESEADO</p>
+    por eso para separar los Flex Items debo usar gap: y NO margin:*/
+    margin-bottom: 80px;
+}
+
+.espacio_indeseado {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.gap_forma_correcta {
+    padding: 2.5%;
+    row-gap: 5rem; /* si uso gap: entonces no tendre espacios indeseados */
+    flex-direction: column;
+}
+
+.gap_forma_correcta div {
+    width: 100%;
+}
+
+.h3_font_size {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.justify_content_flex_start {
+    max-width: 100%; /* el Flex Container ocupa todo el ancho del viewport */
+
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.justify_content_space_evenly {
+    max-width: 100%;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 30px;
+}

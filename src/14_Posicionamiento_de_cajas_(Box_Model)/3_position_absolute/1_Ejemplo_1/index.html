@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es"><!--el <html> ocupa TODO el viewport,
+                    ocupa TODA la pagina web -->
+    <head> <!-- lo q esta dentro del <head>
+        no representan NADA semanticamente entonces tampoco se tienen en cuenta
+        para saber cual es el contenedor padre mas cercano -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Posicionamiento</title>
+    </head>
+    <body> <!-- NO se tiene en cuenta el <body> -->
+
+        <!-- el contenedor PADRE
+            de estos dos elementos <div> de aqui abajo es el <html>
+            cuando los posicione absolutamente
+            se moveran con respecto a su padre q es el <html>
+
+
+        esto contenedor_1 esta PRIMERO
+        y esto otro contenedor_2 DESPUES -->
+<!--
+        <div class="box_model contenedor_1">contenedor 1</div>
+        <div class="box_model contenedor_2">contenedor 2</div>
+-->
+
+<!-- ----------------------------------------------------------------- -->
+
+        <!-- inverti el orden de los contenedores:
+
+        PRIMERO escribi el .contenedor_2
+        y DESPUES el .contenedor_1 -->
+<!--
+        <div class="box_model contenedor_2">contenedor 2</div>
+        <div class="box_model contenedor_1">contenedor 1</div>
+-->
+
+<!-- ----------------------------------------------------------------- -->
+
+<div class="contenedor_padre"> <!-- como este <div> SI esta posicionado-->
+        <div>
+            <div>
+                <div>
+                    <!-- entonces el .contenedor_1 se seguira moviendo con respecto al .contenedor_padre
+                    SIN importar q NO sea el hijo directo -->
+                    <div class="box_model contenedor_1">contenedor 1</div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-- como ninguno de estos <div> esta posicionado entonces
+    el .contenedor_2 se mueve (posiciona) con respecto al elemento raiz <html> (viewport) -->
+<div>
+    <div>
+        <div>
+            <div>
+                <!-- NO importa q el .contenedor_2 este dentro de mas <div>.
+                    NO importa q no sea hijo directo del elemento raiz <html>  -->
+                <div class="box_model contenedor_2">contenedor 2</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------------------------------------------------------------- -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<span class="elemento_en_linea span">Soy un Divisor de Contenido en Línea</span>
+
+<a class="elemento_en_linea" href="https://www.google.com/">
+    Soy un enlace a y soy un elemento en linea</a>
+
+<br>
+<br>
+
+
+    </body>
+</html>

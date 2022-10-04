@@ -1,0 +1,36 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.float_right {
+    height: 200px;
+    float: right;
+    background-color: crimson;
+}
+
+.float_left {
+    height: 100px;
+    float: left;
+    background-color: limegreen;
+}
+
+.texto_de_relleno {
+    background-color: cornflowerblue;
+}
+
+/* el .texto_de_relleno se situara DESPUES del elemento q flota hacia la IZQUIERDA
+y puede superponerse con los elementos q floten hacia la DERECHA */
+.clearfix {
+    clear: left; /* limpiar flotacion hacia la IZQUIERDA */
+}

@@ -1,0 +1,11 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* cuando visites (abras) un enlace entonces cambiara a color gris */
+a:visited {
+    color: gray;
+}
+

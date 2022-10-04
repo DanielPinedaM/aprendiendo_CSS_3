@@ -1,0 +1,166 @@
+/*
+samanthaming - Margen Automatico margin: auto; en Flexbox
+https://www.samanthaming.com/flexbox30/31-flexbox-with-auto-margins/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* Wtamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p, a, ul li { font-size: 25px; }
+
+p, hr, .contenedor_flexbox {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.centrar_margin {
+    /* Centrar horizontalmente usando margin auto */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    font-size: 1.5625rem;
+    border-collapse: collapse; /* juntar los bordes de las casillas de la tabla */
+}
+
+table td {
+    border: thick solid black;
+}
+
+.centrar_texto {
+    /* centrar texto horizontalmente */
+    text-align: center;
+}
+
+img {
+    display: block; /* convertir a elemento EN BLOQ */
+}
+
+.contenedor_flexbox {
+    max-width: 700px;
+    margin-bottom: 50px; /* margen hacia abajo, separar los Flex Container */
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+    gap: 10px 2%; /* distancia de separacion ENTRE los Flex Items (Responsive) */
+    flex-wrap: wrap; /* Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+}
+
+.contenedor_flexbox div {
+    font-size: 1.8rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+.contenedor_flexbox div:nth-child(1) {
+    font-weight: 900;
+    border: thick solid aqua; /* dar un borde de colro diferente al Flex Item 1 */
+}
+
+/* seleccionar Flex items 2 y 3
+pero NO :not()
+el Flex Item 1 div:nth-child(1) */
+.contenedor_flexbox :not(div:nth-child(1)) {
+    font-size: 5rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.margin_auto_row div,
+.margin_top_row div,
+.margin_right_row div,
+.margin_bottom_row div,
+.margin_left_row div {
+    flex-basis: 9rem; /* para flex-direction: row;
+                         flex-basis: es el ancho width: Responsive */
+    height: 9.5rem;
+}
+
+.margin_auto_column div,
+.margin_top_column div,
+.margin_right_column div,
+.margin_bottom_column div,
+.margin_left_column div {
+    height: 8rem;
+    /* flex-basis: 8rem; */ /* para flex-direction: column;
+                         flex-basis: es el alto height: Responsive */
+    width: 8rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.margin_auto_row,
+.margin_top_row,
+.margin_right_row,
+.margin_bottom_row,
+.margin_left_row {
+    min-height: 450px;
+    flex-direction: row;
+}
+
+.margin_auto_row div:nth-child(1) { margin: auto; }
+
+.margin_top_row div:nth-child(1) { margin-top: auto; }
+
+.margin_right_row div:nth-child(1) { margin-right: auto; }
+
+.margin_bottom_row div:nth-child(1) { margin-bottom: auto; }
+
+.margin_left_row div:nth-child(1) { margin-left: auto; }
+
+.margin_auto_column,
+.margin_top_column,
+.margin_right_column,
+.margin_bottom_column,
+.margin_left_column {
+    height: 600px;
+    flex-direction: column;
+}
+
+.margin_auto_column div:nth-child(1) { margin: auto; }
+
+.margin_top_column div:nth-child(1) { margin-top: auto; }
+
+.margin_right_column div:nth-child(1) { margin-right: auto; }
+
+.margin_bottom_column div:nth-child(1) { margin-bottom: auto; }
+
+.margin_left_column div:nth-child(1) { margin-left: auto; }

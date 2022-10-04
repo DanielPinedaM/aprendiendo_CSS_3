@@ -1,0 +1,29 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+article {
+    font-size: 1.8em;
+}
+
+/*
+ESTO...
+
+article *:last-of-type {
+    background-color: pink;
+}*/
+
+/* es lo mismo q esto:
+
+:last-of-type selecciona los ULTIMOS elementos
+de cada tipo q estan dentro del articulo <article>
+
+<article>
+  …
+    <element :first-of-type>
+Especificidad: (0, 1, 1) */
+article :last-of-type {
+    background-color: pink;
+}

@@ -1,0 +1,33 @@
+/*
+Combinar Fondos background-blend-mode:
+
+Documentación Oficial de background-blend-mode:
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode
+
+CSS-Tricks (Trucos CSS) - background-blend-mode:
+https://css-tricks.com/almanac/properties/b/background-blend-mode/
+
+https://css-tricks.com/basics-css-blend-modes/
+
+
+background-blend-mode: sirve para combinar fondos (imagen, color, etc.) Lo mas común es que se mezcle la imagen de fondo background-image: con el color de fondo background-color: como si fuera un especie de filtro para la imagen de fondo.
+
+
+Lista de Todos los Valores para background-blend-mode:
+Hay muchos estilos en como se pueden juntar los fondos. Esta es la lista completa:
+https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode#try_out_different_blend_modes
+
+*/
+
+.contenedor {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+    border: 4px solid black;
+
+    /* Puedo juntar los fondos: imagenes y colores */
+    background: url("http://lorempixel.com/300/300/cats"), red;
+    background-blend-mode: screen; /* juntar imagen de fondo con el color rojo */
+}
+

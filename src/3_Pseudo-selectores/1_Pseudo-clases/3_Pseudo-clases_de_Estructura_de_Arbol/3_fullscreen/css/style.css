@@ -1,0 +1,95 @@
+/*
+:fullscreen
+Seleccionar Elementos
+Cuando la Pagina Web
+está en Modo de Pantalla Completa
+
+Documentación Oficial de…
+
+- :fullscreen
+https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen
+
+- API de Pantalla Completa (Fullscreen API)
+https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+
+https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API/Guide
+
+CSS-Tricks (Trucos CSS)…
+
+- :fullscreen
+https://css-tricks.com/almanac/selectors/f/fullscreen/
+
+- API de Pantalla Completa (Fullscreen API)
+https://css-tricks.com/how-to-leverage-the-fullscreen-api-and-style-it/
+
+
+
+resetear estilos por defecto del navegador usando el selector universal */
+* {
+    padding: 0; /* quitar el relleno */
+    margin: 0; /* quitar el margen */
+    box-sizing: border-box; /* hacer q las medidas del Box Model siempre sean las del ancho width: y alto height: */
+
+}
+
+html, body {
+    /* hacer q el <body> y <html> ocupen todo el ancho width: y alto height: del viewport */
+    width: 100%;
+    height: 100vh;
+    background-color: #1b1b1b; /* color de fondo de toda la pagina web */
+}
+
+/* centrar horizontal y verticalmente usando flexbox */
+.centrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------- */
+
+button, img {
+    display: block; /* convertir de Línea a Bloque */
+}
+
+img {
+    max-width: 100%; /* hacer q la imagen ocupe todo el ancho del contenedor */
+    margin-top: 2rem; /* 2rem = 16px */
+
+    /* centrar imagen horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* seleccionar imagen en modo de pantalla completa */
+img:fullscreen {
+    object-fit: fill; /* Ampliar Imagen  para que Tenga las Mismas Medidas que el Contenedor */
+}
+
+.contenedor {
+    /* contenedor que ocupa todo el viewport */
+    min-width: 100%;
+    min-height: 100%;
+
+    padding: 2rem; /* relleno */
+    border: thick solid aqua; /* borde */
+    border-radius: 100px; /* borde redondeado */
+    background: linear-gradient(78deg, rgba(161, 140, 209, 1) 0%, rgba(251, 194, 235, 1) 50%);
+}
+
+/* dar apariencia (estilo) al boton */
+button {
+    text-align: center; /* centrar texto dentro del boton */
+    border: 1px solid #007bff; /* borde */
+    padding: 0.375rem 0.75rem; /* relleno */
+    font-size: 1rem; /* tamaño de la letra */
+    line-height: 2; /* Espaciado Entre Renglones o Líneas (Interlineado)  */
+    border-radius: 0.25rem; /* borde redondeado */
+    color: #fff; /* color del texto del boton */
+    background-color: #007bff; /* color de fondo */
+    cursor: pointer; /* estilo del cursor con forma de mano */
+
+    /* centrar horizontalmente ↔ el boton <button> dentro del contenedor <div> */
+    margin-left: auto;
+    margin-right: auto;
+}

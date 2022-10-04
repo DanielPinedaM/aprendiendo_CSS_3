@@ -1,0 +1,160 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+.no_margin { margin: 0; }
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p, a { font-size: 25px; }
+
+a { display: block; }
+
+p, hr, .contenedor_flexbox, a {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.contenedor_flexbox {
+    max-width: 634.5px;
+    min-height: 90vh;
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+    gap: 10px 2%; /* distancia de separacion ENTRE los Flex Items (Responsive) */
+    flex-wrap: wrap; /* los Flex Items pueden ocupar varias lineas de Arriba Hacia Abajo ↓ */
+}
+
+.contenedor_flexbox div {
+    font-size: 3.5rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.stretch_row div { flex-basis: 8rem; }
+
+.flex_start_row div,
+.flex_end_row div,
+.center_row div,
+.baseline_row div {
+    flex-basis: 8rem; /* para flex-direction: row;
+                         flex-basis: es el ancho width: Responsive */
+    height: 8rem;
+}
+
+
+
+.stretch_column div { flex-basis: 8rem; }
+
+.flex_start_column div,
+.flex_end_column div,
+.center_column div,
+.baseline_column div {
+    flex-basis: 8rem; /* para flex-direction: column;
+                         flex-basis: es el alto height: Responsive */
+
+    /* max-width: no funciona en Flexbox
+    https://stackoverflow.com/questions/43705866/max-width-not-working-on-flex-item# */
+    width: 100%; /* esto width: 100%; es para q funcione max-width: */
+    max-width: 8rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.stretch_row {
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.flex_start_row {
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.flex_end_row {
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.center_row {
+    align-items: center;
+    flex-direction: row;
+}
+
+.baseline_row {
+    align-items: baseline;
+    flex-direction: row;
+}
+
+.baseline_row div:nth-child(2) { font-size: 150px; }
+
+.stretch_column {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.flex_start_column {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.flex_end_column {
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.center_column {
+    align-items: center;
+    flex-direction: column;
+}
+
+.baseline_column {
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.baseline_column div:nth-child(2) { font-size: 150px; }

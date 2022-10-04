@@ -1,0 +1,54 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Cuando tengo un elemento position: static;
+y otro position: relative;
+el elemento que tiene la posición relativa relative;
+siempre va a estar por encima del que tiene la posición estática static;
+sin importar que al que tiene posición estática static;
+le asigne un z-index: mayor
+que el de la posición relativa relative;
+esto pasa porque con la posición estática static;
+no se puede usar z-index:
+en cambio con la posición relativa relative; sí. */
+
+.contenedor {
+    /* dar medidas a los contenedores para q se puedan ver */
+    width: 12rem; /* ancho */
+    height: 12rem; /* alto */
+    font-size: 1.3rem; /* tamaño de la letra */
+}
+
+.estatico {
+    background-color: crimson; /* color de fondo */
+    border: thick solid steelblue; /* borde */
+
+    /* Esta propiedad es ignorada por el navegador porq
+    a los elementos position: static; NO se les puede dar un z-index:
+
+    el z-index del position: static;
+    es mayor q el de position: relative; */
+    z-index: 99;
+}
+
+.relativo {
+    background-color: transparent;
+    border: thick solid darkorange;
+
+    z-index: 1; /* 1 es menor q 99 */
+    position: relative; /* posicionamiento relativo */
+    top: -50px; /* el elemento .relativo se pondra encima del elemento estatico */
+}

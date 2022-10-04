@@ -1,0 +1,28 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_general {
+    width: 30rem; /* ancho */
+    height: 30rem; /* alto */
+
+    border: thick solid red;
+
+    display: flex;
+}
+
+.contenedor_1 {
+    width: 40%;
+    height: 40%;
+
+    border: thick solid blue;
+}
+
+.contenedor_2 {
+    width: 40%;
+    height: 40%;
+
+    border: thick solid green;
+}

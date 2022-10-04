@@ -1,0 +1,265 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+.no_margin { margin: 0; }
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p, a { font-size: 25px; }
+
+p, hr, .contenedor_flexbox {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.contenedor_flexbox {
+    max-width: 634.5px;
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+    gap: 10px 2%; /* distancia de separacion ENTRE los Flex Items (Responsive) */
+    flex-wrap: wrap; /* los Flex Items pueden ocupar varias lineas de Arriba Hacia Abajo ↓ */
+}
+
+.contenedor_flexbox div {
+    font-size: 4rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.stretch_row div { flex-basis: 8rem; }
+
+.normal_row div,
+.flex_start_row div,
+.flex_end_row div,
+.center_row div,
+.space_between_row div,
+.space_around_row div,
+.space_evenly_row div {
+    flex-basis: 8rem; /* para flex-direction: row;
+                        flex-basis: es el ancho width: Responsive */
+    height: 8rem;
+}
+
+
+
+.stretch_column div { flex-basis: 8rem; }
+
+.normal_column div,
+.flex_start_column div,
+.flex_end_column div,
+.center_column div,
+.space_between_column div,
+.space_around_column div,
+.space_evenly_column div {
+    flex-basis: 8rem; /* para flex-direction: column;
+                         flex-basis: es el alto height: Responsive */
+
+    /* max-width: no funciona en Flexbox
+    https://stackoverflow.com/questions/43705866/max-width-not-working-on-flex-item# */
+    width: 100%; /* esto width: 100%; es para q funcione max-width: */
+    max-width: 8rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Flexbugs:
+https://github.com/philipwalton/flexbugs#flexbug-3
+
+view-source:https://philipwalton.github.io/flexbugs/3.2.b-workaround.html*
+
+
+En Flexbox cuando defino alto minimo min-height:
+y flex-direction: row;
+en el Flex Flex Container
+entonces min-height: SI funciona */
+.normal_row,
+.stretch_row,
+.flex_start_row,
+.flex_end_row,
+.center_row,
+.space_between_row,
+.space_around_row,
+.space_evenly_row {
+    /* flex-direction: row; */
+    min-height: 500px; /* alto height: */
+}
+
+/*
+En cambio...
+
+En Flexbox cuando defino alto minimo min-height:
+y flex-direction: column;
+en el Flex Flex Container
+entonces min-height: NO funciona */
+.normal_column,
+.stretch_column,
+.flex_start_column,
+.flex_end_column,
+.center_column,
+.space_between_column,
+.space_around_column,
+.space_evenly_column {
+    /* por eso defini un alto height: fijo (estatico, q no cambia)
+    aunq hacer esto es mala practica
+    porq ocasiona q el contenido se desborde */
+    height: 500px;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.normal_row {
+    flex-direction: row;
+    align-content: normal;
+}
+
+.stretch_row {
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.flex_start_row {
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.flex_end_row {
+    flex-direction: row;
+    align-content: flex-end;
+}
+
+.center_row {
+    flex-direction: row;
+    align-content: center;
+}
+
+/*
+Por alguna extraña razon
+pasa esto q no deberia pasar:
+
+align-items: baseline;  SI funciona
+
+align-content: baseline NO funciona
+                        porq NO esta alineando
+                        todos los Flex Items
+                        en el mismo renglon donde se escribe el texto
+
+Cuando necesites q los elementos (etiquetas) HTML
+queden en un mismo renglon entonces usa align-items: baseline;s
+*/
+
+/*
+.baseline_row {
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    align-items: baseline;
+    align-content: baseline !important;
+}
+
+.baseline_row div:nth-child(2) { font-size: 176px; }
+
+.baseline_row div { height: 8rem; }
+*/
+
+.space_between_row {
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.space_around_row {
+    flex-direction: row;
+    align-content: space-around;
+}
+
+.space_evenly_row {
+    flex-direction: row;
+    align-content: space-evenly;
+}
+
+.normal_column {
+    flex-direction: column;
+    align-content: normal;
+}
+
+.stretch_column {
+    flex-direction: column;
+    align-content: stretch;
+}
+
+.flex_start_column {
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+
+.flex_end_column {
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+.center_column {
+    flex-direction: column;
+    align-content: center;
+}
+
+.space_between_column {
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.space_around_column {
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.space_evenly_column {
+    flex-direction: column;
+    align-content: space-evenly;
+}

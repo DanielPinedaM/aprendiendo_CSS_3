@@ -1,0 +1,86 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p, a { font-size: 25px; }
+
+p, hr, .contenedor_flexbox {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.centrar_flexbox {
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+.contenedor_flexbox {
+    padding: 1.5%; /* relleno padding: dar un espacio entre los Flex Items y el Flex Container */
+    max-width: 634.5px; /* ancho maximo de los Flex Container */
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+    gap: 10px 2%;
+    flex-wrap: wrap; /* Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+}
+
+.contenedor_flexbox div {
+    height: 8rem; /* alto de los Flex Items */
+    flex-basis: 8rem; /* ancho width: Responsive en Flexbox */
+    font-size: 4rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+.row { flex-direction: row; }
+
+.row-reverse { flex-direction: row-reverse; }
+
+.column { flex-direction: column; }
+
+.column-reverse { flex-direction: column-reverse; }

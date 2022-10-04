@@ -1,0 +1,34 @@
+.caja {
+    background: purple;
+
+    /* 
+    Como content-box es el valor por defecto, 
+    no importa si lo escribo o no. 
+    El resultado sera el mismo
+    */
+    /* box-sizing: content-box; */
+
+    /* 
+    Esto hace que las medidas totales 
+    de la caja SIEMPRE sean las que defini 
+    en el ancho width y alto height
+    */
+    box-sizing: border-box;
+
+    /* content */
+    width: 100px; /* ancho */
+    height: 50px; /* alto */
+
+    /* 
+    Shorthand (Taquigrafía):
+    arriba / derecha / abajo / izquierda
+    */
+    padding: 35px 10px 40px 5px;
+
+    border-top: 25px solid;
+    border-right: 20px solid;
+    border-bottom: 30px solid;
+    border-left: 15px solid;
+}
+
+

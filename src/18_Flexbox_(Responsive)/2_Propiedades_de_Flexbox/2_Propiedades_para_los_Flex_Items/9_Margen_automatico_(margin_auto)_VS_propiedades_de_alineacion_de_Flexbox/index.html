@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            ¿Cuál es la Prioridad Entre
+            las Propiedades Margen Automático en Flexbox
+            VS Propiedades de Alineación en Flexbox?
+        </h1>
+        <p>Las propiedades para el margen automático en Flexbox:</p>
+        <ul>
+            <li><code>margin-left: auto;</code></li>
+            <li><code>margin-right: auto;</code></li>
+            <li> <code>margin-top: auto;</code></li>
+            <li><code>margin-bottom: auto;</code></li>
+            <li> <code>margin: auto;</code></li>
+        </ul>
+        <br>
+        <p>
+            SIEMPRE tienen mayor prioridad (sobrescriben, anulan)
+            a las propiedades de alineación de Flexbox:
+        </p>
+        <ul>
+            <li><code>justify-content:</code></li>
+            <li><code>align-items:</code></li>
+            <li><code>align-content:</code></li>
+            <li><code>place-content: align-content justify-content;</code></li>
+            <li><code>align-self:</code></li>
+        </ul>
+        <br>
+        <a href="https://www.samanthaming.com/flexbox30/31-flexbox-with-auto-margins/" target="_blank">Samantha Ming</a>
+        <img src="https://samanthaming.gumlet.io/flexbox30/31-flexbox-with-auto-margins-vs.jpg.gz?format=auto" alt="error al mostrar la imagen">
+
+        <hr>
+
+        <h2>
+            <code>margin-bottom: auto;</code>
+            VS
+            <code>align-self: flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_auto_vs_align_self">
+            <div>1 <br>margin-bottom: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>
+            <code>margin-left: auto;</code>
+            VS
+            <code>justify-content: center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_auto_vs_justify_content">
+            <div>1 <br>margin-left: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+    </body>
+</html>

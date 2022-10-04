@@ -1,0 +1,46 @@
+/*
+Tutorial - Udemy - AlexCG Design - Media Queries
+https://youtu.be/-yE_BrbVPek
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* especificidad: (1, 0, 0) */
+#parrafo {
+    font-size: 2.5rem; /* tamaño de la letra */
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    /* debido a q el selector de ID #parrafo {...}
+    tiene MAYOR especificidad q el selector de etiqueta p
+    entonces el estilo q se aplica es el q tiene MAYOR especificidad
+    q es el del selector de ID #parrafo {...} */
+    color: crimson; /* color del texto */
+}
+
+/* con el pseudo-elemento ::before muestro un mensaje en pantalla
+q me indica si se ha ejecutado o no la Media Query */
+p::before { content: "hasta el momento NO se han ejecutado Media Queries"; }
+
+/* como MAXIMO 600px ó MENOS */
+@media screen and (max-width: 600px) { /* 600, 599, 598... 0 */
+    /* especificidad: (0, 0, 1)
+
+    este estilo NO se aplica
+    a pesar de q el viewport mida 600px ó menos  */
+    p { color: steelblue; }
+    p::before { content: "max-width: 600px"; }
+}

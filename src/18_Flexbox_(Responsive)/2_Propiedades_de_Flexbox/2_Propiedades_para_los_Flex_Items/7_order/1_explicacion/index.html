@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>order:</h1>
+
+        <p>
+            Es el orden que tienen los elementos hijos (Flex Items) que están dentro del contenedor
+            Flexbox (Flex Container).
+        </p>
+        <p>
+            Como buena práctica si necesitas que los Flex Items tengan un orden diferente primero
+            deberías cambiar el orden de los elementos (etiquetas) en el código HTML y como última opción
+            usar la propiedad <span class="consolas">order:</span> en CSS, dentro de todo lo posible
+            evita usar <span class="consolas">order:</span> aunque esto no significa que estrictamente
+            nunca debes usarlo, solo analiza la situación y mira si realmente es necesario, pero ¿por qué
+            esto es así?, porque <span class="consolas">order:</span> no es mala práctica pero se debe
+            evitar usar, lo que sucede es que tu código HTML debería estar escrito en el mismo orden en
+            que se lo deseas mostrar al usuario final.
+        </p>
+        <p>Su sintaxis es <span class="consolas">order: &#60;integer;&#62;</span></p>
+        <p>
+            Toma como valores números enteros (<span class="subrayar">NO</span> decimales) positivos y
+            negativos: -2, -1, 0, 1, 2...
+        </p>
+        <p>Su valor por defecto es <span class="consolas">order: 0;</span></p>
+        <p>Esto significa:</p>
+        <p>
+            <span class="negrita">1)</span> Si a todos los Flex Items
+            <span class="subrayar">NO</span> les modifico su valor por defecto
+            <span class="consolas">order: 0;</span> entonces se mostrarán en el mismo orden en que fueron
+            escritos en el código HTML
+        </p>
+        <p>
+            <span class="negrita">2)</span> Si al menos a un solo Flex Item le modifico su valor por
+            defecto <span class="consolas">order: 0;</span> para que sea diferente de
+            <span class="consolas">0</span> entonces los Flex Items cambiaran de ubicación (orden) dentro
+            del contenedor Flexbox (Flex Container)
+        </p>
+        <p>
+            Un valor <span class="subrayar">menor siempre</span> ira
+            <span class="subrayar">antes</span> que un valor <span class="subrayar">mayor</span>, esto
+            significa que cuanto más <span class="subrayar">pequeño (menor)</span> sea el número de
+            <span class="consolas">order:</span> entonces hará que el Flex Item se ubique de
+            <span class="subrayar">primero (antes)</span>, en cambio cuanto más
+            <span class="subrayar">grande (mayor)</span> sea el número hará que el Flex Item se ubique de
+            <span class="subrayar">ultimo (después)</span>
+        </p>
+        <p>
+            El orden <span class="consolas">order:</span> de los Flex Items depende de si están alineados
+            en filas ↔ o columnas ↕ <span class="consolas">flex-direction:</span> esto significa que el
+            orden de los Flex Items cambia dependiendo del valor de las propiedades
+            <span class="consolas">order:</span> y <span class="consolas">flex-direction:</span>
+        </p>
+        <a href="https://www.youtube.com/watch?v=u-k1kPtOA5o&t=23s" target="_blank"
+            >Curso de FlexBox de Jon Mircha en YouTube</a
+        >
+        <a href="https://css-tricks.com/almanac/properties/o/order/" target="_blank">CSS-Tricks</a>
+
+        <br />
+        <hr />
+
+        <h2>order: 0;</h2>
+        <p>
+            Como a todos los Flex Items les definí su valor por defecto
+            <span class="consolas">order: 0;</span> entonces su orden no cambia:
+        </p>
+        <div class="contenedor_flexbox">
+            <div>Flex Item 1 <br />order: 0;</div>
+            <div>Flex Item 2 <br />order: 0;</div>
+            <div>Flex Item 3 <br />order: 0;</div>
+            <div>Flex Item 4 <br />order: 0;</div>
+            <div>Flex Item 5 <br />order: 0;</div>
+        </div>
+
+        <h2>order: 99;</h2>
+        <p>Si a todos los Flex Items les defino el mismo
+            <span class="consolas">order: 99;</span>
+            Entonces el resultado seguirá siendo el mismo,
+            el orden de los Flex Items no cambia:
+        </p>
+        <div class="contenedor_flexbox">
+            <div>Flex Item 1 <br />order: 99;</div>
+            <div>Flex Item 2 <br />order: 99;</div>
+            <div>Flex Item 3 <br />order: 99;</div>
+            <div>Flex Item 4 <br />order: 99;</div>
+            <div>Flex Item 5 <br />order: 99;</div>
+        </div>
+
+        <h2>order: 0; order; 1;</h2>
+        <p>
+            Si al Flex Item 2 le modifico su valor por defecto y se lo cambio por
+            <span class="consolas">order: 1;</span>
+            esto hará que cambie el orden de los Flex Items:
+        </p>
+        <div class="contenedor_flexbox">
+            <div>Flex Item 1 <br />order: 0;</div>
+            <div><span class="negrita">Flex Item 2 <br />order: 1;</span></div>
+            <div>Flex Item 3 <br />order: 0;</div>
+            <div>Flex Item 4 <br />order: 0;</div>
+            <div>Flex Item 5 <br />order: 0;</div>
+        </div>
+
+        <h2>order: -1; order; 1;</h2>
+        <p>
+            Al Flex Item 2 le definí
+            <span class="consolas">order: -1;</span>
+            al Flex Item 4 le definí
+            <span class="consolas">order: 1;</span>
+            y el resto de los Flex Items 1, 3 y 5
+            conservan su valor por defecto
+            <span class="consolas">order: 0;</span>
+        </p>
+        <p>
+            En el resultado puedes ver que
+            los Flex Items con un
+            <span class="consolas">order:</span>
+            <span class="subrayar">menor</span>
+            van
+            <span class="subrayar">primero (antes)</span>
+            y los Flex Items con un
+            <span class="consolas">order:</span>
+            <span class="subrayar">mayor</span>
+            van de
+            <span class="subrayar">ultimo (después)</span>:
+        </p>
+        <div class="contenedor_flexbox">
+            <div>Flex Item 1 <br />order: 0;</div>
+            <div><span class="negrita">Flex Item 2 <br />order: -1;</span></div>
+            <div>Flex Item 3 <br />order: 0;</div>
+            <div><span class="negrita">Flex Item 4 <br />order: 1;</span></div>
+            <div>Flex Item 5 <br />order: 0;</div>
+        </div>
+
+        <h2>flex-direction: row-reverse; order: 1; order; 0;</h2>
+        <p>
+            Al Flex Item 2 le definí
+            <span class="consolas">order: 1;</span>
+            el resto de los Flex Items 1, 3, 4 y 5
+            conservan su valor por defecto
+            <span class="consolas">order: 0;</span>
+            y cambie la alineación de los Flex Items
+            definiéndole al Flex Container
+            <span class="consolas">flex-direction: row-reverse;</span>
+        </p>
+        <p>
+            Esto va hacer que los Flex Items se alineen (ubiquen)
+            en una posición diferente debido al
+            <span class="consolas">flex-direction:</span>
+            y que el Flex Item 2 que es el que tiene el número mayor
+            <span class="consolas">order: 1;</span>
+            se ubique de primero (antes)
+            que el resto de los Flex Items 1, 3, 4 y 5
+            que tienen un número menor
+            <span class="consolas">order: 0;</span>
+            por lo que se ubican después (de ultimo):
+        </p>
+        <div class="contenedor_flexbox">
+            <div>Flex Item 1 <br />order: 0;</div>
+            <div><span class="negrita">Flex Item 2 <br />order: 1;</span></div>
+            <div>Flex Item 3 <br />order: 0;</div>
+            <div>Flex Item 4 <br />order: 0;</div>
+            <div>Flex Item 5 <br />order: 0;</div>
+        </div>
+
+    </body>
+</html>

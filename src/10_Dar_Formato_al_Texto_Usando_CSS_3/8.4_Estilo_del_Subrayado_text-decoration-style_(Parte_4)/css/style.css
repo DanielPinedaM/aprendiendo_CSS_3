@@ -1,0 +1,81 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.text-decoration-style_solid {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-style;
+    text-decoration: underline solid; */
+
+    /* Es lo mismo q esto: */
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: solid; /*Estilo del Subrayado
+                                    No importa si escribo o no solid;
+                                    el resultado es el mismo
+                                    porq es el valor por defecto*/
+}
+
+/* --------------------- */
+
+.text-decoration-style_double {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-style;
+    text-decoration: underline double; */
+
+    /* Es lo mismo q esto: */
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: double; /* Estilo del Subrayado */
+}
+
+/* --------------------- */
+
+.text-decoration-style_dotted {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-style;
+    text-decoration: underline dotted; */
+
+    /* Es lo mismo q esto: */
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: dotted; /* Estilo del Subrayado */
+}
+
+/* --------------------- */
+
+.text-decoration-style_dashed {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-style;
+    text-decoration: underline dashed; */
+
+    /* Es lo mismo q esto: */
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: dashed; /* Estilo del Subrayado */
+}
+
+/* --------------------- */
+
+.text-decoration-style_wavy {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-style;
+    text-decoration: underline wavy; */
+
+    /* Es lo mismo q esto: */
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: wavy; /* Estilo del Subrayado */
+}
+
+.parrafo {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-style;
+    text-decoration: underline wavy; */
+
+    /* Es lo mismo q esto: */
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: wavy; /* Estilo del Subrayado */
+}

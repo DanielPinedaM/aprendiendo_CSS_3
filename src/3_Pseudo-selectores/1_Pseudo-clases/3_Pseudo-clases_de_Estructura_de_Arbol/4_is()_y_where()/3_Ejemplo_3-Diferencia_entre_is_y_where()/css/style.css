@@ -1,0 +1,48 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+p,
+h1 {
+    font-size: 2em;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* La “cascada” hace que los elementos de más abajo sobrescriban a los de arriba
+pero si hay un selector con MAYOR especificidad que seleccione el mismo elemento,
+entonces el estilo que se aplica es el que tenga mayor especificidad. */
+
+/*
+<element class="contenedor">
+  …
+    <p>
+Especificidad: (0, 1, 1)
+
+<element class="contenedor">
+  …
+    <h1>
+Especificidad: (0, 1, 1) */
+.contenedor p,
+.contenedor h1 {
+    color: yellow;
+}
+
+/*
+<element class="contenedor">
+  …
+    <element :is>
+
+Especificidad: (0, 0, 2, 0) */
+.contenedor :is(.titulo, p) {
+    color: red;
+}
+
+/*
+<element class="contenedor">
+  …
+    <element :where>
+Especificidad: (0, 0, 1, 0) */
+.contenedor :where(.titulo, p) {
+    color: blue;
+}

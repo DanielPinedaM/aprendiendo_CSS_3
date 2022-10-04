@@ -1,0 +1,218 @@
+/*
+No importa si es padre, nieto, bisnieto, etc.
+Siempre se va a heredar el color del contenedor más cercano. */
+
+/* por herencia TODO el texto dentro de .padre va ser rojo */
+/*
+.padre {
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid black;
+    color: red;
+}
+
+.hijo_directo {
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid black;
+}
+
+.nieto {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid black;
+}
+*/
+
+/*
+el borde del .bisnieto sera rojo porq
+el contenedor con el color: definido mas cercano
+es el del padre */
+
+/*
+.bisnieto {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid currentColor;
+}
+
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+
+/* SOLAMENTE se hereda el color de la propiedad color: */
+/*
+.padre {
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid black;
+}
+*/
+
+/* por herencia TODO el texto q este dentro de .hijo_directo sera rojo */
+/*
+.hijo_directo {
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid black;
+    color: red;
+}
+*/
+
+/* El color de background NO se hereda con currentColor; */
+/*
+.nieto {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid black;
+    background: steelblue;
+}
+*/
+
+/* .bisnieto hereda la propiedad color: red; del .hijo_directo */
+/*
+.bisnieto {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid black;
+    background: currentColor;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/* Cuando NO he definido ningún color entonces el color por defecto es negro. */
+
+/* Puse TODOS los bordes border rojos
+para verificar de q cuando NO defino la propiedad color:
+entonces currentColor; toma el color por defecto q es negro */
+/*
+.padre {
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid red;
+}
+*/
+
+/* por herencia, TODOS los elementos q esten dentro de .hijo_directo seran negros */
+/*
+.hijo_directo {
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid red;
+    background: currentColor;
+}
+
+.nieto {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid red;
+}
+
+.bisnieto {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid red;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/* Si dentro del mismo selector ya he declarado la propiedad color: entonces ese será el color que se usará */
+
+/*
+.padre {
+    width: 400px;
+    height: 400px;
+
+    color: red;
+    border: 1px solid currentColor;
+}
+*/
+
+/* por herencia TODO el texto q este dentro de .hijo_directo sera azul
+y por cascada los estilos de mas abajo sobreescriben a los de arriba
+si se selecciona al mismo elemento y
+el selector tiene la misma especificidad
+
+currentColor toma el valor del color: MAS CERCANO */
+
+/*
+.hijo_directo {
+    width: 300px;
+    height: 300px;
+
+    color: steelblue;
+    border: 1px solid currentColor;
+}
+
+.nieto {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid black;
+}
+
+.bisnieto {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid black;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/* Puedo usar currentColor varias veces en un mismo .css: */
+
+.padre {
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid black;
+}
+
+.hijo_directo {
+    width: 300px;
+    height: 300px;
+
+    /* currentColor = color: red; */
+    color: red;
+    border: 5px solid currentColor;
+    box-shadow: 10px 5px 5px currentColor;
+    filter: drop-shadow(30px 10px 4px currentColor);
+}
+
+.nieto {
+    width: 200px;
+    height: 200px;
+
+    border: 1px solid black;
+}
+
+.bisnieto {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid black;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+- currentColor sirve para cualquier propiedad que tenga como valor colores. Algunos ejemplos son:
+
+* Color de texto color:
+* Color de fondo background: ; background-color:
+* Borde border: y contorno outline:
+* Sombra de Caja box-shadow: y Filtro de Sombra Paralela filter: drop-shadow()
+
+*/

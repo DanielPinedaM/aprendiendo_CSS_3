@@ -1,0 +1,136 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+.no_margin { margin: 0; }
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+    font-family: "Consolas", monospace;
+}
+
+p, a { font-size: 25px; }
+
+a { display: block; }
+
+p, hr, .flex_container, a {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.subrayar {
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: solid; /* Estilo del Subrayado - Estilo del Subrayado */
+}
+
+.consolas { font-family: "Consolas", monospace; }
+
+.negrita { font-weight: 900; }
+
+.flex_container {
+    padding: 20px; /* relleno padding: dar un espacio entre los Flex Items y el Flex Container */
+    width: 100%; /* ancho width: de los Flex Container */
+    min-height: 85vh;
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+}
+
+.flex_container div {
+    flex-basis: 15rem; /* ancho width: Responsive en Flexbox */
+    margin: 5px; /* distancia de separacion entre cada una de las cajas */
+    font-size: 3rem;
+    border: thick solid black; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* FORMA INCORRECTA */
+.align_content {
+    flex-direction: row; /* Flex Items en Fila → de Izquierda a Derecha,
+                            no importa si escribo esto o no
+                            el resultado es el mismo porq es su valor por defecto */
+
+    /* align-content: sirve para
+       flex-wrap: wrap; y flex-wrap: wrap-reverse; */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+    align-content: center; /* Centrar Flex Items Verticalmente ↕ */
+}
+
+.align_content div:nth-child(2),
+.align_content div:nth-child(4) {
+    align-self: flex-end !important;/*  Los Flex Items 2 y 4
+                                        NO se alinean
+                                        en la parte de abajo ↓ align-self: flex-end;
+                                        del Flex Container
+                                        porq align-self: NO funciona con align-content:
+                                        esto sigue sucediendo
+                                        sin imporar si uso o no !important */
+}
+
+
+
+/* FORMA CORRECTA */
+.align_items {
+    flex-direction: row; /* Flex Items en Fila → de Izquierda a Derecha,
+                            no importa si escribo esto o no
+                            el resultado es el mismo porq es su valor por defecto */
+
+    /* con align-items puedo definir CUALQUIER valor de flex-wrap:
+    y align-self: seguira funcionando */
+    /* flex-wrap: nowrap; */ /* Flex Items en una sola Línea (Valor por Defecto) */
+    /* flex-wrap: wrap; */ /* Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+    flex-wrap: wrap-reverse; /* Flex Items En Varias Líneas
+                                al Revés de Abajo Hacia Arriba ↑ */
+
+    align-items: center; /* Centrar Flex Items Verticalmente ↕ */
+}
+
+.align_items div:nth-child(2),
+.align_items div:nth-child(4) {
+    align-self: flex-end;/* align-self: SOBRESCRIBE (anula) align-items:
+
+                            Los Flex Items 2 y 4 se alinean (ubican)
+                            en la parte de abajo ↓ align-self: flex-end;
+                            del Flex Container */
+}

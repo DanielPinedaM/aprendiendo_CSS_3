@@ -1,0 +1,63 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+/* ejemplo basico de :not() */
+
+/*
+por HERENCIA
+TODO el texto DENTRO de <div class="contenedor">
+sera rojo
+
+No hace falta seleccionar cada elemento dentro del contenedor,
+basta con seleccionar solamente el contenedor */
+/*
+.contenedor {
+    color:red;
+}
+*/
+
+/*
+selecciona TODO lo q haya dentro de <element class="contenedor">
+pero NO selecciones lo q tenga la clase .no_seleccionar
+
+<element class="contenedor">
+  …
+    <element :not>
+Especificidad: (0, 2, 0) */
+.contenedor :not(.no_seleccionar) {
+    color: red;
+}
+
+/* ---------------- */
+
+/* seleccioneme el <body> pero NO la <table>
+esto tendra un comportamiento inesperado
+
+Se supone que el color de fondo background-color del <body> estaría azul
+y la tabla de otro color que no sea azul,
+pero esto en realidad no es así porq
+:not() no se puede usar para dejar de seleccionar a los antepasados (elementos contenedores padres). */
+
+/*
+body :not(table) {
+    background-color: steelblue;
+}
+*/
+
+/* ---------------- */
+
+/* si lo escribes asi "JUNTO" ahun no es compatible con todos los navegadores */
+/*
+:not(.foo, .bar) {
+    color: red;
+}
+*/
+
+/* al escribirlo asi "SEPARADO" hay mayor compatibilidad con los navegadores */
+/*
+:not(.foo):not(.bar) {
+    color: red;
+}
+*/

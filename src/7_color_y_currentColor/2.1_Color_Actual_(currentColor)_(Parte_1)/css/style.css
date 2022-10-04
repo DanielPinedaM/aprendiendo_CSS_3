@@ -1,0 +1,43 @@
+/*
+currentColor; hace que se herede el color mas cercano al elemento que le he puesto esta instruccion.
+
+- En caso de que no haya NINGUN color entonces el color por defecto sera negro
+*/
+body {
+    color: red; /* color de texto */
+    background-color: mediumorchid; /* color de fondo */
+}
+
+
+/* El padre de .contenedor es <body> */
+.contenedor {
+    color: aquamarine;
+    background-color: currentColor;
+
+    /* ----------------------------------------------------- */
+
+    /* .contenedor hereda el color: red; del <body>
+    se pinta un cuadro rojo al lado derecho
+    */
+    /* background-color: currentColor; */
+
+    /* ----------------------------------------------------- */
+
+    /* Heredar Propiedad Padre -
+    Obligar a q el Elemento Hijo Herede
+    Propiedades del Elemento Padre (Contenedor)
+
+    Aqui estoy heredando el background-color: del <body>
+    */
+    /* background-color: inherit; */
+}
+
+.hijo {
+    width: 300px; /* ancho */
+    height: 300px; /* alto */
+
+    background: #ffd743;
+
+    /* border: 10px solid; */
+    /* border: 10px solid currentColor; */
+}

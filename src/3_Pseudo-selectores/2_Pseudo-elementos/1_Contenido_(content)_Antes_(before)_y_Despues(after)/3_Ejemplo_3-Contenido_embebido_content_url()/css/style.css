@@ -1,0 +1,49 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=n-vafPXo63k
+
+CSS-Tricks (Trucos CSS) - Antes ::before y después ::after
+https://css-tricks.com/almanac/selectors/a/after-and-before/ */
+
+/* ----------------------------------------------------------------------------- */
+
+body {
+    background-color: lightcoral; /* color de fondo de toda la pagina web */
+}
+
+/*
+::before antes
+
+<element class="elemento" ::before>
+Especificidad: (0, 1, 1) */
+.elemento::before {
+    /* dentro de los parentesis de url("")
+    va una ruta local (dentro de mi proyecto)
+    ó un link de internet */
+    content: url("http://lorempixel.com/300/300/cats"); /* insertar contenido embebido */
+}
+
+/* -------------------- */
+
+/*
+el display: inline-block;
+en .img y .img::before
+hace q el "Hola Mundo"
+este al lado de la imagen */
+.img {
+    display: inline-block;
+}
+
+.img::before { /* tambien podria usar ::after */
+    content: ""; /* contenido vacio */
+
+    display: inline-block; /* convertir elemento a linea con las Propiedades ancho width: y alto height: del content */
+    width: 400px; /* ancho */
+    height: 300px; /* alto */
+    border: thick solid red; /* borde */
+
+    background-image: url("../../../../../../assets/images/dos.jpg");
+    background-size: 100% 100%; /* hacer q la imagen de fondo ocupe TODO el tamaño del contenedor <div> */
+    background-repeat: no-repeat; /* NO repetir imagen de fondo */
+    background-position: center; /* centrar imagen de fondo */
+}

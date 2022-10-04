@@ -1,0 +1,63 @@
+/*TUTORIAL:
+https://www.youtube.com/watch?v=hRsDcdsfe7k&list=PLggiJKmZtpaJXLWGjDgG6XfTFMvJdCuHd&index=113
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.galeria {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+/*
+<element class="galeria">
+  …
+    <h1>
+*/
+.galeria h1 {
+    margin: 40px 0; /* arriba abajo / izquierda derecha */
+    font-size: 35px;
+    border-bottom: 4px solid #4343a1; /* borde hacia abajo */
+    padding-bottom: 20px; /* relleno hacia abajo, esto da un espacio entre la linea border-bottom: y el <h1> */
+}
+
+/* IMPORTANTE!!!: esto quita el espacio entre cada una de las imagenes */
+.contenedor_imagenes {
+    font-size: 0;
+}
+
+/*
+<element class="contenedor_imagenes">
+  …
+    <img>
+*/
+.contenedor_imagenes img {
+    width: 30%;
+    height: 280px;
+
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+    /* vertical-align: top; */
+}

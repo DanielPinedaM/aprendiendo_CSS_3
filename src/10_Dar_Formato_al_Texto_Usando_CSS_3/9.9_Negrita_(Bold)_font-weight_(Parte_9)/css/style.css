@@ -1,0 +1,81 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------- */
+
+p {
+    font-size: 36px; /* Tamaño de la letra */
+}
+
+/* --------------------- */
+
+/* Definir el grosor (peso) de la fuente usando PALABRAS */
+.font-weight_normal {
+    font-weight: normal; /* No importa si escribo o no normal;
+                            el resultado sera el mismo
+                            porq es el valor por defecto
+
+                            font-weight: 400; es lo mismo q font-weight: normal; */
+}
+
+.font-weight_bold {
+    font-weight: bold; /* font-weight: 700; es lo mismo q font-weight: bold; */
+}
+
+.font-weight_bolder {
+    font-weight: bolder;
+}
+
+.font-weight_lighter {
+    font-weight: lighter;
+}
+
+/* --------------------- */
+
+/* Definir el grosor (peso) de la fuente usando NUMEROS DEL 100 AL 1000 */
+
+.font-weight_100 {
+    font-weight: 100;
+}
+
+.font-weight_200 {
+    font-weight: 200;
+}
+
+.font-weight_300 {
+    font-weight: 300;
+}
+
+.font-weight_400 {
+    font-weight: 400;
+}
+
+.font-weight_500 {
+    font-weight: 500;
+}
+
+.font-weight_600 {
+    font-weight: 600;
+}
+
+.font-weight_700 {
+    font-weight: 700;
+}
+
+.font-weight_800 {
+    font-weight: 800;
+}
+
+.font-weight_900 {
+    font-weight: 900;
+}
+
+.font-weight_1000 {
+    font-weight: 1000;
+}

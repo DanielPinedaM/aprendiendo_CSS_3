@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Formato de Texto</title>
+    </head>
+    <body>
+        <!--
+        <ul class="lista_con_viñetas">
+            <li><img src="/assets/icons/icono_1.png" alt="icono_1" class="imagen_en_lista"/>item 1</li>
+            <li><img src="/assets/icons/icono_2.jpg" alt="icono_2" class="imagen_en_lista"/>item 2</li>
+            <li><img src="/assets/icons/icono_3.png" alt="icono_3" class="imagen_en_lista"/>item 3</li>
+            <li><img src="/assets/icons/icono_4.jpg" alt="icono_4" class="imagen_en_lista"/>item 4</li>
+        </ul>
+-->
+
+        <!--
+        para ver el espaciado en blanco del lado izquierdo
+        (identacion o sangria) q dejan TODOS los tipos las listas
+        cree un contenedor <div> -->
+        <div class="contenedor">
+            <p class="no_margin">lista original SIN css</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>
+        </div>
+
+        <hr />
+
+        <div class="contenedor">
+            <p class="no_margin"><code>list-style-position: outside;</code></p>
+            <ul class="list-style-position_outside">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>
+        </div>
+
+        <hr />
+
+        <div class="contenedor">
+            <p class="no_margin"><code>list-style-position: inside;</code></p>
+            <ul class="list-style-position_inside">
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+            </ul>
+        </div>
+    </body>
+</html>

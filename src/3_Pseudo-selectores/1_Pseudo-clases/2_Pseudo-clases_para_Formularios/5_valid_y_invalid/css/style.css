@@ -1,0 +1,23 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* seleccionar todos los
+Controles Interactivos <input> y Etiquetas para <form>
+
+Cuando los datos sean VALIDOS (correctos) :valid
+tendran un color de fondo background-color verde*/
+input:valid {
+    background-color: green;
+}
+
+/* y cuando sean INVALIDOS (incorrectos) :invalid
+su color de verde sera crimson (como una especie de rojo) */
+input:invalid {
+    background-color: crimson;
+}
+
+
+

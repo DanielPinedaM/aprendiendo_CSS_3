@@ -1,0 +1,24 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+::before se inserta ANTES del texto "Lorem ipsum..."
+
+<p ::before>
+Especificidad: (0, 0, 2) */
+p::before {
+    content: "Soy antes ::before y soy el PRIMER hijo "; /* la PRIMERA LETRA es la "S" */
+}
+
+/* ::first-letter selecciona la primera letra del content:
+
+<p ::first-letter>
+Especificidad: (0, 0, 2) */
+p::first-letter {
+    color: red; /* color del texto */
+    font-size: 2rem; /* tamaño de la letra */
+}

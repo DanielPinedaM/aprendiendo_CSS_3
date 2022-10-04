@@ -1,0 +1,48 @@
+/*
+Diferencia entre :nth-child() y :nth-of-type()...
+
+CSS-Tricks (Trucos CSS)
+https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/
+
+Stack Overflow:
+https://stackoverflow.com/questions/9313769/nth-of-type-vs-nth-child */
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+section {
+    font-size: 2em;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+
+/*
+
+Seleccionar el segundo (2) elemento
+SIN importar :nth-child de q tipo sea
+y q este dentro de <section>
+<section>
+  …
+    <p :nth-child>
+Especificidad: (0, 1, 2) */
+section p:nth-child(2) {
+    color: red;
+}
+/* En el HTML hay dos parrafos:
+El primero es el q dice "Soy un parrafo p"
+y el segundo el q dice "Soy otro parrafo p"
+
+Seleccionar el segundo elemento (2)
+de TIPO parrafo p:nth-of-type
+y q este dentro de <section>
+<section>
+  …
+    <p :nth-of-type>
+Especificidad: (0, 1, 2) */
+section p:nth-of-type(2) { /* el TIPO -of-type de etiqueta q especifiq es el parrafo <p> */
+    color: blue;/*les cambie el color: para diferenciar
+                    q parrafo esta seleccionando
+                    p:nth-child(2) y p:nth-of-type(2) */
+}

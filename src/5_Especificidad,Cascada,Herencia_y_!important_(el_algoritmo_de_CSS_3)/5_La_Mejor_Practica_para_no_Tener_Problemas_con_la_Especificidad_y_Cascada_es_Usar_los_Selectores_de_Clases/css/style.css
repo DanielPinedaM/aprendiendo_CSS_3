@@ -1,0 +1,19 @@
+/* 
+Usar Selectores de Clases .class {...} para no Tener Problemas con la Especificidad y Cascada (Buena Practica)
+
+Si tengo selectores de clases 
+sobrescribir los estilos con la cascada es más fácil. 
+Así evito hacer selectores más complejos con mayor especificidad 
+para sobrescribir los estilos:
+*/
+
+.parrafo {
+    color:red;
+}
+
+/* Se aplica el ultimo estilo porque:
+1. Los selectores deben tener la misma especificidad.
+2. Se debe modificar la misma propiedad y elemento. */
+.parrafo {
+    color:blue;
+}

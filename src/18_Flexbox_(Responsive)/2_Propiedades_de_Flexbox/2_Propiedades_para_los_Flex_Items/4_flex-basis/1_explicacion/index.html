@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>flex-basis:</h1>
+
+        <p>Es el <span class="subrayar">ancho ↔</span> o <span class="subrayar">alto ↕</span>
+            inicial Responsive de los Flex Items</p>
+
+        <p>
+            <span class="consolas">flex-basis:</span>
+            depende de
+            <span class="consolas">flex-direction:</span>
+        </p>
+
+        <p>Analicemos paso a paso esta definición:</p>
+
+        <p>
+            <span class="negrita">1.1) “ancho” ↔</span>
+            Si el contenedor padre (Flex Container) tiene dirección de
+            <span class="subrayar">fila ↔</span>
+            <span class="consolas">flex-direction: row;</span>
+            entonces <span class="consolas">flex-basis:</span>
+            representa el <span class="subrayar">ancho ↔</span>
+            <span class="consolas">width:</span>
+            de los elementos hijos (Flex Items)
+        </p>
+
+        <p>
+            <span class="negrita">1.2)</span>
+            <span class="consolas">flex-basis:</span>
+            <span class="subrayar">NO</span>
+            es lo mismo q
+            <span class="consolas">width:</span>
+        </p>
+
+        <p>
+            <span class="negrita">2.1) “alto” ↕</span>
+            Si el contenedor padre (Flex Container) tiene dirección de
+            <span class="subrayar">columna</span> ↕
+            <span class="consolas">flex-direction: column;</span>
+            entonces
+            <span class="consolas">flex-basis:</span>
+            representa el
+            <span class="subrayar">alto ↕</span>
+            <span class="consolas">height:</span>
+            de los elementos hijos (Flex Items)
+        </p>
+
+        <p>
+            <span class="negrita">2.2)</span>
+            <span class="consolas">flex-basis:</span>
+            <span class="subrayar">NO</span>
+            es lo mismo q
+            <span class="consolas">height:</span>
+        </p>
+
+        <p>
+            <span class="negrita">3) “inicial”</span>
+            significa q
+            <span class="consolas">flex-basis:</span>
+            es el tamaño q se aplica en un principio a los Flex Items
+            pero esta medida cambia dependiendo del tamaño del viewport,
+            esto pasa porq en Flexbox los contendores son Responsive,
+            por lo q su tamaño cambia.
+        </p>
+        <p>En otras palabras más tecnicas: Primero los Flex Items toman como medida (inicial, en un principio) el tamaño de  <span class="consolas">flex-basis:</span> y después el de <span class="consolas">flex-grow:</span> (cuando se ancha el viewport) y <span class="consolas">flex-shrink:</span> (cuando se encoge el viewport)</p>
+
+        <a href="https://www.youtube.com/watch?v=jst2jcHDAWA&list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys&index=9" target="_blank">Curso de FlexBox de Jon Mircha en YouTube</a>
+        <a href="https://css-tricks.com/almanac/properties/f/flex-basis/" target="_blank">CSS-Tricks</a>
+
+        <br>
+        <hr>
+
+        <h2>flex-basis: auto; flex-direction: row;</h2>
+        <p>
+            <span class="consolas">flex-basis: auto;</span>
+            es su <span class="negrita">valor por defecto</span>.
+            Funciona como un condicional, cuando
+            <span class="subrayar">SI</span>
+            se ha definido un ancho ↔
+            <span class="consolas">width:</span>
+            o alto ↕
+            <span class="consolas">height:</span>
+            entonces este será el tamaño (medida) q tomaran los Flex Items
+        </p>
+        <p>
+            Y cuando
+            <span class="subrayar">NO</span>
+            se ha definido un ancho ↔
+            <span class="consolas">width:</span>
+            <span class="subrayar">NI</span>
+            alto ↕
+            <span class="consolas">height:</span>
+            entonces los Flex Items ocuparan el espacio de su contenido (imágenes, video, texto, etc.), es decir, q
+            tendrá el mismo comportamiento de
+            <span class="consolas">flex-basis: content;</span>
+        </p>
+        <p>
+            En este ejemplo en especifico como a los Flex Items les defini
+            <span class="consolas">flex-basis: auto;</span>
+            y
+            <span class="consolas">width: 200px;</span>
+            entonces
+        </p>
+        <p>
+            el ANCHO ↔ de los Flex Items es el de
+            <span class="consolas">width:</span>
+            q es
+        </p>
+        <p>(12,5rem * 16px) = 200px</p>
+        <p>(200px / 16px) = 12,5rem</p>
+        <div class="contenedor_flexbox row">
+            <div class="auto width">1 <br> width: 200px;</div>
+            <div class="auto width">2 <br> width: 200px;</div>
+            <div class="auto width">3 <br> width: 200px;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: content; flex-direction: row;</h2>
+        <p>
+            <span class="subrayar">SIEMPRE</span>
+            sin importar si en los Flex Items
+            se ha definido o no las propiedades ancho ↔
+            <span class="consolas">width:</span> y alto ↕
+            <span class="consolas">height:</span>
+            hará q los Flex Items ocupen exactamente el mismo espacio q su contenido (imágenes, video, texto, etc.)
+        </p>
+        <div class="contenedor_flexbox row">
+            <div class="content">1 - otro contenido - a</div>
+            <div class="content">2 - otro contenido - abc</div>
+            <div class="content">3 - otro contenido - abcde</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 0; flex-direction: row;</h2>
+        <p>
+            Los Flex Items ocuparan el
+            <span class="subrayar">MENOR</span>
+            ancho ↔
+            <span class="consolas">width:</span>
+            <span class="subrayar">o</span>
+            alto ↕
+            <span class="consolas">height:</span>
+            posible, es como definir
+            <span class="consolas">width: 0;</span>
+            ó
+            <span class="consolas">height: 0;</span>
+            (<span class="subrayar negrita">NO</span> son lo mismo)
+        </p>
+        <p>
+            <span class="consolas">width: 0;</span>
+            y <span class="consolas">height: 0;</span>
+            hacen q el contenido se desborde
+            <span class="consolas">overflow:</span>
+            esto significa, q el conbtenido se salga de los Flex Items
+        </p>
+        <div class="contenedor_flexbox row">
+            <div class="cero">1 otro contenido</div>
+            <div class="cero">2 otro contenido</div>
+            <div class="cero">3 otro contenido</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 200px; flex-direction: row;</h2>
+        <p>
+            como a los Flex Items les deifini
+            <span class="consolas">flex-direction: row;</span>
+            entonces
+        </p>
+        <p>
+            <span class="consolas">flex-basis:</span>
+            es el
+            <span class="negrita">ANCHO ↔ INICIAL</span>
+            de los Flex Items
+        </p>
+        <p>
+            en este ejemplo en especifico los Flex Items van a medir 200px de ancho ↔ porq defini
+            <span class="consolas">flex-basis: 200px;</span>
+        </p>
+        <p>Los Flex Items miden 200px de ancho ↔ SI el tamaño del Flex Container lo permite, es decir,</p>
+        <p>q cuando hay espacio suficiente los Flex Items miden 200px de ancho ↔</p>
+        <p>
+            y SI el tamaño del viewport disminuye entonces
+            el Flex Container tambien se encogera
+            por lo q los Flex Items seran mas peqños
+            y mediran menos de 200px (Responsive)
+        </p>
+            <div class="contenedor_flexbox row">
+            <div class="px">1 <br> flex-basis: 200px;</div>
+            <div class="px">2 <br> flex-basis: 200px;</div>
+            <div class="px">3 <br> flex-basis: 200px;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 12.5rem; flex-direction: row;</h2>
+        <p>
+            Aqui sucede exactamente lo mismo q ya habia explicado en la seccion anterior
+            <span class="consolas">flex-basis: 200px; flex-direction: row;</span>
+        </p>
+        <p>la unica diferencia es q en vez de usar
+            <span class="consolas">px</span>
+            use
+            <span class="consolas">rem</span>
+        </p>
+        <p>pero las medidas siguen siendo las mismas porq</p>
+        <p>(12.5rem * 16px) = 200px</p>
+        <p>(200px / 16px) = 12.5rem</p>
+        <div class="contenedor_flexbox row">
+            <div class="rem">1 <br> flex-basis: 12.5rem;</div>
+            <div class="rem">2 <br> flex-basis: 12.5rem;</div>
+            <div class="rem">3 <br> flex-basis: 12.5rem;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 50%; flex-direction: row;</h2>
+        <h3>1 Flex Item</h3>
+        <p>
+            Debido a q al Flex Container le defini
+            <span class="consolas">flex-direction: row;</span>
+            entonces
+            <span class="consolas">flex-basis:</span>
+            es el ANCHO ↔ del Flex Item
+        </p>
+        <p>los porcentajes se sacan dependiendo del contenedor padre, entonces</p>
+        <p>si el Flex Container (contenedor padre) mide 800px el 50% de 800px es 400px</p>
+        <p>
+            y como defini
+            <span class="consolas">flex-basis: 50%;</span>
+            entonces el ancho ↔ del Flex Item es 400px
+        </p>
+        <p>q es la mitad del ancho ↔ del Flex Container</p>
+        <p>Recuerda q estas medidas cambian si:</p>
+        <p>
+            <span class="negrita">1)</span>
+            Cuando los contendores tienen
+            <span class="consolas">margin:</span>
+            y
+            <span class="consolas">padding:</span>
+            las medidas cambian porq
+            debido al Box Model los tamaños se restan
+            <span class="consolas">box-sizing: border-box;</span>
+        </p>
+        <p>
+            <span class="negrita">2)</span>
+            Cuando uso unidades de medida relativas
+        </p>
+        <div class="contenedor_flexbox row width_px no_margin_padding">
+            <div class="porcentaje no_margin_padding">1 - flex-basis: 50%;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 50%; flex-direction: row;</h2>
+        <h3>2 Flex Items</h3>
+        <p>
+            Cuando hay mas de un solo Flex Item y
+            a todos les defino flex-basis: 50%; entonces
+            el tamaño de los Flex Items se reparte proporcionalmente,
+            es decir q los Flex Items miden lo mismo (ocupan el mismo tamaño)
+        </p>
+        <div class="contenedor_flexbox row width_px">
+            <div class="porcentaje">1 - flex-basis: 50%;</div>
+            <div class="porcentaje">2 - flex-basis: 50%;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 20vw; flex-direction: row;</h2>
+        <p>
+            Aqui sucede exactamente lo mismo q ya habia explicado en
+            <span class="consolas">flex-basis: 200px; flex-direction: row;</span>
+        </p>
+        <p>
+            la unica diferencia es q en vez de usar
+            <span class="consolas">px</span>
+            use
+            <span class="consolas">vw</span>
+        </p>
+        <p>1vw = 1% del ANCHO ↔ de la pantalla (viewport), toma valores de 1 a 100</p>
+        <p>
+            en este ejemplo en especifico
+            <span class="consolas">flex-basis: 20vw;</span>
+            significa q el ANCHO ↔ de los Flex Items es el 20% del ANCHO ↔ del viewport
+        </p>
+        <div class="contenedor_flexbox row">
+            <div class="vw">1 <br> flex-basis: 20vw;</div>
+            <div class="vw">2 <br> flex-basis: 20vw;</div>
+            <div class="vw">3 <br> flex-basis: 20vw;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 20vh; flex-direction: row;</h2>
+        <p>
+            Debido a q al Flex Container le defini
+            <span class="consolas">flex-direction: row;</span>
+            entonces
+            <span class="consolas">flex-basis:</span>
+            es el ANCHO ↔ de los Flex Items
+        </p>
+        <p>
+            El ancho ↔ de los Flex Items es de
+            <span class="consolas">20vh</span>
+        </p>
+        <p>1vh = 1% del ALTO ↕ de la pantalla (viewport), toma valores de 1 a 100</p>
+        <p>
+            en este ejemplo en especifico
+            <span class="consolas">flex-basis: 20vh;</span>
+            significa q el ANCHO ↔
+            <span class="consolas">row;</span>
+            de los Flex Items es el 20% del ALTO ↔
+            <span class="consolas">vh</span>
+            del viewport
+        </p>
+        <div class="contenedor_flexbox row">
+            <div class="vh">1 <br> flex-basis:20vh;</div>
+            <div class="vh">2 <br> flex-basis:20vh;</div>
+            <div class="vh">3 <br> flex-basis:20vh;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: auto; flex-direction: column;</h2>
+        <p>como a los Flex Items les deifini
+            <span class="consolas">flex-direction: column;</span>
+            entonces
+        </p>
+        <p>
+            <span class="consolas">flex-basis:</span>
+            es el
+            <span class="negrita">ALTO ↕ INICIAL</span>
+            de los Flex Items
+        </p>
+        <p>
+            En este ejemplo en especifico como a los Flex Items les defini
+            <span class="consolas">flex-basis: auto;</span>
+            y
+            <span class="consolas">height: 200px;</span>
+            entonces
+        </p>
+        <p>
+            el ALTO ↕ de los Flex Items es el de
+            <span class="consolas">height:</span>
+            q es
+        </p>
+        <p>(12,5rem * 16px) = 200px</p>
+        <p>(200px / 16px) = 12,5rem</p>
+        <div class="contenedor_flexbox column">
+            <div class="auto height">1 <br> height: 200px;</div>
+            <div class="auto height">2 <br> height: 200px;</div>
+            <div class="auto height">3 <br> height: 200px;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: content; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox column">
+            <div class="content">1 - SIN contenido en el siguente renglon</div>
+            <div class="content">2 <br> otro contenido en el siguiente renglon <br>el siguiente div de abajo NO tiene contenido</div>
+            <div class="content"></div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 0; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox column">
+            <div class="cero">1 - SIN contenido en el siguente renglon </div>
+            <div class="cero">2 <br> otro contenido en el siguiente renglon <br>el siguiente div de abajo NO tiene contenido</div>
+            <div class="cero"></div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 200px; flex-direction: column;</h2>
+        <p>
+            Como a los Flex Items les deifini
+            <span class="consolas">flex-direction: column;</span>
+            entonces
+        </p>
+        <p>
+            <span class="consolas">flex-basis:</span>
+            es el
+            <span class="negrita">ALTO ↕ INICIAL</span>
+            de los Flex Items
+        </p>
+        <p>
+            En este ejemplo en especifico como a los Flex Items les defini
+            <span class="consolas">flex-basis: 200px;</span>
+            entonces
+        </p>
+        <p>el ALTO ↕ de los Flex Items es el de
+            <span class="consolas">flex-basis:</span>
+            q es
+            <span class="consolas">200px</span>
+        </p>
+        <div class="contenedor_flexbox column">
+            <div class="px">1 <br> flex-basis: 200px;</div>
+            <div class="px">2 <br> flex-basis: 200px;</div>
+            <div class="px">3 <br> flex-basis: 200px;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 12.5rem; flex-direction: column;</h2>
+        <p>
+            Aqui sucede exactamente lo mismo q ya habia explicado en la seccion anterior
+            <span class="consolas">flex-basis: 200px; flex-direction: column;</span>
+        </p>
+        <p>
+            la unica diferencia es q en vez de usar
+            <span class="consolas">px</span>
+            use
+            <span class="consolas">rem</span>
+        </p>
+        <p>pero las medidas siguen siendo las mismas porq</p>
+        <p>(12.5rem * 16px) = 200px</p>
+        <p>(200px / 16px) = 12.5rem</p>
+        <div class="contenedor_flexbox column">
+            <div class="rem">1 <br> flex-basis: 12.5rem;</div>
+            <div class="rem">2 <br> flex-basis: 12.5rem;</div>
+            <div class="rem">3 <br> flex-basis: 12.5rem;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 50%; flex-direction: column;</h2>
+        <h3>1 Flex Item</h3>
+        <p>
+            Debido a q al Flex Container le defini
+            <span class="consolas">flex-direction: column;</span>
+            entonces
+            <span class="consolas">flex-basis:</span>
+            es el ALTO ↕ del Flex Item
+        </p>
+        <p>los porcentajes se sacan dependiendo del contenedor padre, entonces</p>
+        <p>si el Flex Container (contenedor padre) mide de alto 300px el 50% de 300px es 150px</p>
+        <p>y como defini flex-basis: 50%; entonces el alto ↕ del Flex Item es 150px</p>
+        <p>q es la mitad del alto ↕ del Flex Container</p>
+        <p></p>
+        <div class="contenedor_flexbox column height_px no_margin_padding">
+            <div class="porcentaje no_margin_padding">1 - flex-basis: 50%;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 50%; flex-direction: column;</h2>
+        <h3>2 Flex Items</h3>
+        <p>
+            Debido a q al Flex Container le defini
+            <span class="consolas">flex-direction: column;</span>
+            entonces
+            <span class="consolas">flex-basis:</span>
+            es el ALTO ↕ de los Flex Items
+        </p>
+        <p>
+            <span class="consolas">flex-basis: 50%;</span>
+            Hace q el ALTO ↕ de los Flex Items se reparta proporcionalmente, es decir, q
+            todos los Flex Items ocupen el mismo tamaño (espacio),
+            en este caso como defini
+            <span class="consolas">flex-direction: column;</span>
+            entonces tienen el mismo ALTO ↕
+        </p>
+        <div class="contenedor_flexbox column height_px">
+            <div class="porcentaje">1 - flex-basis: 50%;</div>
+            <div class="porcentaje">2 - flex-basis: 50%;</div>
+            <!-- <div class="porcentaje">3</div> -->
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 20vw; flex-direction: column;</h2>
+        <p>
+            Aqui sucede exactamente lo mismo q ya habia explicado en
+            <span class="consolas">flex-basis: 200px; flex-direction: column;</span>
+        </p>
+        <p>
+            la unica diferencia es q en vez de usar
+            <span class="consolas">px</span>
+            use
+            <span class="consolas">vw</span>
+        </p>
+        <p>1vw = 1% del ANCHO ↔ de la pantalla (viewport), toma valores de 1 a 100</p>
+        <p>
+            en este ejemplo en especifico
+            <span class="consolas">flex-basis: 20vw;</span>
+            significa q el ALTO ↕ de los Flex Items es el 20% del ANCHO ↔ del viewport
+        </p>
+        <div class="contenedor_flexbox column height_px_2">
+            <div class="vw">1 <br> flex-basis: 20vw;</div>
+            <div class="vw">2 <br> flex-basis: 20vw;</div>
+            <div class="vw">3 <br> flex-basis: 20vw;</div>
+        </div>
+
+        <br>
+
+        <h2>flex-basis: 20vh; flex-direction: column;</h2>
+        <p>
+            Debido a q al Flex Container le defini
+            <span class="consolas">flex-direction: column;</span>
+            entonces
+            <span class="consolas">flex-basis:</span>
+            es el ALTO ↕ de los Flex Items
+        </p>
+        <p>
+            El ALTO ↕ de los Flex Items es de
+            <span class="consolas">20vh</span>
+        </p>
+        <p>1vh = 1% del ALTO ↕ de la pantalla (viewport), toma valores de 1 a 100</p>
+        <p>
+            en este ejemplo en especifico
+            <span class="consolas">flex-basis: 20vh;</span>
+            significa q el ALTO ↕
+            <span class="consolas">column;</span>
+            de los Flex Items es el 20% del ALTO ↕
+            <span class="consolas">vh</span>
+            del viewport
+        </p>
+        <div class="contenedor_flexbox column height_px_2">
+            <div class="vh">1 <br> flex-basis 20vh;</div>
+            <div class="vh">2 <br> flex-basis 20vh;</div>
+            <div class="vh">3 <br> flex-basis 20vh;</div>
+        </div>
+
+    </body>
+</html>

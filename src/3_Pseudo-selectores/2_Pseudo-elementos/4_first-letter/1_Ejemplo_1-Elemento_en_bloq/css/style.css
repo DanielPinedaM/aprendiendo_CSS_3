@@ -1,0 +1,19 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+span {
+    /* cuando el elemento es EN LINEA ::first-letter NO funciona
+    display: inline; */
+
+    /* entonces hay 2 formas de convertirlo a elemento EN BLOQ */
+    /* display: inline-block; */
+    display: block;
+}
+
+/* como el elemento <span> ahora es EN BLOQ entonces ::first-letter SI funciona */
+span::first-letter {
+    color: red; /* color del texto */
+}

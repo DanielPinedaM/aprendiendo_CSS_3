@@ -1,0 +1,46 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+
+    background: steelblue;
+    border: 2px solid black;
+}
+
+/* --------------------- */
+/*
+La propiedad color: sirve para cambiar el color del texto 
+
+Valores:
+La colorpropiedad puede aceptar cualquier valor de color CSS.
+
+- Colores con nombre: por ejemplo, "aqua".
+- Colores hexadecimales: por ejemplo, # 00FFFF o # 0FF.
+- Colores RGB y RGBa: por ejemplo, rgb (0, 255, 255) y rgba (0, 255, 255, .5).
+- Colores HSL y HSLa: por ejemplo, hsl (180, 100%, 50%) y hsla (180, 100%, 50%, .5).
+*/
+
+.parrafo {
+    color: aqua;
+}

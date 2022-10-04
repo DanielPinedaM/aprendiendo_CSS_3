@@ -1,0 +1,52 @@
+/* 
+display: sirve para definir el tipo y comportamiento de los elementos. Algunos valores 
+de display: son
+
+display: none; Hace q el elemento NO se muestre pero sigue cargandose. El elemento NO ocupa espacio en la pagina web (desaparece)
+
+display: block; Convierte el elemento a BLOQUE. SI puedo definir el ancho width: y alto height: del content
+
+display: inline; Convierte el elemento a LINEA. NO se puede definir el ancho width: y alto height: del content
+
+display: inline-block; Convierte el elemento a LINEA. SI se puede definir el ancho width: y alto height: del content
+*/
+
+/* eliminar estilos por defecto del navegador usando el selector universal */
+* {
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2c3a47;
+}
+
+.bloque,
+.linea {
+    border: 3px solid #000;
+}
+
+.bloque {
+    background: #fea47f;
+    width: 90px; /* ancho */
+    height: 100px; /* alto */
+
+    /* display: inline; */
+    display: inline-block;
+}
+
+.linea {
+    background: white;
+    /* width: 70px; */ /* ancho */
+    /* height: 100px; */ /* alto */
+    /* margin-bottom: 40px; */ /* abajo */
+
+    /* display: block; */
+}
+
+/* 
+.ocultar {
+    display: none;
+} 
+*/

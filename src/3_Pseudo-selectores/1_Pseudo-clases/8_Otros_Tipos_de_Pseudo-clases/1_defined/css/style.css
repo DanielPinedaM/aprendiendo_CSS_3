@@ -1,0 +1,41 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+Colores de fondo background-color
+diferentes para...
+
+el elemento estandar parrafo <p> */
+p {
+    background-color: yellow;
+}
+/* el elemento personalizado <simple-custom> creado con JS */
+simple-custom {
+    background-color: cyan;
+}
+/* seleccionar TODOS los elementos:
+los estandar y los creados con JS
+
+<element :defined>
+Especificidad: (0, 1, 0) */
+:defined {
+    font-style: italic; /* Letra crsiva (inclinada) */
+    font-size: 2rem; /* tamaño de la letra */
+}
+/* seleccionar el elemento creado con JS simple-custom cuando...
+
+NO este definido :not(:defined)
+
+<simple-custom :not>
+Especificidad: (0, 1, 1)  */
+simple-custom:not(:defined) {
+    display: none; /* Desaparecer (ocultar) TOTALMENTE el Elemento */
+}
+/* SI esta definido :defined */
+simple-custom:defined {
+    display: block; /* convertir elemento de linea a bloq */
+}

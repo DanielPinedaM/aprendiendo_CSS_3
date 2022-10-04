@@ -1,0 +1,77 @@
+/*
+background-clip: controla hasta q punto se extiende el fondo (color o imagen)
+mas alla del relleno padding: o contenido content de un elemento
+
+
+
+Puede tomar los siguientes valores:
+
+background-clip: border-box;
+Valor por defecto. Permite q el fondo se extienda hasta el borde border exterior del elemento
+
+background-clip: padding-box;
+Recorta el fondo en el borde border exterior del relleno padding y no deja que se extienda hasta el borde border
+
+background-clip: content-box;
+Recorta el fondo en el borde border del cuadro de contenido.
+
+*/
+
+/*
+Mezcla de colores:
+red + blue = purple
+
+Generador de imagenes aleatorias
+http://lorempixel.com/300/300/cats
+*/
+
+/* Crear una caja contenedora (Box Model) para cada uno de los fondos: */
+.contenedor {
+    width: 270px; /* ancho */
+    height: 70px; /* alto */
+    padding: 30px; /* relleno */
+    border: 30px dashed rgba(255, 0, 0, 0.4); /* el border TIENE q ser transparente con rgba();
+                                                    y con una linea intermitente dashed
+                                                    para poder ver el espacio q ocupa el fondo
+                                                    y cuando se junte el fondo (imagen) con el border */
+
+    background-color: yellow; /* Color de fondo */
+
+    font-weight: 900; /* negrilla */
+    font-family: monospace; /* Tipo (fuente) de letra */
+}
+
+/* A cada uno de los contenedores le asigno una propiedad... */
+.border-box { /* El Fondo Ocupa el Contenido content: ; Relleno padding: y Borde border: */
+    background-clip: border-box;
+}
+
+.padding-box { /* El Fondo Ocupa el Contenido content: y Relleno padding: */
+    background-clip: padding-box;
+}
+
+/* ------------------------- */
+/* content-box El Fondo SOLAMENTEcode Ocupa el Contenido content*/
+
+/* Por defecto se aplica un margin al <p> */
+.content-box {
+    background-clip: content-box;
+}
+
+/* Para QUITAR el margin del <p> se deben cumplir las siguientes condiciones:
+1. Definir content-box; al contenedor del fondo background:
+2. Definir en el elemento <p> un margin: 0;
+3. alto height: debe estar en su valor por defecto */
+
+.content-box_2 {
+    height: initial; /* Restablecer el alto height a su valor predeterminado */
+
+    background-clip: content-box;
+}
+
+/* Quitar el margin predeterminado del parrafo <p> que da el navegador */
+.no_margin {
+    margin:0;
+}
+
+

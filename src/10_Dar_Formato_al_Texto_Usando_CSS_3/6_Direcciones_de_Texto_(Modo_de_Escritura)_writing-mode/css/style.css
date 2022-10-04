@@ -1,0 +1,68 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+
+    background: steelblue;
+    border: 2px solid black;
+
+    /* Centrar texto... */
+    /* text-align: center; */ /* Horizontalmente */
+    /* line-height: 200px; */ /* Verticalmente */
+}
+
+/* --------------------- */
+
+/*
+El Texto se Lee de Izquierda a Derecha y de Arriba a Abajo (Valor por Defecto)
+writing-mode: horizontal-tb;
+
+No importa si escribo o no este bloq de declaracion,
+el resultado sera el mismo porq este es el valor por defecto */
+
+/*
+.parrafo {
+    writing-mode: horizontal-tb;
+}
+*/
+
+/* --------------------- */
+
+/*
+El Texto se Lee de Izquierda a Derecha y de Arriba a Abajo writing-mode: 
+vertical-lr; */
+
+/*
+.parrafo {
+    writing-mode: vertical-lr;
+}
+*/
+
+/* --------------------- */
+/*
+El texto se Lee de Derecha a Izquierda y de Arriba a Abajo  writing-mode: vertical-rl; */
+
+.parrafo {
+    writing-mode: vertical-rl;
+}

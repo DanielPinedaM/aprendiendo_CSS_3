@@ -1,0 +1,85 @@
+/* eliminar estilos por defecto usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* hacer q el color de fondo background-color:
+del texto seleccionado ::selection
+del .boton sea invisible transparent */
+.boton::selection {
+ background-color: transparent;
+}
+
+/* centrar los elementos */
+.centrar {
+ /*PosicionamientoAbsoluto*/
+ position: absolute;
+ top: 50%;/*arriba*/
+ left: 50%;/*izquierda*/
+ transform:translateX(-50%) translateY(-50%);
+
+}
+
+/* dar estilos al boton */
+.boton {
+ width: 5em;/*ancho*/
+ padding: 0.2em;/*relleno*/
+ border: 0;/*quitar el borde*/
+ color: white;/*color del texto*/
+ font-size: 5em;/*tamaño de la letra*/
+ font-family: serif;/*fuente (tipografia)*/
+ font-weight: 900;/*negrita (bold)*/
+ border-radius: 40px;/*borde redondeado*/
+ text-align: center;/*centrar texto*/
+ cursor: pointer;/*CursorConFormaDeMano*/
+ background-color: #4eb5f1;/*ColorDeFondo*/
+ box-shadow: 1px 3px 21px 0px black;/*sombra*/
+
+}
+
+/* :focus se activa cuando:
+el usuario esta SITUADO
+sobre el elemento
+los estilos se conservan hasta q
+el usuario cambia el foco
+(hace click o toca otro elemento) */
+.boton:focus {
+ color: red;
+ /* outline: 0; */
+}
+
+/* :active se activa cuando:
+en el INSTANTE
+(el estilo se ve por un segundo)
+en q el usuario hace click
+(o toca) el elemento
+despues de q suelta el click
+(o lo deja de tocar)
+el estilo desaparece */
+.boton:active {
+ color: darkgreen;
+}
+
+/* ambos estilos :focus y :active
+se DEJAN de aplicar cuando
+el usuario recarga la pagina web */
+
+/*estilos del cuadro de texto
+<input type="text">*/
+.text {
+ border: thick solid black;
+ border-radius: 30px;
+ background-color: #00bfff;
+ font-size: 1.5em;
+ margin-top: 110px;/*margen hacia arriba*/
+}

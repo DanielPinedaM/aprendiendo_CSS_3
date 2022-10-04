@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Posicionamiento</title>
+    </head>
+    <body>
+
+        <!--
+
+        SIN IMPORTAR el orden en que escribi los <div> en el codigo HTML
+        la regla se sigue cumpliendo
+
+        el elemento NO posicionado esta ATRAS
+        y el elemento posicionado esta ADELANTE-->
+        <div class="box_model posicionado">elemento POSICIONADO</div> <!-- el valor de position: es DIFERENTE de static; -->
+        <div class="box_model NO_posicionado">elemento NO posicionado</div> <!-- el valor es position: static; -->
+
+        <br><br><br><br><br><br>
+        <hr> <!-- hacer esto es MALA PRACTICA pero lo hago para q sea mas facil separar las cajas -->
+        <br><br>
+
+        <div class="box_model NO_posicionado">elemento NO posicionado</div>
+        <div class="box_model posicionado_2">elemento POSICIONADO</div>
+
+    </body>
+</html>

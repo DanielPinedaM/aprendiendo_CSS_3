@@ -1,0 +1,28 @@
+/* Ordenar propiedades CSS */
+
+body {
+    /* position */
+    position:relative;
+    top: 0;
+    left: 0;
+
+    /* Box Model */
+    width: 10px;
+    height: 20px;
+    padding: 10px;
+    margin:10px;
+    overflow: hidden;
+
+    /* Texto: */
+    font-size: 12px;
+    text-align: center;
+
+    /* Visual */
+    color: red;
+    background: blue;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    /* Otras propiedades */
+    opacity: 1;
+}

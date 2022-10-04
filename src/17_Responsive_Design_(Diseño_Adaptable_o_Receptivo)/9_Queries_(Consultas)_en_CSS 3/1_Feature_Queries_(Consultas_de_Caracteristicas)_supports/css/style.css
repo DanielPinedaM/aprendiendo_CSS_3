@@ -1,0 +1,52 @@
+/*
+Jon Mircha - YouTube - Feature Queries (Consultas de Características) @supports
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=12481s
+
+CSS-Tricks (Trucos CSS) - Feature Queries
+https://css-tricks.com/how-supports-works/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Los Feature Queries (Consultas de Características) @supports
+le preguntan (es un condicional) al navegador
+si es compatible con una propiedad o valor.
+Cuando si es compatible entonces se ejecuta el código
+y cuando no es combatible entonces no se ejecuta.
+
+Su sintaxis es:
+@supports (propiedad: valor) {
+    Regla CSS
+} */
+
+
+p {
+    text-align: center; /* centrar texto horizontalmente */
+    font-size: 2rem; /* tamaño de la letra */
+}
+
+@supports (grid-template-columns: subgrid) { /* cuando el navegador SI sea compatible con CSS Subgrid entonces... */
+    /* se ejecutan la siguiente Regla CSS: */
+    body { background-color: steelblue; }
+    p::before {content:"SI soy compatible con Subgrid"}
+}
+
+@supports not (grid-template-columns: subgrid) { /* cuando el navegador NO sea compatible con CSS Subgrid entonces... */
+    body { background-color: crimson; }
+    p::before {content:"NO soy compatible con Subgrid"}
+}

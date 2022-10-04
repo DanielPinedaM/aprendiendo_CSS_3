@@ -1,0 +1,31 @@
+/* 
+CSS es la abreviación de hoja de estilos en CASCADA. 
+“Cascada” significa que los estilos de más abajo sobrescriben a los de arriba, es decir, 
+que el estilo que este MAS ABAJO es el que se va aplicar pero se deben cumplir estas condiciones:
+
+1. Los selectores deben tener la misma especificidad.
+2. Se debe modificar la misma propiedad y elemento.
+*/
+
+.encabezado {
+    background: tomato;
+
+    background: steelblue;
+}
+
+/* 
+- Como este selector tiene MAYOR especificidad entonces 
+sera el q se aplicara, SIN IMPORTAR en q lugar lo ponga 
+(si mas arriba o abajo).
+
+- Estos selectores son MALA practica.
+*/
+body > header > h2.title#title,
+.copy,
+body > header.encabezado {
+    background: red;
+}
+
+.encabezado {
+    background: lightcoral;
+}

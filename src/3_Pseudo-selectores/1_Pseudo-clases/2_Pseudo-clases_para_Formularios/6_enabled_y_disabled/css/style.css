@@ -1,0 +1,24 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+label,
+input,
+button {
+    font-size: 2rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* el color del texto de los campos q estan habilitados :enabled
+es verde */
+input:enabled,
+button:enabled {
+    color: green;
+}
+
+/* y de los q estan deshabilitados :disabled
+es rojo */
+input:disabled {
+    color: red;
+}

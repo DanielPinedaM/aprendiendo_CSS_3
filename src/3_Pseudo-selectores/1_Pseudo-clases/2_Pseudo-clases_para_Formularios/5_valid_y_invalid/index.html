@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+
+        <!-- Dentro del formulario <form> validare algunos campos
+            usando HTML y CSS -->
+        <form action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co" method="POST">
+            <label for="nombre">Nombre completo *:</label>
+            <!-- campo obligatorio required -->
+            <input type="text" name="text_nombre_completo" id="nombre" required />
+            <br />
+            <label for="correo">Correo *:</label>
+            <!-- el correo debe tener un @ <input type="email"> -->
+            <input type="email" name="email_correo" id="correo" required />
+            <br />
+            <label for="edad">Edad</label>
+            <!-- la edad debe ser entre 18 a 105 años -->
+            <input type="number" name="number_edad" id="edad" min="18" max="105" />
+            <br />
+            <button type="submit">Enviar datos</button>
+        </form>
+
+    </body>
+</html>

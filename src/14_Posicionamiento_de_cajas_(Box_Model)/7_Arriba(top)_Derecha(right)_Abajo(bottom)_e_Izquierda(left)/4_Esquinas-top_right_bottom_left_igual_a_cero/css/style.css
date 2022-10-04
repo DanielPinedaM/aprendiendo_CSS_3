@@ -1,0 +1,45 @@
+/*
+Este ejemplo lo saq de aqui:
+
+CSS-Tricks (Trucos CSS) - Arriba top: ; Derecha right: ; Abajo bottom: e Izquierda left:
+https://css-tricks.com/almanac/properties/t/top-right-bottom-left/
+
+https://codepen.io/missmatsuko/pen/LYPKzRG
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.caja {
+    /* al posicionar todos los contenedores <div> absolutamente  position: absolute;
+    como estos NO estan dentro de un contenedor padre significa q se posicionan
+    CON RESPECTO al elemento raiz <html> (viewport q es la parte visible de l apagina web) */
+    position: absolute;
+    /* si usara posicionamiento fijo position: fixed; tambien funcionaria (obtengo el MISMO resultado) */
+    /* position: fixed; */
+    outline: 10px solid red; /* outline: es una linea q borde a las cajas q NO ocupa espacio en el Box Model */
+    font-size: 2rem; /* tamaño de la letra */
+    background-color: cyan;
+}
+/* como Arriba top: ; Derecha right: ; Abajo bottom: e Izquierda left: son IGUAL A CERO
+entonces se van a ACERCAR a la direccion q le diga */
+.esquina_superior_izquierda { top: 0; left: 0; } /* top=arriba / left=izquierda */
+
+.esquina_superior_derecha { top: 0; right: 0; } /* top=arriba / right=derecha */
+
+.esquina_inferior_izquierda { bottom: 0; left: 0; } /* bottom=abajo / left=izquierda */
+
+.esquina_inferior_derecha { bottom: 0; right: 0; } /* bottom=abajo / right=derecha */

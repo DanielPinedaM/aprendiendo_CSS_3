@@ -1,0 +1,157 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #eeede7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* selector del elemento q quiero q cambie el estilo del cursor,
+puedo seleccionar CUALQUIER otro elemento
+
+ancho
+
+alto
+
+borde
+
+estilo del cursor
+No importa si copio auto; o no
+el resultao sera el mismo
+porq es el valor por defecto */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: auto;
+}
+*/
+
+/* --------------------- */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+}
+*/
+
+/* en los enlaces <a> el cursor tiene forma de mano cursor: pointer;
+pero puede hacer q cambie a cualquier otra forma  */
+
+
+.contenedor > a {
+    cursor: default;
+}
+
+
+/* --------------------- */
+/* el cursor es invisible (oculto), no se ve */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: none;
+}
+*/
+
+/* --------------------- */
+/* el cursor toma forma de una mano */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: pointer;
+}
+*/
+
+/* --------------------- */
+/* el cursor toma forma de un "preloader" (cargando) */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: wait;
+}
+*/
+
+/* --------------------- */
+/* cursor con forma de linea vertical ↕ */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: text;
+}
+*/
+
+/* --------------------- */
+/* el cursor toma forma del simbolo de prohibido */
+
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: not-allowed;
+}
+
+/* --------------------- */
+/* Aumentar Zoom   cursor: zoom-in;Aumentar Zoom   cursor: zoom-in; */
+
+/*
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: zoom-in;
+}
+*/
+
+/* --------------------- */
+/* Disminuir Zoom  cursor: zoom-out; */
+
+.contenedor {
+    width: 15em;
+    height: 15em;
+
+    border: 2px solid black;
+
+    cursor: zoom-out;
+}

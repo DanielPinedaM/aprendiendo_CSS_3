@@ -1,0 +1,24 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ol {
+    font-size: 1.5em;
+}
+
+/*
+
+Seleccionar el primer elemento de la lista
+empezando desde el ULTIMO elemento (de abajo hacia arriba)
+y a partir de ahi empezar a seleccionar cada 3 elementos
+
+<ol>
+  …
+    <li :nth-child>
+Especificidad: (0, 1, 2) */
+
+ol li:nth-last-child(3n+1) { /* An+B = 1, 4, 7, 10 */
+    color: blue; /* color de la letra */
+}

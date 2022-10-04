@@ -1,0 +1,49 @@
+/*
+Jon Mircha - Curso de Grid en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUY628cyd9LVbXSXi2xG9mUl */
+
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    outline: thick solid lightcoral;
+
+    max-width: min(90%, 1332px);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------- Layout usando Grid (Responsive) -------------------- */
+
+/*
+CSS-Tricks (Trucos CSS)
+https://css-tricks.com/equal-columns-with-flexbox-its-more-complicated-than-you-might-think/#aa-but-what-about-at-small-screens
+*/
+
+.grid_container {
+    border: thick solid black;
+
+    display: grid; /* usar Grid */
+
+    /* Centrar los Grid Items q estan dentro del .grid_container  */
+    justify-content: center;
+    align-items: center;
+
+    /* gap: distancia de separacion ENTRE los Grid Items (elementos hijos) */
+    gap: 0.1rem 0.5%; /* gap: row-gap column-gap; */
+
+    /* column-gap: 0.5% es lo q se resta dentro de la funcion calc() */
+    grid-template-columns: repeat(auto-fit, minmax(10%, calc(25rem - 0.5%)));
+}
+
+.grid_container div { border: thick solid crimson; }

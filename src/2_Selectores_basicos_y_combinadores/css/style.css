@@ -1,0 +1,60 @@
+/* *{
+    background: red;
+} */
+
+/* seleccionar todas las etiquetas <h2> */
+h2 {
+    color: steelblue;
+}
+
+/* seleccionar todas las clases llamadas borde */
+.borde {
+    border: 1px solid black;
+}
+
+/* seleccionar el id llamado section */
+#section {
+    border: 1px solid black;
+}
+
+/* seleccionar todas las clases llamadas titulo */
+.titulo {
+    text-align: center;
+}
+
+/* seleccionar todas las clases con emojis */
+.😁 {
+    color: darkblue;
+}
+
+.😂 {
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+/* Seleccionar todos los elementos q tengan href */
+[href] {
+    text-decoration: none;
+}
+
+/* Seleccionar los elementos href que tengan como valor un link... */
+[href="https://alexcgdesign.com/inicio"]
+{
+    color: red;
+}
+
+/* Seleccionar todos los atributos href q empiecen en "hsttps"*/
+[href^="hsttps"] {
+    color: green;
+}
+
+/* Seleccionar todos los atributos href q terminen en ".org"*/
+[href$=".org"] {
+    background: steelblue;
+    color: white;
+}
+
+/* Seleccionar todos los atributos href q en cualquier parte tengan "alexcgdesign" */
+[href*="alexcgdesign"] {
+    background: darksalmon;
+}

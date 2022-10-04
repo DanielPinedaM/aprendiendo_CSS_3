@@ -1,0 +1,57 @@
+/*
+Diferencia entre :nth-child() y :nth-of-type()...
+
+CSS-Tricks (Trucos CSS)
+https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/
+
+Stack Overflow:
+https://stackoverflow.com/questions/9313769/nth-of-type-vs-nth-child */
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+section {
+    font-size: 2em;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+
+/*
+
+Selecciona el elemento
+SOLAMENTE si el segundo (2) elemento
+q esta dentro de <section>
+es un parrafo <p> p:nth-child(2)
+
+cuando NO sea un <p> entonces NO lo selecciones
+
+<section>
+  …
+    <p :nth-child>
+Especificidad: (0, 1, 2) */
+section p:nth-child(2) {
+    color: red;
+}
+
+/*
+Es buena practica usar
+section :nth-child()
+
+y NO
+section p:nth-child()
+*/
+
+/*
+Cuentame SOLAMENTE los parrafos p:nth-of-type(2)
+q esta dentro de <section>
+y entre ellos me seleccionas al segundo (2)
+
+<section>
+  …
+    <p :nth-of-type>
+Especificidad: (0, 1, 2) */
+section p:nth-of-type(2) {
+    color: blue;
+}

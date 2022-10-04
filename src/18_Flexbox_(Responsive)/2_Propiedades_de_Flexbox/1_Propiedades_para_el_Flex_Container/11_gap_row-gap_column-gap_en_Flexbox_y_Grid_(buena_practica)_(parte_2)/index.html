@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <h1>
+            <code>gap: row-gap column-gap;</code>
+        </h1>
+
+        <p>
+            <code>gap:</code> es una propiedad abreviada (shorthand)
+            que sirve en Flexbox, Grid y CSS Multiple-column Layout
+            para definir cuál es la distancia de separación (espacio)
+            de los Flex Items entre sus filas ↔ <code>row-gap:</code> y columnas ↕ <code>column-gap:</code>
+        </p>
+        <p>
+            A esto también se le llama
+            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Gutters" target="_blank">“gutters” (canalones)</a>
+        </p>
+        <p>
+            Su sintaxis es <code>gap: row-gap column-gap;</code>
+        </p>
+        <p><code>gap:</code>
+            <a href="https://css-tricks.com/almanac/properties/g/gap/#aa-values" target="_blank">
+                puede tomar como valores:
+            </a>
+        </p>
+        <ul>
+            <li>
+                Numero con unidades de medida de CSS
+                (<code>px</code>, <code>em</code>, <code>rem</code>, <code>%</code>, <code>vw</code>, <code>vh</code>, <code>vmin</code>, <code>vmax</code>),
+                este número no puede ser negativo
+                (no puede ser menor que cero),
+                tiene que ser mayor o igual que cero
+                (si puede ser cero, un número mayor a cero o decimal):</li>
+            <li>La función <code>gap: calc();</code></li>
+            <li>
+                Puede tener un solo valor.
+                Ejemplo: <code>gap: 4rem</code>;
+                o dos valores
+                Ejemplo: <code>gap 2rem 4rem;</code>
+            </li>
+        </ul>
+        <br>
+        <a href="https://css-tricks.com/almanac/properties/g/gap/" target="_blank">CSS-Tricks - Parte 1</a>
+        <br>
+        <a href="https://css-tricks.com/minding-the-gap/" target="_blank">CSS-Tricks - Parte 2</a>
+
+        <hr>
+
+        <h2><code>gap: normal;</code> (valor por defecto)</h2>
+        <p>
+            Su valor por defecto es
+            <code>gap: normal; </code> para Flexbox y Grid y
+            <code>gap: 1em;</code> para CSS Multiple-column Layout
+        </p>
+        <p>
+            <code>gap: normal;</code>
+            es lo mismo que <code>gap: 0;</code> en Flexbox y Grid
+            ambos significan que NO hay distancia de separación entre los Flex Items,
+            por lo cual los Flex Items están juntos,
+            en cambio en CSS Multiple-column Layout su valor por defecto es <code>gap: 1em;</code>
+        </p>
+        <div class="flex_container normal_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2><code>gap: 0;</code></h2>
+        <p></p>
+        <div class="flex_container cero_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>gap:</code> negativo
+        </h2>
+        <h2>
+            <code>gap: -4rem;</code>
+        </h2>
+        <p>
+            <code>gap:</code> NO puede ser negativo,
+            eso es un ERROR
+        </p>
+        <div class="flex_container negativo_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>un solo valor</h2>
+        <h2><code>gap: 4rem;</code></h2>
+        <p>
+            Cuando defino un solo valor significa
+            que las filas ↔ <code>row-gap:</code> y columnas ↕ <code>column-gap:</code>
+            van a tener la misma distancia de separación.
+        </p>
+        <div class="flex_container un_solo_valor_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>dos valores</h2>
+        <h2><code>gap: 2rem 4rem;</code></h2>
+        <p>
+            En cambio cuando defino
+            dos valores de <code>gap:</code>
+            el primer valor es para
+            <code>row-gap:</code> y el segundo para <code>column-gap:</code>
+        </p>
+        <div class="flex_container dos_valores_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2><code>gap:</code> en porcentaje usando Grid</h2>
+        <h2><code>row-gap: 1rem; column-gap: 20%; display: grid;</code></h2>
+        <p>
+            Si defino <code>gap:</code> en porcentaje <code>%</code>
+            entonces tiene un comportamiento diferente para Flexbox y Grid.
+        </p>
+        <p>
+            En Grid <code>row-gap:</code> en porcentaje
+            ocasiona desbordamiento (overflow)
+            de los elementos <code>div</code> hijos,
+            por eso para Grid debo definir <code>row-gap:</code> en <code>rem</code>, <code>em</code> ó <code>px</code>
+            y <code>column-gap:</code> en Grid si se puede usar con porcentaje:
+        </p>
+        <a href="https://css-tricks.com/almanac/properties/g/gap/#aa-percentages-in-gap-properties" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <br>
+        <a href="https://stackoverflow.com/questions/48214281/why-does-grid-gap-cause-an-overflow" target="_blank">Stack Overflow</a>
+        <br> <br>
+        <div class="flex_container porcentaje_grid">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>gap:</code> en porcentaje usando Flexbox
+        </h2>
+        <h2>
+            <code>row-gap: 1rem; column-gap: 20%; display: flex;</code>
+        </h2>
+        <h3>FORMA INCORRECTA</h3>
+        <p>
+            En Flexbox para que <code>row-gap:</code> funcione
+            hay que definirle un alto <code>height:</code>
+            estático (fijo, que no cambie) al Flex Container
+        </p>
+        <p>
+            en Responsive a los Flex Container
+            NO se les define alto <code>height:</code> fijo (estatico, q no cambie),
+            hacer esto es un ERROR
+        </p>
+        <h3>FORMA CORRECTA</h3>
+        <p>
+            La solución al desbordamiento (overflow) en Flexbox y Grid es definir row-gap: en rem, em ó px y column-gap: en porcentaje %
+        </p>
+        <a href="https://css-tricks.com/almanac/properties/g/gap/#aa-percentages-in-gap-properties" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <br> <br>
+        <div class="flex_container porcentaje_flexbox_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <br>
+        <table>
+            <!-- <tr> fila ↔ -->
+            <tr>
+                <!-- <td> casilla ❐ (columna ↕) -->
+                <td>
+                    <code>gap:</code>
+                </td>
+                <td class="text_align_center">¿Qué unidad de medida de CSS usar?</td>
+                <td rowspan="4" class="azul">vh y vw juntos para Responsive. Ejemplo: <code>gap: 5vh 5vw;</code></td>
+            </tr>
+            <tr>
+                <td>
+                    <code>row-gap:</code>
+                </td>
+                <td class="verde">
+                    rem, em ó px para tamaño estático (fijo, que no cambia)
+                </td>
+            </tr>
+            <tr>
+                <td>column-gap:</td>
+                <td class="verde">% para Responsive</td>
+            </tr>
+            <tr>
+                <td class="no_border"></td>
+                <td class="verde">Ejemplo: <code> gap: 1rem 20%;</code></td>
+            </tr>
+        </table>
+        <br>
+
+        <h2><code>gap: calc();</code></h2>
+        <a href="https://css-tricks.com/almanac/properties/g/gap/#aa-using-the-calc-function-with-gap" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <p></p>
+        <div class="flex_container gap_calc_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            Diferencia Entre <code>column-gap:</code> y <code>row-gap:</code>
+        </h2>
+        <p>No importa si los Flex Items están ubicados en
+            fila ↔ <code>flex-direction: row;</code> ó columna ↕ <code>flex-direction: column;</code>
+            la propiedad gap: siempre va separar los Flex Items así:
+        </p>
+        <ul>
+            <li><code>colum-gap:</code> separa los Flex Items VERTICALmente ↕</li>
+            <li><code>row-gap:</code> separa los Flex Items HORIZONTALmente ↔</li>
+        </ul>
+        <br>
+        <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2020/08/DKNteyUQ.png?resize=1000%2C807&ssl=1" alt="no se puede cargar la imagen">
+        <br>
+
+        <h2><code>gap: 1rem 4rem; flex-direction: row;</code></h2>
+        <a href="https://css-tricks.com/almanac/properties/g/gap" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <p></p>
+        <div class="flex_container gap_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2><code>gap: 1rem 4rem; flex-direction: column;</code></h2>
+        <a href="https://css-tricks.com/almanac/properties/g/gap" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <p></p>
+        <div class="flex_container gap_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>margin-bottom:</code>
+        </h2>
+        <h2>
+            <code>gap:</code> es buena practica!!!!
+        </h2>
+        <p>
+            y es mejor usar <code>gap:</code> que margen <code>margin:</code>
+            para separar los Flex Items
+            porque <code>gap:</code> sirve para evitar “espacios indeseados”
+        </p>
+        <h3>FORMA INCORRECTA</h3>
+        <p>
+            Tengo un Flex Container
+            y dentro a sus Flex Items
+            les he definido un margen hacia abajo <code>margin-bottom:</code>
+            lo cual es lo que ocasiona en la parte de abajo un “espacio indeseado”
+        </p>
+        <a href="https://youtu.be/81q_0-0d_Is" target="_blank">Video YouTube AlexCG Design</a>
+        <p></p>
+        <div class="flex_container margin_bottom_forma_incorrecta">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <p class="espacio_indeseado">ESPACIO INDESEADO</p>
+        </div>
+
+        <h2>
+            <code>gap:</code>
+        </h2>
+        <h3>FORMA CORRECTA</h3>
+        <p>
+            Lo correcto es usar <code>gap:</code>
+            para eliminar ese “espacio indeseado”
+            en la parte de abajo
+        </p>
+        <a href="https://youtu.be/81q_0-0d_Is" target="_blank">Video YouTube AlexCG Design</a>
+        <br> <br>
+        <div class="flex_container gap_forma_correcta">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <h2>
+            <code>gap:</code> NO SIEMPRE es la distancia de separación entre los Flex Items
+        </h2>
+        <a href="https://css-tricks.com/almanac/properties/g/gap/#aa-gutter-size-is-not-always-equal-to-the-gap-value" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <p>
+            Esto se debe a que también
+            hay otras propiedades
+            que afectan como se separan los Flex Items.
+        </p>
+        <p>
+            <code>gap:</code> SI funciona (siempre) con <code>align-items:</code>
+            pero NO SIEMPRE va funcionar con
+            <code>justify-content:</code> y <code>align-content:</code>
+        </p>
+        <p>
+            Los valores de las propiedades
+            <code>align-items:</code> <code>align-content:</code> y <code>justify-content:</code>
+            con los que SI funciona <code>gap:</code> son:
+        </p>
+        <ul>
+            <li>
+                <code>stretch;</code>
+            </li>
+            <li>
+                <code>flex-start;</code>
+            </li>
+            <li>
+                <code>flex-end;</code>
+            </li>
+            <li>
+                <code>center;</code>
+            </li>
+            <li>
+                <code>baseline;</code>
+            </li>
+        </ul>
+        <br>
+        <h3 class="h3_font_size">
+            <code>justify-content: flex-start; gap: 30px;</code>
+        </h3>
+        <p>
+            Tengo un Flex Container al que le definí
+            <code>gap: 30px;</code> y <code>justify-content: flex-start;</code>
+        </p>
+        <p>
+            Los Flex Items SI se están separando por el <code>gap: 30px;</code>
+            porque lo que hace <code>justify-content: flex-start;</code>
+            es juntar los Flex Items uno al lado del otro
+            (no genera un espacio entre los Flex Items):
+        </p>
+        <div class="flex_container justify_content_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h3 class="h3_font_size">
+            <code>justify-content: space-evenly; gap: 30px;</code>
+        </h3>
+        <p>
+            Pero el problema es cuando defino <code>justify-content: space-evenly;</code>
+            que ocasiona que la distancia entre todos los Flex Items sea la misma,
+            entonces en este ejemplo <code>justify-content:</code>
+            estaría sobrescribiendo (anulando) a <code>gap: 30px;</code>
+            y por lo tanto los Flex Items NO se estarían separando <code>30px</code>
+        </p>
+        <div class="flex_container justify_content_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <a href="https://css-tricks.com/minding-the-gap/#aa-multi-column-gaps" target="_blank">
+                CSS-Tricks (Trucos CSS) -
+                gap: en CSS Multiple-column Layout
+            </a>
+        </h2>
+
+    </body>
+</html>

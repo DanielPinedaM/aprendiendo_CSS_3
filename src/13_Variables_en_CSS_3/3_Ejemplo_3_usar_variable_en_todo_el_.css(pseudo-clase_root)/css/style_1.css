@@ -1,0 +1,50 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+/*
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*/
+
+:root {
+    /* Seleccionar el elemento raiz <html> */
+    /* estas variables se pueden usar en cualquier .css
+    q este enlazado dentro del proyecto */
+    --color_parrafo_1: blue;
+    --color_fondo_contenedor_1: red;
+
+    --color_parrafo_2: purple;
+    --color_fondo_contenedor_2: yellow;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* Este es el codigo de style_1.css */
+div {
+    width: 100px; /* ancho */
+    border: thick solid black; /* borde */
+    display: inline-block; /* poner los <div> uno al lado del otro
+                              convirtiendolos a elementos de linea */
+}
+
+/* los colores de ambos contenedores SI van a cambiar
+por q use la funcion :root */
+.contenedor_1 {
+    background-color: var(--color_fondo_contenedor_1);
+}
+.contenedor_1 p {
+    color: var(--color_parrafo_1);
+}
+.contenedor_2 {
+    background-color: var(--color_fondo_contenedor_2);
+}
+.contenedor_2 p {
+    color: var(--color_parrafo_2);
+}

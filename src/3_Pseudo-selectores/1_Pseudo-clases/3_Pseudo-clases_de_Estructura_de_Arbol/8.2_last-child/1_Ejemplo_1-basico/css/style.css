@@ -1,0 +1,67 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    font-size: 3em;
+}
+
+p,
+span {
+    font-size: 2em;
+}
+
+/*
+ESTO...
+seleccionar el ULTIMO elemento q esta dentro del articulo <article>
+
+<article>
+  …
+    <element :last-child>
+Especificidad: (0, 1, 1) */
+/*
+article :last-child {
+    color: red;
+}
+ */
+
+/* es lo mismo q esto:
+
+<article>
+  …
+    <element :nth-last-child>
+Especificidad: (0, 1, 1) */
+/* 
+article :nth-last-child(1) {
+    color: red;
+}
+ */
+
+/* ---------------- */
+
+/*
+Si uso :last-of-type selecciona algo diferente a :last-child
+
+Me selecciona el ultimo elemento de cada tipo, es decir,
+solo hay un titulo <h1> entonces ese es el ultimo de su tipo,
+el último párrafo <p> entre el grupo de hermanos de párrafos
+es el que dice “párrafo - Elemento 4” ese es el último párrafo pero de su tipo
+y como solo hay un divisor de contenido en línea <span>
+eso hace que sea el ultimo de su tipo:
+
+
+
+de cada TIPO de elementos q estan dentro del articulo <article>
+seleccionar el ULTIMO
+
+<article>
+  …
+    <element :last-of-type>
+Especificidad: (0, 1, 1) */
+/*
+article :last-of-type {
+    color: blue;
+}
+*/

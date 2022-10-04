@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es"> <!--para rem la base SIEMPRE es el font-family: de la etiqueta <html>-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Unidades de Medida en CSS 3</title>
+    </head>
+    <body>
+        <h1>Diferencia entre em y rem</h1>
+        <hr>
+        <h2><code>em</code> </h2>
+        <div class="em_padre"> <!--la base de em es el contenedor MAS CERCANO-->
+            <p>
+                CONTENEDOR PADRE - Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Perferendis, laboriosam!
+            </p>
+            <div class="em_hijo">
+                <p>
+                    CONTENEDOR HIJO - Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Perferendis, laboriosam!
+                </p>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <h2><code>rem</code> (Root EM)</h2>
+        <!--para rem NO importa cual sea el contenedor,
+            SIEMPRE se tiene en cuenta el font-family: de la etiqueta <html>-->
+        <div class="rem_padre">
+            <p>
+                CONTENEDOR PADRE - Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Perferendis, laboriosam!
+            </p>
+            <div class="rem_hijo">
+                <p>
+                    CONTENEDOR HIJO - Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Perferendis, laboriosam!
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

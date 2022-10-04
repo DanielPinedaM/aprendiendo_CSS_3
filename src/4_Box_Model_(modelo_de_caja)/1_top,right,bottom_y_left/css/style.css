@@ -1,0 +1,131 @@
+/* Ver el Box Model de Cualquier Elemento */
+
+/* 
+.box {
+    background: red;
+    border: 3px solid black;
+
+    padding: 10px;
+    margin: 20px;
+} 
+*/
+
+/* --------------------------------------- */
+
+/* 
+Modelo de Caja (Box Model):
+
+Todas las partes (elementos) de una página web están dentro de una caja. Una página web es la unión de muchas cajas.
+
+Los elementos pueden ser en línea o en bloque.
+
+Las cajas están compuestas por partes o capas.
+
+Para entender las capas hay que verlas desde la que esta mas adentro content hasta la que está más afuera margin. En el siguiente orden:
+
+- Contenido content, Ancho width y Alto height
+- Relleno padding
+- Borde border
+- Contorno outline
+- Margen margin
+*/
+
+/* --------------------------------------- */
+
+/* Quitar el margin del principio de la pagina body, es decir, el espacio q hay entre los elementos y la barra de navegacion superior del navegador */
+
+body {
+    margin: 0;
+}
+
+.box1,
+.box2 {
+    margin: 10px;
+}
+
+/* --------------------------------------- */
+
+/* Para las 2 cajas <div>... */
+.box {
+    /* content es cualquier cosa visible dentro de la pagina web: Imagenes, texto, etc... */
+
+    /* darle color de fondo al content */
+    background: red;
+
+    /* --------------------------------------- */
+
+    /* 
+    padding es el espacio de relleno q hay entre content y border 
+    margin es el espacio q hay entre los elementos
+
+    margin y padding...
+    -top arriba 
+    -bottom abajo 
+
+    -right derecha
+    -left izquierda
+    */
+
+    /* todos los padding ...
+    -top 
+    -bottom 
+    
+    -left 
+    -right 
+
+    de la misma medida */
+    /* padding: 20px; */
+
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
+
+    /* text-align: right; */
+    /* padding-right: 60px; */
+
+    /* padding-left: 60px; */
+
+    /* --------------------------------------- */
+
+    /* 
+    border es una linea que bordea al elemento
+
+    outline es una linea que va fuera del border del elemento.
+    */
+    border: 3px solid #000;
+    outline: 1px dashed blue;
+}
+
+/* --------------------------------------- */
+
+/* Ancho width y Alto height */
+.box1 {
+    width: 80px;
+    height: 40px;
+}
+
+.box2 {
+    width: 160px;
+    height: 80px;
+}
+
+/* --------------------------------------- */
+
+p {
+    /* El orden de las medidas se mueve 
+    en sentido de las manesillas del reloj 
+    empezando desde arriba */
+    padding-top: 5px;      /* arriba    */
+    padding-right: 15px;   /* derecha   */
+    padding-bottom: 10px;  /* abajo     */
+    padding-left: 20px;    /* izquierda */
+}
+
+p {
+    /* arriba, derecha, abajo, izquierda */
+    padding: 5px 15px 10px 20px;
+}
+
+p {
+    /* 5px para arriba derecha abajo izquierda */
+    padding: 5px;
+}

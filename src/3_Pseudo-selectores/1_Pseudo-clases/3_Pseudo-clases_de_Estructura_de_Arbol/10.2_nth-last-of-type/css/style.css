@@ -1,0 +1,27 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Contando desde abajo hacia arriba
+y teniendo en cuenta solamente los párrafos <p>
+el primer párrafo es el que dice “Soy un párrafo p”
+y el segundo (que es el seleccionado de color rojo)
+es el que dice “Soy otro párrafo p”:
+
+
+
+cuenteme desde abajo hacia arriba p:nth-last-of-type
+los elementos que sean de tipo <p> ,
+q esten dentro de .contenedor
+y seleccioneme el segundo (2) <p>
+
+<element class="contenedor">
+  …
+    <p :nth-last-of-type>
+Especificidad: (0, 2, 1) */
+.contenedor p:nth-last-of-type(2) {
+    color: red;
+}

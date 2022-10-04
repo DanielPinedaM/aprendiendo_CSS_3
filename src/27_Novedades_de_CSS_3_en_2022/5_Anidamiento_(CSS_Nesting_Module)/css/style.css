@@ -1,0 +1,41 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.centrar {
+    /* Centrar texto... */
+    text-align: center; /* horizontalmente */
+    line-height: 40vh; /* Verticalmente */
+
+    /* Centrar Divisor de Contenido en Bloque <div> horizontal ↔ y verticalmente ↕ */
+    position: absolute;
+    top: 50%; /* arriba */
+    left: 50%; /* izquierda */
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.contenedor {
+    width: 40vw; /* ancho */
+    height: 40vh; /* alto */
+
+    border: 2px solid black; /* borde */
+
+    background-color: steelblue;
+}
+
+.parrafo {
+    font-size: 5vw; /* Tamaño de la letra */
+}
+
+/* --------------------- */

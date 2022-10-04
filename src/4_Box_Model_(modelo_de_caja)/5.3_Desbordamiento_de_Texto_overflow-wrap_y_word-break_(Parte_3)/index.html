@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Desbordamiento</title>
+    </head>
+    <body>
+        <h1>
+            Insertar Salto de Línea (Renglón) para que no se Desborde el Texto -
+            Diferencias y Similitudes entre overflow-wrap: y word-break:
+        </h1>
+
+        <hr>
+
+        <p class="p_centrado">Permite q el texto se desborde</p>
+
+        <hr>
+
+        <h2>overflow-wrap: normal;</h2>
+        <div class="contenedor">
+            <p class="overflow-wrap_normal">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>word-break: normal;</h2>
+        <div class="contenedor">
+            <p class="word-break_normal">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>word-break: keep-all;</h2>
+        <div class="contenedor">
+            <p class="word-break_keep-all">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em. 次の単語グレートブリテンおよび北アイルランド連合王国で本当に大きな言葉
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>hyphens: none;</h2>
+        <div class="contenedor">
+            <p class="hyphens_none">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <p class="p_centrado">Salto de linea (renglon) COMPLETO dejando un ESPACIO EN BLANCO</p>
+
+        <hr>
+
+        <h2>overflow-wrap: break-word;</h2>
+        <div class="contenedor">
+            <p class="overflow-wrap_break-word">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>word-break: break-word;</h2>
+        <div class="contenedor">
+            <p class="word-break_break-word">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>overflow-wrap: anywhere;</h2>
+        <div class="contenedor">
+            <p class="overflow-wrap_anywhere">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <p class="p_centrado">Se pasa al siguiente renglon cada vez que se desborda la palabra. NO se deja espacio en blanco</p>
+
+        <hr>
+
+        <h2>word-break: break-all;</h2>
+        <div class="contenedor">
+            <p class="word-break_break-all">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <p class="p_centrado">Salto de Línea (Renglón) CON GUION hyphens:</p>
+
+        <hr>
+
+        <h2>hyphens: manual;</h2>
+        <div class="contenedor">
+            <p class="hyphens_manual">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>hyphens: auto;</h2>
+        <div class="contenedor">
+            <p class="hyphens_auto">
+                Most words are short & don't need to break. But <b>UnoDosTresCuatroCincoSeisSieteOcho</b> is long. The width is set to min-content, with a max-width of 11em.
+            </p>
+        </div>
+
+        <br>
+
+    </body>
+</html>

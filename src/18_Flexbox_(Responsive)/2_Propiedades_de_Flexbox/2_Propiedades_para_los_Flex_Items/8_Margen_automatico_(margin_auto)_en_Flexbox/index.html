@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            Margen Automático
+            <code>margin: auto;</code>
+            en Flexbox
+        </h1>
+        <p>
+            Considera usar esta propiedad de
+            margen automático <code>margin: auto;</code> en Flexbox
+            como última alternativa,
+            dentro de todo lo posible trata de no usarla,
+            no es mala práctica,
+            pero las propiedades de Flexbox son mucho más fáciles de entender
+        </p>
+        <p>
+            <code>align-self:</code>
+            es una alternativa al
+            margen automático <code>margin: auto;</code> en Flexbox
+        </p>
+        <p>
+            <code>margin: auto;</code>
+            no es estrictamente una propiedad de Flexbox,
+            pero se puede usar con los Flex Items (en Flexbox).
+        </p>
+        <p>
+            <code>margin: auto;</code> en Flexbox
+            sirve para alinear uno solo en específico o varios Flex Items.
+        </p>
+        <p>
+            <code>margin: auto;</code> en Flexbox
+            es similar (NO son lo mismo)
+            a la propiedad
+            <code>justify-self:</code>
+            (justificarse a sí mismo) en CSS Grid.
+        </p>
+        <p>
+            <code>margin: auto;</code> en Flexbox
+            modifica la alineación de los Flex Items
+            seleccionados así:
+        </p>
+
+        <h2>
+            Ejemplo 1 -
+            El Margen Automático <code>margin: auto;</code> en Flexbox
+            Depende del Espacio Disponible (Sobrante) del Flex Container
+        </h2>
+        <p>
+            Lo que escribiré a continuación aplica para cualquier margen automático en Flexbox:
+        </p>
+        <ul>
+            <li><code>margin-left: auto;</code></li>
+            <li><code>margin-right: auto;</code></li>
+            <li><code>margin-top: auto;</code></li>
+            <li><code>margin-bottom: auto;</code></li>
+            <li><code>margin: auto;</code></li>
+        </ul>
+        <p>
+            Si en un principio
+            tengo un solo Flex Item
+            al que le defino <code>margin: auto;</code>
+            entonces se centrara perfectamente
+            horizontal ↔ y verticalmente ↕
+        </p>
+        <img class="centrar_margin" src="https://samanthaming.gumlet.io/flexbox30/31-flexbox-with-auto-margins-center.jpg.gz?format=auto" alt="error al mostrar la imagen">
+        <p>
+            Pero si hay más Flex Items,
+            entonces dependiendo del
+            espacio disponible (sobrante) del Flex Container,
+            esto afectara el como se alinea
+            el Flex ítem con margen automático <code>margin: auto;</code>
+        </p>
+        <img class="centrar_margin" src="https://samanthaming.gumlet.io/flexbox30/31-flexbox-with-auto-margins-center-with-others.jpg.gz?format=auto" alt="error al mostrar la imagen">
+
+        <h2>
+            <a href="https://www.samanthaming.com/flexbox30/31-flexbox-with-auto-margins/#auto-margins-always-wins-%F0%9F%8F%86" target="_blank">
+                ¿Cuál es la Prioridad
+                Entre las Propiedades
+                Margen Automático en Flexbox
+                VS
+                Propiedades de Alineación en Flexbox?
+            </a>
+        </h2>
+        <p>
+            Las propiedades para el margen automático en Flexbox:
+        </p>
+        <ul>
+            <li><code>margin-left: auto;</code></li>
+            <li><code>margin-right: auto;</code></li>
+            <li><code>margin-top: auto;</code></li>
+            <li><code>margin-bottom: auto;</code></li>
+            <li><code>margin: auto;</code></li>
+        </ul>
+        <p>
+            SIEMPRE tienen mayor prioridad (sobrescriben, anulan)
+            que las propiedades de alineación de Flexbox:
+        </p>
+        <ul>
+            <li><code>justify-content:</code></li>
+            <li><code>align-items:</code></li>
+            <li><code>align-content:</code></li>
+            <li><code>place-content: align-content justify-content;</code></li>
+            <li><code>align-self:</code></li>
+        </ul>
+        <img class="centrar_margin" src="https://samanthaming.gumlet.io/flexbox30/31-flexbox-with-auto-margins-vs.jpg.gz?format=auto" alt="error al mostrar la imagen">
+
+
+        <h2>
+            Ejemplo 2 -
+            Mas Ejemplos de Margen Automático <code>margin: auto;</code> en Flexbox
+        </h2>
+        <img class="centrar_margin" src="https://samanthaming.gumlet.io/flexbox30/31-flexbox-with-auto-margins-examples.jpg.gz?format=auto" alt="error al mostrar la imagen">
+
+        <h2>
+            Explicacion de las Propiedades de
+            <code>margin: auto;</code> en Flexbox
+        </h2>
+        <table class="centrar_margin">
+            <!-- <tr> fila ↔ -->
+            <tr>
+                <!-- <td> casilla ❐ (columna ↕) -->
+                <td class="centrar_texto">Margen Automático</td>
+                <td class="centrar_texto">Espacio</td>
+                <td class="centrar_texto">Resultado</td>
+            </tr>
+            <tr>
+                <td class="centrar_texto" colspan="3">Eje Principal (Main Axis)</td>
+            </tr>
+            <tr>
+                <td><code>margin-left: auto;</code></td>
+                <td>agrega espacio a la izquierda</td>
+                <td>empuja el elemento a la derecha</td>
+            </tr>
+            <tr>
+                <td><code>margin-right: auto;</code></td>
+                <td>agrega espacio a la derecha</td>
+                <td>empuja el elemento a la izquierda</td>
+            </tr>
+            <tr>
+                <td class="centrar_texto" colspan="3">Eje Transversal (Cross Axis)</td>
+            </tr>
+            <tr>
+                <td><code>margin-top: auto;</code></td>
+                <td>agrega espacio a la parte superior</td>
+                <td>empuja el elemento hacia abajo</td>
+            </tr>
+            <tr>
+                <td><code>margin-bottom: auto;</code></td>
+                <td>agrega espacio a la parte inferior</td>
+                <td>empuja el elemento hacia arriba</td>
+            </tr>
+            <tr>
+                <td class="centrar_texto" colspan="3">Centrar horizontal ↔ y verticalmente ↕</td>
+            </tr>
+            <tr>
+                <td><code>margin: auto;</code></td>
+                <td>agrega espacio alrededor</td>
+                <td>empuja el elemento hacia el centro</td>
+            </tr>
+        </table>
+
+        <a href="https://www.samanthaming.com/flexbox30/31-flexbox-with-auto-margins/" target="_blank">Samantha Ming</a>
+        <img class="centrar_margin" src="https://samanthaming.gumlet.io/flexbox30/31-flexbox-with-auto-margins.jpg.gz?format=auto" alt="error al mostrar la imagen">
+
+        <hr>
+
+        <h2>margin: auto; flex-direction: row;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_auto_row">
+            <div>1 <br> margin: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_auto_row">
+            <div>1 <br> margin: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_auto_row">
+            <div>1 <br> margin: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-top: auto; flex-direction: row;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_top_row">
+            <div>1 <br> margin-top: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_top_row">
+            <div>1 <br> margin-top: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_top_row">
+            <div>1 <br> margin-top: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-right: auto; flex-direction: row;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_right_row">
+            <div>1 <br> margin-right: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_right_row">
+            <div>1 <br> margin-right: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_right_row">
+            <div>1 <br> margin-right: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-bottom: auto; flex-direction: row;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_bottom_row">
+            <div>1 <br> margin-bottom: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_bottom_row">
+            <div>1 <br> margin-bottom: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_bottom_row">
+            <div>1 <br> margin-bottom: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-left: auto; flex-direction: row;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_left_row">
+            <div>1 <br> margin-left: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_left_row">
+            <div>1 <br> margin-left: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_left_row">
+            <div>1 <br> margin-left: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin: auto; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_auto_column">
+            <div>1 <br> margin: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_auto_column">
+            <div>1 <br> margin: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_auto_column">
+            <div>1 <br> margin: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-top: auto; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_top_column">
+            <div>1 <br> margin-top: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_top_column">
+            <div>1 <br> margin-top: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_top_column">
+            <div>1 <br> margin-top: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-right: auto; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_right_column">
+            <div>1 <br> margin-right: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_right_column">
+            <div>1 <br> margin-right: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_right_column">
+            <div>1 <br> margin-right: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-bottom: auto; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_bottom_column">
+            <div>1 <br> margin-bottom: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_bottom_column">
+            <div>1 <br> margin-bottom: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_bottom_column">
+            <div>1 <br> margin-bottom: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>margin-left: auto; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox margin_left_column">
+            <div>1 <br> margin-left: auto;</div>
+        </div>
+        <div class="contenedor_flexbox margin_left_column">
+            <div>1 <br> margin-left: auto;</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="contenedor_flexbox margin_left_column">
+            <div>1 <br> margin-left: auto;</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+    </body>
+</html>

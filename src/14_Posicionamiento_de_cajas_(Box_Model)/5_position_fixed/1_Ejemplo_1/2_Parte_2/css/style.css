@@ -1,0 +1,48 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Dorian Designs:
+https://www.youtube.com/watch?v=9Tc1PBe-6ng */
+
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333; /* color de fondo de TODA la pagina web */
+    color: #eeede7; /* color del texto de TODA la pagina web */
+    padding-top: 66px;
+}
+
+.encabezado {
+    width: 100vw; /* el encabezado ocupa TODO el ancho width: disponible de la pagina web */
+    text-align: center; /* centrar texto horizontalmente */
+    padding: 25px 0; /* arriba abajo / izquierda derecha */
+    background-color: lightskyblue;
+    color: orangered;
+    position: fixed; /* posicionamiento fijo */
+    /* top: 0; y left: 0;
+    hacen que el .encabezado se ubiq en la esquina superior izquierda de la pagina web */
+    top: 0;
+    left: 0;
+}
+
+.enlace {
+    width: 20rem;
+    height: 20rem;
+
+    color: orangered;
+    font-weight: 900;
+    background-color: #fff;
+
+    /* con position: fixed y position: absolute
+    obtengo el MISMO resultado, puedo darle medidas de ancho y alto
+    a los elementos EN LINEA */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,36 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+/* FORMA 1 USANDO float: */
+
+
+.contenedor_general {
+    width: 30rem; /* ancho */
+    height: 30rem; /* alto */
+
+    border: thick solid red;
+}
+/*
+<element class="contenedor_general">
+  …
+    <div>
+*/
+.contenedor_general div {
+    float: left; /* las cajas 1 y 2 flotan hacia la izquierda de .contenedor_general  */
+}
+.contenedor_1 {
+    width: 40%;
+    height: 40%;
+
+    border: thick solid blue;
+}
+.contenedor_2 {
+    width: 40%;
+    height: 40%;
+
+    border: thick solid green;
+}
+
+

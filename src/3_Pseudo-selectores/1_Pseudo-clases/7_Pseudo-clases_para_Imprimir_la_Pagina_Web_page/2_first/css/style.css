@@ -1,0 +1,19 @@
+/*
+Documentacion oficial de :first
+https://developer.mozilla.org/en-US/docs/Web/CSS/:first
+*/
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+@page :first {
+    margin-left: 50%;
+    margin-top: 50%;
+}
+
+p {
+    page-break-after: always;
+}

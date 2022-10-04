@@ -1,0 +1,349 @@
+/*
+ESTE CODIGO CSS ESTA BASADO EN BOOTSTRAP 5
+
+Jon Mircha - Layout CON Media Queries + Flexbox (Responsive) (FORMA 2)
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=10719s */
+
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -------------------- titulo principal <h1> -------------------- */
+
+h1 {
+    /* centrar texto horizontalmente */
+    text-align: center;
+}
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    /* uso outline: y NO border:
+    para q la linea q bordea la pagina web
+    NO ocupe espacio en el Box Model
+    y asi haya mas espacio disponible dentro de la pagina web,
+    en lo q este dentro del <div class="page_wrap"> */
+    outline: thick solid lightcoral;
+
+    /* el ancho maximo max-width: de la pagina web es
+    el valor (numero) minimo min() entre
+    el 90% del ancho del viewport
+    y 1332px */
+    max-width: min(90%, 1332px);
+
+    /* Centrar horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------- tamaño de letra -------------------- */
+
+h2 { font-size: 1.9rem; }
+
+p,
+ul li { font-size: 1.5rem; }
+
+/* -------------------- estilos de para listas -------------------- */
+
+ul {
+    list-style-position: inside; /* Lista con Indentación (Sangría) */
+}
+
+/* -------------------- Un Flex Item mas grande que el otro -------------------- */
+
+.border div:nth-child(3),
+.border div:nth-child(4) { border: thick solid steelblue; }
+
+/* -------------------- Layout CON Media Queries + Flexbox (Responsive) -------------------- */
+
+.flex_container {
+    border: thick solid black; /* borde */
+
+    display: flex; /* usar Flexbox */
+
+    /* flex-flow:          Propiedad abreviada (shorthand) para el flujo de Flexbox
+    flex-direction: row;   Flex Items en Fila → de Izquierda a Derecha
+    flex-wrap: wrap;       Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+    flex-flow: row wrap;
+
+    /* Centrar los Flex Items dentro del Flex Container */
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_container div { border: thick solid crimson; }
+
+/*
+En los Frameworks de CSS (Bootstrap, Tailwind, etc.)
+los Layouts (Grid) tienen 12 columnas ↕
+porq 12 es un numero
+q se puede dividir entre muchos numeros:
+
+1)  Los numeros que tienen las clases de CSS. Ejemplo: .columna_..._1 {...}
+    son el ancho de los Flex Items
+
+    cuanto mas pequeño el numero entonces mas pequeño el Flex Item y
+    "        " grande  "                    " grande  "          "
+
+2) COLUMNAS CON MEDIDAS IGUALES (Flex Items del MISMO tamaño):
+
+se deben escribir en el HTML
+las clases q son divisibles entre 12,
+las cuales son...
+
+(12 # total de columnas ↕ ) / (# de columnas ↕ de Flex Items q se muestran en pantalla) = (# de columnas ↕ q ocupa cada Flex Item, es la clase de CSS .columna_... )
+
+NOMBRE CLASE      DIVISION
+.columna_..._1    12 / 1 = 12
+.columna_..._2    12 / 2  = 6
+.columna_..._3    12 / 3  = 4
+.columna_..._4    12 / 4  = 3
+.columna_..._6    12 / 6  = 2
+.columna_..._12   12 / 12 = 1
+
+3) COLUMNAS CON MEDIDAS DIFERENTES (Flex Items de DIFERENTE tamaño):
+La suma de los elementos
+q van a estar en una misma fila ↔
+SIEMPRE tiene q dar 12. Ejemplo:
+
+2 FLEX ITEMS:
+5 + 7 = 12->El Flex Item 1 ocupa 5 columnas (es mas PEQUEÑO)
+            y el Flex Item 2 ocupa 7 columnas (es mas GRANDE)
+
+3 FLEX ITEMS:
+2 + 5 + 5 = 12->El Flex Item 1 ocupa 2 columnas
+                y los Flex Items 2 y 3 ocupan 5 columnas,
+                los Flex Items 2 y 3 miden lo mismo (5 columnas)
+                y son mas grandes q el Flex Item 1 (2 columnas)
+
+4 FLEX ITEMS:
+4 + 2 + 3 + 3 = 12->Flex Item 1 es el mas grande de todos (4 columnas),
+                    Flex Item 2 mide 2 columnas q es la mitad del Flex Item 1,
+                    Flex Items 3 y 4 miden lo mismo (3 columnas cada uno)
+
+4) Regla de 3 para convertir las medidas de las columnas a porcentaje:
+12 # total de columnas ↕     ---> 100%
+# de columna 1, 2, 3... 12   ---> % ?
+
+[ (# de columna 1, 2, 3... 12) * (100%) ] / (12 # total de columnas ↕) = width: ...%
+
+En total son 12 columnas
+q tienen la clase de CSS .columna_... {...}
+*/
+
+/* extra small desde 0 hasta 479px */
+.columna_xs_1 {
+    /* (1 * 100%) / 12 = width: 8.33333333333%; */
+    width: 8.33333333333%;
+}
+
+.columna_xs_2 {
+    /* (2 * 100%) / 12 = width: 16.6666666667%; */
+    width: 16.6666666667%;
+}
+
+.columna_xs_3 {
+    /* (3 * 100%) / 12 = width: 25%; */
+    width: 25%;
+}
+
+.columna_xs_4 {
+    /* (4 * 100%) / 12 = width: 33.3333333333%; */
+    width: 33.3333333333%;
+}
+
+.columna_xs_5 {
+    /* (5 * 100%) / 12 = width: 41.6666666667%; */
+    width: 41.6666666667%;
+}
+
+.columna_xs_6 {
+    /* (6 * 100%) / 12 = width: 50%; */
+    width: 50%;
+}
+
+.columna_xs_7 {
+    /* (7 * 100%) / 12 = width: 58.3333333333%; */
+    width: 58.3333333333%;
+}
+
+.columna_xs_8 {
+    /* (8 * 100%) / 12 = width: 66.6666666667%; */
+    width: 66.6666666667%;
+}
+
+.columna_xs_9 {
+    /* (9 * 100%) / 12 = width: 75%; */
+    width: 75%;
+}
+
+.columna_xs_10 {
+    /* (10 * 100%) / 12 = width: 83.3333333333%; */
+    width: 83.3333333333%;
+}
+
+.columna_xs_11 {
+    /* (11 * 100%) / 12 = width: 91.6666666667%; */
+    width: 91.6666666667%;
+}
+
+.columna_xs_12 {
+    /* (12 * 100%) / 12 = width: 100%; */
+    width: 100%;
+}
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- LAYOUT-GRID SYSTEM ARTESANAL DE 12 COLUMNAS CON FLEXBOX (RESPONSIVE) -------------------- */
+
+/*
+Dar un Numero de columnas
+al Flex Container
+dependiendo del ancho del viewport
+
+Esta tabla esta hecha por Jon Mircha,
+en este video: https://www.youtube.com/watch?v=udGrXWeJp1Y&t=11657s
+
+Nombre clase de CSS   Significado   Desde (Breakpoint)   Hasta    Media Qurie
+(Abreviacion)
+xs                    extra small   0                    479px    ...
+sm                    small         480px     = 30em     767px    @media screen and (min-width: 30em) { ... }
+md                    medium        768px     = 48em     991px    @media screen and (min-width: 48em) { ... }
+lg                    large         992px     = 62em     1199px   @media screen and (min-width: 62em) { ... }
+xl                    extralarge    >=1200px  = 75em     ∞        @media screen and (min-width: 75em) { ... }
+*/
+
+@media screen and (min-width: 30em) { /* small desde 480px = 30em hasta 767px */
+    .columna_sm_1 { width: 8.33333333333%; }
+
+    .columna_sm_2 { width: 16.6666666667%; }
+
+    .columna_sm_3 { width: 25%; }
+
+    .columna_sm_4 { width: 33.3333333333%; }
+
+    .columna_sm_5 { width: 41.6666666667%; }
+
+    .columna_sm_6 { width: 50%; }
+
+    .columna_sm_7 { width: 58.3333333333%; }
+
+    .columna_sm_8 { width: 66.6666666667%; }
+
+    .columna_sm_9 { width: 75%; }
+
+    .columna_sm_10 { width: 83.3333333333%; }
+
+    .columna_sm_11 { width: 91.6666666667%; }
+
+    .columna_sm_12 { width: 100%; }
+}
+
+@media screen and (min-width: 48em) { /* medium desde 768px = 48em hasta 991px */
+    .columna_md_1 { width: 8.33333333333%; }
+
+    .columna_md_2 { width: 16.6666666667%; }
+
+    .columna_md_3 { width: 25%; }
+
+    .columna_md_4 { width: 33.3333333333%; }
+
+    .columna_md_5 { width: 41.6666666667%; }
+
+    .columna_md_6 { width: 50%; }
+
+    .columna_md_7 { width: 58.3333333333%; }
+
+    .columna_md_8 { width: 66.6666666667%; }
+
+    .columna_md_9 { width: 75%; }
+
+    .columna_md_10 { width: 83.3333333333%; }
+
+    .columna_md_11 { width: 91.6666666667%; }
+
+    .columna_md_12 { width: 100%; }
+}
+
+@media screen and (min-width: 62em) { /* large desde 992px = 62em hasta 1199px */
+    .columna_lg_1 { width: 8.33333333333%; }
+
+    .columna_lg_2 { width: 16.6666666667%; }
+
+    .columna_lg_3 { width: 25%; }
+
+    .columna_lg_4 { width: 33.3333333333%; }
+
+    .columna_lg_5 { width: 41.6666666667%; }
+
+    .columna_lg_6 { width: 50%; }
+
+    .columna_lg_7 { width: 58.3333333333%; }
+
+    .columna_lg_8 { width: 66.6666666667%; }
+
+    .columna_lg_9 { width: 75%; }
+
+    .columna_lg_10 { width: 83.3333333333%; }
+
+    .columna_lg_11 { width: 91.6666666667%; }
+
+    .columna_lg_12 { width: 100%; }
+}
+
+@media screen and (min-width: 75em) { /* extralarge >=1200px = 75em, desde 1200px hasta infinito ∞ */
+    .columna_xl_1 { width: 8.33333333333%; }
+
+    .columna_xl_2 { width: 16.6666666667%; }
+
+    .columna_xl_3 { width: 25%; }
+
+    .columna_xl_4 { width: 33.3333333333%; }
+
+    .columna_xl_5 { width: 41.6666666667%; }
+
+    .columna_xl_6 { width: 50%; }
+
+    .columna_xl_7 { width: 58.3333333333%; }
+
+    .columna_xl_8 { width: 66.6666666667%; }
+
+    .columna_xl_9 { width: 75%; }
+
+    .columna_xl_10 { width: 83.3333333333%; }
+
+    .columna_xl_11 { width: 91.6666666667%; }
+
+    .columna_xl_12 { width: 100%; }
+}
+
+/* -------------------- Un Flex Item mas grande que el otro -------------------- */
+
+/* Cambiar el orden order: a los Flex Items
+
+El "Item grande" va de primero
+y despues (de segundo) va el "Item pequeño" */
+
+@media screen and (max-width: 29.9375em) { /* extra small desde 0 hasta 479px = 29.9375em */
+    .border div:nth-child(3) { order: 1; }
+}

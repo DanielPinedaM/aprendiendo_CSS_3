@@ -1,0 +1,106 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px; /*dar un margen (espacio) en blanco
+                    para q el contenido de la pagina web
+                    no este pegado a los bordes de la ventana */
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (fuente) (tipografia) */
+}
+
+h2 { font-family: "Consolas", monospace; }
+
+p, a { font-size: 25px; }
+
+a { display: block; }
+
+p, hr, .contenedor_flexbox {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.subrayar {
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: solid; /* Estilo del Subrayado - Estilo del Subrayado */
+}
+
+.consolas { font-family: "Consolas", monospace; }
+
+.negrita { font-weight: 900; }
+
+.contenedor_flexbox {
+    width: 100%; /* ancho width: de los Flex Container
+                    width: 100%; significa q
+                    el .contenedor_flexbox va a ocupar todo el ancho del viewport */
+    display: flex;
+    /* padding: 1%; */ /* relleno padding: dar un espacio entre los Flex Items y el Flex Container */
+    outline: thick solid black;
+    /* border: thick solid black; */
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+}
+
+.contenedor_flexbox div { /* seleccionar TODOS los Flex Items */
+    margin: 1.5%; /* distancia de separacion entre cada una de las cajas */
+    outline: thick solid crimson;
+    /* border: thick solid black; */ /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+    font-size: 20px;
+}
+
+/* Flex Items alineados en fila row; ó columna column; */
+.flex_direction_row { flex-direction: row; }       /* para flex-direction: row;    flex-basis: es el ANCHO width: de los Flex Items */
+.flex_direction_column { flex-direction: column; } /* "  " flex-direction: column; "               " ALTO  height "               " */
+
+/* flex-basis: es el ancho o alto inicial de los Flex Items.
+
+flex-basis: depende de flex-direction: */
+
+.hijo_1 {
+    flex-basis: auto;
+    width: 250px;
+}
+
+.hijo_2 {
+    flex-basis: auto;
+    min-width: 160px;
+}
+
+.hijo_3 {
+    flex-basis: 600px;
+    max-width: 400px;
+}
+
+.hijo_4 {
+    flex-basis: 200px;
+    max-width: 600px;
+}

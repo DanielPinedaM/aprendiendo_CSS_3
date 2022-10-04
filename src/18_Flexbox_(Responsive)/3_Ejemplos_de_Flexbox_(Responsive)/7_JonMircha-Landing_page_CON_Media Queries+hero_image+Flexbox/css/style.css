@@ -1,0 +1,261 @@
+/*
+Jon Mircha - Landing page CON Media Queries + Flexbox (Responsive)
+https://www.youtube.com/watch?v=po9V3IoxbJc&t=115s */
+
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* -------------------- Enlace <a> con link del tutorial con el q hice este codigo -------------------- */
+
+a {
+    font-size: 2rem;
+
+    /* Centrar horizontalmente enlaces <a>
+    https://stackoverflow.com/questions/14299602/how-to-center-anchor-tag-horizontally-css */
+    display: block;
+    text-align: center;
+}
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    outline: thick solid blue; /* borde para poder ver el <div class="page_wrap"> */
+    max-width: min(90%, 1332px); /* el ancho maximo max-width: de la pagina web es
+                                    el valor (numero) minimo min() entre
+                                    el 90% del ancho del viewport
+                                    y 1332px */
+
+    /* Centrar horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* Centrar Horizontalmente ↔ lo q esta dentro del <div class="page_wrap"> */
+    row-gap : 50px; /* dar un espacio ENTRE cada uno de los <section class="flex_container"> */
+}
+
+/* -------------------- Imagenes Responsive -------------------- */
+
+.flex_item img {
+    /* Hacer q las imagenes sean Responsive */
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    /* centrar horizontalmente
+    las imagenes q estan dentro del contenedor */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Ajustar Imagen al contendor
+    Ampliándola y Conservando su Calidad.
+    Es Probable q la Imagen se Recorte  */
+    object-fit: cover;
+}
+
+/* -------------------- Texto del encabezado <header> y pie de pagina <footer> -------------------- */
+
+.titulares {
+    padding: 1rem; /* esto da un grosor a las barras del header y footer */
+    background-color: #222;
+    color: #EEE;
+}
+
+/* -------------------- encabezado <header> y menu -------------------- */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* align-items: center; centrar FLEX ITEMS
+
+                            como flex-direction: column;
+                            entonces align-items: center;
+                            centra horizontalmente los Flex Items */
+
+    text-align: center; /* centrar TEXTO horizontalmente */
+}
+
+.nav_ul {
+    list-style-type: none; /* Quitar las Viñetas y Enumeración de la Lista */
+}
+
+.nav_a {
+    text-decoration-line: none; /* Quitar el Subrayado del Texto */
+    color: #fff; /* color del texto */
+}
+
+/* -------------------- imagen de fondo al principio de la pagina web -------------------- */
+
+.hero_image {
+    /* Hacer q la imagen ocupe todo el ancho y alto del Viewport */
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+
+    /* CSS-Tricks (Trucos CSS) - Imagen de Fondo Responsive del Tamaño de Toda la Página Web:
+    https://css-tricks.com/perfect-full-page-background-image/ */
+    background-image: url("https://source.unsplash.com/1280x720/?cat"); /* imagen de fondo */
+    background-repeat: no-repeat; /* la imagen NO se repite */
+    background-position: center center; /* centrar imagen de fondo */
+    background-attachment: fixed; /* Todos los Fondos se Mueven al Hacer Scroll por la Página Web y se Quedan Quietos al Hacer Scroll con el Contenedor */
+    background-size: cover; /* Ajustar Fondo Ampliándolo al Tamaño del Contenedor */
+}
+
+.hero_image div {
+    min-height: 100vh; /* el texto q dice "hola mundo" ocupa la misma altura q la imagen de fondo .hero_image */
+    color: red; /* color del texto q dice "hola mundo" */
+    background-color: rgba(0, 0, 0, 0.6); /* color de fondo al texto para q se pueda ver el "hola mundo" */
+
+    /* centrar el texto q dice "hola mundo"
+
+    esto centra el <div> */
+    display: flex;
+    justify-content: center; /* Centrar Horizontalmente ↔  */
+    align-items: center; /* Centrar Verticalmente ↕ */
+
+    /* y esto otro centra horizontalmente el texto "hola mundo" q esta dentro del <div> */
+    text-align: center;
+}
+
+.hero_image h2 {
+    /* tamaño de letra Responsive,
+    del texto q dice "hola mundo"*/
+    font-size: 7vw;
+}
+
+/* -------------------- Flex Items con imagenes y texto Lorem ipsum -------------------- */
+
+.flex_item { border: thick solid red; }
+
+.flex_item h2,
+.flex_item p { text-align: center; }
+
+/* -------------------- .flex_container -------------------- */
+
+.flex_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* centrar horizontalmente las imagenes y texto */
+
+    /* dar un espacio ENTRE el texto y las imagenes
+
+    este column-gap: 5px; es lo q se le resta
+    al flex-basis: q esta en los Media Queries */
+    column-gap: 10px;
+
+    row-gap: 10px; /* esto sirve para dispositivos moviles:
+                      dar un espacio entre el texto y las imagenes */
+}
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- orden del contenedor
+                        con 3 columnas de Flex Items
+                        <article class="flex_item flex_three_columns"> ------------------ */
+
+@media screen and (max-width: 63.9375em) { /* ancho viewport <= 1023px  */
+    .flex_three_columns:nth-child(2) {
+        order: -1; /* Primero va el texto y de ultimo las 2 imagenes */
+    }
+}
+
+/* -------------------- encabezado <header>
+                        contenedores con 2, 3 y 4 columnas de Flex Items -------------------- */
+
+@media screen and (min-width: 64em) { /* ancho viewport >= 1024px */
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  /* como flex-direction: row;
+                                            entonces justify-content:
+                                            alinea horizontalmente
+                                            los Flex Items en el Eje Principal (Main Axis)
+
+                                            justify-content: space-between;
+                                            Primer Flex Item al Inicio
+                                            y Ultimo Flex Item al Final*/
+    }
+
+    .nav_ul {
+        display: flex; /* esto hace q
+                            los <li> esten uno al lado del otro en un solo renglon
+                            y NO en varios renglones */
+    }
+
+    .nav_li {
+        padding: 0.51rem; /* separar los <lis> */
+    }
+
+    .flex_container {
+        display: flex; /* esto situa el texto al lado de la imagen en los computadores,
+                            cuando el ancho del viewport
+                            es mayor o igual a 1024px,
+                            para eso es el @media screen and (min-width: 64rem) { */
+        align-items: center; /* Centrar Verticalmente ↕ el texto */
+    }
+
+    .flex_row_reverse {
+        flex-direction: row-reverse; /* cambiar el orden de los Flex Items */
+    }
+
+    .flex_two_columns {
+        /*
+        flex-grow: 0;       Los Flex Items NO crecen (AUMENTAN su tamaño)
+        flex-shrink:        Los Flex Items NO se encogen (DISMINUYEN su tamaño)
+
+        flex-basis: 50%;    ancho Responsive de los Flex Items
+                            cada flex item ocupa la mitad del ancho del Flex Container
+
+        (100% ancho del <div class="page_wrap">) / (2 columnas de Flex Items) = 50%
+        (50%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(50% - 10px); /* flex: flex-grow flex-shrink flex-basis; */
+    }
+
+    .flex_three_columns {
+        /* (100% ancho del <div class="page_wrap">) / (3 columnas de Flex Items) = 33.33333333333333%
+        (33.33333333333333%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(33.33333333333333% - 10px);
+    }
+
+    .flex_four_columns {
+        /* (100% ancho del <div class="page_wrap">) / (4 columnas de Flex Items) = 25%
+        (25%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(25% - 10px);
+    }
+
+    .flex_five_columns {
+        /* (100% ancho del <div class="page_wrap">) / (5 columnas de Flex Items) = 20%
+        (20%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(20% - 10px);
+    }
+
+    .flex_six_columns {
+        /* (100% ancho del <div class="page_wrap">) / (6 columnas de Flex Items) = 16.6666666667%
+        (16.6666666667%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(16.6666666667% - 10px);
+    }
+}

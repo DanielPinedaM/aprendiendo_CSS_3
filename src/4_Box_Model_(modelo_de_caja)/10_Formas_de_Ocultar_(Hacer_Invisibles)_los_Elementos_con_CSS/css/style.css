@@ -1,0 +1,154 @@
+/* 
+Ocultar (Hacer Invisibles) los Elementos 
+
+Esto se puede hacer con HTML con hidden ; <input type="hidden"> y <input hidden>
+
+O con CSS de las siguientes formas ...
+*/
+
+body {
+    background: #9aecdb;
+}
+
+.parrafo,
+.enlace {
+    background: #f19066;
+    border: 1px solid black;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* 
+Forma 1 - Dar Opacidad al Elemento opacity:
+
+Con opacity: puedo definir que tan transparente es el elemento. 
+Sus valores van desde 0 hasta 1 donde, 
+cuanto mas cerca a 0 mas invisible es y 
+cuanto más cerca a 1 más visible es.
+
+- El elemento se sigue cargando.
+- El elemento funciona (puedo abrir el enlace).
+- El elemento ocupa espacio en la página web.
+*/
+
+/* 
+.ocultar_enlace {
+    opacity: 0;
+}
+*/
+
+/* 
+.ocultar_enlace {
+    opacity: 0.5;
+}
+*/
+
+/* 
+.ocultar_enlace {
+    opacity: 1;
+}
+*/
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* 
+Forma 2 - Cambiar la Visibilidad del Elemento visibility:
+
+- El elemento se sigue cargando.
+- El elemento NO funciona (NO puedo abrir el enlace).
+- El elemento ocupa espacio en la página web.
+*/
+
+/* Su valor por defecto es... */
+/* 
+.ocultar_enlace {
+    visibility: visible;
+}
+*/
+
+/* 
+.ocultar_enlace {
+    visibility: hidden;
+}
+*/
+
+/* visibility: collapse; se usa para tablas <table> */
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* 
+Forma 3 - Desaparecer TOTALMENTE el Elemento display: none;
+
+display: none; desaparece TOTALMENTE el elemento de la página web. Es como si no existiera:
+
+- El elemento NO se carga.
+- El elemento NO funciona (NO puedo abrir el enlace).
+- El elemento NO ocupa espacio en la página web (NO tiene las propiedades del Box Model).
+*/
+
+/* 
+.ocultar_enlace {
+    display: none;
+}
+*/
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* 
+Forma 4 - Posicionar el Elemento Fuera de la Pantalla position: absolute; y top: -9999px;
+
+- El elemento se sigue cargando pero fuera de la pagina web.
+- El elemenento sigue funcionando, no lo puedo ver pero puedo acceder a el desde el teclado para abrir el enlace.
+- El elemento ocupa espacio fuera de la página web.
+*/
+
+/* 
+.ocultar_enlace {
+    position: absolute;
+    top: -99999px;
+} 
+*/
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* 
+Forma 5 - Haciendo las Propiedades del Box Model Igual a Cero
+
+Cuando las propiedades del Box Model son cero es como si el elemento dejara de existir.
+
+- El elemento se sigue cargando.
+- El elemento NO funciona (NO puedo abrir el enlace).
+- El elemento NO ocupa espacio en la página web porque las propiedades del Box Model son cero.
+*/
+
+.ocultar_enlace {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden; /* Ocultar el content que se desborde */
+
+    /* Copiar lo siguiente SOLAMENTE si ... */
+    line-height: 0; /* El elemento tiene la propiedad display: inline-block; */
+    display: inline-block; /* El elemento es en linea */
+
+    /* Lo anterior NO se copia para los elementos en bloque */
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* 
+Forma 6 - Cortando el Elemento al Máximo con clip-path:
+Al recortar al máximo un elemento es como si el elemento dejara de existir.
+
+- El elemento se sigue cargando.
+- El elemento funciona, puedo abrir el enlace con el teclado.
+- El elemento ocupa espacio en la página web.
+*/
+
+/* 
+.ocultar_enlace {
+    clip-path: polygon(1px 1px, 1px 1px, 1px 1px);
+}
+*/

@@ -1,0 +1,129 @@
+/*
+Jon Mircha -
+Encabezado (header)
++ menu (nav)
++ pie de pagina (footer)
++ imagen de fondo con Flexbox
+https://www.youtube.com/watch?v=9TcStLE3qzI&t=68s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+a { font-size: 2rem; }
+
+img {
+    /* Hacer q las imagenes sean Responsive */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.titulares {
+    padding: 1rem; /* esto da un grosor a las barras del header y footer */
+    background-color: #222;
+    color: #EEE;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* align-items: center; centrar FLEX ITEMS
+
+                            como flex-direction: column;
+                            entonces align-items: center;
+                            centra horizontalmente los Flex Items */
+
+    text-align: center; /* centrar TEXTO horizontalmente */
+}
+
+.nav_ul {
+    list-style-type: none; /* Quitar las Viñetas y Enumeración de la Lista */
+}
+
+.nav_a {
+    text-decoration-line: none; /* Quitar el Subrayado del Texto */
+    color: #fff; /* color del texto */
+}
+
+.hero_image {
+    min-height: 100vh; /* altura minima de la imagen de fondo */
+
+    /* CSS-Tricks (Trucos CSS) - Imagen de Fondo Responsive del Tamaño de Toda la Página Web:
+    https://css-tricks.com/perfect-full-page-background-image/ */
+    background-image: url("https://source.unsplash.com/1280x720/?cat"); /* imagen de fondo */
+    background-repeat: no-repeat; /* la imagen NO se repite */
+    background-position: center center; /* centrar imagen de fondo */
+    background-attachment: fixed; /* Todos los Fondos se Mueven al Hacer Scroll por la Página Web y se Quedan Quietos al Hacer Scroll con el Contenedor */
+    background-size: cover; /* Ajustar Fondo Ampliándolo al Tamaño del Contenedor */
+}
+
+.hero_image div {
+    min-height: 100vh; /* el texto q dice "hola mundo" ocupa la misma altura q la imagen de fondo .hero_image */
+    color: red; /* color del texto q dice "hola mundo" */
+    background-color: rgba(0, 0, 0, 0.6); /* color de fondo al texto para q se pueda ver el "hola mundo" */
+
+    /* centrar el texto q dice "hola mundo"
+
+    esto centra el <div> */
+    display: flex;
+    justify-content: center; /* Centrar Horizontalmente ↔  */
+    align-items: center; /* Centrar Verticalmente ↕ */
+
+    /* y esto otro centra horizontalmente el texto "hola mundo" q esta dentro del <div> */
+    text-align: center;
+}
+
+.hero_image h2 {
+    /* tamaño de letra Responsive,
+    del texto q dice "hola mundo"*/
+    font-size: 7vw;
+}
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+@media screen and (min-width: 64em) { /* (64em) * (16px) = 1024px */
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  /* como flex-direction: row;
+                                            entonces justify-content:
+                                            alinea horizontalmente
+                                            los Flex Items en el Eje Principal (Main Axis)
+
+                                            justify-content: space-between;
+                                            Primer Flex Item al Inicio
+                                            y Ultimo Flex Item al Final*/
+    }
+    .nav_ul {
+        display: flex; /* esto hace q
+                            los <li> esten uno al lado del otro en un solo renglon
+                            y NO en varios renglones */
+    }
+    .nav_li {
+        padding: 0.51rem; /* separar los <lis> */
+    }
+}

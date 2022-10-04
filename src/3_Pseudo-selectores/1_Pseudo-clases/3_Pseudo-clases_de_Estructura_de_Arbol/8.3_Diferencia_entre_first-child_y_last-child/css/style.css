@@ -1,0 +1,38 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    font-size: 3em;
+}
+
+p,
+span {
+    font-size: 2em;
+}
+
+/*
+dentro del contenedor articulo <article> seleccionar el elemento...
+
+PRIMERO
+
+<article>
+  …
+    <element :first-child>
+Especificidad: (0, 1, 1) */
+article :first-child { /* esto es lo mismo q :nth-child(1) */
+    color: red;
+}
+
+/*
+ULTIMO
+
+<article>
+  …
+    <element :last-child>
+Especificidad: (0, 1, 1) */
+article :last-child { /* esto es lo mismo q :nth-last-child(1) */
+    color: blue;
+}

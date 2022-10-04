@@ -1,0 +1,21 @@
+body {
+    background: #dfe6e9;
+}
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+}
+
+.hijo {
+    /* Centrar horizontalmente: */
+    text-align: center;
+    /* 
+    Centrar verticalmente:
+    Las medidas del height y line-height 
+    TIENEN q ser iguales
+    */
+    line-height: 500px;
+} 
+

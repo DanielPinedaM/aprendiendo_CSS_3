@@ -1,0 +1,11 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* este codigo lo saq de la documentacion oficial:
+https://developer.mozilla.org/en-US/docs/Web/CSS/::slotted
+https://developer.mozilla.org/en-US/docs/Web/CSS/::slotted#examples
+https://mdn.github.io/web-components-examples/slotted-pseudo-element/ */
+

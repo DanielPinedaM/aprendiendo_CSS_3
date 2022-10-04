@@ -1,0 +1,55 @@
+/*
+background-attachment: define como se desplaza (mueve) el fondo.
+Sirve para que el fondo se mueva o se quede quieto
+cuando el usuario se desplace por la página web haciendo scroll.
+Esto puede suceder sin importar que el contenido content se desborde overflow: o no.
+*/
+
+/* Esto hace q la pagina web tenga unas barras laterales para hacer scroll */
+body {
+    height: 3000px;
+    width: 3000px;
+}
+
+.contenedor {
+    width: 300px; /* ancho */
+    height: 180px; /* alto */
+    margin-bottom: 20px; /* Margen margin hacia abajo para separar los elementos */
+    border: 3px solid;
+
+    overflow: auto; /* Poner Barras Laterales Automáticamente a la Caja (Box Model) para Hacer Scroll (Si Hiciera Falta) */
+
+    /* Poner dos fondos (uno encima del otro) */
+    background-image: url("/assets/images/dados_sin_fondo.png"), /* los DADOS es el fondo q esta ADELANTE */
+                      url("/assets/images/luna_con_fondo.webp"); /* la LUNA es el fondo de MAS ATRAS */
+    background-size: 300px 200px;
+    background-repeat: repeat;
+}
+
+.tipo {
+    font-family: monospace; /* Tipo de letra */
+    font-weight: bolder; /* Negrilla */
+
+    background-color: red; /* color de fondo */
+    color: white; /* color de letra */
+}
+
+.scroll {
+    background-attachment: scroll;
+}
+
+.fixed {
+    background-attachment: fixed;
+}
+
+.local {
+    background-attachment: local;
+}
+
+.local_scroll {
+    background-attachment: local, scroll;
+}
+
+.scroll_local {
+    background-attachment: scroll, local;
+}

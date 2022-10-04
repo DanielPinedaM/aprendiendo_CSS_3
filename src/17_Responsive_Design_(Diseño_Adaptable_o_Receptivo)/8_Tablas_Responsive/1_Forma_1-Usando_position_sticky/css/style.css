@@ -1,0 +1,71 @@
+/*
+De aqui saq el codigo:
+
+CSS-Tricks (Trucos CSS) - Tablas Responsive Usando Posicionamiento Pegajoso position: sticky;
+https://css-tricks.com/idea-simple-responsive-spreadsheet/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #eeede7; /* color de fondo */
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_tabla {
+    max-width: 43.75em; /* ancho maximo de la tabla */
+    max-height: 500px; /* alto maximo de la tabla */
+    overflow: scroll; /* darle barras laterales de scroll a la tabla */
+}
+
+table {
+/* Posicionamiento relativo:
+El Elemento se Mueve con Respecto a su Posición Original
+y no Pierde las Medidas del Box Model */
+    position: relative;
+    max-width: 100%; /* hacer q la <table> ocupe todo el ancho del .contenedor_tabla */
+    border-collapse: collapse; /* juntar los bordes de la tabla */
+}
+
+td, th {
+    padding: 20px; /* relleno: espacio interno entre las casillas de la tabla */
+    border: 1px solid #ccc; /* borde (lineas) de la tabla */
+}
+
+th {
+    background-color: #B9B7BD;
+/* posicionamiento pegajoso:
+El Elemento se Queda Quieto (Fijo)
+de Acuerdo al Ancho width: y Alto height: del Contenedor Padre
+y no Pierde las Medidas del Box Model */
+    position: sticky;
+    top: -1px;
+    z-index: 2;
+}
+
+th:first-of-type {
+    left: 0;
+    z-index: 3;
+}
+
+/* seleccionar la primera columna ↕ de la izquierda  */
+tbody tr td:first-of-type {
+    background-color: #B9B7BD;
+    position: sticky;
+    left: -1px;
+    text-align: left;
+}

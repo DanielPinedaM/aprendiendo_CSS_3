@@ -1,0 +1,30 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+p,
+label,
+option input[type="submit"] {
+    font-size: 2rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* :default va a seleccionar de los inputs seleccionables
+las opciones q estan marcadas por defecto
+con los atributos booleanos selected y checked */
+input[type="radio"]:default + label,
+input[type="checkbox"]:default + label,
+option:default {
+    color: indianred;
+    font-style: italic;
+}
+
+/* :default tambien va a seleccionar el boton con el q envio el formulario */
+input[type="submit"]:default {
+    background-color: steelblue;
+}
+
+input[type="submit"] {
+    margin-top: 40px;
+}

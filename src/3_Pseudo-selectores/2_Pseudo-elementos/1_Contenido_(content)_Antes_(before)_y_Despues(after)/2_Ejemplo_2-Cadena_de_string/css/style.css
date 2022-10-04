@@ -1,0 +1,17 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=n-vafPXo63k
+
+CSS-Tricks (Trucos CSS) - Antes ::before y después ::after
+https://css-tricks.com/almanac/selectors/a/after-and-before/ */
+
+/* ----------------------------------------------------------------------------- */
+
+body {
+    background-color: lightcoral; /* color de fondo de toda la pagina web */
+}
+
+.elemento::before { /* es buena practica q SIEMPRE uses PRIMERO el antes ::before y DESPUES ::after */
+    content: "hola mundo"; /* contenido, aqui escribes la cadena de caracteres string */
+    background-color: steelblue;
+}

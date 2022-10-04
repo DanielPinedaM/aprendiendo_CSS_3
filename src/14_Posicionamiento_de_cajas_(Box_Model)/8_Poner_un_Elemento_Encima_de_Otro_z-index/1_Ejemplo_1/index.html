@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Posicionamiento</title>
+    </head>
+
+    <body> <!-- el <body> es todo lo q el usuario final puede ver en la pagina web -->
+
+        <!-- solamente la .caja_1 tiene un padre q es .contenedor_padre -->
+        <div class="contenedor_padre"> <!-- yo .contenedor_padre soy el padre de .caja_1  -->
+            yo soy el padre de caja_1
+            <div class="box_model caja_1">caja 1</div> <!-- yo .caja_1 SI estoy dentro de otro contenedor -->
+        </div>
+
+        <!-- el resto de las cajas (Box Model) son HIJAS DIRECTAS del <body>
+            porq NO estan dentro de ningun otro contenedor -->
+        <div class="box_model caja_2">caja 2</div>
+        <div class="box_model caja_3"> caja 3</div>
+
+    </body>
+</html>

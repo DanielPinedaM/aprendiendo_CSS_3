@@ -1,0 +1,105 @@
+/* 
+!important tiene mayor prioridad de todos.
+
+Al usar !important estoy anulando la especificidad del selector y 
+le estoy dando mayor prioridad al bloque de declaración.
+*/
+
+/* ------------------------------------------------------------------------------------ */
+
+/* 
+Especificidad = (1, 0, 0) 
+Como el selector de ID tiene MAS especificidad entonces
+el color seguira siendo rojo */
+/* 
+#ID {
+    color:red;
+}
+*/
+
+/* Especificidad = (0, 1, 0) */
+/* 
+.important {
+    color:blue !important;
+}
+*/
+
+/* ------------------------------------------------------------------------------------ */
+
+/* especificidad = (1, 0, 0) */
+/* 
+#ID {
+    color:red;
+}
+*/
+
+/* especificidad =  (0, 1, 0)
+!important ANULA la especificidad */
+/* 
+.important {
+    color:blue !important;
+}
+*/
+
+/* ------------------------------------------------------------------------------------ */
+
+/* 
+#ID {
+    color:red;
+}
+*/
+/* 
+.important {
+    color:blue !important;
+}
+*/
+
+/* Por cascada, el !important que este más abajo va sobrescribir a los anteriores: */
+/* 
+.important {
+    color:green !important;
+}
+*/
+
+/* ------------------------------------------------------------------------------------ */
+
+/* Especificidad =  (1, 0, 0) 
+Al tener !important; en ambos bloques de declaracion 
+se aplica el color que tenga mayor especificidad */
+
+#ID {
+    color: red !important;
+}
+
+/* Especificidad = (0, 1, 0) 
+El selector de ID id {...} tiene MAS especificidad
+q el selector de clase .class {...}*/
+
+.important {
+    color: blue !important;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* En ves de usar !important considere escribir selectores mas especificos 
+para sobreescribir los estilos */
+
+div span {
+    color: blue;
+}
+
+/* Como este selector tiene mayor especificidad sera aplicado sin importar el orden */
+div#test span {
+    color: green;
+}
+
+span {
+    color: red;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* Reemplazar los Estilos en Línea (Puestos en el HTML) style="" */
+
+.sobreescribir[style*="color: red"] {
+    color: blue !important;
+} /* Pero lo sobreescribo con otro color (azul) */

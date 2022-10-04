@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Selectores combinadores</title>
+        <link rel="stylesheet" href="estilos.css" />
+    </head>
+    <body>
+        <header class="contenedor">
+            <nav class="contenedor">
+                <a href="#">enlace 1 - Estoy dentro de un header class="contenedor" y un nav - 1</a>
+                <br />
+                <a href="#">enlace 2 - Estoy dentro de un header class="contenedor" y un nav - 2</a>
+                <br />
+                <a href="#"> enlace 3 -Estoy dentro de un header class="contenedor" y un nav - 3</a>
+            </nav>
+        </header>
+
+        <hr />
+
+        <div class="contenedor">
+            <p>parrafo hijo directo de div class=contenedor</p>
+        </div>
+
+        <hr />
+
+        <div class="contenedor">
+            <div>
+                <p>
+                    parrafo - estoy dentro de un div class=contenedor y otro div adentro
+                    otra vez
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <nav>
+            <div class="contenedor">
+                soy un div class=contenedor q esta dentro de un nav
+            </div>
+        </nav>
+
+        <hr />
+
+        <nav class="contenedor titulo">
+            soy un CONTENEDOR DIRECTO - nav class="contenedor titulo"
+
+            <nav>
+                <p>hijo directo</p>
+                <nav>
+                    <p>nieto</p>
+                    <nav>
+                        <p>bis nieto</p>
+                    </nav>
+                </nav>
+            </nav>
+        </nav>
+
+        <hr />
+
+        <p>Hola soy un p</p>
+
+        <hr />
+
+        <section>
+            <h2 class="titulo">h2 class=titulo dentro de section</h2>
+            <!-- Este es el hermano siguiente q esta despues del <h2> -->
+            <p>parrafo 1 dentro de section</p>
+
+            <p>parrafo 2 dentro de section</p>
+        </section>
+
+        <hr />
+
+        <aside>
+            <h3>h3 dentro de aside</h3>
+
+            <p>parrafo 1 dentro de aside</p>
+            <p>parrafo 2 dentro de aside</p>
+            <p>parrafo 3 dentro de aside</p>
+        </aside>
+
+        <hr />
+
+        <footer class="contenedor">
+            <p>parrafo dentro de footer class=contenedor</p>
+
+            <a href="#">enlace 1 dentro de footer class=contenedor</a>
+            <br />
+            <a href="#">enlace 2 dentro de footer class=contenedor</a>
+            <br />
+            <a href="#">enlace 3 dentro de footer class=contenedor</a>
+        </footer>
+    </body>
+</html>

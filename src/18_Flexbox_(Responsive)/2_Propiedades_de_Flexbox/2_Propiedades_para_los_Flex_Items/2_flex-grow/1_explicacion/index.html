@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>flex-grow:</h1>
+        <p>determina que tanto pueden estirarse (crecer) los Flex Items</p>
+        <p>Cuando el Flex Container SI tenga espacio sobrante (disponible), los Flex Items podrán aumentar su tamaño dependiendo del valor de <code>flex-grow:</code></p>
+        <p>Su sintaxis es: <code>flex-grow: number;</code></p>
+        <p>Donde <code>number</code> es un numero solo sin unidades de medida, este número no puede ser negativo. Puede ser un numero entero o decimal mayor o igual que cero (0, 1, 2, 3.5…)</p>
+        <p>Su valor por defecto es cero <code>flex-grow: 0;</code></p>
+        <a href="https://www.samanthaming.com/flexbox30/21-flex-grow/" target="_blank">Articulo - Ejemplo de flex-grow:</a>
+        <a href="https://www.samanthaming.com/flexbox30/22-flex-grow-calculation/" target="_blank">Articulo - ¿Cómo se Calcula flex-grow: ?</a>
+
+        <hr>
+
+        <h2>flex-grow: 0;</h2>
+        <p class="no_margin">los Flex Items van a ocupar el menor espacio posible dentro del Flex Container</p>
+        <p>en caso de q le haya definido un width: a los Flex Items entonces ocupara el ancho del width: (valor por defecto)</p>
+        <div class="contenedor_flexbox caja_1">
+            <div>flex-grow: 0;</div>
+            <div>flex-grow: 0;</div>
+        </div>
+
+        <h2>flex-grow: 1;</h2>
+        <p>Todos los Flex Items ocupan el mismo espacio porq el valor de flex-grow: es el mismo para todos</p>
+        <div class="contenedor_flexbox caja_2">
+            <div>flex-grow: 1;</div>
+            <div>flex-grow: 1;</div>
+        </div>
+
+        <h2>flex-grow: 0; y flex-grow: 1;</h2>
+        <p class="no_margin">El Flex Item con flex-grow: 0; ocupa el menor espacio posible y el Flex Item con flex-grow: 1;
+            ocupa el resto del espacio del Flex Container</p>
+        <p>El q tenga el numero mayor va a ser el mas grande</p>
+        <div class="contenedor_flexbox caja_3">
+            <div>flex-grow: 0;</div>
+            <div>flex-grow: 1;</div>
+        </div>
+
+        <h2>flex-grow: 1; y flex-grow: 2;</h2>
+        <p class="no_margin">el Flex Item con flex-grow: 2;
+            aprovecha 2 veces el espacio sobrante (disponible) del Flex Container</p>
+            <p>flex-grow: 1; <span>NO</span> es el doble de flex-grow: 2; </p>
+        <div class="contenedor_flexbox caja_4">
+            <div>flex-grow: 1;</div>
+            <div>flex-grow: 2;</div>
+        </div>
+
+    </body>
+</html>

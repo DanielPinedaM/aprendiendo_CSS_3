@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>in-range</title>
+    </head>
+    <body>
+
+        <!-- dentro del formulario <form> tengo campos numericos q puede seleccionar
+            :in-range y :out-of-range -->
+        <form action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co" method="POST">
+            <!-- Campo (cuadro) numérico <input type="number"> -->
+            <label for="edad">¿Cuantos años tienes? (número de 0 a 105)</label>
+            <input type="number" name="edad_number" id="edad" min="0" max="105" />
+
+            <br />
+
+            <!-- Fecha <input type="date">  -->
+            <label for="cumpleaños">¿Cuando es tu proximo cumpleaños? (del 1 al 30 de abril del 2017 )</label>
+            <input type="date" name="date_" id="cumpleaños" min="2017-04-01" max="2017-04-30">
+
+            <br>
+
+            <!-- Hora <input type="time"> -->
+            <label for="hora_nacimiento">¿A que hora naciste? (de la 1pm a 2pm)</label>
+            <input type="time" name="time_hora_nacimiento" id="hora_nacimiento" min="13:00" max="14:00">
+
+            <br>
+
+            <button type="submit">Enviar datos</button>
+        </form>
+
+    </body>
+</html>

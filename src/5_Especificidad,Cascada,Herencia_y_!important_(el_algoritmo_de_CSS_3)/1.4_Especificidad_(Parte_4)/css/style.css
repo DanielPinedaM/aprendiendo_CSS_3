@@ -1,0 +1,79 @@
+/* 
+Especificidad:
+
+La especificidad es un NUMERO ENTERO POSITIVO que se le asigna a cada selector 
+que determina la prioridad con la que se aplica el estilo.
+
+Cascada:
+
+CSS es la abreviación de hoja de estilos en cascada. “Cascada” significa que los estilos de más abajo sobrescriben a los de arriba, es decir, que el estilo que este mas abajo es el que se va aplicar pero se deben cumplir estas condiciones:
+
+1. Los selectores deben tener la misma especificidad.
+2. Se debe modificar la misma propiedad y elemento.
+
+*/
+
+/* (0, 1, 0) */
+.encabezado {
+    background: tomato;
+}
+
+/*  (0, 1, 0) */
+.title {
+    color: black;
+}
+
+/* (0, 0, 1) */
+
+h2 {
+    color: red;
+}
+
+/* (0, 1, 0)
+
+No importa en q orden lo ponga, como este selector tiene MAS especificidad entonces el <h2> va ser blanco*/
+.title {
+    color: white;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* La negación de pseudo-clase :not(){...} NO tiene especificidad, 
+lo que si tiene especificidad 
+son los selectores definidos dentro del parentesis 
+como por ejemplo :not(p){...} */
+
+/* SI tiene especificidad */
+/* 
+:not(p) {
+    color: blue;
+} 
+*/
+
+/* 
+Este selector da error
+NO tiene especificidad */
+/* 
+:not() { 
+    color: blue;
+}
+*/
+
+/* ------------------------------------------------------------------------------------ */
+
+/* El selector universal NO tiene especificidad */
+
+/* 
+* {
+    background: red;
+}
+*/
+
+/* ------------------------------------------------------------------------------------ */
+
+/* La suma de los selectores es lo que SI tiene especificidad, 
+los operadores por si solos (selectores combinadores) NO tienen especificidad */
+
+div > p + .class {
+    background: red;
+}

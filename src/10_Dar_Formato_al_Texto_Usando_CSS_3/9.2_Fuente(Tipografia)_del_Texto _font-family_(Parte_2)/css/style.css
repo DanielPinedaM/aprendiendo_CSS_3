@@ -1,0 +1,44 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    font-size: 80px; /* Tamaño de la letra */
+}
+
+/* --------------------- */
+/* Puedo poner una sola fuente: */
+
+/*
+.parrafo {
+    font-family: Impact;
+}
+*/
+
+/* --------------------- */
+
+/*
+Puedo poner varias fuentes separadas por comas:
+Cuando hago esto
+se leen las fuentes de izquierda a derecha una por una
+y apenas se encuentre una fuente disponible
+esta será la que se le aplicara al texto seleccionado,
+bien sea que la fuente este instalada localmente en el dispositivo del usuario
+o importada de un servidor como en el caso de Google Fonts
+(en el siguiente numeral puedes ver cómo hacer esto):
+
+Como Arial esta instalado en mi equipo
+esta es la fuente q se aplica al texto
+y no se siguen leyendo las otras fuentes
+*/
+
+.parrafo {
+    font-family: Arial, Impact, cursive;
+}

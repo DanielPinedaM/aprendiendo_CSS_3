@@ -1,0 +1,44 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Jon Mircha:
+https://www.youtube.com/watch?v=K3xmRF8ab1o&t=30269s
+
+eliminar estilos por defecto del navegador usando el selector universall */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p { font-size: 3rem; }
+
+.caja_pegajosa_1,
+.caja_pegajosa_2 { font-size: 2rem; }
+
+.caja_pegajosa_1 {
+    background-color: lightskyblue;
+
+    position: sticky;
+    top: 50px; /* cuando NO defino top:
+                  entonces position: sticky; deja de funcionar */
+}
+
+.caja_pegajosa_2 {
+    background-color: lightgreen;
+
+    position: sticky;
+    top: 100px;
+}
+
+.seccion {
+    border: thick solid red;
+
+    /* height: 1100px; */
+}

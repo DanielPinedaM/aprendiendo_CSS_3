@@ -1,0 +1,746 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Dorian Designs:
+https://www.youtube.com/watch?v=GdrGXcDYbUE
+
+Cuando a un elemento le defines (escribes) position: absolute; y no le das medidas para su ancho width: y alto height:
+- Pierde las medidas del Box Model (espacio reservado).
+
+Cuando mueves un elemento con position: absolute; lo hace con respecto a:
+1. El contenedor padre mas cercano que sea un elemento posicionado, es decir, el valor de position: es diferente de static;
+
+2. Cuando no hay un contenedor padre más cercano,
+el elemento se mueve con respecto al elemento raíz <html>, es decir,
+con respecto al viewport (parte visible de la página web). */
+
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* dar medidas a los contenedores */
+
+/*
+En un principio como los <div> son elementos EN BLOQ
+entonces van a ocupar todo el ancho disponible de la pagina web
+
+los contenedores NO tienen medidas
+de ancho width: y alto height:
+
+tamaño de la letra
+
+centrar texto */
+
+/*
+.box_model {
+    font-size: 2em;
+    text-align: center;
+}
+
+.contenedor_1 {
+    background-color: lightcoral;
+}
+
+.contenedor_2 {
+    background-color: lightgreen;
+}
+*/
+
+/* -------------------------- */
+
+/* a los <div> NO les he definido un ancho width: y alto height:
+
+tamaño de la letra
+centrar texto */
+
+/*
+.box_model {
+    font-size: 2em;
+    text-align: center;
+}
+*/
+
+/* este contenedor NO esta posicionado
+entonces como el <div> es un elemento EN BLOQ
+ocupa todo el ancho disponible de la pagina web
+
+color de fondo */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+}
+*/
+
+/* cuando al .contenedor_2 le doy un posicionamiento absoluto
+entonces a pesar de q es un elemento EN BLOQ
+pasara a ocupar el espacio del texto q dice "contenedor 2"
+por lo tanto PIERDE las medidas del Box Model
+
+posicionamiento absoluto */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: absolute;
+}
+*/
+
+/* -------------------------- */
+
+/*
+como ya le defini medidas a las cajas <div>
+para su ancho width: y alto height:
+entonces estas seran las medidas q tendran las cajas
+
+ancho
+alto
+tamaño de la letra
+centrar texto */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2em;
+    text-align: center;
+}
+*/
+
+/* color de fondo
+
+el elemento .contenedor_1 NO esta posicionado position: static; */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+}
+*/
+
+/* el elemento .contenedor_2 esta POSICIONADO absolutamente */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: absolute;
+}
+*/
+
+/* -------------------------- */
+
+/* dar medidas a los contenedores para q se puedan ver
+
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/* color de fondo
+el .contenedor_1 NO esta posicionado position: static; */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+}
+*/
+
+/* como el .contenedor_2 esta posicionado absolutamente
+y su contenedor padre es el <html>
+entonces se movera con respecto al viewport
+
+moverse a la parte MAS ABAJO de toda la pagina web
+moverse DEL TODO a la derecha de toda la pagina web
+
+cuando junto bottom: 0; y right: 0;
+es la esquina inferior derecha de la pagina web */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+*/
+
+/* -------------------------- */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+}
+*/
+
+/* como el contenedor padre de .contenedor_2 es el <html>
+y esta posicionado absolutamente
+entonces se movera con respecto al tamaño de toda la pagina web
+
+posicionamiento absoluto
+
+bottom: 100px; esto hara q la caja se aleje 100px;
+                de la aprte de abajo de toda la pagina web */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+
+    position: absolute;
+    bottom: 100px;
+}
+*/
+
+/* -------------------------- */
+
+/* ¿Q PASA SI EL .contenedor_1 tiene position: absolute; ?
+
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/*
+    como en el codigo HTML esta escrito PRIMERO el .contenedor_1
+    y DESPUES el .contenedor_2
+
+    <div class="box_model contenedor_1">contenedor 1</div>  esto esta escrito PRIMERO
+    <div class="box_model contenedor_2">contenedor 2</div>  y esto otro DESPUES
+
+    entonces al darle posicionamiento absoluto position: absolute;
+    al .contenedor_1 este se situara ADELANTE y el .contenedor_2 ATRAS
+    esto sucede debido al contexto de apilamiento
+
+    posicionamiento absoluto*/
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+
+    position: absolute;
+}
+*/
+
+/* elemento NO posicionado position: static; */
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+}
+*/
+
+/* -------------------------- */
+
+/* ¿Q PASA SI EL .contenedor_1 tiene position: absolute; ?
+
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/* elemento NO posicionado position: static; */
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+}
+*/
+
+
+/*   como ahora inverti el orden de los <div> en el codigo HTML
+
+    <div class="box_model contenedor_2">contenedor 2</div>   PRIMERO escribi el .contenedor_2
+    <div class="box_model contenedor_1">contenedor 1</div>   y DESPUES el .contenedor_1 -->
+
+    y le posicione absolutamente el .contenedor_2
+    entonces el .contenedor_1 se situa ATRAS
+    y el .contenedor_2 ADELANTE
+
+posicionamiento absoluto */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: absolute;
+}
+*/
+
+/* -------------------------- */
+
+/*
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/* escribi left: 12rem; para correr el .contenedor_1
+y asi poder ver ambos contenedores para
+verificar de q el .contenedor_2 (q esta ATRAS) SI existe en la pagina web */
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: absolute;
+    left: 12rem;
+}
+*/
+
+/* el .contenedor_2 NO desaparece
+lo q en realidad sucede
+es q cuando el codigo HTML esta escrito asi:
+
+<div class="box_model contenedor_1">contenedor 1</div>    esto contenedor_1 esta PRIMERO
+<div class="box_model contenedor_2">contenedor 2</div>    y esto otro contenedor_2 DESPUES
+
+el .contenedor_2 se situa ATRAS
+y el .contenedor_1 ADELANTE */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+}
+*/
+
+/* -------------------------- */
+
+/*
+Cuando mueves un elemento con position: absolute; lo hace con respecto a:
+1. El contenedor padre mas cercano y que tenga posicionamiento relativo relative; o absoluto absolute;
+
+2. Cuando no hay un contenedor padre más cercano,
+el elemento se mueve con respecto al elemento raíz <html>, es decir,
+con respecto al viewport (parte visible de la página web).
+
+
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/* el CONTENEDOR PADRE MAS CERCANO de .contenedor_1 es .contenedor_padre
+
+el ancho y alto del .contenedor_padre
+es el doble del de .contenedor_1 y .contenedor_2
+esto se hace para q ambos contenedores puedan caber dentro
+de .contenedor_padre
+
+color de fondo
+el elemento .contenedor_padre NO esta posicionado position: static; */
+
+/*
+.contenedor_padre {
+    width: 24rem;
+    height: 24rem;
+    background-color: peru;
+}
+*/
+
+/*
+como el .contenedor_padre del .contenedor_1 NO esta posicionado entonces
+el .contenedor_1 se mueve con respecto al viewport (elemento raiz <html>)
+
+posicionamiento absoluto
+
+ALEJARSE de las siguientes direcciones hacia...
+izquierda
+abajo */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: absolute;
+
+    left: 12rem;
+    bottom: 12rem;
+}
+*/
+
+/*
+el CONTENEDOR PADRE MAS CERCANO de .contenedor_2 es el elemento raiz <html> (viewport)
+
+como el .contenedor_2 NO esta dentro de otro <div>
+entonces el padre de .contenedor es el elemento raiz <html>
+y por lo tanto se movera con respecto al viewport
+
+el left si es igual en ambos contenedores
+
+si el bottom: de contenedor 1 y 2 fuera el mismo
+entonces el .contenedor_1 estaria ATRAS
+y el .contenedor_2 ADELANTE
+y como el contenedor_1 esta atras entonces no lo podrias ver */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+
+    position: absolute;
+    left: 12rem;
+
+    bottom: 9rem;
+}
+*/
+
+/* -------------------------- */
+
+/*
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/*
+el CONTENEDOR PADRE MAS CERCANO de .contenedor_1 es .contenedor_padre 
+
+color de fondo
+
+como el .contenedor_padre es un ELEMENTO POSICIONADO (el valor de position NO es static; )
+y ADENTRO de el hay un <div> .contenedor_1 q esta posicionado absolutamente absolute; entonces
+el .contenedor_1 se movera CON RESPECTO al CONTENEDOR PADRE MAS CERCANO q este POSICIONADO
+q en este caso es .contenedor_padre
+
+position: absolute;
+position: fixed;
+position: sticky;*/
+
+/*
+.contenedor_padre {
+    width: 24rem;
+    height: 24rem;
+    background-color: peru;
+
+    position: relative;
+}
+*/
+
+/*
+.contenedor_1 se mueve con respecto al .contenedor_padre
+
+a pesar de q a ambos contenedores 1 y 2 les he puesto las MISMAS medidas
+left: y bottom: NO estan ubicados en el MISMO lugar
+esto pasa porq se han movido CON RESPECTO a elementos DIFERENTES
+
+el .contenedor_1 se mueve CON RESPECTO al .contenedor_padre
+
+izquierda
+abajo */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: absolute;
+
+    left: 12rem;
+    bottom: 12rem;
+}
+*/
+
+/*
+el CONTENEDOR PADRE MAS CERCANO de .contenedor_2 es el elemento raiz <html> (viewport)
+
+.contenedor_2 se mueve con respecto al viewport (elemento raiz <html>)
+    porq este elemento .contenedor_2 NO esta dentro de otro contenedor <div> POSICIONADO */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: absolute;
+    left: 12rem;
+    bottom: 12rem;
+}
+*/
+
+/* -------------------------- */
+
+/*
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/*
+para q .contenedor_1 se situe CON RESPECTO al .contenedor_padre
+    el valor de position: del .contenedor_padre tiene q ser DIFERENTE de static; */
+
+/*
+.contenedor_padre {
+    width: 24rem;
+    height: 24rem;
+    background-color: peru;
+    position: relative;
+}
+*/
+
+/*
+el CONTENEDOR POSICIONADO PADRE MÁS CERCANO al .contenedor_1 es el .contenedor_padre
+
+como .contenedor_1 esta dentro de .contenedor_padre
+entonces .contenedor_1 se mueve CON RESPECTO al .contenedor padre
+
+bottom: 0; y  right: 0; es la esquina inferior derecha */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+*/
+
+/*
+como el .contenedor_2 NO tiene un CONTENEDOR POSICIONADO PADRE MÁS CERCANO
+entonces .contenedor_2 se mueve CON RESPECTO al elemento raiz <html>
+(al viewport q es la parte visible de la pagina web)  */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+*/
+
+/* -------------------------- */
+
+/*
+ancho
+alto
+tamaño de la letra
+centrar texto horizontalmente */
+
+/*
+.box_model {
+    width: 12rem;
+    height: 12rem;
+    font-size: 2rem;
+    text-align: center;
+}
+*/
+
+/* el tamaño del .contenedor_padre aumenta pero el .contenedor_1 sigue situado en la esquina inferior derecha */
+
+/*
+.contenedor_padre {
+
+    width: 48rem;
+    height: 48rem;
+    background-color: peru;
+    position: relative;
+}
+*/
+
+/*
+el CONTENEDOR POSICIONADO PADRE MÁS CERCANO al .contenedor_1 es el .contenedor_padre
+
+bottom: 0; y  right: 0; es la esquina inferior derecha */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+*/
+
+/* el padre de .contenedor_2 es el elemento raiz <html> */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+*/
+
+/* -------------------------- */
+
+.box_model {
+    width: 12rem; /* ancho */
+    height: 12rem; /* alto */
+    font-size: 2rem; /* tamaño de la letra */
+    text-align: center; /* centrar texto horizontalmente */
+}
+.contenedor_padre {
+    width: 24rem;
+    height: 24rem;
+    /* el margen margin: es la distancia de separacion entre los elementos
+    como dentro del .contenedor_padre esta el .contenedor_1
+    entonces ambas cajas se moveran juntas */
+    margin: 50px 0 0 50px; /* arriba / derecha / abajo / izquierda */
+    background-color: peru;
+    position: relative;
+}
+.contenedor_1 { /* el CONTENEDOR POSICIONADO PADRE MÁS CERCANO al .contenedor_1 es el .contenedor_padre */
+    background-color: lightcoral;
+    position: absolute;
+    bottom: 0; /* bottom: 0; y  right: 0; es la esquina inferior derecha */
+    right: 0;
+}
+.contenedor_2 { /* el padre de .contenedor_2 es el elemento raiz <html> */
+    background-color: lightgreen;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* -------------------------- */
+
+/*
+¿Qué pasa cuando uso posicionamiento absoluto position: absolute; en elementos en línea?
+
+Por defecto a los elementos EN LINEA NO les puedo dar un ancho width: y alto height:
+
+PERO
+
+Cuando uso posicionamiento absoluto position: absolute; en elementos EN LINEA
+SI les puedo dar un ancho width: y alto height: a los elementos EN LINEA
+
+
+
+como <a> y <span> son elementos EN LINEA
+entonces NO les puedo dar un ancho y alto,
+estas propiedades son IGNORADAS
+
+ancho
+alto
+
+el color de fondo es el espacio q ocupan los elementos
+tamaño de la letra */
+
+/*
+.elemento_en_linea {
+
+    width: 15rem;
+    height: 15rem;
+
+
+    background-color:tomato;
+    font-size: 2rem;
+
+    position: absolute;
+}
+*/
+
+/* -------------------------- */
+
+.elemento_en_linea {
+    width: 15rem; /* ancho */
+    height: 15rem; /* alto */
+    /* el color de fondo es el espacio q ocupan los elementos */
+    background-color: tomato;
+    font-size: 2rem; /* tamaño de la letra */
+    /*
+    - El POSICIONAMIENTO ABSOLUTO absolute; Y FIJO fixed;
+    hace q a los elementos EN LINEA
+    SI les pueda dar un ancho width: y alto height:
+
+    - ESTO DE AQUI SOLAMENTE APLICA PARA POSICIONAMIENTO ABSOLUTO absolute;
+    Como el <a> y <span> NO tienen un
+    CONTENEDOR POSICIONADO PADRE MAS CERCANO
+    entonces se mueven CON RESPECTO al elemento raiz <html>
+    (al viewport = ventana grafica q es toda la parte visible de la pagina web) */
+    position: absolute; /* con position: absolute; y position: fixed; obtengo el MISMO resultado */
+}
+
+span {
+    /* left: 17rem; separar el Divisor de Contenido en Linea <span>
+    del enlace <a>
+
+    esto hace q pueda ver a ambos elementos
+    para q uno no este adelante y el otro atras */
+    left: 17rem; /* ALEJAR el <span> del lado IZQUIERDO */
+}

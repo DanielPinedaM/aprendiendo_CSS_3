@@ -1,0 +1,28 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+video, iframe, audio {
+    display: block; /* convertir elementos de linea a bloq */
+    width: 300px; /* ancho */
+    margin-bottom: 5px; /* margen hacia abajo */
+
+    /* border: thick solid red; */
+    /* border: thick solid blue; */
+}
+
+/* Cuando los elementos esten pausados :paused tendran un borde rojo */
+video:paused,
+iframe:paused,
+audio:paused {
+    border: thick solid red;
+}
+
+/* y cuando se esten reproduciendo :playing tendran un borde azul */
+video:playing,
+iframe:playing,
+audio:playing {
+    border: thick solid blue;
+}

@@ -1,0 +1,71 @@
+/*
+Diferencia entre vmin y vmax
+http://thenewcode.com/1137/MinMaxing-Understanding-vMin-and-vMax-in-CSS
+
+Recordatorio:
+Ancho = width: = vw
+Alto = height: = vh
+
+Ambas unidades de medida toman valores de 1 a 100
+y se basan en la longitud (tamaño) del viewport.
+La diferencia es:
+
+1. vmin 1% del mínimo entre vw y vh
+vmin usa la relación del lado más pequeño . Es decir,
+si la altura del viewport es menor que su ancho ,
+1vmin será equivalente a 1vh.
+Si el ancho del viewport es menor que su altura ,
+1vmin es equivalente a 1vw.
+
+Si (alto MENOR ancho) entonces 1vmin = 1vh
+Si (ancho MENOR alto) entonces 1vmin = 1vw
+
+2. vmax 1% del máximo entre vw y vh
+vmax es lo contrario: usa el lado más grande . Por lo tanto
+1vmax, es equivalente a 1vw
+si el viewport es más ancho que alto;
+si el viewport es más alto que ancho,
+1vmax será equivalente a 1vh.
+
+Si (ancho MAYOR alto) entonces 1vmax = 1vw
+Si (alto MAYOR ancho) entonces 1vmax = 1vh
+
+*/
+
+/* ----------------------------------------------------------------------------- */
+
+/* eliminar estilos por defecto del navegador usando el selector universal*/
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: black;
+}
+body {
+    background-color: red;
+}
+.widthVmax_heightVmin {
+    background-color: darksalmon;
+    border: 5px solid cyan;
+
+    width: 50vmax; /* ancho */
+    height: 50vmin; /* alto */
+}
+.widthVmin_heightVmax {
+    background-color: violet;
+    border: 5px solid orange;
+
+    width: 50vmin; /* ancho */
+    height: 50vmax; /* alto */
+}
+.vw_vh {
+    background-color: gold;
+    border: 5px solid green;
+
+    width: 50vw; /* ancho */
+    height: 50vh; /* alto */
+}

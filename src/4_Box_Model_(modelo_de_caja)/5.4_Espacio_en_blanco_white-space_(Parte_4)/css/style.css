@@ -1,0 +1,68 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Crear una caja (contenedor) y dentro meter el texto */
+.contenedor {
+    width: 200px; /* ancho */
+    height: 130px; /* alto */
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 2px solid black;
+
+    background: steelblue;
+}
+
+.p_centrado,
+h1,
+h2 {
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* ESPACIO EN BLANCO white-space: */
+
+
+/* --------------------- */
+
+.white-space_normal {
+    white-space: normal;
+}
+
+/* --------------------- */
+
+.white-space_nowrap {
+    white-space: nowrap;
+}
+
+/* --------------------- */
+
+.white-space_pre {
+    white-space: pre;
+}
+
+/* --------------------- */
+
+.white-space_pre-wrap {
+    white-space: pre-wrap;
+}
+
+/* --------------------- */
+
+.white-space_pre-line {
+    white-space: pre-line;
+}
+
+/* --------------------- */
+
+.white-space_break-spaces {
+    white-space: break-spaces;
+}

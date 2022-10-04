@@ -1,0 +1,71 @@
+/*
+Este ejemplo lo saq de aqui:
+
+CSS-Tricks (Trucos CSS) - Arriba top: ; Derecha right: ; Abajo bottom: e Izquierda left:
+https://css-tricks.com/almanac/properties/t/top-right-bottom-left/
+
+https://codepen.io/missmatsuko/pen/LYPKzRG
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1, h2 {
+    /*centrar texto horizontalmente*/
+    text-align: center;
+}
+
+.caja {
+    width: 10rem;/*ancho*/
+    height: 10rem;/*alto*/
+    display: flex;/*usar flexbox*/
+/*centrar texto
+q esta dentro de los contenedores...*/
+    justify-content: center;/*horizontalmente*/
+    align-items: center;/*verticalmente*/
+    background-color: Silver;/*color de fondo*/
+    position: relative;/*posicionamientoRelativo*/
+
+}
+
+.outline {
+/*convertir de bloq a linea
+Con las Propiedades ancho width: y alto height:
+del content*/
+    display: inline-block;
+/*el outline NO ocupa espacio en el Box Model*/
+    outline: 2px dashed black;
+    margin: 55px;/*margenParaSepararLasCajas*/
+
+}
+
+/*Eje “x” (Horizontal ↔ )*/
+/*Izquierda left:*/
+.left_positivo { left: 50px; }
+.left_negativo { left: -50px; }
+
+/*Derecha right:*/
+.right_positivo { right: 50px; }
+.right_negativo { right: -50px; }
+
+/*Eje “y” (Vertical ↕ )*/
+/*Arriba top:*/
+.top_positivo { top: 50px; }
+.top_negativo { top: -50px; }
+
+/*Abajo bottom:*/
+.bottom_positivo { bottom: 50px; }
+.bottom_negativo { bottom: -50px; }

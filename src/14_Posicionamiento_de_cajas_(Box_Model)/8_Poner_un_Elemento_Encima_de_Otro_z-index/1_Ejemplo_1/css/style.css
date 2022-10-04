@@ -1,0 +1,416 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Dorian Designs:
+https://www.youtube.com/watch?v=G2erXdkjhmk
+
+Mueve los elementos en el contexto de apilamiento
+con respecto al eje “z” por eso se llama z-index:
+
+z-index: sirve para poner (ubicar) un elemento encima de otro,
+es para indicar que tan profundo (si antes o después) está el elemento.
+
+z-index: solamente funciona en elementos posicionados, es decir,
+q el valor de position: es DIFERENTE a su valor por defecto q es static;
+
+z-index: funciona con:
+position: relative;
+position: absolute;
+position: fixed;
+position: sticky; */
+
+
+/* eliminar estilos por defecto del navegador usando el selector universal */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { /* estilos de TODA la pagina */
+    background-color: #eeede7;
+    font-weight: 900; /* negrita (bold) */
+    font-size: 1.5rem; /* tamaño de la letra */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+TODAS las cajas NO estan posicionadas position: static;
+
+ancho
+alto
+color de fondo */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 { background-color: lightcoral; }
+
+.caja_2 { background-color: lightgreen; }
+
+.caja_3 { background-color: lightseagreen; }
+*/
+
+/* --------------------- */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 { background-color: lightcoral; }
+*/
+
+/* posicionamiento relativo
+El Elemento se Mueve con Respecto a su Posición Original
+y NO Pierde las Medidas del Box Model
+
+ALEJARSE de arriba 50px; */
+
+/*
+.caja_2 {
+    background-color: lightgreen;
+
+
+    position: relative;
+    top: 50px;
+}
+*/
+
+/* .caja_3 { background-color: lightseagreen; } */
+
+/* --------------------- */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 { background-color: lightcoral; }
+
+.caja_2 {
+    background-color: lightgreen;
+
+
+    position: relative;
+    top: 50px;
+}
+
+.caja_3 {
+    background-color: lightseagreen;
+
+    position: relative;
+}
+*/
+
+/* --------------------- */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 { background-color: lightcoral; }
+*/
+
+/* debido a q .caja_2 SI tiene z-index: y .caja_3 NO
+entonces la .caja_2 se situa ADELANTE
+y la .caja_3 ATRAS */
+
+/*
+.caja_2 {
+    background-color: lightgreen;
+
+
+    position: relative;
+
+    z-index: 1;
+    top: 50px;
+}
+*/
+
+
+/* obtendria el MISMO resultado si la .caja_3
+NO estuviera posicionada position: static;
+
+z-index: auto; NO importa si copio esto o no
+                el resultado es el mismo porq es el valor por defecto */
+
+/*
+.caja_3 {
+    background-color: lightseagreen;
+
+
+    position: relative;
+    z-index: auto;
+
+}
+*/
+
+/* --------------------- */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 { background-color: lightcoral; }
+*/
+
+/*
+posicionamiento relativo
+
+es BUENA PRACTICA
+q los z-index: tengan una diferencia de al menos 10 numeros, 10, 20, 30...
+NO se pueden poner con numeros seguidos 1, 2, 3...
+
+cuanto MAS MENOR sea el z-index: mas ATRAS esta el elemento */
+
+/*
+.caja_2 {
+    background-color: lightgreen;
+
+    position: relative;
+
+    z-index: 10;
+    top: 50px;
+}
+*/
+
+/* y cuanto MAS MAYOR sea el z-index: mas ADELANTE esta el elemento */
+
+/*
+.caja_3 {
+    background-color: lightseagreen;
+
+    position: relative;
+    z-index: 20;
+}
+*/
+
+/* --------------------- */
+
+/*
+¿Cómo Hacer que un Elemento Hijo se Muestre Atrás
+y que su Padre se Muestre Adelante?
+
+posicionamiento relativo */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+
+    position: relative;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+*/
+
+/*
+alinear texto a la derecha
+
+ALEJARSE de la IZQUIERDA left: 16rem; = 256px; */
+/*
+
+.caja_1 {
+    background-color: lightcoral;
+    text-align: right;
+
+    position: relative;
+    left: 16rem;
+}
+*/
+
+/* --------------------- */
+
+/* a pesar de q el z-index del .contenedor_padre es MAYOR q el
+z-index: de su hijo q es la .caja_1
+
+el .contenedor_padre sigue estando ATRAS
+y la .caja_1 hija ADELANTE
+
+esto pasa por q en el codigo HTML el padre es .contenedor_padre
+y el hijo es la .caja_1
+
+<div class="contenedor_padre">                   este es el PADRE
+    yo soy el padre de caja_1
+    <div class="box_model caja_1">caja 1</div>    y este otro es el HIJO
+</div>
+
+este z-index: es MAYOR */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+
+    position: relative;
+    z-index: 20;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 {
+    background-color: lightcoral;
+    text-align: right;
+
+    position: relative;
+    z-index: 10;
+    left: 16rem;
+}
+*/
+
+/* --------------------- */
+
+/*
+Forma 1 - Definirle un z-index: Negativo al Hijo y al Contenedor Padre no Definirle z-index:
+
+Hacer q el .contenedor_padre este ADELANTE
+y el hijo que es la .caja_1 este ATRAS
+
+z-index: auto       NO importa si escribo esto o no
+                    el resultado es el mismo porq este es su valor por defecto
+
+                    Al .contenedor_padre NO le puedo escribir z-index:  */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+
+    position: relative;
+    z-index: auto;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 {
+    background-color: lightcoral;
+    text-align: right;
+
+    position: relative;
+    z-index: -1;
+    left: 16rem;
+}
+*/
+
+/* --------------------- */
+
+/* Forma 2 - Usando Transformaciones:  */
+
+/*
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+*/
+
+/*
+lo q esta aqui entre parentesis TIENE q ser NEGATIVO
+transform: translateZ(-16px);
+
+translateZ(-16px) es la sumatoria de esto left: 16rem */
+
+/*
+.caja_1 {
+    background-color: lightcoral;
+    text-align: right;
+
+    transform: translateZ(-16px);
+    position: relative;
+    left: 16rem;
+}
+*/
+
+/* --------------------- */
+
+/* z-index: NEGATIVO */
+
+.contenedor_padre {
+    width: 20rem;
+    height: 20rem;
+    background-color: #555;
+}
+
+.box_model {
+    width: 10rem;
+    height: 10rem;
+}
+
+.caja_1 { background-color: lightcoral; }
+
+.caja_2 {
+    background-color: lightgreen;
+
+    position: relative; /* posicionamiento relativo */
+    z-index: -1;  /* el -1 esta MUY cerca del 0 entonces la .caja_2 esta ADELANTE */
+    top: 50px;
+}
+
+.caja_3 {
+    background-color: lightseagreen;
+
+    position: relative;
+    z-index: -100; /* el -100 esta MUY lejos del 0 entonces la .caja_3 esta ATRAS */
+}

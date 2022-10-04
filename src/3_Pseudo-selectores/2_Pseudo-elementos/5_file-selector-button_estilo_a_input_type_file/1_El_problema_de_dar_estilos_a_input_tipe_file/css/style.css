@@ -1,0 +1,49 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+seleccionar el boton q dice "Enviar archivo"
+
+<element class="enviar">
+Especificidad: (0, 1, 0) */
+.enviar {
+    margin-top: 1em; /* margen hacia arriba,
+                        esto deja un espacio entro  los 2 botones */
+    display: block; /* convertir elemento de linea a bloq */
+}
+
+/*
+El problema de dar estilos a <input type="file">
+es q cuando seleccionas este elemento mediante cualquier tipo de selector CSS
+
+(yo en este casi aqui abajo use los dos mas comunes: el selector de atributos y de clases)
+
+NO se selecciona el BOTON,
+se selecciona el texto de al lado
+q es el encargado de decir si se ha subido o no el archivo
+
+
+
+seleccionar el <input type="file"> */
+input[type="file"] { /* este es el selector de atributos */
+    background-color: red; /* color de fondo */
+}
+
+/* seleccionar el <input type="file"> que ahora tiene la clase .importar */
+.importar { /* selector de clases */
+    background-color: red;
+}
+
+
+/*
+Entonces ¿Cuál es la solución?.
+Vamos a ver a continuación con ejemplos
+(q son los q estan en las otras carpetas llamadas "Solucion...")
+las diferentes alternativas que hay para
+darle estilos a un <input type="file">
+y NO a ese texto de al lado que dice “No se eligió archivo”
+*/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+
+        <!-- dentro del formulario tengo unos campos habilitados y deshabilitados -->
+        <form action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co" method="POST">
+            <label for="nombre">Nombre (activado)</label>
+            <!-- este campo esta HABILITADO por q NO le copie el atributo HTML disabled -->
+            <input type="text" name="text_nombre" id="nombre" value="Lorem">
+
+            <br>
+
+            <label for="apellido">Apellido (desactivado)</label>
+            <!-- este campo esta DESHABILITADO disabled -->
+            <input type="text" name="text_apellido" id="apellido" disabled value="Ipsum">
+
+            <br>
+
+            <button type="submit">Enviar datos</button>
+        </form>
+
+    </body>
+</html>
+
+
+
+
+

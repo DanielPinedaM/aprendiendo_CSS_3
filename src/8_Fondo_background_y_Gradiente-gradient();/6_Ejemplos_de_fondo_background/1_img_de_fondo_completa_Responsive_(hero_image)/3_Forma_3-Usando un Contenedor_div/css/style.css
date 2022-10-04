@@ -1,0 +1,35 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a { font-size: 2.5rem; }
+
+/* <element id="bg"> */
+#bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+/*
+<element id="bg">
+  …
+    <img>
+*/
+#bg img {
+    position: absolute;
+    top: 0; /* arriba */
+    left: 0; /* izquierda */
+    right: 0; /* derecha */
+    bottom: 0; /* abajo */
+    margin: auto;
+    min-width: 50%; /* ancho */
+    min-height: 50%; /* alto */
+}

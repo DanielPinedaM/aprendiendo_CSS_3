@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>
+            <a href="https://www.youtube.com/watch?v=udGrXWeJp1Y&t=10719s" target="_blank">
+                Jon Mircha - Layout CON Media Queries + Flexbox (Responsive) (FORMA 2)
+            </a>
+        </h1>
+        <br>
+        <p>
+            En esta forma 2 uso
+            <code>width:</code>
+            en porcentaje para el ancho de los Flex Items
+        </p>
+        <p>
+            Esta FORMA 2
+            es la q debes usar
+            si eliges hacer los Layout de Flexbox
+            con Media Queries,
+            porq asi es como como lo hace Boostrap 5
+        </p>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- con este <div class="page_wrap">
+        centro horizontalmente todo el contenido de la pagina web,
+        tambien sirve para q a los lados izquierda y derecha
+        haya un espacio en blanco
+        y asi el contenido de la pagina web
+        NO ocupe todo el ancho del viewport-->
+        <div class="page_wrap">
+            <h2>
+                El # de columnas ↕ de Flex Items
+                cambia dependiendo del ancho ↔ del viewport
+            </h2>
+
+            <br>
+
+            <h2>
+                <code>columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2</code>
+            </h2>
+            <p>Como minimo 1 columna ↕ de Flex Items</p>
+            <p>y como maximo 6 columnas ↕ de Flex Items</p>
+            <div class="flex_container"> <!-- Contenedor de Flexbox (Flex Container) -->
+                <!--
+                Emmet abbreviation (abreviacion de Emmet de VS Code):
+                div.columna_12.columna_sm_6.columna_md_4.columna_lg_3.columna_xl_2*19{Item $}
+
+                Los nombres de las clases <div class=""> significan lo siguiente:
+                columna_12      Cuando el ancho del viewport es xs (desde 0     hasta 479px)  entonces mostrar en pantalla 1 columnas -> (12 # total de columnas ↕) / (1 # de columnas ↕ de Flex Items q se muestran en pantalla) = (12 # de columnas ↕ q ocupa cada Flex Item, es la clase de CSS columna_...)
+                columna_sm_6    "                             " sm ("   " 480px "   " 767px)  "                          " 2 "      " ->  12 / 2 = 6
+                columna_md_4    "                             " md ("   " 768px "   " 991px)  "                          " 3 "      " ->  12 / 3 = 4
+                columna_lg_3    "                             " lg ("   " 992px "   " 1199px) "                          " 4 "      " ->  12 / 4 = 3
+                columna_xl_2    "                             " xl        ( >=1200px )        "                          " 6 "      " ->  12 / 6 = 2
+                -->
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 1</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 2</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 3</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 4</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 5</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 6</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 7</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 8</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 9</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 10</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 11</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 12</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 13</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 14</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 15</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 16</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 17</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 18</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_2">Item 19</div>
+            </div>
+
+            <br>
+
+            <h2>
+                <code>columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1</code>
+            </h2>
+            <p>Como minimo 1 columna ↕ de Flex Items</p>
+            <p>y como maximo 12 columnas ↕ de Flex Items</p>
+            <div class="flex_container">
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 1</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 2</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 3</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 4</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 5</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 6</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 7</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 8</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 9</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 10</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 11</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 12</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 13</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 14</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 15</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 16</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 17</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 18</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_3 columna_xl_1">Item 19</div>
+            </div>
+
+            <br>
+
+            <h2>
+                columna_xs_12 columna_sm_12 columna_md_12 columna_lg_12 columna_xl_12
+            </h2>
+            <p>
+                Todos los Flex Items
+                ocupan por completo
+                todo el ancho del Flex Container
+            </p>
+            <br>
+            <p>
+                El resultado de esto es similar
+                (NO es lo mismo) a
+                <code>flex-direcion: column;</code>
+            </p>
+            <br>
+            <p>
+                TODOS los Flex Items tienen la clase de CSS
+                <code>columna_.._12</code>
+            </p>
+            <br>
+            <p>
+                El resultado es el mismo sin importar cuantos Flex Items tenga (Item 1, 2, 3, 4, 5, 6 ... ∞)
+            </p>
+            <br>
+            <p>12 / 1 = 12</p>
+            <div class="flex_container">
+                <div class="columna_xs_12 columna_sm_12 columna_md_12 columna_lg_12 columna_xl_12">Item 1</div>
+                <div class="columna_xs_12 columna_sm_12 columna_md_12 columna_lg_12 columna_xl_12">Item 2</div>
+                <div class="columna_xs_12 columna_sm_12 columna_md_12 columna_lg_12 columna_xl_12">Item 3</div>
+                <div class="columna_xs_12 columna_sm_12 columna_md_12 columna_lg_12 columna_xl_12">Item 4</div>
+                <div class="columna_xs_12 columna_sm_12 columna_md_12 columna_lg_12 columna_xl_12">Item 5</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                Un Flex Item mas grande que el otro
+            </h2>
+            <p>
+                defini la clase <code>columna_xs_12</code>
+                al item grande para q ocupe
+                todo el ancho del Flex Container
+            </p>
+            <p>
+                y <code>columna_xs_5</code>
+                al item pequeño porq <code>xs</code>
+                es el tamaño de viewport mas pequeño
+                entonces para q el item pequeño
+                no sea tan pequeño use <code>_5</code>
+            </p>
+            <br>
+            <p>la suma de las clases de CSS es igual a 12:</p>
+            <p>
+                (<code>columna_sm_8</code> item grande) + (<code>columna_sm_4</code> item pequeño) = 8 + 4 = 12
+            </p>
+            <p>
+                (<code>columna_md_9</code> item grande) + (<code>columna_md_3</code> item pequeño) = 9 + 3 = 12
+            </p>
+            <p>
+                (<code>columna_lg_9</code> item grande) + (<code>columna_lg_3</code> item pequeño) = 9 + 3 = 12
+            </p>
+            <p>
+                (<code>columna_xl_8</code> item grande) + (<code>columna_xl_4</code> item pequeño) = 8 + 4 = 12
+            </p>
+            <div class="flex_container border">
+                <div class="columna_xs_12 columna_sm_8 columna_md_9 columna_lg_9 columna_xl_8">Item grande</div>
+                <div class="columna_xs_5 columna_sm_4 columna_md_3 columna_lg_3 columna_xl_4">Item pequeño</div>
+
+                <div class="columna_xs_5 columna_sm_4 columna_md_3 columna_lg_3 columna_xl_4">Item pequeño</div>
+                <div class="columna_xs_12 columna_sm_8 columna_md_9 columna_lg_9 columna_xl_8">Item grande</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                2 Flex Items con el mismo ancho
+            </h2>
+            <p>
+                Cuando el viewport es muy pequeño,
+                extra small desde 0 hasta 479px = 29.938em
+            </p>
+            <p>
+                uso la clase de CSS
+                <code>.columna_xs_12 { width: 100%; }</code>
+                para q los Flex Items puedan ocupar
+                todo el ancho del Flex Container
+            </p>
+            <br>
+            <p>
+                Cuando el viewport es pequeño,
+                small desde 480px = 30em hasta 767px
+            </p>
+            <p>
+                uso la clase de CSS
+                <code>columna_sm_6</code>
+                para q los Flex Items ocupen 2 columnas ↕
+            </p>
+            <br>
+            <p>
+                Para el resto de los tamaños...
+            </p>
+            <ul>
+                <li>
+                    <code>columna_md_6</code>
+                </li>
+                <li>
+                    <code>columna_lg_6</code>
+                </li>
+                <li>
+                    <code>columna_xl_6</code>
+                </li>
+            </ul>
+            <p>
+                cuando el viewport es mas grande uso
+                <code>columna_.._6</code>
+                porque...
+            </p>
+            <p>(6 Flex Item 1) + (6 Flex Item 2) = 12</p>
+            <br>
+            <p>(12 # total de columnas ↕) / (2 # de columnas ↕ de Flex Items q se muestran en pantalla) = (6 # de columnas ↕ q ocupa cada Flex Item, es la clase de CSS <code>.columna_...</code> )</p>
+            <div class="flex_container">
+                <div class="columna_xs_12 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 1</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 2</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                3 Flex Items con el mismo ancho
+            </h2>
+            <p>
+                <code>columna_xs_12</code>
+            </p>
+            <p>
+                <code>columna_sm_6</code>
+            </p>
+            <br>
+            <ul>
+                <li>
+                    <code>columna_md_4</code>
+                </li>
+                <li>
+                    <code>columna_lg_4</code>
+                </li>
+                <li>
+                    <code>columna_xl_4</code>
+                </li>
+            </ul>
+            <p>(4 Flex Item 1) + (4 Flex Item 2) + (4 Flex Item 3) = 12</p>
+            <p>12 / 3 = 4</p>
+            <div class="flex_container">
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_4 columna_xl_4">Item 1</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_4 columna_xl_4">Item 2</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_4 columna_lg_4 columna_xl_4">Item 3</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                4 Flex Items con el mismo ancho
+            </h2>
+            <p>
+                <code>columna_xs_12</code>
+            </p>
+            <p>
+                <code>columna_sm_6</code>
+            </p>
+            <br>
+            <ul>
+                <li>
+                    <code>columna_md_3</code>
+                </li>
+                <li>
+                    <code>columna_lg_3</code>
+                </li>
+                <li>
+                    <code>columna_xl_3</code>
+                </li>
+            </ul>
+            <p>(3 Flex Item 1) + (3 Flex Item 2) + (3 Flex Item 3) + (3 Flex Item 4) = 12</p>
+            <p>12 / 4 = 3</p>
+            <div class="flex_container">
+                <div class="columna_xs_12 columna_sm_6 columna_md_3 columna_lg_3 columna_xl_3">Item 1</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_3 columna_lg_3 columna_xl_3">Item 2</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_3 columna_lg_3 columna_xl_3">Item 3</div>
+                <div class="columna_xs_12 columna_sm_6 columna_md_3 columna_lg_3 columna_xl_3">Item 4</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                <code>columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1</code>
+            </h2>
+            <p>
+                clase de CSS
+                <code>.columna_..._1</code>
+                son 12 columnas ↕
+            </p>
+            <div class="flex_container">
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 1</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 2</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 3</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 4</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 5</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 6</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 7</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 8</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 9</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 10</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 11</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 12</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 13</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 14</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 15</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 16</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 17</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 18</div>
+                <div class="columna_xs_1 columna_sm_1 columna_md_1 columna_lg_1 columna_xl_1">Item 19</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                <code>columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2</code>
+            </h2>
+            <p>
+                clase de CSS
+                <code>columna_..._2</code>
+                son 6 columnas ↕
+            </p>
+            <div class="flex_container">
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 1</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 2</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 3</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 4</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 5</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 6</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 7</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 8</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 9</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 10</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 11</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 12</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 13</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 14</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 15</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 16</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 17</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 18</div>
+                <div class="columna_xs_2 columna_sm_2 columna_md_2 columna_lg_2 columna_xl_2">Item 19</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                <code>columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3</code>
+            </h2>
+            <p>
+                clase de CSS
+                <code>columna_..._3</code>
+                son 4 columnas ↕
+            </p>
+            <div class="flex_container">
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 1</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 2</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 3</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 4</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 5</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 6</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 7</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 8</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 9</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 10</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 11</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 12</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 13</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 14</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 15</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 16</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 17</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 18</div>
+                <div class="columna_xs_3 columna_sm_3 columna_md_3 columna_lg_3 columna_xl_3">Item 19</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                <code>columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4</code>
+            </h2>
+            <p>
+                clase de CSS
+                <code>columna_..._4</code>
+                son 3 columnas ↕
+            </p>
+            <div class="flex_container">
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 1</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 2</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 3</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 4</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 5</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 6</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 7</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 8</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 9</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 10</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 11</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 12</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 13</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 14</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 15</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 16</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 17</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 18</div>
+                <div class="columna_xs_4 columna_sm_4 columna_md_4 columna_lg_4 columna_xl_4">Item 19</div>
+            </div>
+
+            <br><br>
+
+            <h2>
+                <code>columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6</code>
+            </h2>
+            <p>
+                clase de CSS
+                <code>columna_..._6</code>
+                son 2 columnas ↕
+            </p>
+            <div class="flex_container">
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 1</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 2</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 3</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 4</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 5</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 6</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 7</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 8</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 9</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 10</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 11</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 12</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 13</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 14</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 15</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 16</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 17</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 18</div>
+                <div class="columna_xs_6 columna_sm_6 columna_md_6 columna_lg_6 columna_xl_6">Item 19</div>
+            </div>
+        </div>
+
+        <br><br>
+
+    </body>
+</html>

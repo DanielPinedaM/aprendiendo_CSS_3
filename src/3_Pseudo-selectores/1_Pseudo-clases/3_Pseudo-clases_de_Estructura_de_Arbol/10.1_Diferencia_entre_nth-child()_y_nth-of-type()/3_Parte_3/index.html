@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+
+        <section> <!-- etiqueta contenedora padre seccion <section> -->
+            <h1>Soy un titulo h1</h1>
+            <h2>Soy un subtitulo h2</h2><!--p:nth-child(2) ya NO funciona
+                                            porq el segundo elemento es este subtitulo <h2>
+                                            y NO un parrafo <p> como era antes -->
+
+            <p>Soy un parrafo p</p> <!-- primer parrafo p:nth-of-type(1) -->
+            <p>Soy otro parrafo p</p>  <!-- este SIGUE siendo el segundo parrafo
+                                            por lo q p:nth-of-type(2) ahun funciona -->
+        </section>
+
+    </body>
+</html>

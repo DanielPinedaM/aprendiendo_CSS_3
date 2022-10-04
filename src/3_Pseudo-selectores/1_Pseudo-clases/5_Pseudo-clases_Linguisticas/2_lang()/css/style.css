@@ -1,0 +1,18 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    font-size: 2em;
+}
+
+/* seleccionar todo el texto de la pagina web
+q esta escrito en español
+
+<element :lang>
+Especificidad: (0, 1, 1) */
+:lang(es) {
+    color: red; /* color del texto */
+}

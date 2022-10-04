@@ -1,0 +1,35 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=AJjmQEr8cbY
+
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=13339s
+
+Documentación Oficial de @container
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries
+
+CSS-Tricks (Trucos CSS) - @container
+https://css-tricks.com/say-hello-to-css-container-queries/
+
+Articulo - @container
+https://ishadeed.com/article/say-hello-to-css-container-queries/
+
+Can I Use - @container
+https://caniuse.com/css-container-queries
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+

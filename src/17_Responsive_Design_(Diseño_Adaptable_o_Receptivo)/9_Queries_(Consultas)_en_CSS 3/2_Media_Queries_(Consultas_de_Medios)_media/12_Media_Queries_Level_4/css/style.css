@@ -1,0 +1,74 @@
+/*
+Can I Use - Media Queries: Range Syntax (Media Queries Level 4)
+https://caniuse.com/css-media-range-syntax
+
+
+
+Este ejemplo lo saq de aqui:
+MDN - Media Queries Level 4
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4 */
+
+/* ----------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+/* ----------------------------------------------------------- */
+
+/* EJEMPLO 1
+
+ancho viewport <= 30em
+30em, 29em, 28em... 0
+
+ESTO... */
+@media (max-width: 30em) { /* 30em = 480px */
+    .uno::before {
+        content: "@media (max-width: 30em)";
+        color: red;
+    }
+}
+
+/* ES LO MISMO Q ESTO:
+
+Media Queries Level 4 */
+@media (width <= 30em) {
+    .dos::before {
+        content: "@media (width <= 30em)";
+        color: red;
+    }
+}
+
+/* ----------------------------------------------------------- */
+
+/* EJEMPLO 2
+
+ancho viewport desde 30em hasta 50em
+30em, 31em, 32em ... 50em
+
+ESTO... */
+@media (min-width: 30em) and (max-width: 50em) { /* 30em = 480px  ;  50em = 800px */
+    .tres::before {
+        content: "@media (min-width: 30em) and (max-width: 50em)";
+        color: steelblue;
+    }
+}
+
+/* ES LO MISMO Q ESTO:
+
+Media Queries Level 4 */
+@media (30em <= width <= 50em ) {
+    .cuatro::before {
+        content: "@media (30em <= width <= 50em )";
+        color: steelblue;
+    }
+}

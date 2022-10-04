@@ -1,0 +1,29 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+::first-line SOLAMENTE funciona
+con los elementos en BLOQ
+
+<span> es un elemento EN LINEA,
+lo voy a convertir a bloq */
+span {
+    /* puedes usar cualquiera de estas dos formas de aqui abajo: */
+    display: inline-block; /* convertir SIN las propiedades del ancho width: y alto height: */
+    display: block; /* convertir de linea a bloq CON las ancho width: y alto height: */
+
+    /* usando esto NO funciona:
+    display: inline; */
+}
+
+/*
+Como ambos elementos son EN BLOQ
+entonces el color de la primera linea SI cambia*/
+span::first-line,
+p::first-line {
+    color: red; /* color de la PRIMERA linea ::first-line de texto */
+}

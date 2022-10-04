@@ -1,0 +1,55 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.enlaces {
+    /* A los elementos en linea no se les puede definir el ancho width y alto height */
+    /*  width: 500px;
+    height: 100px;  */
+
+    text-decoration: none; /* Quitar subrayado del texto */
+    background: crimson;
+    color: white;
+
+    /* Convertir elemento a bloque */
+    /* display: block; */
+
+    /* Convertir elemento a linea.
+
+    Los elementos en linea NO tienen las propiedades del box model */
+    /* display: inline; */
+
+    /* Esto hace q los elementos en linea tengan las propiedades del Box Model */
+    display: inline-block;
+
+    /* arriba abajo / izquierda derecha */
+    padding: 30px 20px;
+
+    margin-top: 20px;
+
+    /*
+    Para centrar horizontalmente con margin: 0 auto; 
+    se deben cumplir las siguientes condiciones:
+    1. Debe ser un elemento de bloque. 
+    2. Definir el ancho width: del elemento.
+ */
+    /* margin: 0 auto; */
+}
+
+.block {
+    /* display: block; */
+
+    /* HACER INVISIBLE UN ELEMENTO */
+    /* FORMA 1 - Ocultarlo con display 
+    El elemento se desaparece totalmente de la pagina
+    */
+    /* display: none; */
+
+    /* FORM 2 - Darle la maxima opacidad opacity 
+    El elemento sigue ocupando espacio en la pagina pero NO se ve
+    */
+    opacity: 0;
+}

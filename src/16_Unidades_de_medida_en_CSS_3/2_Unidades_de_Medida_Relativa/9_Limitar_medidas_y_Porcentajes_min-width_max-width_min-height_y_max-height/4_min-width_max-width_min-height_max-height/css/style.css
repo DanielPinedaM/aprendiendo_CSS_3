@@ -1,0 +1,26 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+html, body {
+    /* Hacer que el <html> y <body> ocupen todo el ancho y alto del viewport */
+    width: 100%;
+    height: 100vh;
+}
+
+.contenedor {
+    background-color: steelblue;
+    /* ancho width: */
+    max-width: 500px; /* la caja se puede ESTIRAR hasta 500px */
+    min-width: 200px; /* la caja se puede ENCOGER hasta 200px */
+
+    /* alto height: */
+    height: 30vh;
+}

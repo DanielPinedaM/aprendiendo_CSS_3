@@ -1,0 +1,105 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color: peru;
+}
+
+img {
+    /* Donde haya color AZUL significa que la IMAGEN esta ocupando ese espacio */
+    background-color: steelblue;
+}
+
+.contenedor {
+    width: 400px; /* ancho */
+    height: 400px; /* alto */
+    border: 5px solid red; /* borde */
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Ajustar Imagen al Tamaño de un Contenedor div */
+
+/*
+este es el selector de la imagen
+ocupar TODO el ANCHO del contenedor
+ocupar TODO el ALTO del contenedor */
+
+.adaptar_imagen_a_contenedor {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+este es el selector de la imagen
+ocupar TODO el ANCHO del contenedor
+ocupar TODO el ALTO del contenedor  */
+
+/*
+.adaptar_imagen_a_contenedor {
+    max-width: 100%;
+    height: 100%;
+}
+*/
+
+/* -------------------- */
+/* (Valor por Defecto) object-fit: fill; */
+
+.object-fit_fill {
+    /* Ocupar todo el ancho y alto del contenedor <div> */
+    max-width: 100%;
+    height: 100%;
+
+    object-fit: fill; /* No importa si copio esto o no
+                        el resultado sera el mismo
+                        porq es el valor por defecto */
+}
+
+/* -------------------- */
+
+.object-fit_contain {
+    /* Ocupar todo el ancho y alto del contenedor <div> */
+    max-width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+/* -------------------- */
+
+.object-fit_cover {
+    /* Ocupar todo el ancho y alto del contenedor <div> */
+    max-width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* -------------------- */
+
+.object-fit_none {
+    /* Ocupar todo el ancho y alto del contenedor <div> */
+    max-width: 100%;
+    height: 100%;
+
+    object-fit: none;
+}
+
+/* -------------------- */
+
+.object-fit_scale-down {
+    /* Ocupar todo el ancho y alto del contenedor <div> */
+    max-width: 100%;
+    height: 100%;
+
+    object-fit: scale-down;
+}

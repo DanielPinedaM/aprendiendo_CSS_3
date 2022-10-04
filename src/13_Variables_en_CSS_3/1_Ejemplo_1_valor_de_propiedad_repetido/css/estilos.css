@@ -1,0 +1,149 @@
+/*
+Variables en CSS 3
+Tutorial: https://www.youtube.com/watch?v=nJO1jjKUroI
+La pseudo-clase :root accede al elemento raiz <html> para definir variables en todo el .html */
+:root {
+    /* --nombre_variable: valor_de_la_propiedad; */
+    --fondo_oscuro: #232533;
+    --fondo_claro: #f5f7fb;
+
+    --color_primario: #505ef4;
+    --color_primario_oscuro: #3041f8;
+
+    --color_secundario: #b1b2c9;
+    --color_secundario_oscuro: #888ab7;
+
+    --color_blanco: #ffffff;
+
+    --fuente_primaria: "Lato", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo_claro);
+    font-family: var(--fuente_primaria);
+    color: var(--color_blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* * ----- ----- ----- HEADER ----- ----- ----- */
+
+header {
+    min-height: 40vh;
+    background-color: var(--fondo_oscuro);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+header .logotipo {
+    color: var(--color_secundario);
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+header .slogan {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+header .contenedor-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header .btn {
+    display: inline-block;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    color: var(--color_blanco);
+    border-radius: 5px;
+    transition: 0.3s ease all;
+}
+
+header .btn.primario {
+    /* background: valor_de_la_variable */
+    background: var(--color_primario);
+}
+header .btn.primario:hover {
+    background: var(--color_primario_oscuro);
+}
+
+header .btn.secundario {
+    background: var(--color_secundario);
+}
+header .btn.secundario:hover {
+    background: var(--color_secundario_oscuro);
+}
+
+/* * ----- ----- ----- MAIN ----- ----- ----- */
+main .contenedor {
+    padding: 40px 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+main .card {
+    background: var(--color_blanco);
+    color: var(--fondo_oscuro);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+main .card img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+main .card .texto {
+    margin-bottom: 20px;
+    line-height: 27px;
+}
+
+main .card .contenedor-botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+main .card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: var(--color_blanco);
+    border-radius: 5px;
+    transition: 0.3s ease all;
+}
+
+main .card .btn.primario {
+    background: var(--color_primario);
+}
+main .card .btn.primario:hover {
+    background: var(--color_primario_oscuro);
+}
+
+main .card .btn.secundario {
+    background: var(--color_secundario);
+}
+main .card .btn.secundario:hover {
+    background: var(--color_secundario_oscuro);
+}

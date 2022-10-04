@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <h1>
+            Dar una Distancia de Separación (Espacio)
+            Entre los Flex Items y el Flex Container
+        </h1>
+
+        <hr>
+
+        <p>
+            Usar margen <code>margin:</code> para separar los Flex Items es mala practica,
+            lo correcto (buena practica) es usar <code>gap: row-gap column-gap;</code>
+        </p>
+        <p>
+            Relleno <code>padding:</code> se usa para dar una distancia ALREDEDOR de los Flex Items
+            (una distancia entre el Flex Container y los Flex Items)
+        </p>
+
+        <h2>
+            Margen <code>margin:</code> y relleno <code>padding:</code> Responsive
+        </h2>
+        <p>
+            Si el viewport se estira o encoge
+            entonces la distancia por la q estan separados los <code>div</code>
+            tambien lo hara, para ello uso <code>margin:</code> y <code>padding:</code>
+            en porcentaje <code>%</code>
+        </p>
+        <p>
+            Para que la distancia de separación entre los Flex Items
+            y el Flex Container sea Responsive
+            usar el margen <code>margin:</code> y relleno <code>padding:</code>
+            en porcentaje <code>%</code> para que el Layout se adapte al viewport </p>
+        <div class="flex_container porcentaje">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            Margen <code>margin:</code> y relleno <code>padding:</code> Estaticos (Fijos, NO cambian)
+        </h2>
+        <p>
+            Si quiero q la distencia de separacion entre los Flex Items y el Flex Container
+            NO cambie entonces uso <code>margin:</code> y <code>padding:</code>
+            en <code>px</code> <code>em</code> ó <code>rem;</code>
+        </p>
+        <p>es mejor usar <code>rem</code> y NO <code>px</code></p>
+        <div class="flex_container rem">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>gap: 2rem 4rem;</h2>
+        <p>
+            Si usara <code>gap:</code> entonces la distancia se aplica solamente
+            ENTRE los Flex Items, pero NO puedo separar el Flex Container de los Flex Items
+        </p>
+        <p>
+            En el resultado te das cuenta de que <code>gap:</code>
+            solo sirve para dar distancia de separación ENTRE filas ↔ <code>row-gap:</code>
+            y columnas ↕ <code>column-gap:</code>
+        </p>
+        <div class="flex_container gap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2><code>margin:</code> y <code>padding:</code> VS <code>gap:</code></h2>
+        <p>
+            <code>gap:</code> se aplica a TODOS los Flex Items
+            en cambio <code>margin:</code> y <code>padding:</code>
+            sirven para CUALQUIER elemento.
+        </p>
+        <p>
+            Con <code>margin:</code> y <code>padding:</code>
+            puedo seleccionar elementos (etiquetas) HTML en ESPECIFICO,
+            lo cual no puedo hacer con <code>gap:</code>
+            entonces voy a darle un margen hacia la derecha <code>margin-right: 4rem;</code>
+            al Flex Item 2 y al Flex Container un relleno hacia abajo <code>padding-bottom: 2rem;</code>
+        </p>
+        <p>
+            En el resultado te das cuenta de que
+            <code>margin:</code> y <code>padding:</code>
+            me permiten dar una distancia de separación a CUALQUIER elemento (etiqueta) HTML
+        </p>
+        <div class="flex_container margin_y_padding_vs_gap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>Usando todas las propiedades juntas (mala practica)</h2>
+        <ul>
+            <li>margen <code>margin:</code></li>
+            <li>relleno <code>padding:</code></li>
+            <li><code>gap:</code></li>
+        </ul>
+        <br>
+        <a href="https://css-tricks.com/minding-the-gap/#aa-empty-space-adds-up" target="_blank">CSS-Tricks (Trucos CSS)</a>
+        <br> <br>
+        <p>
+            Usar <code>margin:</code> y <code>gap:</code>
+            juntos para los Flex Items es mala practica
+        </p>
+        <p>
+            Lo correcto es usar una de las dos propiedades
+            ( <code>margin:</code> ó <code>gap:</code> )
+            porque cuando uso <code>margin:</code> y <code>gap:</code>
+            juntos para separar los Flex Items
+            entonces los Flex Items se separan
+            SUMANDO la distancia de <code>margin:</code>
+            MAS la de <code>gap:</code>
+            y hacer esto no tiene sentido (es ilógico).
+        </p>
+        <p>
+            Lo que pasa a continuacion es lo siguiente,
+            mira los colores para que diferencies cada una de las propiedades:
+        </p>
+        <ul>
+            <li>
+                <code>gap:</code> da una distancia
+                de separación ENTRE los Flex Items.
+            </li>
+            <li>
+                Margen <code>margin:</code> separa más
+                (las distancias se suman) los Flex Items,
+                agrega espacio a AMBOS LADOS (izquierdo y derecho)
+                de los Flex Items.
+            </li>
+            <li>
+                Relleno <code>padding:</code>
+                da un espacio DENTRO de los Flex Items.
+            </li>
+        </ul>
+        <br>
+        <div class="flex_container margin_padding_gap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+    </body>
+</html>

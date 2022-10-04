@@ -1,0 +1,14 @@
+body {
+    background-color: lightcoral; /* color de fondo */
+}
+
+input,
+button {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* https://gist.github.com/Menma27/49f2decc039c8c34f99f3aca8da7c17e */
+

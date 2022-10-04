@@ -1,0 +1,31 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+ESTO...
+
+Selecciona todas las etiquetas HTML q sean de tipo enlace
+y q tengan el atributo href=""
+
+Especificidad: (0, 1, 0)
+*/
+:any-link {
+    color: red;
+}
+
+/* ES LO MISMO Q ESTO:
+Especificidad:  (0, 1, 0)
+* [href] {
+    color: red;
+}
+
+Especificidad:  (0, 3, 0)
+:is(:link, :visited) {
+    color: red;
+}
+Lo unico diferente seria la especificidad
+pero todos estos selectores
+seleccionan lo mismo */

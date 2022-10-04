@@ -1,0 +1,74 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------- */
+/* Valor por defecto del tamaño de la letra font-size
+No importa si escribo esto o no, el resultado sera el mismo*/
+
+.font-size_16px {
+    font-size: 16px; /* font-size: 16px; es lo mismo q font-size: medium; */
+}
+
+.font-size_medium {
+    font-size: medium;
+}
+
+/* --------------------- */
+/* Unidades de medida y porcentajes */
+
+.unidades_de_medida {
+    font-size: 30px; /* Puede ser cualquier otra unidad de medida de CSS */
+}
+
+.porcentajes {
+    font-size: 150%;
+}
+
+/* --------------------- */
+/* Palabras clave */
+
+.font-size_small {
+    font-size: small;
+}
+
+.font-size_x-small {
+    font-size: x-small;
+}
+
+.font-size_xx-small {
+    font-size: xx-small;
+}
+
+/* --------------------- */
+
+.font-size_large {
+    font-size: large;
+}
+
+.font-size_x-large {
+    font-size: x-large;
+}
+
+.font-size_xx-large {
+    font-size: xx-large;
+}
+
+.font-size_xxx-large {
+    font-size: xxx-large;
+}
+
+/* --------------------- */
+
+.font-size_smaller {
+    font-size: smaller;
+}
+
+.font-size_larger {
+    font-size: larger;
+}

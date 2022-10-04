@@ -1,0 +1,45 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 440px; /* ancho */
+    height: 400px; /* alto */
+
+    background: steelblue;
+    border: 2px solid black;
+}
+
+.parrafo {
+    /* Esto...
+    font: font-style font-variant font-weight font-size/line-height font-family */
+    font: oblique small-caps bold 100px/160px sans-serif, Georgia; /* Cuando ponia el font-stretch: aqui me daba error */
+    font-stretch: ultra-expanded; /* Tuve q ponerlo por separado */
+
+    /* Es lo mismo q esto:
+    font-style: oblique;                Letra más Inclinada que la Cursiva Normal
+    font-variant: small-caps;           Letra Mayúscula con un Tamaño más Pequeño
+    font-weight: bold;                  Negrita
+    font-stretch: ultra-expanded;       Estiramiento de Fuente
+    font-size: 100px;                   Tamaño de la Letra
+    line-height: 160px;                 Espaciado Entre Renglones o Líneas (Interlineado)
+    font-family: sans-serif, Georgia;   Cambiar la Fuente (Tipografía) del Texto (Familia Tipográfica) */
+}

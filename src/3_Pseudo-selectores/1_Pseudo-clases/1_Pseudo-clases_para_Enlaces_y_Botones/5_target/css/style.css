@@ -1,0 +1,14 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+<section id="hash" :target>
+Selector Specificity: (1, 1, 1) */
+section#hash:target {
+    background-color: yellow;
+}
+
+

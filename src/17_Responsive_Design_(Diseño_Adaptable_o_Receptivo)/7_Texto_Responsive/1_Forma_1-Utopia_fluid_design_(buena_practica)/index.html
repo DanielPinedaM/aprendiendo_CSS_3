@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <p>
+            este texto NO es responsive, <br>
+            por lo q el tamaño de la letra NO cambia, <br>
+            solo copie esto para comparar el tamaño de la letra <br>
+            Responsive con el NO Responsive (estatico o fijo)
+        </p>
+        <br>
+        <h6>h6 - 10.72px</h6>
+        <h5>h5 - 13.28px</h5>
+        <h4>h4 - 16px</h4>
+        <p>p - 16px</p>
+        <span>span - 16px</span>
+        <h3>h3 - 18.72px</h3>
+        <h2>h2 - 24px</h2>
+        <h1>h1 - 32px</h1>
+
+        <br>
+        <hr>
+        <br>
+
+        <p>
+            Texto Responsive
+        </p>
+        <br>
+
+        <!-- para cada parrafo tengo una clase class=""
+        y en el CSS usare el font-size: var(--);
+        para hacer que el texto sea Responsive
+
+        En los comentarios he escrito
+        para q se usa cada tamaño de letra-->
+
+        <p class="step--1">--step--1</p> <!-- texto mas pequeño (diminuto) de todos -->
+
+        <p class="step-0">--step-0</p> <!-- "texto normal" <p> ; <span> ... -->
+
+        <!-- titulo principal <h1> y subtitulos <h2> hasta <h6> -->
+        <p class="step-1">--step-1</p> <!-- <h3> -->
+        <p class="step-2">--step-2</p> <!-- <h2> -->
+        <p class="step-3">--step-3</p> <!-- <h1> -->
+
+        <p class="step-4">--step-4</p><!--un poco mas pequeño q "el texto grande"
+                                            es un <h2> por lo q acompaña al titulo principal -->
+
+        <!-- A partir del 5 empiezan los textos grandes
+        y el ultimo 8 es el mas gigante de todos,
+        esto se usa para mensajes muy importantes y cortos,
+        Ejemplo: Para el texto q esta
+        por encima de una .hero_image
+        (imagen de fondo q ocupa toda la pagina web) -->
+        <p class="step-5">--step-5</p>
+        <p class="step-6">--step-6</p>
+        <p class="step-7">--step-7</p>
+        <p class="step-8">--step-8</p>
+
+    </body>
+</html>

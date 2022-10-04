@@ -1,0 +1,39 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 12em; /* ancho */
+    height: 12em; /* alto */
+    border: thick solid black; /* borde */
+
+    /* position: static; es el valor por defecto
+
+    cuando el elemento NO esta posicionado, es decir,
+    el valor de position: es static;
+    entonces el elemento NO se mueve
+    (NO puedo usar las propiedades del posicionamiento) */
+    position: static; /* elemento NO posicionado */
+
+    /* solamente puedo usar las propiedades del posicionamiento
+    cuando el valor de position: es DIFERENTE a static; */
+    /* position: relative; */
+    /* position: absolute; */
+    /* position: fixed; */
+    /* position: sticky; */
+
+    /* mover el elemento hacia... */
+    top: 100px; /* arriba */
+    left: 100px; /* izquierda */
+}

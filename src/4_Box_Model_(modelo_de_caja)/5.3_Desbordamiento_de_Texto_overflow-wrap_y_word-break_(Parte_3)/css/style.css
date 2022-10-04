@@ -1,0 +1,125 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Crear una caja (contenedor) y dentro meter el texto */
+.contenedor {
+    width: 130px; /* ancho */
+    height: 200px; /* alto */
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 2px solid black;
+
+    background: steelblue;
+}
+
+.p_centrado,
+h1,
+h2 {
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* PROPIEDADES PARA EL DESBORDAMIENTO DEL TEXTO: */
+
+.overflow-wrap_normal {
+    overflow-wrap: normal;
+}
+
+/* --------------------- */
+
+.word-break_normal {
+    word-break: normal;
+}
+
+/* --------------------- */
+
+.overflow-wrap_break-word {
+    overflow-wrap: break-word;
+}
+
+/* --------------------- */
+
+.word-break_break-word {
+    word-break: break-word;
+}
+
+/* --------------------- */
+
+.overflow-wrap_anywhere {
+    overflow-wrap: anywhere;
+}
+
+/* --------------------- */
+
+.word-break_break-all {
+    word-break: break-all;
+}
+
+/* --------------------- */
+
+.word-break_keep-all {
+    word-break: keep-all;
+}
+
+/* --------------------- */
+
+.hyphens_none {
+    hyphens: none;
+}
+
+/* --------------------- */
+
+.hyphens_manual {
+    hyphens: manual;
+}
+
+/* --------------------- */
+
+.hyphens_auto {
+    hyphens: auto;
+}
+
+/* --------------------- */
+
+.white-space_normal {
+    white-space: normal;
+}
+
+/* --------------------- */
+
+.white-space_nowrap {
+    white-space: nowrap;
+}
+
+/* --------------------- */
+
+.white-space_pre {
+    white-space: pre;
+}
+
+/* --------------------- */
+
+.white-space_pre-wrap {
+    white-space: pre-wrap;
+}
+
+/* --------------------- */
+
+.white-space_pre-line {
+    white-space: pre-line;
+}
+
+/* --------------------- */
+
+.white-space_break-spaces {
+    white-space: break-spaces;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>:read-only y :read-write</title>
+    </head>
+    <body>
+
+        <!--Las siguientes etiquetas HTML
+            seran seleccionadas por las pseudo-clases CSS :read-only y :read-write
+            dependiendo del atributo HTML q tengan
+            disabled , readonly, contenteditable="true" -->
+        <input class="etiqueta" type="text" value="input text SIN atributos">
+        <input class="etiqueta" type="text" value="input text DESACTIVADO disabled" disabled>
+        <input class="etiqueta" type="text" value="input text de SOLO LECTURA readonly" readonly>
+        <p class="etiqueta">Parrafo SIN atributos</p>
+        <p class="etiqueta" contenteditable="true">Parrafo EDITABLE contenteditable="true"</p>
+
+    </body>
+</html>

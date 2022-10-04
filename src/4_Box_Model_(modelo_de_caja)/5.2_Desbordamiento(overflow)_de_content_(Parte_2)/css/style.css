@@ -1,0 +1,51 @@
+/* 
+Desbordamiento overflow de content 
+El content se desborda cuando lo que esta dentro de la caja (imágenes, texto, etc.) se sale.
+
+overflow es la propiedad que controla que debe hacer la caja cuando el content se desborda del elemento contenedor (de la caja). 
+
+
+
+Desbordamiento en el Eje “x” overflow-x y Eje “y” overflow-y   
+Los valores de la propiedad overflow los puedo asignar sobre el eje “x” y/o el eje “y”:
+
+overflow-x = width = Horizontal
+
+overflow-y = height = Vertical
+
+Esto quiere decir que puedo controlar en que parte está la barra lateral de desplazamiento para que el usuario haga scroll.
+
+
+
+Valores de la Propiedad overflow:   
+- Permitir que el content se Desborde (Valor por Defecto) overflow: visible;
+- Ocultar el content que se Desborde overflow: hidden;
+- Poner Barras Laterales a la Caja para Hacer Scroll overflow: scroll;
+- Poner Barras Laterales Automáticamente a la Caja para Hacer Scroll (Si Hiciera Falta) overflow: auto;
+
+*/
+
+body {
+    background: tomato;
+}
+
+.contenedor {
+    background: steelblue;
+
+    /* Centrar la caja horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 300px; /* ancho */
+    height: 300px; /* alto */
+    border-radius: 50px; /* border redondeados */
+    overflow: hidden;
+
+}
+
+.div {
+    color: gold;
+    padding: 20px;
+    /* text-align:justify; */
+    background: lightcoral;
+}

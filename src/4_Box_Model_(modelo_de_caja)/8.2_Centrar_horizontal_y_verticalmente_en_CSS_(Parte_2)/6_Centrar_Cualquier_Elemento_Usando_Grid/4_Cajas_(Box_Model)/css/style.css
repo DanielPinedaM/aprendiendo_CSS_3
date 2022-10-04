@@ -1,0 +1,32 @@
+body {
+    background: #dfe6e9;
+}
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+
+    /* 
+    Para centrar cualquier elemento usando Grid 
+    al contenedor padre ponerle el siguiente codigo. 
+    Por cada selector solamente copiar una forma:
+    */
+    display: grid;
+
+    /* FORMA 1: */
+    /* place-items: center; */ /* Centrar horizontal y verticalmente al mismo tiempo */ 
+
+    /* FORMA 2: */
+    justify-items: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+
+.hijo {
+    background: #f2f2f2;
+    width: 70%;
+    height: 100px;
+    border: 1px solid #000;
+}
+

@@ -1,0 +1,94 @@
+/*
+Jon Mircha - YouTube - Media Queries
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=7897s
+
+Documentacion Oficial de Media Queries
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+
+CSS-Tricks (Trucos CSS) - Guia Completa de las Media Queries
+https://css-tricks.com/a-complete-guide-to-css-media-queries/
+
+¿Que son las Media Queries?
+Los Media Queries (Consultas de Medios) @media
+son preguntas (condicionales) que se le hace al navegador
+para que se ejecute un fragmento de código CSS.
+Sirven para cambiar el diseño de la página web (propiedades CSS)
+dependiendo del tamaño del viewport, orientación del dispositivo, etc.
+
+Sintaxis:
+@media screen (min-width: 320px) and (max-width: 768px) {
+    Regla CSS
+}
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* media queries para imprimir la pagina web
+
+voy a ejecutar una media query @media
+para imprimir la pagina web print */
+@media print {
+    @page {
+        size: A5 landscape; /* tamaño de la hoja */
+    }
+    body {
+        font-size: 100pt;
+        font-family: san-serif;
+        background-color: steelblue;
+        color: white;
+    }
+}
+
+/* ------------- */
+
+/* media queries para las configuraciones q tiene el usuario en el sistema operativo
+https://css-tricks.com/a-complete-guide-to-css-media-queries/#user-preference
+
+
+voy a ejecutar una media query @media
+para las pantallas screen
+que estan configuradas para reducir los efectos de animaciones de movimiento (prefers-reduce-motion: reduce) */
+@media screen and (prefers-reduce-motion: no-preference) {
+    html {
+        scroll-behavior: smooth; /* esto activa el efecto de animacion de scroll */
+    }
+}
+
+/* voy a ejecutar una media query @media
+para las pantallas screen
+q en el sistema operativo este configurado con el modo oscuro (prefers-color-scheme: dark) */
+@media screen and (prefers-color-scheme: dark) {
+    html {
+        background-color: black;
+        color: white;
+    }
+}
+
+/* y para el modo claro (prefers-color-scheme: light) */
+@media screen and (prefers-color-scheme: light) {
+    html {
+        background-color: white;
+        color: dark;
+    }
+}
+
+@media screen and (prefers-color-scheme: no-preference) {
+    html {
+        background-color: steelblue;
+        color: white;
+    }
+}

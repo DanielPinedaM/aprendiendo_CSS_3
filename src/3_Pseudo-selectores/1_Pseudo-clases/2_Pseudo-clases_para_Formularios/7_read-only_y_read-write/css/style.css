@@ -1,0 +1,31 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+/*
+Atributos HTML
+Contenido Editable       contenteditable=""
+Campo de Solo Lectura    readonly
+Campo desactivado        disabled
+
+Pseudo-clases CSS
+:read-only    Solo Lectura
+:read-write   Lectura y Escritura */
+
+.etiqueta {
+    width: 20em; /* ancho */
+    display: block; /* Convertir Elemento de linea a bloq */
+    margin-bottom: 10px; /* margen hacia abajo */
+    font-size: 2rem; /* tamaño de la letra */
+}
+
+/* los elementos de solo lectura seran de color :tomato (rojo) */
+.etiqueta:read-only {
+    background-color: tomato;
+}
+
+/* y los de lectura y escritura seran lightgreen (verde) */
+.etiqueta:read-write {
+    background-color: lightgreen;
+}

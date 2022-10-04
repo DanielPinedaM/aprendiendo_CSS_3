@@ -1,0 +1,38 @@
+/*
+Tutorial:
+https://www.youtube.com/watch?v=vwwjrJq-EJI
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Operador Logico  not
+La @media se ejecuta
+para todos los casos (posibilidades)
+en los que no se cumple la condición indicada
+
+
+Media Query para imprimir la pagina web:
+
+Esta Media Query @media
+elimina el color de fondo (not(color)) de la pagina web
+para las impresoras print q solo pueden imprimir a blanco y negro */
+@media print and (not(color)) {
+    body {
+        background-color: none; /* quitar color de fondo de toda la pagina web */
+    }
+}

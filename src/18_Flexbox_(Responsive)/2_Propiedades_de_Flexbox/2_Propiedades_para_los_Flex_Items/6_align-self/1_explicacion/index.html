@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <h1>align-self:</h1>
+        <p>
+            <span class="consolas">align-self:</span>
+            sirve para modificar la alineación (ubicación)
+            de uno solo en específico o varios Flex Items.
+        </p>
+        <p>
+            <span class="consolas">align-self:</span>
+            y
+            <span class="consolas">align-items:</span>
+            pueden tomar los mismos valores
+            con una única excepción
+            <span class="consolas">align-self: auto;</span>
+            <span class="subrayar negrita">SI</span>
+            existe (es correcto), en cambio
+            <span class="consolas">align-items: auto;</span>
+            <span class="subrayar negrita">NO</span>
+            existe (es un error).
+        </p>
+        <p>
+            <span class="consolas">align-self:</span>
+            es similar
+            (<span class="subrayar negrita">NO</span>
+            es exactamente lo mismo) a
+            <span class="consolas">align-items:</span>
+        </p>
+        <p>
+            <span class="consolas">align-self:</span>
+            modifica la alineación de los Flex Items
+            en el Eje Transversal (Cross Axis)
+        </p>
+        <p>
+            <span class="consolas">align-self:</span>
+            alinea uno o más Flex Items de forma
+            <span class="subrayar negrita">individual</span>
+            en cambio
+            <span class="consolas">align-items:</span>
+            alinea
+            <span class="subrayar negrita">todos</span>
+            los Flex Items
+        </p>
+        <p>
+            <span class="consolas">align-self:</span>
+            sobrescribe (anula) el valor de
+            <span class="consolas">align-items:</span>
+            pero solamente sirve para el Flex Item especificado
+            (para el Flex Item seleccionado con selectores de CSS)
+        </p>
+        <p>
+            <span class="consolas">align-self:</span>
+            <span class="negrita subrayar">NO</span>
+            sobrescribe el valor de
+            <span class="consolas">align-content:</span>
+        </p>
+        <p>
+            Su valor por defecto es
+            <span class="consolas">align-self: auto;</span>
+        </p>
+
+        <a href="https://www.samanthaming.com/flexbox30/28-align-self/" target="_blank">Samantha Ming</a>
+        <a href="https://www.youtube.com/watch?v=u-k1kPtOA5o&t=250s" target="_blank">Curso de Flexbox de Jon Mircha</a>
+
+        <hr>
+
+        <h2>flex-direction: row;</h2>
+        <p>
+            Ejemplo de todos los valores de
+            <span class="consolas">align-self:</span>
+            con
+            <span class="consolas">flex-direction: row;</span>
+        </p>
+        <div class="contenedor_flexbox flex_direction_row">
+            <div>align-self: auto;</div>
+            <div>align-self: stretch;</div>
+            <div>align-self: flex-start;</div>
+            <div>align-self: flex-end;</div>
+            <div>align-self: center;</div>
+            <div>align-self: baseline;</div>
+        </div>
+
+        <h2>flex-direction: column;</h2>
+        <p>
+            Ejemplo de todos los valores de
+            <span class="consolas">align-self:</span>
+            con
+            <span class="consolas">flex-direction: column;</span>
+        </p>
+        <div class="contenedor_flexbox flex_direction_column">
+            <div>align-self: auto;</div>
+            <div>align-self: stretch;</div>
+            <div>align-self: flex-start;</div>
+            <div>align-self: flex-end;</div>
+            <div>align-self: center;</div>
+            <div>align-self: baseline;</div>
+        </div>
+
+        <h2>align-self: auto; flex-direction: row;</h2>
+        <p>(valor por defecto)</p>
+        <p>
+            <span class="consolas">align-self: auto;</span>
+            hace que los Flex Items se alineen
+            dependiendo de las propiedades
+            <span class="consolas">align-items:</span>
+            y
+            <span class="consolas">align-content:</span>
+        </p>
+        <p>
+            Cuando
+            <span class="negrita subrayar">NO</span>
+            se define
+            <span class="consolas">align-self:</span>
+            ó
+            <span class="negrita subrayar">SI</span>
+            se define pero con su valor por defecto
+            <span class="consolas">align-self: auto;</span>
+            entonces todos los Flex Items
+            van a tener la misma alineación
+            y no va a existir ningún Flex Item
+            en específico que tenga una alineación diferente.
+        </p>
+        <div class="contenedor_flexbox auto_row">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: auto; </div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: auto;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>
+            Diferencia entre <code>align-self: auto;</code> y <code>align-self: stretch;</code>
+        </h2>
+        <h2>
+            align-self: auto;
+            align-self: stretch;
+            align-items: center;
+            flex-direction: row;
+        </h2>
+        <p>
+            <span class="consolas">align-self: auto;</span>
+            y
+            <span class="consolas">align-self: stretch;</span>
+            son
+            <span class="negrita subrayar">DIFERENTES</span>
+        </p>
+        <p>
+            <span class="consolas">align-self: auto;</span>
+            hace que la alineacion sea la
+            <span class="negrita subrayar">MISMA</span>
+            q las propiedades
+            <span class="consolas">align-items:</span>
+            y
+            <span class="consolas">align-content:</span>
+            en cambio
+            <span class="consolas">align-self: stretch;</span>
+            estira el o los Flex Items seleccionados
+            para q ocupen por completo todo el espacio del Flex Container
+        </p>
+        <div class="contenedor_flexbox row_diferencia_entre_auto_y_stretch">
+            <div>1 <br> align-items: center;</div>
+            <div class="negrita">2 <br>align-self: auto;</div>
+            <div>3 <br> align-items: center;</div>
+            <div class="negrita">4 <br>align-self: stretch; </div>
+            <div>5 <br> align-items: center;</div>
+        </div>
+
+        <h2>align-self: strech; flex-direction: row;</h2>
+        <p>Estirar los Flex Items para q ocupen todo el espacio disponible del Flex Container. Se respeta el ancho mínimo y ancho máximo del Flex Container</p>
+        <div class="contenedor_flexbox strech_row">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: strech;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: strech;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: flex-start; flex-direction: row;</h2>
+        <p>
+            Cuando los Flex Items están en fila ↔
+            <span class="consolas">flex-direction: row;</span>
+            entonces
+            <span class="consolas">align-self: flex-start;</span>
+            los sitúa arriba
+        </p>
+        <p>
+            Y cuando están en columna ↕
+            <span class="consolas">flex-direction: column;</span>
+            entonces los sitúa a la izquierda.
+        </p>
+        <div class="contenedor_flexbox flex_start_row">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: flex-start;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: flex-start;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: flex-end; flex-direction: row;</h2>
+        <p>
+            Cuando los Flex Items están en fila ↔
+            <span class="consolas">flex-direction: row;</span>
+            entonces
+            <span class="consolas">align-self: flex-end;</span>
+            los sitúa abajo
+        </p>
+        <p>
+            Y cuando están en columna ↕
+            <span class="consolas">flex-direction: column;</span>
+            entonces los sitúa a la derecha.</p>
+        <div class="contenedor_flexbox flex_end_row">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: flex-end;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: flex-end;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: center; flex-direction: row;</h2>
+        <p>Los Flex Items se centran en el Cross Axis.</p>
+        <p>
+            Cuando los Flex Items están en fila ↔
+            <span class="consolas">flex-direction: row;</span>
+            entonces
+            <span class="consolas">align-self: center;</span>
+            los centra verticalmente ↕
+        </p>
+        <p>
+            Y cuando están en columna ↕
+            <span class="consolas">flex-direction: column;</span>
+            entonces los centra horizontalmente ↔
+        </p>
+        <div class="contenedor_flexbox center_row">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: center;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: center;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: baseline; flex-direction: row;</h2>
+        <p>Los Flex Items se alinean en el renglón (línea base) sobre la que se escribe el texto</p>
+        <p>
+            Cuando el tamaño de la letra
+            <span class="consolas">font-size:</span>
+            del texto que está dentro de los Flex Items es el mismo,
+            pareciera ser que
+            <span class="consolas">align-self: flex-start;</span>
+            es lo mismo que
+            <span class="consolas">align-self: baseline;</span>
+            pero en realidad
+            <span class="consolas subrayar">NO</span>
+            son lo mismo. Si usas
+            <span class="consolas">align-self: baseline;</span>
+            y tienes un tamaño de letra diferente para los Flex Items
+            entonces puedes notar la diferencia.
+        </p>
+        <div class="contenedor_flexbox baseline_row">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: auto; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox auto_column">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: auto;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: auto;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>
+            Diferencia entre <code>align-self: auto;</code> y <code>align-self: stretch;</code>
+        </h2>
+        <h2>
+            align-self: auto;
+            align-self: stretch;
+            align-items: center;
+            flex-direction: column;
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox column_diferencia_entre_auto_y_stretch">
+            <div>1 <br> align-items: center;</div>
+            <div class="negrita">2 <br>align-self: auto;</div>
+            <div>3 <br> align-items: center;</div>
+            <div class="negrita">4 <br>align-self: stretch; </div>
+            <div>5 <br> align-items: center;</div>
+        </div>
+
+        <h2>align-self: strech; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox strech_column">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: strech;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: strech;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: flex-start; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_column">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: flex-start;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: flex-start;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: flex-end; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_column">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: flex-end;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: flex-end;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: center; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox center_column">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2 <br>align-self: center;</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4 <br>align-self: center;</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+        <h2>align-self: baseline; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox baseline_column">
+            <div>1 <br> align-items: stretch;</div>
+            <div class="negrita">2</div>
+            <div>3 <br> align-items: stretch;</div>
+            <div class="negrita">4</div>
+            <div>5 <br> align-items: stretch;</div>
+        </div>
+
+    </body>
+</html>

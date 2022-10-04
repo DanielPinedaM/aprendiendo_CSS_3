@@ -1,0 +1,28 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+seleccionar el input de seleccion unica
+al cargar la pagina web
+cuando el usuario NO haya marcado ninguna opcion
+
+<input type="radio" :indeterminate>
+<label>
+Especificidad: (0, 2, 2)*/
+input[type="radio"]:indeterminate + label {
+    color: indianred;
+    font-style: italic;
+}
+
+/* :indeterminate selecciona la barra de progreso
+porq NO escribi el atributo HTML value=""
+
+<progress :indeterminate>
+Especificidad: (0, 1, 1) */
+progress:indeterminate {
+    width: 80vw; /* ancho */
+    height: 20px; /* alto */
+}

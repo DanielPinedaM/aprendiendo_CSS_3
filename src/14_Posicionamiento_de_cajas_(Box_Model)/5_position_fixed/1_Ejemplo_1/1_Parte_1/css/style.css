@@ -1,0 +1,151 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Dorian Designs:
+https://www.youtube.com/watch?v=9Tc1PBe-6ng */
+
+/*
+color de fondo
+color del texto */
+
+/*
+body {
+    background-color: #333;
+    color: #eeede7;
+}
+*/
+
+/*
+el .encabezado <header> NO tiene medidas de ancho width: y alto height:
+centrar texto horizontalmente
+relleno, deja un espacio interno en el .encabezado
+
+elemento NO posicionado position: static; */
+
+/*
+.encabezado {
+
+    text-align: center;
+    padding: 25px 0;
+    background-color: lightskyblue;
+    color: orangered;
+
+}
+*/
+
+/* ------------------------ */
+
+/*
+body {
+    background-color: #333;
+    color: #eeede7;
+}
+*/
+
+/*
+cuando al .encabezado <header> le doy un posicionamiento fijo position: fixed;
+entonces a pesar de q es un elemento EN BLOQ
+pasara a ocupar el espacio del texto q dice "Menu"
+por lo tanto PIERDE las medidas del Box Model (espacio reservado)
+
+posicionamiento fijo */
+
+/*
+.encabezado {
+    text-align: center;
+    padding: 25px 0;
+    background-color: lightskyblue;
+    color: orangered;
+
+
+    position: fixed;
+}
+*/
+
+/* ------------------------ */
+
+/* eliminar estilos por defecto del navegador usando el selector universal */
+
+/*
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*/
+
+/*
+body {
+    background-color: #333;
+    color: #eeede7;
+}
+*/
+
+/*
+100vw es TODO el ancho del viewport (parte visible de la pagina web) 
+
+width: 100%; otra alternativa es esta,
+PERO para q funcione el contenedor padre mas cercano al .encabezado TIENE q ocupar todo el viewport
+en este caso el padre de .encabezado es el <body> entonces si ocupa todo el viewport
+
+si quisiera tambien podria darle un alto height:
+y esta medida se CONSERVARIA
+
+el elemento se mueve CON RESPECTO al elemento raiz <html> (viewport)
+posicionamiento fijo
+top: 0; y left: 0;
+posicionan el elemento en la esquina superior izquierda */
+
+/*
+.encabezado {
+
+    width: 100vw;
+
+
+
+    text-align: center;
+    padding: 25px 0;
+    background-color: lightskyblue;
+    color: orangered;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+}
+*/
+
+/* ------------------------ */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333; /* color de fondo */
+    color: #eeede7; /* color del texto */
+    /* en el .encabezado esta escrito padding: 25px 0;
+    entonces arriba y abajo tiene 25px
+    el tamaño de la letra q esta dentro de .encabezado q dice "MENU" es de 16px
+
+    Sumo todas estas medidas:
+    (25px padding: arriba) + (25px padding abajo) + (16px tamaño letra "MENU") = 66px */
+    padding-top: 66px; /* esto hace q el "MENU" NO tape el titulo <h1> q dice "Position Fixed" */
+}
+
+.encabezado {
+    width: 100vw; /* hacer q el .encabezado ocupe todo el ancho width: de la pagina web */
+    text-align: center; /* centrar texto horizontalmente */
+    /* relleno padding: */
+    padding: 25px 0; /* arriba abajo / izquierda derecha */
+    background-color: lightskyblue;
+    color: orangered;
+    position: fixed; /* el .encabezado se mueve con respecto al viewport ( <html> ) */
+    /* top: 0; y left: 0; ubicar .encabezado en la esquina superior izquierda de la pagina web */
+    top: 0;
+    left: 0;
+}

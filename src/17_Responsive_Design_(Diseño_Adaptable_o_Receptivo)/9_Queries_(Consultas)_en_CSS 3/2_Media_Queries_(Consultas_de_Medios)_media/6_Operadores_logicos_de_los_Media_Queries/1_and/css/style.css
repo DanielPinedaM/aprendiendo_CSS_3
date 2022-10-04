@@ -1,0 +1,37 @@
+/*
+CSS-Tricks (Trucos CCS) - Operador Logico and en los Media Queries
+https://css-tricks.com/a-complete-guide-to-css-media-queries/#and
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Operador Logico and
+La @media solamente se ejecuta cuando
+se cumplen todas las condiciones,
+por una sola condición que no se cumpla
+entonces no se ejecuta la @media
+
+Pantallas que tienen un ancho width: que estan ENTRE los
+320px Y (AND) los 768px */
+@media screen and (min-width: 320px) and (max-width: 768px) { /* desde 320px hasta 768px */
+    /* cuando TODA la condicion anterior se cumpla
+    entonces se ejecutaran los bloques de declaracion q esrciba aqui abajo */
+    span {
+        color: red;
+    }
+}

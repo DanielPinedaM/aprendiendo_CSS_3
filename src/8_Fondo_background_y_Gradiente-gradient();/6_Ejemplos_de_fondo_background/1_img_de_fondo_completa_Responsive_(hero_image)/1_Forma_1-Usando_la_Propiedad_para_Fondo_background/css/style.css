@@ -1,0 +1,46 @@
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    box-sizing: border-box !important;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden;
+}
+
+html, body { line-height: 1.2; }
+
+/* -------------------- hero image - imagen de fondo completa -------------------- */
+
+a { font-size: 2.5rem; }
+
+/* de este codigo tengo un snipet en VS Code
+q se activa escribiendo .hero_image en un archivo .css */
+html { /* Selecciono la etiqueta <html> porq es la q contiene TODO el codigo html */
+    display: block;     /* convertir a elemento de bloq */
+    min-height: 100vh;  /* ocupar el 100% del ALTO del viewport */
+    width: 100%;        /* ocupar el 100% del ANCHO del viewport */
+
+    background-image: url('https://source.unsplash.com/1024x683/?cat'); /* link ó ruta donde esta la imagen */
+    background-repeat: no-repeat; /* NO repetir la imagen */
+    background-position: center center; /* centrar la imagen */
+    background-attachment: fixed; /* Todos los Fondos se Mueven al Hacer Scroll por la Página Web y se Quedan Quietos al Hacer Scroll con el Contenedor  */
+    background-size: cover; /* Ajustar Imagen Ampliándolo y Conservando su Calidad. Es Probable q la Imagen SI se Recorte  */
+    background-origin: border-box; /* El fondo...
+                                    1) Se ajusta al contenedor y NO se recorta
+                                    2) Ocupa por completo toda la etiqueta HTML: contenido content, relleno padding y borde border */
+}

@@ -1,0 +1,22 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ol {
+    font-size: 1.5em;
+}
+
+/*
+
+Seleccionar las posiciones de la lista
+q son multiplos de 3
+
+<ol>
+  …
+    <li :nth-child>
+Especificidad: (0, 1, 2) */
+ol li:nth-child(3n) { /* An = 3, 6, 8, 12... */
+    color: red;
+}

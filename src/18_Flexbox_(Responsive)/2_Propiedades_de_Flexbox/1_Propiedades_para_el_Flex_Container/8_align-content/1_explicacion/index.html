@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <h1>align-content:</h1>
+        <p>Ambos <code>align-items:</code> y <code>align-content:</code> definen en que parte de Cross Axis están ubicados los Flex Items (esto se llama “alineación”).</p>
+        <p>Para ambos <code>align-items:</code> y <code>align-content:</code> se aplica esta regla. Dependiendo del <code>flex-direction:</code> es decir, si los Flex Items están en filas ↔ o columnas ↕ la alineación es diferente:</p>
+        <p class="no_margin">Cuando los Flex Items ocupan una sola línea <code>flex-wrap: nowrap;</code> entonces usar <code>align-items:</code></p>
+        <p class="no_margin">en cambio</p>
+        <p class="no_margin">si los Flex Items ocupan varias líneas <code>flex-wrap: wrap;</code> ó <code>flex-wrap: wrap-reverse;</code> usar <code>align-content:</code></p>
+        <a href="https://css-tricks.com/almanac/properties/a/align-content/" target="_blank">CSS-Tricks</a>
+
+        <hr>
+
+        <h2>align-content: normal; flex-direction: row;</h2>
+        <p>Conservar la Posición Original de los Flex Items (Valor por Defecto)</p>
+        <p>Los Flex Items se quedan en su posición original como sino se hubiera establecido ningún valor (propiedad CSS).</p>
+        <div class="contenedor_flexbox normal_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: stretch; flex-direction: row;</h2>
+        <p>Los Flex Items Ocupan Todo el Espacio Disponible del Flex Container</p>
+        <p>Estirar (estrechar) los Flex Items para que ocupen todo el espacio disponible del Flex Container.</p>
+        <p>Se respetan las medidas del ancho y alto mínimo y máximo del Flex Container.</p>
+        <div class="contenedor_flexbox stretch_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: flex-start; flex-direction: row;</h2>
+        <p>Los Flex Items se sitúan (alinean) en la esquina superior izquierda</p>
+        <p>Lo único que cambia cuando los Flex Items están en fila ↔ flex-direction: row; ó columna flex-direction: column; es el orden de los Flex Items</p>
+        <div class="contenedor_flexbox flex_start_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: flex-end; flex-direction: row;</h2>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; entonces align-content: flex-end; los sitúa en la esquina inferior izquierda</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; entonces los sitúa en la esquina superior derecha</p>
+        <div class="contenedor_flexbox flex_end_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: center; flex-direction: row;</h2>
+        <p>Los Flex Items se centran en el Cross Axis.</p>
+        <p>Cuando los Flex Items están en fila ↔ flex-direction: row; entonces align-items: center; los centra verticalmente ↕</p>
+        <p>Y cuando están en columna ↕ flex-direction: column; entonces los centra horizontalmente ↔</p>
+        <div class="contenedor_flexbox center_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <!--
+        <h2>align-content: baseline; flex-direction: row;</h2>
+        <p>Los Flex Items se alinean en el renglón (línea base) sobre la que se escribe el texto</p>
+        <p>Cuando el tamaño de la letra font-size: del texto que está dentro de los Flex Items es el mismo, pareciera ser que align-content: flex-start; es lo mismo que align-content: baseline; pero en realidad NO son lo mismo. Si usas align-content: baseline; y tienes un tamaño de letra diferente para los Flex Items entonces puedes notar la diferencia.</p>
+        <div class="contenedor_flexbox baseline_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+        -->
+
+        <h2>align-content: space-between; flex-direction: row;</h2>
+        <p>Primer Flex Item al Inicio y Ultimo Flex Item al Final</p>
+        <p>El espacio entre los Flex Items se distribuye uniformemente (proporcionalmente) en la línea. El primer elemento está en la línea de inicio y el último elemento en la línea final.</p>
+        <p>No importa si son filas ↔ o columnas ↕ el primer y ultimo Flex Item de cada línea se van a juntar situándose lo más cerca posible del Flex Container.</p>
+        <div class="contenedor_flexbox space_between_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: space-around; flex-direction: row;</h2>
+        <p>Espacio Entre los Flex Items es Igual pero el Espacio al Principio y Final de los Flex Items no es Igual</p>
+        <p>Los Flex Items se distribuyen uniformemente en la línea con el mismo espacio a su alrededor</p>
+        <p>PERO</p>
+        <p>El espacio vacío antes del primero y después del último elemento es igual a la mitad del espacio entre cada par de Flex Items.</p>
+        <div class="contenedor_flexbox space_around_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: space-evenly; flex-direction: row;</h2>
+        <p>TODOS los Espacios Entre los Flex Items son Iguales</p>
+        <p>Los Flex Items se distribuyen uniformemente en la línea y absolutamente todos los espacios de separación que hay entre cada uno de los Flex Items incluyendo los espacios antes del primero y después del último elemento son iguales.</p>
+        <div class="contenedor_flexbox space_evenly_row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: normal; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: stretch; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: flex-start; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: flex-end; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: center; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox center_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: space-between; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: space-around; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+        <h2>align-content: space-evenly; flex-direction: column;</h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+
+
+    </body>
+</html>

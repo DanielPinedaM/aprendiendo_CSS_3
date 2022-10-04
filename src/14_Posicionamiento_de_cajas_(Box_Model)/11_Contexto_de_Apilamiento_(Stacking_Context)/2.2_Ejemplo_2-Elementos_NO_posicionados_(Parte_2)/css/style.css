@@ -1,0 +1,42 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.box_model { /* dar medidas a las cajas para q se puedan ver */
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+    border: thick solid black; /* borde */
+    font-size: 2rem; /* tamaño de la letra */
+}
+
+.caja_1 {
+    background-color: rgba(220, 20, 60, 0.637); /* color de fondo */
+    /* esto va hacer q las cajas se junten */
+    margin-top: -100px;
+    margin-left: 40px;
+    z-index: -1; /* este numero es menor */
+}
+
+.caja_2 {
+    background-color: steelblue;
+
+/* NO importa q el z-index: de la .caja_2 sea MAYOR q el de la .caja_1
+se sigue respetando la norma:
+
+El comportamiento por defecto de los elementos cuando NO están posicionados es este:
+En el código HTML…
+- Cuanto más arriba (de primero) este escrito el elemento, significa que se posicionara más atrás.
+- Cuanto más abajo (de ultimo) este escrito el elemento, significa que se posicionara más adelante */
+    z-index: 999; /* y este es mayor */
+}

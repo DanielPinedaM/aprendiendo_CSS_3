@@ -1,0 +1,37 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.box_model { /* dar medidas a las cajas para q se puedan ver */
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+    border: thick solid black; /* borde */
+    font-size: 2rem; /* tamaño de la letra */
+}
+
+/*
+
+Los elementos posicionados (el valor de position: es diferente de static;)  están adelante
+y los elementos no posicionados position: static; están atrás. */
+.caja_1 {
+    background-color: crimson; /* color de fondo */
+    margin-top: -100px;
+    margin-left: 40px;
+    /* position: static; - este elemento esta ATRAS - elemento NO posicionado -  */
+}
+
+.caja_2 {
+    background-color: rgba(70, 131, 180, 0.657);
+    position: relative; /* posicion relativa - este elemento esta ADELANTE - elemento posicionado */
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- conectar HTML y CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+        <!-- Dentro de un formulario <form>
+            tengo inputs que puede seleccionar :indeterminate -->
+        <form>
+            <!-- Selección Única: <input type="radio"> -->
+            <p>¿Dormiste bien anoche?</p>
+            <input type="radio" name="dormir" id="si" />
+            <label for="si">Si</label>
+            <input type="radio" name="dormir" id="no" />
+            <label for="no">No</label>
+            <hr />
+            <!-- Selección Múltiple: <input type="checkbox"> -->
+            <p>De estos colores selecciona al menos 2 de tus favoritos</p>
+            <input type="checkbox" name="colores" id="amarillo" />
+            <label for="amarillo">Amarillo</label>
+            <input type="checkbox" name="colores" id="azul" />
+            <label for="azul">Azul</label>
+            <input type="checkbox" name="colores" id="rojo" />
+            <label for="rojo">Rojo</label>
+            <hr />
+            <!-- Barra de Progreso “Cargando…” (ProgressBar): <progress> -->
+            <label for="progress">Cargando...</label>
+            <!-- para q :indeterminate seleccione a <progress>
+                NO puedo escribir el atributo value="" -->
+            <progress id="progress" max="100"></progress>
+        </form>
+        <!-- conectar HTML y JS -->
+        <script src="js/checkbox.js"></script>
+    </body>
+</html>
+
+

@@ -1,0 +1,25 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* Selecciona un host root en la sombra, solo si es
+    un descendiente del argumento selector dado */
+:host-context(h1) {
+    font-weight: bold;
+}
+
+:host-context(main article) {
+    font-weight: bold;
+}
+
+/* Cambia el color del texto del párrafo de negro a blanco cuando
+      se aplica una clase .dark-theme al cuerpo del documento */
+p {
+    color: #000;
+}
+
+:host-context(body.dark-theme) p {
+    color: #fff;
+}

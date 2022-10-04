@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <!--
+            Jon Mircha - YouTube - Atributos HTML srcset="" y sizes=""
+            https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4367s -->
+
+        <h1>Imagenes responsive usando los atributos srcset y sizes de HTML 5</h1>
+
+        <!-- 1x 1.5x 2x es el device pixel ratio
+        esta es la relacion q existe
+        entre los pixeles reales que tiene el dispositivo
+        y los pixeles que tenemos disponibles para "pintar" contenido-->
+        <img
+        alt="error_al_cargar_imagen"
+        src="../../../../assets/images/html5-3d-600.png"
+        srcset="../../../../assets/images/html5-3d-600.png 1x,
+                ../../../../assets/images/html5-3d-900.png 1.5x,
+                ../../../../assets/images/html5-3d-1200.png 2x">
+
+        <br>
+
+        <!-- las imagenes se van cargando dependiendo del ancho del viewport
+            PERO la imagen se redimensiona automaticamente conforme cambia el viewport,
+            por lo cual las medidas de la imagen CAMBIAN y NO son fijas
+
+            para q entiendas mejor la diferencia abre este index.html
+            usando el live server y empeizas a encoger y estirar el viewport
+            ahi notaras la diferencia en como se muestran todas las imagenes->
+        <img
+        alt="error_al_cargar_imagen"
+        src="../../../../assets/images/html5-3d-600.png"
+        srcset="../../../../assets/images/html5-3d-600.png 600w,
+                ../../../../assets/images/html5-3d-900.png 900w,
+                ../../../../assets/images/html5-3d-1200.png 1200w">
+
+        <br>
+
+        <!--
+        dependiendo del anho del viewport se van cargando las imagenes
+        PERO se muestran tamaños FIJOS de la imagen. Ejemplo:
+        (max-width: 480px) 300px cuando el ancho del viewport sea de 480px se muestra la imagen de 300px de ancho
+        y asi sucesivamente con el resto las instrucciones-->
+        <img
+        alt="error_al_cargar_imagen"
+        src="../../../../assets/images/html5-3d-600.png"
+        srcset="../../../../assets/images/html5-3d-600.png 600w,
+                ../../../../assets/images/html5-3d-900.png 900w,
+                ../../../../assets/images/html5-3d-1200.png 1200w"
+        sizes="(max-width: 480px) 300px,
+               (max-width: 600px) 480px,
+               (max-width: 768px) 600px,
+               (max-width: 1024px) 900px,
+               (min-width: 1200px) 1200px">
+
+    </body>
+</html>

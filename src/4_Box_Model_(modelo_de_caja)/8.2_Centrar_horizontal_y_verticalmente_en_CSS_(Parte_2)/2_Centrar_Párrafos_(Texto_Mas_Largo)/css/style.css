@@ -1,0 +1,25 @@
+body {
+    background: #dfe6e9;
+}
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+
+    /* Centrar verticalmente (usando Flexbox) */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hijo {
+    background: #f2f2f2;
+    width: 70%;
+
+    /* Centrar horizontalmente */
+    margin: auto;
+}

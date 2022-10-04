@@ -1,0 +1,16 @@
+/*
+:root {
+    --color_parrafo_1: blue;
+}
+*/
+
+/*
+Este es el codigo de style_2.css
+como defini las variables dentro de :root
+entonces las puedo usar en cualquier .css
+q este conectado con la etiqueta <link> a mi HTML */
+body {
+    /* Puedo usar la variable --color_parrafo_1
+    a pesar de q NO esta definida en esta otra hoja de estilos .css */
+    background-color: var(--color_parrafo_1); /* color de fondo de toda la pagina web */
+}

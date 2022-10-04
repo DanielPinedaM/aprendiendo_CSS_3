@@ -1,0 +1,27 @@
+/*
+Distancia Entre el Contorno outline: y Borde border:
+(Desplazamiento de Contorno) outline-offset
+
+outline-offset es la distancia que separa las dos líneas que están alrededor (delineando) de la caja (Box Model), 
+es decir, es la distancia entre el contorno outline y borde border
+*/
+
+.contenedor {
+    width: 200px; /* ancho */
+    height: 150px; /* alto */
+    margin: 60px;
+
+    background: tomato;
+    font-size: 30px;
+
+    border: 5px solid black;
+    outline: 7px dashed red;
+
+    /* Cuando la longitud es POSITIVA
+    el contono outline esta FUERA de la caja */
+    /* outline-offset: 20px; */
+
+    /* Cuando la longitud es NEGATIVA
+    el contono outline esta DENTRO de la caja */
+    outline-offset: -20px;
+}

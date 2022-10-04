@@ -1,0 +1,25 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+p,
+h1 {
+    font-size: 2em;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* !important siempre tiene mayor especificidad q cualquier otro selector
+por lo tanto el color del titulo <h1> sera blue azul */
+.titulo {
+    color: blue !important; /* mayor especificidad q todo */
+}
+
+/*
+dentro del parentesis de :is() escribo lo q quiero seleccionar
+y al lado escribo un selector de id # con cualquier nombre q no exista en en HTML
+
+Especificidad:  (19, 2, 0)*/
+:is(.titulo, #incrementar#mucho#la#especificidad#a#a#a#a#a#a#a#a#a#a#a#a#a#a#a) {
+    color: red;
+}

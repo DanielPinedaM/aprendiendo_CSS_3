@@ -1,0 +1,23 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+:empty selecciona a cualquier elemento (etiqueta) HTML que este vacía.
+
+
+seleccionar TODOS los <div> q esten vacios :empty */
+div:empty {
+    width: 50px; /* ancho */
+    height: 50px; /* alto */
+
+    background-color: tomato; /* color de fondo */
+    border: thick solid dimgray; /* borde */
+}
+
+/* :empty NO selecciona el parrafo <p> porq NO esta vacio */
+p:empty {
+    color: red;
+}

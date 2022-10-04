@@ -1,0 +1,251 @@
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box !important;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -------------------- Fluid Reset -------------------- */
+/* https://utopia.fyi/ */
+
+:root {
+    --fluid-min-width: 320;
+    --fluid-max-width: 1500;
+    --fluid-min-size: 17;
+    --fluid-max-size: 20;
+    --fluid-min-ratio: 1.2;
+    --fluid-max-ratio: 1.33;
+
+    --fluid-screen: 100vw;
+    --fluid-bp: calc(
+      (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+        ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+    );
+  }
+
+  @media screen and (min-width: 1500px) {
+    :root {
+      --fluid-screen: calc(var(--fluid-max-width) * 1px);
+    }
+  }
+
+  :root {
+    --fluid-min-scale-0: var(--fluid-min-ratio);
+    --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+    --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+    --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+    --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+    --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+
+    --fluid-max-scale-0: var(--fluid-max-ratio);
+    --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+    --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+    --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+    --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+    --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+
+    --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+    --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+    --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+    --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+    --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+    --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+
+    --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+    --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+    --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+    --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+    --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+    --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+
+    --fluid-0: calc(
+      (
+        (var(--fluid-min-size-0) * 1rem) +
+          (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)
+      )
+    );
+    --fluid-1: calc(
+      (
+        (var(--fluid-min-size-1) * 1rem) +
+          (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)
+      )
+    );
+    --fluid-2: calc(
+      (
+        (var(--fluid-min-size-2) * 1rem) +
+          (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)
+      )
+    );
+    --fluid-3: calc(
+      (
+        (var(--fluid-min-size-3) * 1rem) +
+          (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)
+      )
+    );
+    --fluid-4: calc(
+      (
+        (var(--fluid-min-size-4) * 1rem) +
+          (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)
+      )
+    );
+    --fluid-5: calc(
+      (
+        (var(--fluid-min-size-5) * 1rem) +
+          (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)
+      )
+    );
+  }
+
+/* -------------------- Texto -------------------- */
+
+a, p, option, label, select, h5, h6 { font-size: var(--fluid-1); }
+
+h2 { font-size: var(--fluid-2); }
+
+h1 {
+    text-align: center;
+    font-size: var(--fluid-3);
+}
+
+/* -------------------- lista -------------------- */
+
+.list_style_position_inside {
+    list-style-position: inside;
+    margin-left: 20px;
+}
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    outline: thick solid lightcoral;
+    min-width: 151px;
+    max-width: min(90%, 1332px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------- Imagenes Responsive -------------------- */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    object-fit: cover !important;
+}
+
+/* -------------------- Barra de busqueda de ropa <nav class="nav_filtrar"> -------------------- */
+
+.formulario_filtrar {
+    margin-bottom: 20px;
+}
+
+/* desde 0 hasta 599px */
+.nav_filtrar {
+    border: thick solid black;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor_filtrar_ordenar {
+    column-gap: 40px;
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.item_filtrar_ordenar {
+    display: flex;
+    flex-flow: column wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------- Cards -------------------- */
+
+.contenedor_card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* desde 0 hasta 479px */
+.card {
+    border: thick solid black;
+
+    /* (100% ancho del <div class="page_wrap">) / (1 columna de Flex Items) = 100% */
+    flex: 0 0 100%;
+}
+
+.card_enlace {
+    text-decoration-line: none;
+    color: #000;
+}
+
+.descripcion h5:nth-child(1) { text-align: center; }
+
+.descripcion h6:nth-child(2) { text-align: right; }
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- Cards -------------------- */
+
+@media screen and (min-width: 30em) {
+    .card {
+      /* padding: 1.5%; para q las cards sean mas pequeñas */
+      padding: 1.5%; /* ancho viewport >= 480px = 30em hasta infinito */
+
+      /* (100% ancho del <div class="page_wrap">) / (2 columnas de Flex Items) = 50%
+      (50%) - (10px de la propiedad column-gap: ) */
+      flex: 0 0 calc(50% - 10px); /* desde 480px = 30em hasta 767px */
+    }
+}
+
+@media screen and (min-width: 48em) { /* desde 768px = 48em hasta 1023px */
+    .card {
+        /* (100% ancho del <div class="page_wrap">) / (3 columnas de Flex Items) = 33.3333333333%
+        (33.3333333333%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(33.3333333333% - 10px);
+    }
+}
+
+@media screen and (min-width: 64em) { /* ancho viewport >= 1024px */
+    .card {
+        /* (100% ancho del <div class="page_wrap">) / (4 columnas de Flex Items) = 25%
+        (25%) - (10px de la propiedad column-gap: ) */
+        flex: 0 0 calc(25% - 10px);
+    }
+}
+
+/* -------------------- Barra de busqueda de ropa <nav class="nav_filtrar"> -------------------- */
+
+@media screen and (min-width: 37.5em) { /* ancho viewport >= 37.5em = 600px hasta infinito */
+    .nav_filtrar { justify-content: flex-end; }
+}

@@ -1,0 +1,59 @@
+* {
+    /* Quitar los estilos por defecto del navegador */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-size: 15px; */
+}
+
+.box {
+    width: 300px; /* Ancho */
+    height: 150px; /* Alto */
+}
+
+.box_1 {
+    background: steelblue;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    /* 
+    Solución al Colapso de Elementos Externos:
+    
+    La forma correcta de escribir el margin de los elementos cuando colapsan es definir solamente la medida del margen hacia abajo margin-bottom del elemento que está arriba (q en este caso es la caja 1)
+    */
+    margin-bottom: 30px; /* Abajo */
+}
+
+.box_2 {
+    /* 
+    box-sizing: content-box; es el valor por defecto
+
+    box-sizing: content-box; = content width y height + padding + border
+
+    box-sizing: border-box;
+
+   */
+    /* box-sizing: content-box; */
+
+    /* Esto hace q se conserve el ancho width y alto height q originalmente habia definido */
+    box-sizing: border-box;
+
+    background: tomato;
+    color:indigo;
+
+    margin-left: 20px; /* Izquierda */
+
+    /* arriba / derecha / abajo / izquierda */
+    padding: 100px 50px 30px 40px;
+
+    /* 
+    Desbordamiento overflow de content  
+    
+    El desbordamiento es cuando el contenido se sale de la caja. 
+
+    Ejemplo: Cuando tengo un texto que se sale de un cuadrado (caja)
+    */
+
+    /* overflow: hidden; oculta TODO el contenido que se desborde */
+    overflow: hidden;
+}

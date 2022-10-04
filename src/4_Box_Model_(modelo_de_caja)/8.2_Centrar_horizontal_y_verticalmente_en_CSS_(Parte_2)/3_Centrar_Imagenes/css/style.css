@@ -1,0 +1,27 @@
+body {
+    background: #dfe6e9;
+}
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+
+    /* Centrar horizontalmente: */
+    text-align: center;
+}
+
+.hijo {
+    width: 200px;
+    height: 200px;
+
+    /* 
+    Centrar verticalmente: 
+    (height contenedor 500px) - (width hijo 200px) =  300px
+
+    300px / 2 = 150px
+    */
+    margin: 150px 0; /* arriba abajo / izquierda derecha */
+}
+
+

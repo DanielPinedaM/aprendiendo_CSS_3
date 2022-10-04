@@ -1,0 +1,25 @@
+body {
+    background: #dfe6e9;
+}
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+
+    /* Para centrar cualquier elemento usando flexbox
+    al contenedor padre ponerle el siguiente codigo: */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hijo {
+    width: 200px;
+    height: 200px;
+}
+
+

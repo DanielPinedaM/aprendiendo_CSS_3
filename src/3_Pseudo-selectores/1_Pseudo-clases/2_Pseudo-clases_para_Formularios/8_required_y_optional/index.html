@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+
+        <!-- los elementos q tienen el atributo booleano HTML required
+        es OBLIGATORIO q el usuario los llene,
+        en cambio los q NO tengan required
+        son opcionales (pueden estar vacios o llenos) -->
+        <form action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co" method="POST">
+            <label for="nombre">Nombre (Opcional)</label>
+            <input type="text" name="text_nombre" id="nombre" />
+
+            <br>
+
+            <label for="correo">Correo (Obligatorio)</label>
+            <input type="email" name="email_correo" id="correo" required>
+
+            <br>
+
+            <p class="inline-block">(Obligatorio)</p>
+            <input type="radio" name="radio_opcion" id="opcion_1" required>
+            <label for="opcion_1">Opcion 1</label>
+            <input type="radio" name="radio_opcion" id="opcion_2" required>
+            <label for="opcion_2">Opcion 2</label>
+
+            <br>
+
+            <button type="submit">Enviar datos</button>
+        </form>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

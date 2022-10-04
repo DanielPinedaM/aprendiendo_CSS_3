@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --fondoPrimario: #fcf7f8;
+    --colorOscuro: #1a1e21;
+    --azul: #3860ec;
+}
+
+body {
+    background: var(--fondoPrimario);
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+ul {
+    margin: 0;
+}
+
+.contenedor {
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.titulo {
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--colorOscuro);
+    margin-bottom: 20px;
+}
+
+.grupo {
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.grupo div p,
+.grupo div div,
+.grupo div span,
+.grupo ul li {
+    background: #dbdbdb;
+    padding: 10px;
+}
+
+/* ? ------------- PSEUDO-CLASES ------------- */
+.enlace:active {
+    background-color: black;
+}
+
+.enlace:link {
+    color: orange;
+}
+
+.enlace:visited {
+    color: red;
+}
+
+.enlace:hover {
+    color: steelblue;
+}
+
+/* ? --- --- --- --- PARRAFOS --- --- --- --- */
+
+/*
+ESTO...
+
+seleccionar el PRIMERO parrafo <p> q este dentro del contenedor con la clase .parrafos
+
+<element class="parrafos">
+  …
+    <p :first-child>
+*/
+.parrafos p:first-child {
+    background-color: var(--azul);
+}
+
+/*
+ES SIMILAR A ESTO (NO es lo mismo)
+
+selecciona todo lo q haya dentro de .parrafos q tenga la clase .primero
+
+<element class="parrafos">
+  …
+    <element class="primero">
+
+.parrafos .primero {
+    color: red;
+}
+*/
+
+/*
+seleccionar el ULTIMO parrafo <p> q este dentro del contenedor con la clase .parrafos
+
+<element class="parrafos">
+  …
+    <p :last-child>
+*/
+
+.parrafos p:last-child {
+    background-color: black;
+    color: white;
+}
+
+/* ? --- --- --- --- ELEMENTOS --- --- --- --- */
+/*
+dentro del contenedor con la clase .elementos
+busque todos los hermanos q sean parrafos <p>
+y seleccione solamente el PRIMERO
+
+<element class="elementos">
+  …
+    <p :first-of-type>
+*/
+.elementos p:first-of-type {
+    background-color: var(--azul);
+}
+
+/*
+dentro del contenedor con la clase .elementos
+busque todos los hermanos q sean <div>
+y seleccione solamente el ULTIMO
+
+<element class="elementos">
+  …
+    <div :last-of-type>
+*/
+
+.elementos div:last-of-type {
+    background-color: black;
+    color: white;
+}
+
+/* ? --- --- --- --- LISTA 1 --- --- --- --- */
+/*
+LA DIFERENCIA ENTRE :nth-child() Y :nth-last-child() ES ESTA:
+
+selecciona el PRIMER elemento de la .lista y q sean hermanos */
+
+.lista :nth-child(1) {
+    background-color: var(--azul);
+}
+
+/* selecciona el ULTIMO elemento de la .lista y q sean hermanos */
+
+.lista :nth-last-child(1) {
+    background-color: black;
+    color: white;
+}
+
+/* seleccionar las posiciones PARES de la .lista y q sean hermanos 
+even es lo mismo q 2n */
+
+/*
+.lista :nth-child(2n) {
+    background-color: var(--azul);
+}
+
+.lista :nth-last-child(2n) {
+    background-color: black;
+    color: white;
+}
+
+
+
+.lista :nth-child(even) {
+    background-color:chartreuse;
+}
+
+.lista :nth-last-child(even) {
+    background-color:brown;
+}
+*/
+
+/* seleccionar las posiciones IMPARES de la .lista y q sean hermanos
+odd es lo mismo q 3n */
+
+/*
+.lista :nth-child(2n+1) {
+    background-color: var(--azul);
+}
+*/
+
+/*
+.lista :nth-last-child(2n+1) {
+    background-color: black;
+    color: white;
+}
+*/
+
+/*
+.lista :nth-child(odd) {
+    background-color:chartreuse;
+}
+*/
+
+/*
+.lista :nth-last-child(odd) {
+    background-color:brown;
+}
+*/
+
+/*
+seleccionar las posiciones que sean MULTIPLOS de un numero y sean hermanos
+seleccionar los multiplos de 3 por eso es q entre parentesis esta (3n)
+*/
+
+/* contando desde el primero 1 (de arriba hacia abajo) */
+/*
+.lista :nth-child(3n) {
+    background-color: steelblue;
+}
+*/
+
+/* contando desde el ultimo (de abajo hacia arriba) */
+/*
+.lista :nth-last-child(3n) {
+    background-color: deeppink;
+}
+*/
+
+/* ? --- --- --- --- LISTA 2 --- --- --- --- */
+.lista2 p:nth-of-type(2) {
+    background-color: var(--azul);
+}
+
+.lista2 div:nth-last-of-type(2) {
+    background-color: black;
+    color: white;
+}
+
+/* ? --- --- --- --- LISTA 3 --- --- --- --- */
+/*
+:only-child selecciona el unico elemento (hijo unico)
+q esta dentro de un contenedor
+
+:only-child SOLAMENTE funciona
+cuando hay UN SOLO elemento (HIJO UNICO) dentro del contenedor,
+si hay hermanos NO funciona
+*/
+.lista3 p:only-child {
+    background-color: var(--azul);
+}
+
+/* ? --- --- --- --- LISTA 4 --- --- --- --- */
+
+/* :only-of-type selecciona un solo elemento de un tipo que esta dentro de un contenedor */
+.lista4 p:only-of-type {
+    /* como dentro del contenedor hay UN SOLO <p> entonces SI se selecciona */
+    background-color: var(--azul);
+}
+
+/* cuando tengo varias etiquetas de los mismos tipos :only-of-type NO funciona */
+.lista4 div:only-of-type {
+    /* como dentro del contenedor hay VARIOS <p> entonces NO se selecciona */
+    border: thick solid black;
+}
+
+/*
+<element class="lista4">
+  …
+    <div>
+*/
+.lista4 div {
+    border: thick solid black;
+}

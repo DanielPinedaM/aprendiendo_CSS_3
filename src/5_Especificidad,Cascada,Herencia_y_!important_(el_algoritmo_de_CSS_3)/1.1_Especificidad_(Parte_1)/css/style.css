@@ -1,0 +1,32 @@
+/* 
+La especificidad define q selectores tienen prioridad sobre otros. 
+*/
+
+/* Especifidad = (100 selector de ID) + (10 selector de clases) = 110 */
+#background.background {
+    background: #481933;
+    width: 10px; /* ancho */
+    height: 10px; /* alto */
+    border: 2px solid #000;
+}
+
+#background {
+    background: steelblue;
+    width: 50px; /* ancho */
+    height: 50px; /* alto */
+    border: 2px solid #000;
+}
+
+.background {
+    background: crimson;
+    width: 100px; /* ancho */
+    height: 100px; /* alto */
+    border: 2px solid #000;
+}
+
+section {
+    background: yellow;
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+    border: 2px solid #000;
+}

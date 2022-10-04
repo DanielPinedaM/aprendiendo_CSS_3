@@ -1,0 +1,28 @@
+/* 
+Aspectos a Tener en Cuenta:
+- Solamente colapsan la margen hacia arriba margin-top y hacia abajo margin-bottom. La margen hacia la derecha margin-right e izquierda margin-left no colapsan, se suman
+
+- Las márgenes de los elementos flotantes float: y con posición absoluta position: no colapsan.
+
+- Los márgenes que son igual a cero margin: 0; también colapsan.
+
+- Cuando hay un margin negativo y otro positivo, la distancia de separación entre los elementos es la suma del mayor margin (más positivo) y el margin menor (más negativo).
+
+- Cuando todos los margin son negativos la distancia de separación entre los elementos es el margin menor (más negativo). 
+
+*/
+.box {
+    width: 200px;
+    height: 100px;
+}
+
+.box_1 {
+    background: tomato;
+    margin-bottom: -30px; /* Abajo */
+}
+
+.box_2 {
+    background: steelblue;
+    opacity: 0.7;
+    margin-top: -100px; /* Arriba */
+}

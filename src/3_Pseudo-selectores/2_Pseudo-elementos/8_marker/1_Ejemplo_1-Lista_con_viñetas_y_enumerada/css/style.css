@@ -1,0 +1,31 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+Seleccionar las viñetas <ul> de la list
+
+<element class="lista_viñetas">
+  …
+    <element ::marker>
+Especificidad: (0, 1, 1) */
+.lista_viñetas ::marker {
+    color: blue; /* color del texto */
+    font-size: 2em; /* tamaño de las viñeyas */
+    line-height: 0; /* Espaciado Entre Renglones o Líneas (Interlineado)  */
+}
+
+/*
+Seleccionar los numeros <ol> de la lista
+
+<element class="lista_enumerada">
+  …
+    <element ::marker>
+Especificidad:(0, 1, 1) */
+.lista_enumerada ::marker {
+    color: red;
+    font-weight: 900; /* Negrita (Bold) */
+}

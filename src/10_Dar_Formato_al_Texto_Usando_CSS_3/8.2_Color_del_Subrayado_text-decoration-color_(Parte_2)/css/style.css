@@ -1,0 +1,44 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+
+    background: steelblue;
+    border: 2px solid black;
+}
+
+/* --------------------- */
+/* text-decoration-color: es el color del subrayado */
+
+.parrafo {
+    /* Esto...
+    text-decoration: text-decoration-line text-decoration-color */
+    text-decoration: line-through red;
+
+    /* Es lo mismo q esto:
+    text-decoration-line: line-through;
+    text-decoration-color: red;*/
+
+    font-size: 50px; /* Tamaño de la letra */
+}

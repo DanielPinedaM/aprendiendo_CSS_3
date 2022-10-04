@@ -1,0 +1,235 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Dorian Designs
+https://www.youtube.com/watch?v=_78Eyo9lZXM&
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.box_model {
+    /* dar medidas a los contenedores */
+    width: 15rem; /* ancho */
+    height: 15rem; /* alto */
+}
+
+/* -------------------- */
+
+/*
+ambos elementos estan posicionados relativamente
+
+PERO como no he escrito
+arriba top: ; derecha right: ; abajo bottom: e izquierda left:
+entonces los elementos se quedan quietos tal cual donde estan
+(NO se mueven)
+*/
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: relative;
+}
+
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: relative;
+}
+*/
+
+/* -------------------- */
+
+/* posicionamiento relativo
+
+desde donde esta ubicado originalmente el elemento, se dejara un espacio hacia la...
+
+izquierda */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: relative;
+
+    left: 15rem;
+}
+*/
+
+/* este elemento NO esta posicionado,
+su valor por defecto es position: static;
+
+este elemento se quedara quieto */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+}
+*/
+
+/* -------------------- */
+
+/*
+posicionamiento relativo
+
+en un principio la caja esta puesta en su lugar original en el <html>
+pero despues se dejara un espacio para q se mueva hacia la...
+
+izquierda
+arriba
+*/
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: relative;
+
+    left: 15rem;
+    top: 15rem;
+}
+*/
+
+/*
+este elemento NO esta posicionado,
+su valor por defecto es position: static;
+
+este elemento se quedara quieto */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+}
+*/
+
+/* -------------------- */
+
+/*
+posicionamiento relativo
+el elemento se mueve con respecto a su posicion original
+
+el .contenedor_1 esta arriba del .contenedor_2
+cuando muevo el .contenedor_1
+este NO empuja (NO hace q se mueva) el .contenedor_2 */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: relative;
+    top: 15rem;
+}
+*/
+
+/*
+el .contenedor_2 va seguir posicionado top: 15rem;
+y esta medida NO se ve afectada por la del .contenedor_1 
+
+arriba*/
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: relative;
+    top: 15rem;
+}
+*/
+
+/* -------------------- */
+
+/*
+debido al CONTEXTO DE APILAMIENTO
+
+cuando el HTML esta asi
+
+    <div class="box_model contenedor_1"></div> el .contenedor_1 esta ATRAS
+    <div class="box_model contenedor_2"></div> el .contenedor_2 esta ADELANTE
+
+
+
+posicionamiento relativo
+el elemento se mueve con respecto a su posicion original
+
+top: 10rem; esto hara q el .contenedor_1 y .contenedor_2 se junten */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: relative;
+    top: 10rem;
+}
+*/
+
+/* el .contenedor_1 esta ATRAS
+y el .contenedor_2 esta ADELANTE */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: relative;
+}
+*/
+
+/* -------------------- */
+
+/*
+como en el codigo HTML esta escrito PRIMERO el .contenedor_2
+y DESPUES el .contenedor_1
+
+entonces
+
+    <div class="box_model contenedor_2">contenedor 2</div> el .contenedor_2 esta ATRAS
+    <div class="box_model contenedor_1">contenedor 1</div> el .contenedor_1 esta ADELANTE
+
+posicionamiento relativo
+los elementos se mueven con respecto a donde estaban ubicados originalmente */
+
+/*
+.contenedor_1 {
+    background-color: lightcoral;
+
+    position: relative;
+}
+*/
+
+/* top: 10rem; esto hara q el .contenedor 1 y 2 se junten */
+
+/*
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: relative;
+    top: 10rem;
+}
+*/
+
+/* -------------------- */
+
+.contenedor_1 {
+    background-color: lightcoral;
+
+    /* los bordes redondeados (formas o figuras) tambien tienen posicionamiento position: */
+    position: relative;
+    border-radius: 50%; /* dar a la caja forma de circulo */
+    top: 15rem; /* arriba */
+    left: 15rem; /* izquierda */
+}
+
+.contenedor_2 {
+    background-color: lightgreen;
+
+    position: relative;
+}

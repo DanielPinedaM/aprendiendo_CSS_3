@@ -1,0 +1,35 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+seleccionar todos los elementos UNICOS de su tipo q esten dentro de <main>
+
+<main>
+  …
+    <element :only-of-type>
+Especificidad: (0, 1, 1) */
+main :only-of-type {
+    color: red;
+}
+
+/* -------------------------------- */
+/*
+:only-of-type selecciona lo mismo que:
+:first-of-type:last-of-type
+:nth-of-type(1):nth-last-of-type(1)
+
+La única diferencia es que
+la especificidad de 20 de :first-of-type:last-of-type y :nth-of-type(1):nth-last-of-type(1)
+es mayor a la especificidad de 10 de :only-of-type
+https://css-tricks.com/almanac/selectors/o/only-of-type/#to-note */
+
+main :first-of-type:last-of-type {
+    color: red;
+}
+
+main :nth-of-type(1):nth-last-of-type(1) {
+    color: red;
+}

@@ -1,0 +1,33 @@
+body {
+    background-color: lightcoral; /* color de fondo */
+}
+
+input,
+button {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* estilos cuando el elemento NO sea autocompletado */
+input {
+    border: 3px solid grey;
+    border-radius: 3px;
+}
+
+/* estilos cuando el navegador AUTOCOMPLETE los campos <input>
+
+para mayor compatibilidad con los navegadores
+lo escribo de ambas formas
+con :-webkit-autofill y :autofill
+
+para q funcione hay q escribir los selectores por separado,
+asi como ves a continuacion*/
+input:-webkit-autofill {
+    border: 3px solid blue;
+}
+
+input:autofill {
+    border: 3px solid blue;
+}

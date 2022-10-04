@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+
+        <div class="flex_container">
+            <div class="item"><p></p></div>
+            <div class="item"><p></p></div>
+
+        </div>
+        <pre>
+DATOS:
+ancho flex container = 800px
+ancho flex item 1 = 300px
+ancho flex item 2 = 600px
+shrink space = espacio disponible =
+= (300px ancho Flex item 1 + 600px ancho Flex item 2) - (800px ancho flex container)
+= 100px
+
+flex-shrink: item 1 = 4
+flex-shrink: item 2 = 6
+Total flex-shrink = 4+6 = 10
+
+CALCULAR flex-shrink:
+total shrink scaled width = Σ(width x flex-shrink)
+total shrink scaled width flex item 1 = (300 ancho flex item 1) * (4 flex-shrink item 1) = 1200
+total shrink scaled width flex item 2 = (600 ancho flex item 2) * (6 flex-shrink item 2) = 3600
+total shrink scaled width = 1200+3600 = 4800
+
+
+shrink ratio = (width x flex shrink) / total shrink scaled width
+shrink ratio flex item 1 = (300px * 4) / 4800  = 0.25
+shrink ratio flex item 2 = (600px * 6) / 4800  = 0.75
+
+new width              = width - (shrink space x shrink ratio)
+new width flex item 1  = 300px - (100px * 0.25) = 275px
+new width flex item 2  = 600px - (100px * 0.75) = 525px
+        </pre>
+
+    </body>
+</html>

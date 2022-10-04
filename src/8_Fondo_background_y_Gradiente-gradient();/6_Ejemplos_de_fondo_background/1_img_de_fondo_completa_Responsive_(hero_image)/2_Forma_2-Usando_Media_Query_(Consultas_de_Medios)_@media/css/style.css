@@ -1,0 +1,33 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a { font-size: 2.5rem; }
+
+img.bg {
+    /* Establecer reglas para llenar el fondo */
+    min-height: 100%; /* alto */
+    min-width: 1024px; /* ancho */
+
+    /* Configurar escala proporcional*/
+    width: 100%;
+    height: auto;
+
+    /* Configurar posicionamiento */
+    position: fixed;
+    top: 0; /* arriba */
+    left: 0; /* izquierda */
+}
+
+@media screen and (max-width: 1024px) {
+    /* Específico para esta imagen en particular */
+    img.bg {
+        left: 50%;
+        margin-left: -512px; /* 50% */
+    }
+}

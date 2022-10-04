@@ -1,0 +1,40 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ------------------------------------------------------------- */
+
+ul,
+li {
+    font-size: 2rem;
+}
+
+/* cuando NO escribo esto
+el :last-child y :nth-last-child(1) no funcionan en la lista */
+
+ul li {
+    color: black;
+}
+
+/* seleccionar el ULTIMO item de cada categoria de la lista
+
+ESTO...
+
+<ul>
+  …
+    <li :last-child>
+Especificidad: (0, 1, 2) */
+ul li:last-child {
+    color: red;
+    border: thick solid red;
+}
+/* es lo mismo q esto:
+
+<ul>
+  …
+    <li :nth-last-child>
+Especificidad: (0, 1, 2)*/
+ul li:nth-last-child(1) {
+    color: red;
+    border: thick solid red;
+}

@@ -1,0 +1,106 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex;
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+
+    /* font-family: cursive; */
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+/* text-shadow: sirve para agregar sombras al texto. */
+
+/* Sus únicos valores obligatorios son el desplazamiento horizontal ↔ y vertical.
+Por defecto el color de la sombra es negro y NO esta difuminada:
+
+desplazamiento horizontal ↔ / desplazamiento vertical ↕
+*/
+
+/*
+.texto {
+    text-shadow: -10px -20px;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/* Puedo definir que tan difuminada esta la sombra:
+
+desplazamiento horizontal ↔ / desplazamiento vertical ↕ / Difuminado
+*/
+
+/*
+.texto {
+    text-shadow: -10px 20px 2px;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/* Puedo cambiar el color de la sombra:
+
+desplazamiento horizontal ↔ / desplazamiento vertical ↕ / Difuminado / Color
+*/
+
+/*
+.texto {
+    text-shadow: 10px -20px 1px rebeccapurple;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+Puedo separar los valores del text-shadow: por comas para tener varias sombras.
+Cuando se define más de una sombra,
+las sombras se aplican de adelante hacia atrás,
+con la primera sombra especificada en la parte superior
+
+Cada coma separa los valores de las sombras
+*/
+
+/*
+.texto {
+    text-shadow: 10px 20px 1px rebeccapurple,
+                 10px 10px steelblue,
+                 30px -20px 1px orange,
+                 -10px 20px 1px red;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+Puedo aplicarle sombra al texto con box-shadow:
+pero la forma de la sombra sería una caja (cuadrado o circulo), es decir,
+q la sombra es la forma del Box Model
+
+En este caso la sombra es rectangular
+porq ese es el Box Model del "Hola Mundo"
+*/
+
+/*
+.texto {
+    box-shadow: 10px 2px 8px red;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+filter: drop-shadow(); y text-shadow: tienen la MISMA sintaxis:
+desplazamiento horizontal ↔ / desplazamiento vertical ↕ / Difuminado / Color */
+
+.texto {
+    filter: drop-shadow(1px 10px 0.9px orange);
+    text-shadow: 1px 10px 0.9px red;
+}

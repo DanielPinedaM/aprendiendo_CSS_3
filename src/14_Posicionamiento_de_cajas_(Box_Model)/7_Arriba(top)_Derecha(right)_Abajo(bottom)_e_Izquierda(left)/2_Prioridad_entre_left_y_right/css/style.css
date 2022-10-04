@@ -1,0 +1,37 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+CSS-Tricks (Trucos CSS) top: right: bottom: left:
+https://css-tricks.com/almanac/properties/t/top-right-bottom-left/ 
+
+Eje “x” (Horizontal ↔ ):
+Cuando posiciono un elemento
+y le defino izquierda left:
+y derecha right:
+se ignora right:
+y el elemento se mueve de acuerdo a la medida de left:*/
+
+.contenedor {
+    width: 8rem; /* ancho */
+    height: 8rem; /* alto */
+    border: thick solid black; /* borde */
+    background-color: violet; /* color de fondo */
+    position: relative; /* posicionamiento relativo */
+
+    /* como estoy definiendo right: y left al mismo tiempo entonces... */
+    right: 50px; /* se IGNORA right: */
+    left: 100px; /* y la caja se mueve la distancia de left: */
+}

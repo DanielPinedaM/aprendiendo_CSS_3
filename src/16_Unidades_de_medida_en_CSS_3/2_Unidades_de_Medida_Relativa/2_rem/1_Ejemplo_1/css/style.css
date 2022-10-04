@@ -1,0 +1,99 @@
+/*
+Unidades de Medida en CSS 3
+
+
+
+Las unidades de medida en CSS se dividen en:
+
+Unidad de Medida Absoluta:
+Su valor NO cambia,
+su tamaño SIEMPRE será el mismo
+sin importar el tamaño del dispositivo o como interactúe el usuario con la página web.
+La mas usada son los pixeles px,
+el resto de estas no es recomendable usarla:
+
+Abreviación de
+Unidad Absoluta	      Nombre	               Equivalente a…
+px	                Pixeles	               1 px = 1/96 de 1 pulg
+cm	                Centímetros	           1 cm = 38 px = 25/64 pulgadas
+mm	                Milímetros	           1 mm = 1/10 de 1 cm
+Q	                Cuarto de milímetro	   1Q = 1/40th of 1cm
+in	                Pulgadas o inches	   1 pulgada = 2,54 cm = 96 px
+pc	                Picas	               1pc = 1/6 de 1 pulg
+pt	                Puntos	               1 pt = 1/72 de 1 pulg
+
+
+
+Unidad de Medida Relativa:
+Su valor SI cambia dependiendo del contexto:
+Tamaño de la fuente principal font-size: ,
+tamaño del dispositivo (ventana grafica o viewport),
+tamaño del contenedor, etc.
+Las mas usadas son em, rem, %, vw, vh, vmin y vmax.
+Son las que se recomienda usar para que los elementos cambien de tamaño proporcionalmente:
+
+
+Abreviación de
+Unidad Relativa	                       Relativo a…
+
+TAMAÑO DE LA FUENTE font-size:
+em	                            Ancho de la letra “m” de la fuente del elemento
+rem	                            Ancho de la letra “m” de la fuente del elemento raíz (HTML)
+ex	                            Alto de la letra “x”
+ch	                            Ancho del número “0”
+%	                            Tamaño del contenedor (elemento padre)
+
+TAMAÑO DEL DISPOSITIVO (VENTANA GRAFICA O VIEWPORT)
+vw	                            1% del ancho de la pantalla. Toma valores de 1 a 100
+vh	                            1% del alto de la pantalla. Toma valores de 1 a 100
+vmin	                        1% del mínimo entre vw y vh
+vmax	                        1% del máximo entre vw y vh
+*/
+
+/* ----------------------------------------------------------------------------- */
+
+/* Normalizar estilos */
+html {
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/* --------------------- */
+
+.em_padre {
+    background-color: cadetblue;
+    font-size: 24px;
+    padding: 1em 0.5em; /* arriba abajo / izquierda derecha
+                           1em = 24px y 0.5em = 12px CON BASE DE 24px */
+    border: 5px solid rebeccapurple;
+}
+
+.em_hijo {
+    background-color: salmon;
+    border: 5px solid beige;
+    margin: 0.5em; /* 0.5em = 12px */
+    padding: 1em;
+    font-size: 2em; /* 2em = 48px */
+}
+
+/* --------------------- */
+
+.rem_padre {
+    background-color: cadetblue;
+    font-size: 24px;
+    padding: 1rem 0.5rem;
+    border: 5px solid rebeccapurple;
+}
+
+.rem_hijo {
+    background-color: salmon;
+    border: 5px solid beige;
+    padding: 1rem;
+    font-size: 2rem;
+}

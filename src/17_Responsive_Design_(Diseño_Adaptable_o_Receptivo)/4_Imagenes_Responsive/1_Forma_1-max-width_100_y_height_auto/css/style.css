@@ -1,0 +1,59 @@
+/* 
+Jon Mircha - YouTube - Contenido Embebido (Multimedia) Responsive usando max-width: 100%; y height: auto;
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4090s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #eeede7; /* color de fondo */
+}
+
+.centrar_flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    /* breakpoints: unidades de medida estandar del tamaño de los dispositivos */
+    min-width: 320px; /* esto es lo MINIMO q se puede encoger el .contenedor */
+    max-width: 1200px; /* y esto otro es lo MAXIMO q se puede ampliar */
+    /* borde */
+    border: thick solid red;
+}
+
+img {
+    max-width: 100%; /* ocupar TODO el ANCHO del contenedor */
+    height: auto; /* esto hace q la imagen no se deforme */
+    display: block; /* si quiero q el elemento multimedia ocupe TOTALMENTE el <div>
+                    entonces copio esto display: block;
+                    asi NO se vera un espacio en blanco en la parte de abajo */
+}
+
+/* ------------------------- */
+
+/* En el Responsive Design
+la multimedia debe ser flexible
+y adaptarse al tamaño de su contenedor,
+lo podemos lograr con las siguiente regla CSS: */
+
+/*
+img, audio, video, iframe, canvas, svg, picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+*/

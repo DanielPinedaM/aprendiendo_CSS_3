@@ -1,0 +1,22 @@
+body, html {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ol {
+    font-size: 1.5em;
+}
+
+/*
+
+Seleccionar elementos con la expresion algebraica An-B
+empezando desde el ULTIMO elemento (de abajo hacia arriba)
+
+<ol>
+  …
+    <li :nth-child>
+Especificidad: (0, 1, 2) */
+ol li:nth-last-child(3n-1) { /* An-B = 2, 5, 8, 11 */
+    color: blue; /* color de la letra */
+}

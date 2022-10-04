@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Posicionamiento</title>
+    </head>
+
+    <body>
+
+        <div class="box_model fondo">fondo background: hijo directo del body</div>
+        <div class="box_model z-index_NEGATIVO">z-index NEGATIVO</div>
+        <div class="box_model bloque">elemento descendiente EN BLOQ - display: block;</div>
+        <div class="box_model flotante_NO_posicionado">elemento flotante float: NO posicionado</div>
+        <div class="box_model linea">elemento EN LINEA - display: inline; y display: inline-block;</div>
+        <div class="box_model z_index_auto_cero">ELEMENTO POSICIONADO con z-index: auto; z-index: 0; y SIN z-index:</div>
+        <div class="box_model z-index_mayor_a_cero">ELEMENTO POSICIONADO con z-index: 1, 2, 3... MAYOR Q cero</div>
+
+    </body>
+
+</html>
+
+<!--
+
+elemento descendiente
+es un elemento q esta escrito despues de otro elemento en el codigo HTML
+<body>        <body> es todo lo q el usuario final ve en la pagina web
+    <div class="caja_1"></div> yo .caja_1 soy descendiente (hijo directo) del <body>
+    <div class="caja_2"></div> como la .caja_1 esta escrita primero y despues la .caja_2
+                                    entonces .caja_2 es descendiente de .caja_1
+    <div class="caja_3"></div>  .caja_3 es descendiente de .caja_2
+</body>
+
+-->

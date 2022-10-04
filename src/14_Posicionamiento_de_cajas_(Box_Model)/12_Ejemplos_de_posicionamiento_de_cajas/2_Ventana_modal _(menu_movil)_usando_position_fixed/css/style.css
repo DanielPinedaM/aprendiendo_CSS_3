@@ -1,0 +1,51 @@
+/*
+Este ejemplo lo saq de aqui
+
+YouTube - Jon Mircha - Ventana Modal (Menú Móvil) Usando position: fixed;
+https://www.youtube.com/watch?v=K3xmRF8ab1o&t=34503s
+
+
+eliminar estilos por defecto del navegador usando el selector universal  */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.ventana_modal {
+    background-color: black; /* color de fondo */
+    opacity: 0.5; /* dar opacidad al color de fondo para q atras se vea la pagina web */
+    color: white; /* color de la letra */
+    display: none; /* <a href="#">Cerrar</a> ocultar la ventana modal cuando esta cerrada */
+
+/* posicionamiento fijo position: fixed;
+El Elemento se Mueve con Respecto al Viewport,
+se Queda Quieto (Fijo) en Donde lo Haya Posicionado
+y Puede Perder las Medidas del Box Model  */
+    position: fixed;
+/* cuando posiciono fijamente y hago cero todas las direcciones
+top right bottom left el elemento va a ocupar todo el viewport */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* pseudo-clase :target Seleccionar el id="" y Hash # del Enlace (Link)
+
+abrir ventana modal
+
+al darle click a
+<a href="#modal_1" class="enlace_modal">Abrir</a>
+se abre la ventana modal */
+.ventana_modal:target {
+    display: block;
+}

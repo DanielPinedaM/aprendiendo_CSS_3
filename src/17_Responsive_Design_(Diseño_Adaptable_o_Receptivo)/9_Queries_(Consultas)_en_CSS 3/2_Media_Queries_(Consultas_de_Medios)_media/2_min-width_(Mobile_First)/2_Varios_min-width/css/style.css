@@ -1,0 +1,80 @@
+/*
+Este ejemplo lo saq de aqui
+
+Mobile First (Los Móviles Primero) min-width: y Desktop First (Los Escritorios Primero) max-width:
+https://joegalley.com/articles/mobile-first-vs-desktop-first-media-queries
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+
+
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+min-width: se usa para Mobile First
+
+Lo q esta escrito FUERA de las @media
+se ejecuta desde 0 hasta 319px */
+p {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+p::before { content: "hasta el momento NO se han ejecutado Media Queries" }
+
+/*
+como MINIMO 320px o MAS
+como MINIMO 480px o MAS
+y asi sucesivamente
+
+desde 320px hasta 479px */
+@media screen and (min-width: 320px) { /* 320, 321, 322... 479 */
+    body { background-color: steelblue; }
+    p::before { content: "min-width: 320px"; }
+}
+
+/* desde 480px hasta 599px */
+@media screen and (min-width: 480px) { /* 480, 481, 482... 599 */
+    body { background-color:coral; }
+    p::before { content: "min-width: 480px"; }
+}
+
+/* desde 600px hasta 767px */
+@media screen and (min-width: 600px) { /* 600, 601, 602... 767 */
+    body { background-color:lightgreen; }
+    p::before { content: "min-width: 600px"; }
+}
+
+/* desde 768px hasta 1023px */
+@media screen and (min-width: 768px) { /* 768, 769, 770... 1023 */
+    body { background-color:lightslategray; }
+    p::before { content: "min-width: 768px"; }
+}
+
+/* desde 1024px hasta 1199px */
+@media screen and (min-width: 1024px) { /* 1024, 1025, 1026... 1199 */
+    body { background-color:lightgray; }
+    p::before { content: "min-width: 1024px"; }
+}
+
+/* como MINIMO 1200px o MAS */
+@media screen and (min-width: 1200px) { /* viewpor >= 1200px
+                                           1200, 1201, 1202... ∞ (infinito) */
+    body { background-color:lightblue; }
+    p::before { content: "min-width: 1200px"; }
+}

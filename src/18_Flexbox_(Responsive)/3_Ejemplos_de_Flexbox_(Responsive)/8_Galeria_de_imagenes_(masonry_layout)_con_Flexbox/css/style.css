@@ -1,0 +1,407 @@
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    /*Desbordamiento overflow de contenido,
+    Sirve para ocultar barra de scroll hidden;
+    horizontal -x q se crea con la .hero_image */
+    overflow-x: hidden;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -------------------- Fluid Reset -------------------- */
+/* https://utopia.fyi/ */
+
+:root {
+    --fluid-min-width: 320;
+    --fluid-max-width: 1500;
+    --fluid-min-size: 17;
+    --fluid-max-size: 20;
+    --fluid-min-ratio: 1.2;
+    --fluid-max-ratio: 1.33;
+
+    --fluid-screen: 100vw;
+    --fluid-bp: calc(
+      (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+        ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+    );
+  }
+
+  @media screen and (min-width: 1500px) {
+    :root {
+      --fluid-screen: calc(var(--fluid-max-width) * 1px);
+    }
+  }
+
+  :root {
+    --fluid-min-scale-0: var(--fluid-min-ratio);
+    --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+    --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+    --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+    --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+    --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+
+    --fluid-max-scale-0: var(--fluid-max-ratio);
+    --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+    --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+    --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+    --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+    --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+
+    --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+    --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+    --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+    --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+    --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+    --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+
+    --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+    --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+    --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+    --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+    --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+    --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+
+    --fluid-0: calc(
+      (
+        (var(--fluid-min-size-0) * 1rem) +
+          (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)
+      )
+    );
+    --fluid-1: calc(
+      (
+        (var(--fluid-min-size-1) * 1rem) +
+          (var(--fluid-max-size-1) - var(--fluid-min-size-1)) * var(--fluid-bp)
+      )
+    );
+    --fluid-2: calc(
+      (
+        (var(--fluid-min-size-2) * 1rem) +
+          (var(--fluid-max-size-2) - var(--fluid-min-size-2)) * var(--fluid-bp)
+      )
+    );
+    --fluid-3: calc(
+      (
+        (var(--fluid-min-size-3) * 1rem) +
+          (var(--fluid-max-size-3) - var(--fluid-min-size-3)) * var(--fluid-bp)
+      )
+    );
+    --fluid-4: calc(
+      (
+        (var(--fluid-min-size-4) * 1rem) +
+          (var(--fluid-max-size-4) - var(--fluid-min-size-4)) * var(--fluid-bp)
+      )
+    );
+    --fluid-5: calc(
+      (
+        (var(--fluid-min-size-5) * 1rem) +
+          (var(--fluid-max-size-5) - var(--fluid-min-size-5)) * var(--fluid-bp)
+      )
+    );
+  }
+
+/* -------------------- Texto -------------------- */
+
+a, p, ol { font-size: var(--fluid-1); }
+
+h2 { font-size: var(--fluid-2); }
+
+h1 {
+    text-align: center;
+    font-size: var(--fluid-3);
+}
+
+.negrita { font-weight: 900; }
+
+/* -------------------- Lista ordenada <ol> -------------------- */
+
+.list_style_position_inside { list-style-position: inside; }
+
+ol li p { display: inline; }
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    /* outline: thick solid lightcoral; */
+
+    max-width: min(90%, 1332px);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------- Imagenes -------------------- */
+
+/* Nota:
+Donde haya escrito !important
+lo hice a proposito
+porq son lineas de codigo de CSS
+q SIEMPRE tienen q funcionar */
+img {
+    outline: 2.5px solid white;   /* linea que bordea las imagenes */
+    outline-offset: -10px;          /* meter la linea -10px adentro de las imagenes */
+    border-radius: 20px;            /* esquinas de la imagen redondeadas */
+
+    /* Imagenes Responsive */
+    display: block !important;
+    /* el ancho width: y alto height: de las imagenes
+    es diferente dependiendo de la forma en q haga la galeria,
+    si es con columns: ó Flexbox */
+
+    /* centrar horizontalmente ↔ las imagenes */
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    /* Ajustar imagen al contenedor,
+    Ajustar Imagen
+    Ampliándolo y Conservando su Calidad.
+    Es Probable q la Imagen se Recorte  */
+    object-fit: cover !important;
+}
+
+/* -------------------- Masonry Layout Usando la Propiedad columns: (SIN Flexbox) -------------------- */
+
+/* Dispositivos X-Small (telefonos verticales, desde 0 hasta 575px)
+No hay Media Queries para "xs"
+porq este es el valor predeterminado en Bootstrap */
+.masonry_layout {
+    width: 100%;
+    outline: thick solid steelblue;
+    line-height: 0;     /* eliminar espacio vertical entre las imagenes */
+    column-gap: 0.8%;   /* distancia de separacion vertical ↕ entre las imagenes */
+    column-count: 1;    /* 1 columna ↕ de imagenes */
+}
+
+.contenedor_imagen {
+    width: 100%;
+    margin-bottom: 20px; /* separar las imagenes */
+}
+
+/* Eliminar espacio en blanco margin-bottom: 0;
+de la ultima imagen .contenedor_imagen:nth-last-child(1) { ... }
+q se crea por el margin-bottom: 20px;
+
+Este espacio en blanco
+solamente es visible en dispositivos moviles */
+.masonry_layout .contenedor_imagen:nth-last-child(1) { margin-bottom: 0; }
+
+/* hacer q las imagenes
+ocupen TODO el ancho del
+.contenedor_imagen <div> */
+.contenedor_imagen img {
+    width: 100%;
+    height: auto;
+}
+
+.hero_image {
+    /* CSS-Tricks (Trucos CSS) -
+    ¿cómo hacer un contenedor
+    del ancho completo del navegador (viewport)
+    cuando estamos dentro de un elemento padre de ancho limitado?
+    https://css-tricks.com/full-width-containers-limited-width-parents/#aa-no-calc-needed */
+    display: block;
+    width: 100vw;
+    min-height: 100vh;
+
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    /* separar la .hero_image de las otras imagenes */
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    /* la .hero_image ocupa una sola columna */
+    column-span: all;
+
+    /* CSS-Tricks (Trucos CSS) -
+    Imagen de Fondo Responsive del Tamaño de Toda la Página Web:
+    https://css-tricks.com/perfect-full-page-background-image/ */
+    background-image: url('https://source.unsplash.com/1280x720/?cat'); /* imagen de fondo */
+    background-repeat: no-repeat; /* la imagen NO se repite */
+    background-position: center center; /* centrar imagen de fondo */
+    background-attachment: fixed; /* Todos los Fondos se Mueven al Hacer Scroll por la Página Web y se Quedan Quietos al Hacer Scroll con el Contenedor */
+    background-size: cover; /* Ajustar Fondo Ampliándolo al Tamaño del Contenedor */
+}
+
+/* -------------------- Masonry Layout Usando Flexbox -------------------- */
+
+/* CSS-Tricks (Trucos CSS)
+https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-demo */
+
+.flex_container_gallery {
+    outline: thick solid crimson;
+    width: 100%;
+    list-style-type: none; /* Quitar las Viñetas y Enumeración de la Lista */
+
+    display: flex; /* usar Flexbox */
+
+    /* Centrar los items de la lista <li> */
+    justify-content: center;   /* centrar HORIZONTALMENTE ↔ */
+    align-items: center;       /* centrar VERTICALMENTE ↕ */
+
+    /*
+    flex-flow:              Flujo Flexible
+    flex-direction: row;    Fila → de Izquierda a Derecha (Valor por Defecto)
+    flex-wrap: wrap;        Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+    flex-flow: row wrap; /* flex-flow: flex-direction flex-wrap; */
+}
+
+.flex_container_gallery li {
+    height: 40vh; /* las imagenes miden un alto del 40% del viewport */
+    flex-grow: 1; /* Los Flex Items SI crecen (aumentan) su tamaño */
+}
+
+.flex_container_gallery img {
+    /* la imagen <img> ocupa todo el
+    ancho min-width: y alto max-height:
+    del Flex Item <li> */
+    min-width: 100%;
+    max-height: 100%;
+
+    /* alinear imagen
+    en la parte inferior (abajo) de la línea (renglón) */
+    vertical-align: bottom;
+}
+
+/* El Flex Item .full_flex_item {...}
+de la .hero_image {...}
+tiene q ser lo mas grande posible */
+.flex_container_gallery .full_flex_item {
+    width: 100%;         /* El ancho width: del Flex Item es TODO 100% el ancho del Flex Container */
+    height: initial;     /* Restablecer el alto height: a su valor por defecto initial; */
+    min-height: 100vh;   /* El alto minimo min-height: del Flex Item es el 100% del alto del viewport 100vh */
+
+    /*
+    flex:                Tamaño de los Flex Items
+    flex-grow: 9999;     El Flex Item se estira (crece) flex-grow: lo maximo posible 9999;
+    flex-shrink: 0;      NO 0; reducir (encoger) flex-shrink: el tamaño del Flex Item
+    flex-basis: 100%;    El ancho flex-basis: del Flex Item es TODO 100% el ancho del Flex Container */
+    flex: 9999 0 100%;   /* flex: flex-grow flex-shrink flex-basis; */
+}
+
+/* Arreglar distribucion (ubicacion) de las imagenes
+
+No hay ciencia en usar flex-grow: 10; aquí.
+En todas mis pruebas,
+esto entregó los mejores resultados.
+
+https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-last-row-stretchiness */
+.flex_container_gallery .empty_item { flex-grow: 10; }
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- Dar un Numero de columnas
+                        de imagenes column-count:
+                        dependiendo del ancho del viewport -------------------- */
+
+/*
+Esta tabla es de Bootstrap 5:
+https://getbootstrap.com/docs/5.2/layout/breakpoints/#available-breakpoints
+
+Nombre Clase de CSS   Significado   Desde (Breakpoint)   Hasta    Media Qurie
+(Abreviacion)
+...	                  Extra small   0                    575px    ...
+sm	                  Small         576px     = 36em     767px    @media screen and (min-width: 36em) {...}
+md	                  Medium        768px     = 48em     991px    @media screen and (min-width: 48em) {...}
+lg	                  Large         >=992px   = 62em     ∞        @media screen and (min-width: 62em) {...}
+*/
+
+/* -------------------- Numero de columnas column-count:  -------------------- */
+
+@media screen and (min-width: 36em) { /* Small desde 576px = 36em hasta 767px */
+    .masonry_layout { column-count: 2; }
+}
+
+@media screen and (min-width: 48em) { /* Medium desde 768px = 48em hasta 991px */
+    .masonry_layout{ column-count: 3;
+    }
+}
+
+@media screen and (min-width: 62em) { /* Large ancho viewport >=992px = 62em, desde 992px hasta infinito ∞ */
+    .masonry_layout{ column-count: 4; }
+}
+
+/* -------------------- Masonry Layout Usando Flexbox -------------------- */
+
+/* Viewport en forma de cuadrado:
+https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-portrait
+
+aspect-ratio: 1/1; es un cuadrado,
+es un viewport (pantalla)
+con las mismas medidas de anchoXalto.
+
+Ejemplo: un viewport q mide 1080px X 1080px */
+@media screen and (max-aspect-ratio: 1/1) {
+    /* El alto height: de los Flex Items <li>
+    es el 30% del alto del viewport 30vh */
+    .flex_container_gallery li { height: 30vh; }
+}
+
+/* Pantallas pequeñas
+https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-short-screens
+
+Ejemplo: un viewport q mide 500px X 479px */
+@media screen and (max-height: 30em) { /* alto viewport <= 480px = 30em */
+    .flex_container_gallery li { height: 80vh; }
+
+    /* la imagen <img> y el Flex Item <li>
+    tenen las mismas medidas */
+    .flex_container_gallery img {
+        /* yo hice esto,
+        esto NO esta escrito en CSS-Tricks,
+        cuando NO copio esto las imagenes se desbordan */
+        display: block;
+        width: 100%; /* ancho */
+        height: 100%; /* alto */
+    }
+
+    /* yo hice esto,
+    esto NO esta escrito en CSS-Tricks,
+    cuando NO copio esto
+    queda un espacio grande en blanco
+    del Flex Item vacio
+
+    display: none; Desaparecer Totalmente el Elemento <li class="empty_item"></li> */
+    .flex_container_gallery .empty_item { display: none; }
+}
+
+/* Pantallas pequeñas en orientacion vertical
+https://css-tricks.com/adaptive-photo-layout-with-flexbox/#aa-smaller-screens-portrait
+
+Ejemplo: 480px X 480px */
+@media screen and (max-aspect-ratio: 1/1) and (max-width: 30em) { /* (anchoXalto viewport es igual) AND (ancho viewport <= 480px = 30em) */
+    .flex_container_gallery { flex-direction: row; }
+
+    .flex_container_gallery li {
+        width: 100%;
+        height: auto;
+    }
+
+    .flex_container_gallery img {
+        display : block;
+        width: 100%;
+        max-height: 75vh;
+        min-width: 0;
+    }
+}

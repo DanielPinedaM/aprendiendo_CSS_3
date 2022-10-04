@@ -1,0 +1,9 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+:host {
+    background: red
+}

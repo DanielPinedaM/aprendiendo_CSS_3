@@ -1,0 +1,42 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+input,
+label,
+button,
+p {
+    font-size: 2rem;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* convertir el parrafo <p>
+q dice "(Obligatorio)"
+de bloq a linea
+con las propiedades del
+ancho width: y alto :height */
+.inline-block {
+    display: inline-block;
+}
+
+/* Los elementos que sean OBLIGATORIOS llenar :required
+tienen un borde tomato (rojo) */
+input[type="email"]:required {
+    border: thick solid tomato;
+}
+
+/*
+<input type="radio" :required>
+<label>
+Especificidad: (0, 2, 2)
+*/
+input[type="radio"]:required + label {
+    color: red;
+}
+
+/* y los q son OPCIONALES :optional
+tienen un borde green (verde) */
+input[type="text"]:optional {
+    border: thick solid green;
+}

@@ -1,0 +1,137 @@
+/*
+Jon Mircha - YouTube - Media Queries
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=7897s
+
+Documentacion Oficial de Media Queries
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+
+CSS-Tricks (Trucos CSS) - Guia Completa de las Media Queries
+https://css-tricks.com/a-complete-guide-to-css-media-queries/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+Para q los Media Queries no se sobreescriban debido a la cascada
+siempre q escribas @media por SEPARADO
+debes usar SOLAMENTE min-width: ó max-width:
+(NO los dos al mismo tiempo)
+
+A continuacion veras ejemplos de
+de la forma correcta ✔️ e INcorrecta ❌
+de escribir los @media
+
+
+
+Lo q esta escrito FUERA de las @media
+se ejecuta cuando NO se cumplan las condiciones de los @media */
+p {
+    text-align: center; /* centrar texto horizontalmente */
+    font-size: 2rem; /* tamaño de la letra */
+}
+
+/* mensaje q se muestra cuando NO se han ejecutado los Media Queries */
+p::before { content: "NO se ha ejecutado ninguna Media Query hasta el momento" }
+
+/*
+
+MALA PRACTICA ❌
+NO se puede usar min-width: y max-width: en @media DIFERENTES
+
+min-width: se usa para Mobile First */
+@media screen and (min-width: 480px) {/*min-width: como MINIMO 480px o MAS
+                                        480, 481, 482... ∞ (infinito)
+                                        viewport >= 480px */
+p::before { content: "min-width: 480px"; }
+body { background-color: lightpink; }
+}
+
+/* max-width: se usa para Desktop First
+
+IMPORTANTE:
+Debido a q esta es la @media q esta escrita mas abajo
+entonces este sera el estilo  q se aplica */
+@media screen and (max-width: 1024px) {/*max-width: como MAXIMO 1024px o MENOS
+                                        1024, 1023, 1022...0
+                                        viewport<= 1024px */
+    p::before { content: "max-width: 1024px"; }
+    body { background-color: lightgreen; }
+}
+
+
+/* ---------------- */
+
+
+/*
+
+MALA PRACTICA ❌
+NO se puede usar min-width: y max-width: en @media DIFERENTES */
+@media screen and (min-width: 480px) {/*min-width: como MINIMO 480px o MAS
+                                        480, 481, 482... ∞ (infinito)
+                                        viewport >= 480px */
+    /* Regla CSS */
+}
+
+@media screen and (max-width: 1024px) {/*max-width: como MAXIMO 1024px o MENOS
+                                        1024, 1023, 1022...0
+                                        viewport<= 1024px */
+    /* Regla CSS */
+}
+
+/* ---------------- */
+
+/*
+
+BUENA PRACTICA ✔️
+SI puedes usar min-width: y max-width: en un MISMO @media */
+@media screen and (min-width: 480px) and (max-width: 1024px) { /* desde 480px hasta 1024px */
+    /* Regla CSS */
+}
+
+/* ---------------- */
+
+/*
+
+BUENA PRACTICA ✔️
+En los @media usar SOLAMENTE Mobile First min-width:
+
+Desde 320px hasta 479px */
+@media screen and (min-width: 320px) { /* 320, 321, 322... 479 */
+    /* Regla CSS */
+}
+
+/* desde 480px hasta ∞ (infinito) */
+@media screen and (min-width: 480px) { /* 480, 481, 482... ∞ (infinito) */
+    /* Regla CSS */
+}
+
+/* ---------------- */
+
+/*
+
+BUENA PRACTICA ✔️
+En los @media usar SOLAMENTE Desktop First max-width:
+
+desde 480px hasta 321px */
+@media screen and (max-width: 480px) { /* 480, 479, 478... 321 */
+   /* Regla CSS */
+}
+
+/* desde 320px hasta 0 */
+@media screen and (max-width: 320px) { /* 320, 319, 318... 0 */
+   /* Regla CSS */
+}

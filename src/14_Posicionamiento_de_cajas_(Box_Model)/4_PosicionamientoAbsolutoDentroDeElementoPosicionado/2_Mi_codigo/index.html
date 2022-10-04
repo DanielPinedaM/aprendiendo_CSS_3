@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!--cuando los elementos posicionados absolutamente absolute;
+                    se mueven con respecto al elemento raiz <html>
+                    se mueven con respecto a toda la parte visible de la pagina web (viewport) -->
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Posicionamiento</title>
+    </head>
+    <body class="centrar_flexbox">
+        <!-- si posiciono el .contenedor_padre entonces
+            los <div> hijos q estan dentro se moveran con respecto al .contenedor_padre -->
+        <div class="centrar_flexbox contenedor_padre">
+            <p>el position: es DIFERENTE de static;</p>
+            <div class="box_model caja_1">
+                position: absolute; top: 0; left: 0;
+            </div>
+            <div class="box_model caja_2">
+                position: absolute;
+                top: 30%;
+                right: -25px;
+            </div>
+            <div class="box_model caja_3">
+                position: absolute;
+                bottom: 5px;
+                left: 10px;
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

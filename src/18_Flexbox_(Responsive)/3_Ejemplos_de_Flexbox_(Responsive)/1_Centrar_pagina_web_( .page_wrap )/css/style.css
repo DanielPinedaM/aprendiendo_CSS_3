@@ -1,0 +1,89 @@
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap_1 {
+    /* uso outline: y NO border:
+    para q la linea q bordea la pagina web
+    NO ocupe espacio en el Box Model
+    y asi haya mas espacio disponible dentro de la pagina web,
+    en lo q este dentro del <div class="page_wrap"> */
+    outline: thick solid black;
+
+    /* ancho maximo de toda la pagina web */
+    max-width: 90vw;
+
+    /* Centrar horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page_wrap_2 {
+    outline: thick solid red;
+
+    /* el ancho maximo max-width: de la pagina web es
+    el valor (numero) minimo min() entre
+    el 90vw del ancho del viewport
+    y 1332px */
+    max-width: min(90vw, 1332px);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- ancho Responsive de toda la pagina web -------------------- */
+
+/* esto lo saq inspeccionando elemento
+de la pagina web de React https://reactjs.org/
+
+*******
+
+PROMEDIO DE LOS 2 DISPOSITIVOS CON MAYOR ANCHO DEL VIEWPORT (BREAKPOINTS):
+
+Promedio @media screen =
+= [ (1280px Breakpoint Laptop) + (1680px Breakpoint Desktop) ] / 2
+= 1480px
+= (1480px) / (16px)
+= 92.5rem
+
+*******
+
+CALCULAR max-width:
+
+90% de 1480px = 1332px
+
+¿Porq 90%?, porq fuera de esta Media Query tengo esto:
+.page_wrap_1 {
+    ...
+    max-width: 90vw;
+    ...
+}
+*/
+
+@media screen and (min-width: 92.5em) { /* ancho viewport >= 1480px = 92.5em */
+    .page_wrap_1 { max-width: 1332px; }
+}

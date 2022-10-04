@@ -1,0 +1,44 @@
+/*
+CSS-Tricks (Trucos CSS) - Texto Responsive
+https://css-tricks.com/simplified-fluid-typography/
+
+https://css-tricks.com/snippets/css/fluid-typography/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* el tamaño de la letra font-size: por defecto es 16px */
+html { font-size: 16px; }
+
+/* en los @media el font-size: calc();
+se TIENE q aplicar al <body> y NO al <html>
+esto es asi para no modificar
+los tamaños de las propiedades que has definido con rem
+
+como MINIMO 320px o MAS
+desde 320px hasta 999px */
+@media screen and (min-width: 20em) { /* 20em = 320px
+                                        320, 321, 322... 999 */
+    body { font-size: calc(16px + 6 * ((100vw - 320px) / 680)); }
+}
+
+/* como MINIMO 1000px o MAS
+desde 1000px hasta infinito */
+@media screen and (min-width: 62.5em) { /* 62.5em = 1000px
+                                           1000, 1001, 1002... ∞ (infinito) */
+    body { font-size: 22px; }
+}

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+<!--         <h1 class="position_sticky">
+            <code class="position_sticky">place-content: align-content justify-content;</code>
+        </h1> -->
+
+        <p>
+            <code>place-content:</code>
+            es una propiedad abreviada (shorthand)
+            que define como están alineados los Flex Items
+            en el Eje Principal (Main Axis) con <code>justify-content:</code>
+            y Eje Transversal (Cross Axis) con <code>align-content:</code>
+        </p>
+        <p>
+            Su sintaxis es
+            <code>place-content: align-content justify-content;</code>
+        </p>
+        <p>
+            Su valor por defecto es
+            <code>place-content: normal;</code>
+        </p>
+
+        <h2>IMPORTANTE!!!:</h2>
+        <p>
+            Al Flex Container hay que definirle <code>flex-wrap: wrap;</code> ó
+            <code>flex-wrap: wrap-reverse;</code> para que
+            la propiedad <code>place-content:</code> pueda funcionar,
+            porque <code>align-content:</code> solamente sirve para
+            <code>flex-wrap: wrap;</code> y <code>flex-wrap: wrap-reverse;</code>
+        </p>
+
+        <h2>
+            Ejemplo 1 - <code>place-content:</code> con Dos Valores:
+        </h2>
+        <p>
+            Cuando defino dos valores para <code>place-content:</code>
+            entonces el primero es para <code>align-content:</code>
+            y el segundo para <code>justify-content:</code>
+        </p>
+        <p>Esto...</p>
+        <p>
+            <code>place-content: flex-start space-evenly;</code>
+        </p>
+        <p>Es lo mismo q esto:</p>
+        <p>
+            <code>align-content: flex-start;</code>
+        </p>
+        <p>
+            <code>justify-content: space-evenly;</code>
+        </p>
+
+        <h2>
+            Ejemplo 2 - <code>place-content:</code> con Un Solo Valor:
+        </h2>
+        <p>
+            Cuando defino un solo valor para <code>place-content:</code>
+            entonces ambas propiedades <code>align-content:</code>
+            y <code>justify-content:</code> toman el mismo valor
+        </p>
+        <p>Esto...</p>
+        <p>
+            <code>place-content: center;</code>
+        </p>
+        <p>Es lo mismo q esto:</p>
+        <p>
+            <code>align-content: center;</code>
+        </p>
+        <p>
+            <code>justify-content: center;</code>
+        </p>
+        <p>Y q esto otro:</p>
+        <p>
+            <code>place-content: center center;</code>
+        </p>
+
+        <a href="https://css-tricks.com/almanac/properties/p/place-content/" target="_blank">CSS-Tricks</a>
+
+        <hr>
+
+        <h2>
+            <code>place-content: normal;</code>
+            (valor por defecto)
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: normal flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: normal flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: normal center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: normal space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: normal space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: normal space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox normal_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: stretch flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: stretch flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: stretch center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: stretch space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: stretch space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: stretch space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox stretch_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-start flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-start flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-start center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-start space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-start space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_start_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-start space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox  flex_start_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-end flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-end flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-end center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-end space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-end space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: flex-end space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox flex_end_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: center flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox center_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: center flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox  center_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: center center;</code>
+        </h2>
+        <p>Centrar cualquier elemento (Etiqueta) HTML en Flexbox</p>
+        <div class="contenedor_flexbox center_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: center space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox center_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: center space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox center_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: center space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox center_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-between flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-between flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-between center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-between space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-between space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-between space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_between_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-around flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-around flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-around center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-around space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-around space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-around space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_around_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-evenly flex-start;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_flex_start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-evenly flex-end;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_flex_end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-evenly center;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-evenly space-between;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_space_between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-evenly space-around;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_space_around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <h2>
+            <code>place-content: space-evenly space-evenly;</code>
+        </h2>
+        <p></p>
+        <div class="contenedor_flexbox space_evenly_space_evenly">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+    </body>
+</html>

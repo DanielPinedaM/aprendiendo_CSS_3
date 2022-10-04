@@ -1,0 +1,28 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+article {
+    font-size: 1.8em;
+}
+
+/*
+ESTO...
+
+article *:first-of-type {
+    background-color: pink;
+}*/
+
+/* es lo mismo q esto:
+
+:first-of-type selecciona los PRIMEROS elementos
+de cada tipo q estan dentro del articulo <article>
+<article>
+  …
+    <element :first-of-type>
+Especificidad: (0, 1, 1) */
+article :first-of-type {
+    background-color: pink;
+}

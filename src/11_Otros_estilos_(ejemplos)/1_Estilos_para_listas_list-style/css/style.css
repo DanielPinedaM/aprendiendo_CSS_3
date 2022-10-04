@@ -1,0 +1,208 @@
+body,
+html {
+    background-color: #eeede7; /* color de fondo */
+    font-size: 32px; /* tamaño de la letra */
+}
+
+/* ----------------------------------------------------------------------- */
+/*
+Tipo de Lista list-style-type:
+
+no importa si copio esto o no,
+el resultado sera el mismo porq
+tengo una Lista con Viñetas (Desordenada): <ul> el resultado sera el mismo */
+
+/*
+.lista_con_viñetas {
+    list-style-type: disc;
+}
+*/
+
+/* --------------------- */
+/* Viñeta con Bola Sin Rellenar  */
+
+/*
+.lista_con_viñetas {
+    list-style-type: circle;
+}
+*/
+
+/* --------------------- */
+/* Viñeta Cuadrada */
+
+/*
+.lista_con_viñetas {
+    list-style-type: square;
+}
+*/
+
+/* --------------------- */
+/* Lista con Números “Normales” (Arábigo) (1, 2, 3…)  */
+
+/*
+.lista_con_viñetas {
+    list-style-type: decimal;
+}
+*/
+
+/* --------------------- */
+/* Lista con Números Romanos en Minúscula */
+
+/*
+.lista_con_viñetas {
+    list-style-type: lower-roman;
+}
+*/
+
+/* --------------------- */
+/* Lista con Números Romanos en Mayúscula */
+
+/*
+.lista_con_viñetas {
+    list-style-type: upper-roman;
+}
+*/
+
+/* --------------------- */
+/* Lista de Definición (Sin Viñetas ni Enumeración)  */
+
+/*
+.lista_con_viñetas {
+    list-style-type: none;
+}
+*/
+
+/* ----------------------------------------------------------------------- */
+/*
+Hacer que las Viñetas de la Lista Sean Imágenes list-style-image:
+
+no importa si copio esto o no
+el resultado sera el mismo
+porq por defecto las listas no tienen imagenes en sus viñetas
+*/
+
+/*
+.lista_con_viñetas {
+    list-style-image: none;
+}
+*/
+
+/* --------------------- */
+/* Forma 1 - Usando la Propiedad list-style-image: url(""); (Mala Práctica)
+El icono se puede ver porq tiene el MISMO tamaño de la viñeta */
+
+/*
+.lista_con_viñetas {
+    list-style-image: url("/assets/icons/icono_muy_pequeño.jpg");
+}
+*/
+
+/* --------------------- */
+/*
+Cuando pongo como icono otra imagen mas grande no puedo ver la imagen
+y como NO le puedo cambiar el tamaño a la imagen con esta propiedad
+por eso es q esto es mala practica */
+
+/*
+.lista_con_viñetas {
+    list-style-image: url("/assets/icons/icono_de_otro_tamaño.png");
+}
+*/
+
+/* --------------------- */
+/*
+Forma 2 - Usando el Pseudo-elemento ::before y Propiedad background: (Buena Practica)
+*/
+
+/*
+<element class="lista_con_viñetas">
+  …
+    <li>
+
+Quitar las Viñetas y Enumeración de la Lista
+*/
+
+/*
+.lista_con_viñetas li {
+    list-style-type: none;
+}
+*/
+
+/*
+<element class="lista_con_viñetas">
+  …
+    <li ::before>
+
+Convertir Elemento de Bloque a Línea Con las Propiedades ancho width: y alto height: del content
+ancho
+alto
+esta es la ruta de la imagen q quiero poner como viñeta
+Ajustar imagen (viñeta) al Tamaño del Contenedor sin Ampliarlo
+NO repetir la imagen (viñeta)
+centrar imagen (viñeta)
+*/
+
+/*
+.lista_con_viñetas li::before {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+
+    content: "";
+
+    background-image: url("/assets/icons/icono_de_otro_tamaño.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+*/
+
+/* --------------------- */
+/*
+Forma 3 - Usando la Etiqueta <img> (Buena Practica)
+*/
+
+/* Quitar las Viñetas y Enumeración de la Lista */
+/*
+.lista_con_viñetas {
+    list-style-type: none;
+}
+*/
+
+/*
+.imagen_en_lista {
+    width: 2rem;
+    height: 2rem;
+}
+*/
+
+/* --------------------- */
+
+/* clase para quitar la distancia de separacion (margen) entre los elementos */
+.no_margin {
+    margin: 0;
+}
+
+.contenedor {
+    width: 40%; /* ancho */
+    height: 40%; /* alto */
+    border: 1px solid black;
+}
+
+/* 
+ul {
+    padding-left: 30px;
+}
+ */
+.list-style-position_inside {
+    list-style-position: inside;
+}
+
+
+
+
+.list-style-position_outside {
+    list-style-position: outside; /* No importa si copio esto o no
+                                    el resultado va ser el mismo
+                                    porq este es el valor por defecto */
+}

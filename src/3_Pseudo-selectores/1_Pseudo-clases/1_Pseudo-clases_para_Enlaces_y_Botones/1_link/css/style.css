@@ -1,0 +1,13 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* selecciona los ENLACES q NO he abierto
+
+<element class="selector_de_clase" :link>
+Selector Specificity: (0, 2, 0)*/
+:link {
+    color: fuchsia;
+}

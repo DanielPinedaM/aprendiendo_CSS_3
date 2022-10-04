@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Responsive</title>
+    </head>
+    <body>
+        <a href="https://www.youtube.com/watch?v=po9V3IoxbJc&t=648s" target="_blank">
+            Jon Mircha - Layout SIN Media Queries + Flexbox (Responsive)
+        </a>
+
+        <br>
+        <hr>
+        <br>
+
+        <!-- con este <div class="page_wrap">
+        centro horizontalmente todo el contenido de la pagina web,
+        tambien sirve para q a los lados izquierda y derecha
+        haya un espacio en blanco
+        y asi el contenido de la pagina web
+        NO ocupe todo el ancho del viewport-->
+        <div class="page_wrap">
+            <h1>
+                <code>flex: flex-grow flex-shrink flex-basis;</code>
+            </h1>
+            <h2>
+                <code>flex: 1 1 200px;</code>
+            </h2>
+            <div class="flex_container"> <!-- Contenedor de Flexbox (Flex Container) -->
+                <!--
+                Emmet abbreviation (abreviacion de Emmet de VS Code):
+                escribir 19 Flex Items enumerados del 1 al 19,
+                con la etiqueta div y la clase flex_item_1
+
+                div.flex_item_1*19{Item $}
+                -->
+                <div class="flex_1_1_200">Item 1</div>
+                <div class="flex_1_1_200">Item 2</div>
+                <div class="flex_1_1_200">Item 3</div>
+                <div class="flex_1_1_200">Item 4</div>
+                <div class="flex_1_1_200">Item 5</div>
+                <div class="flex_1_1_200">Item 6</div>
+                <div class="flex_1_1_200">Item 7</div>
+                <div class="flex_1_1_200">Item 8</div>
+                <div class="flex_1_1_200">Item 9</div>
+                <div class="flex_1_1_200">Item 10</div>
+                <div class="flex_1_1_200">Item 11</div>
+                <div class="flex_1_1_200">Item 12</div>
+                <div class="flex_1_1_200">Item 13</div>
+                <div class="flex_1_1_200">Item 14</div>
+                <div class="flex_1_1_200">Item 15</div>
+                <div class="flex_1_1_200">Item 16</div>
+                <div class="flex_1_1_200">Item 17</div>
+                <div class="flex_1_1_200">Item 18</div>
+                <div class="flex_1_1_200">Item 19</div>
+            </div>
+
+            <br>
+
+            <h2>
+                <code>flex: 0 1 200px;</code>
+            </h2>
+            <div class="flex_container">
+                <div class="flex_0_1_200">Item 1</div>
+                <div class="flex_0_1_200">Item 2</div>
+                <div class="flex_0_1_200">Item 3</div>
+                <div class="flex_0_1_200">Item 4</div>
+                <div class="flex_0_1_200">Item 5</div>
+                <div class="flex_0_1_200">Item 6</div>
+                <div class="flex_0_1_200">Item 7</div>
+                <div class="flex_0_1_200">Item 8</div>
+                <div class="flex_0_1_200">Item 9</div>
+                <div class="flex_0_1_200">Item 10</div>
+                <div class="flex_0_1_200">Item 11</div>
+                <div class="flex_0_1_200">Item 12</div>
+                <div class="flex_0_1_200">Item 13</div>
+                <div class="flex_0_1_200">Item 14</div>
+                <div class="flex_0_1_200">Item 15</div>
+                <div class="flex_0_1_200">Item 16</div>
+                <div class="flex_0_1_200">Item 17</div>
+                <div class="flex_0_1_200">Item 18</div>
+                <div class="flex_0_1_200">Item 19</div>
+            </div>
+
+            <br>
+
+            <h2>
+                <code>flex: 1 1 clamp(160px, 507px, 666px);</code>
+            </h2>
+            <div class="flex_container">
+                <div class="flex_clamp">Item 1</div>
+                <div class="flex_clamp">Item 2</div>
+                <div class="flex_clamp">Item 3</div>
+                <div class="flex_clamp">Item 4</div>
+                <div class="flex_clamp">Item 5</div>
+                <div class="flex_clamp">Item 6</div>
+                <div class="flex_clamp">Item 7</div>
+                <div class="flex_clamp">Item 8</div>
+                <div class="flex_clamp">Item 9</div>
+                <div class="flex_clamp">Item 10</div>
+                <div class="flex_clamp">Item 11</div>
+                <div class="flex_clamp">Item 12</div>
+                <div class="flex_clamp">Item 13</div>
+                <div class="flex_clamp">Item 14</div>
+                <div class="flex_clamp">Item 15</div>
+                <div class="flex_clamp">Item 16</div>
+                <div class="flex_clamp">Item 17</div>
+                <div class="flex_clamp">Item 18</div>
+                <div class="flex_clamp">Item 19</div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

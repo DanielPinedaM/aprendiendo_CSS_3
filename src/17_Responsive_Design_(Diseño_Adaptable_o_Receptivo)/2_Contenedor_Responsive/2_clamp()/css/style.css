@@ -1,0 +1,35 @@
+/*
+Jon Mircha - YouTube - Contenedor Responsive Usando clamp();
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=19630s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    border: thick solid black; /* borde */
+    background-color: steelblue; /* color de fondo */
+
+    /* clamp(valor minimo, valor ideal, valor maximo);
+
+    clamp(min-width, valor ideal, max-width);
+    25rem = 400px, 60vw = 60% del ancho del viewport, 37.5rem = 600px */
+    width: clamp(25rem, 60vw, 37.5rem);
+
+    /* clamp(min-height, valor ideal, max-height);
+    12.5rem = 200px, 30vh = 30% del alto del viewport, 18.75rem = 300px */
+    height: clamp(12.5rem, 30vh, 18.75rem);
+}

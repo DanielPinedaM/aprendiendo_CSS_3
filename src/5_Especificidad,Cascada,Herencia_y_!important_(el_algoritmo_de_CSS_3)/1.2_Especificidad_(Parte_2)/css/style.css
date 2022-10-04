@@ -1,0 +1,31 @@
+/* 
+La especificidad define q selectores tienen prioridad sobre otros. 
+La prioridad de los selectores tiene el siguiente orden:
+*/
+
+/* (1,0,0) */
+#bienvenida {
+    background: red;
+}
+
+/* (0,1,0) */
+.mensaje {
+    background: blue;
+}
+
+/* (0,0,1) */
+div {
+    background: yellow;
+}
+
+/* “Cascada” significa que no importa el orden 
+en que se escriba él .css, excepto si se modifica 
+la misma propiedad al mismo selector, esto hará, 
+en este caso que prevalezca el ultimo bloque de declaración escrito.  */
+
+/* (1,0,0) */
+/* 
+#bienvenida {
+    background: purple;
+}
+*/

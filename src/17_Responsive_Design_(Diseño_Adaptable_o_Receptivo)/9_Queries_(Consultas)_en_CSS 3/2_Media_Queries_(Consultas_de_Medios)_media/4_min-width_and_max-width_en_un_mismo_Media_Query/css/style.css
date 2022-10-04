@@ -1,0 +1,36 @@
+/*
+CSS-Tricks (Trucos CSS) - min-width: and max-width: en un Mismo Media Query
+https://css-tricks.com/a-complete-guide-to-css-media-queries/#using-min-and-max-to-match-value-ranges
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+p::before { content: "hasta el momento NO se ha ejecutado ninguna Media Query" }
+
+/*
+Cuando el viewport mide
+DESDE 320px HASTA 1024px se ejecuta esta Media Query */
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    body { background-color: steelblue; }
+    p::before {content: "(min-width: 320px) and (max-width: 1024px)" }
+}

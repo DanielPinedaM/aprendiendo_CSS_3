@@ -1,0 +1,631 @@
+/*
+Propiedades para el Fondo background:
+
+Lista de Todas las Propiedades CSS de la Documentación Oficial:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index
+
+background: tiene varias propiedades que están en el link anterior.
+Estas propiedad sirven para ponerle fondo a los elementos de la página web.
+
+background: sirve para poner de fondo una imagen, video, color, etc. a un elemento.
+Como por ejemplo poner la imagen de fondo de la pagina web o cambiarle el color a una caja (Box Model).
+
+background: es la abreviación (shorthand) de las siguientes propiedades:
+-  Color de Fondo             background-color:
+- Imagen de Fondo             background-image:
+- background-attachment:
+- background-clip:
+- background-origin:
+- background-position:
+- background-repeat:
+- Tamaño de Fondo background-size:
+
+SINTAXIS COMPLETA DE background:
+background: background-color
+            background-image
+            background-position / background-size
+            background-repeat
+            background-origin
+            background-clip
+            background-attachment
+
+Valores por defecto
+background-image: none
+background-position: 0% 0%
+background-size: auto auto
+background-repeat: repeat
+background-origin: padding-box
+background-clip: border-box
+background-attachment: scroll
+background-color: transparent
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+
+/*
+background-color: cambia el color de fondo
+
+Esto..
+background: steelblue;
+
+Es lo mismo q esto:
+background-color: steelblue;
+*/
+
+/*
+.contenedor {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+
+    background: steelblue;
+    background-color: steelblue;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+    Esto ...
+    background: url(/assets/images/spiderman-removebg.webp);
+
+    Es lo mismo q esto:
+    background-image: url(/assets/images/spiderman-removebg.webp);
+
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url(/assets/images/spiderman-removebg.webp);
+    background-image: url(/assets/images/spiderman-removebg.webp);
+
+    background-size: 380px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+
+/*
+Aqui NO use la propiedad background:
+
+<div class="contenedor">
+    <img
+        src="/assets/images/spiderman-removebg.webp"
+        alt="Error al mostrar imagen"
+        class="img"
+    />
+</div>
+*/
+
+/*
+.contenedor, .img {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+Esto...
+background: url("/assets/images/spiderman-removebg.webp") repeat-x;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp"); Ruta de la imagen
+background-repeat: repeat-x; Hacer q la imagen se repita HORIZONTALMENTE
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") repeat-x;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-repeat: repeat-x;
+
+    background-size: 100px;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: url("/assets/images/spiderman-removebg.webp") repeat-y;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp"); Ruta de la imagen
+background-repeat: repeat-y Hacer q la imagen se repita VERTICALMENTE
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") repeat-y;
+
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-repeat: repeat-y;
+
+    background-size: 100px;
+}
+*/
+
+/* ------------------- */
+/*
+Esto..
+background: url("/assets/images/spiderman-removebg.webp") repeat;
+
+
+Es lo miso q esto...
+background-image: url("/assets/images/spiderman-removebg.webp"); Ruta de la imagen
+background-repeat: repeat; Spiderman se repite hacia TODOS LADOS pero se SALE del cuadrado
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") repeat;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-repeat: repeat;
+
+    background-size: 100px;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: url("/assets/images/spiderman-removebg.webp") round;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp");
+background-repeat: round; /* Spiderman NO se sale del cuadrado
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") round;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-repeat: round; /* Spiderman NO se sale del cuadrado
+
+    background-size: 100px;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: url("/assets/images/spiderman.webp") space;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman.webp"); Spiderman tiene un fondo rojo
+background-repeat: space; Entre cada imagen de spiderman se deja un ESPACIO en blanco
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman.webp") space;
+
+    background-image: url("/assets/images/spiderman.webp");
+    background-repeat: space;
+
+    background-size: 100px;
+}
+*/
+
+/* ------------------- */
+
+/*
+Esto...
+background: url("/assets/images/spiderman.webp") no-repeat;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman.webp");
+background-repeat: no-repeat;
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman.webp") no-repeat;
+
+    background-image: url("/assets/images/spiderman.webp");
+    background-repeat: no-repeat;
+
+    background-size: 100px;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+La Regla del reloj: Forma en cómo se abrevian las propiedades que tienen 4 valores (medidas) en CSS
+background-size: 10px;                   Todas las direcciones
+background-size: 10px 20px;              arriba abajo /izquierda derecha
+background-size: 10px 20px 30;           arriba / izquierda derecha / abajo
+background-size: 10px 20px 30px 40px;    arriba / derecha /abajo / izquierda
+
+
+
+Esto ...
+background: RUTA_DE_LA_IMAGEN background-position / background-size background-repeat;
+background: url("/assets/images/spiderman-removebg.webp") center / 200px 200px no-repeat;
+
+Es lo mismo q esto...
+background: url("/assets/images/spiderman-removebg.webp");
+background-position: center;
+background-size: 200px 200px; Tamaño del fondo - Regla del reloj
+background-repeat: no-repeat;
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: RUTA_DE_LA_IMAGEN background-position / background-size background-repeat;
+    background: url("/assets/images/spiderman-removebg.webp") center / 200px 200px no-repeat;
+
+    background: url("/assets/images/spiderman-removebg.webp");
+    background-position: center;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: background-image background-position / background-size background-repeat;
+background: url("/assets/images/spiderman-removebg.webp") center / contain no-repeat;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp"); ruta de la imagen
+background-position: center; centrar a spiderman
+background-size: contain; spiderman tendra el tamaño lo mas grande posible sin salirse del marco border
+background-repeat: no-repeat; hacer q la imagen de spiderman NO se repita 
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") center / contain no-repeat;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: background-image background-position / background-size background-repeat;
+background: url("/assets/images/spiderman-removebg.webp") center / cover no-repeat;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp"); Ruta de la imagen de spiderman
+background-position: center; centrar imagen
+background-size: cover; La imagen se recorta un poco para q spiderman ocupe TODO el espacio del contenedor
+background-repeat: no-repeat; no repetir la imagen
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") center / cover no-repeat;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: background-image background-position / background-size background-repeat;
+background: url("/assets/images/spiderman-removebg.webp") center / auto no-repeat;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp");
+background-position: center; centrar a spiderman
+background-size: auto; Spiderman tendra las mismas medidas q estan en la "imagen original"
+                       NO importa si escribo esto o no, el resultado va ser el mismo porq este es el valor por defecto
+    background-repeat: no-repeat; NO repetir la imagen
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: background-image background-position / background-size background-repeat;
+    background: url("/assets/images/spiderman-removebg.webp") center / auto no-repeat;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+La Regla del reloj: Forma en cómo se abrevian las propiedades q tienen 4 valores (medidas) en CSS
+background-position: 10px;                   Todas las direcciones
+background-position: 10px 20px;              arriba abajo /izquierda derecha
+background-position: 10px 20px 30;           arriba / izquierda derecha / abajo
+background-position: 10px 20px 30px 40px;     arriba / derecha /abajo / izquierda
+
+
+
+
+Esto...
+background: background-image background-position/background-size background-repeat
+Cuando NO copiaba auto para la propiedad ABREVIADA, NO me funcionaba la imagen de fondo
+background: url("/assets/images/spiderman-removebg.webp") 10px 20px / auto no-repeat;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/spiderman-removebg.webp"); Ruta de la imagen
+background-position: 10px 20px; Regla del reloj para definir en donde esta ubicado el fondo (posicionamiento)
+Si copio las propiedades por SEPARADO, NO hace falta copiar la propiedad para Conservar las Medidas Originales del Fondo
+q es background-size: auto; por q este es el valor por defecto
+background-repeat: no-repeat; NO repetir la imagen
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/spiderman-removebg.webp") 10px 20px / auto no-repeat;
+
+    background-image: url("/assets/images/spiderman-removebg.webp");
+    background-position: 10px 20px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: url("/assets/images/sun.png") center / 120px no-repeat
+
+Es lo mismo q esto..
+background-image: url("/assets/images/sun.png"); Ruta del fondo
+background-position: center;    Los valores q puede tomar background-position son: Arriba      background-position: top;
+                                                                                    Derecha    background-position: right;
+                                                                                    Abajo      background-position: bottom;
+                                                                                    Izquierda  background-position: left;
+                                                                                    Centro     background-position: center;
+                                                                                    Regla del reloj para background-position
+    background-repeat: no-repeat; NO repetir fondo
+    background-size: 120px; Tamaño del fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/sun.png") center / 120px;
+
+    background-image: url("/assets/images/sun.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120px;
+}
+*/
+
+/* ------------------- */
+
+/*
+
+Esto ...
+background: background-image background-position background-repeat background-size
+background: url("/assets/images/sun.png") bottom 210px right 30px / 120px no-repeat
+
+Es lo mismo q esto...
+background-image: url("/assets/images/sun.png"); Ruta del fondo
+background-position: bottom 210px right 30px;        Dejar de espacio... 210px hacia abajo y
+                                                                         30px hacia la derecha
+background-repeat: no-repeat; NO repetir el fondo
+background-size: 120px; tamaño del fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/sun.png") bottom 210px right 30px / 120px no-repeat;
+
+    background-image: url("/assets/images/sun.png");
+    background-position: bottom 210px right 30px;
+    background-repeat: no-repeat;
+    background-size: 120px;
+}
+*/
+
+/* ------------------- */
+/*
+Esto ...
+background: background-image background-position background-repeat background-size
+background: url("/assets/images/sun.png") center / 120px no-repeat
+
+Es lo mismo q esto...
+background-image: url("/assets/images/sun.png"); Ruta del fondo
+background-position: center; Centrar el Fondo Horizontal ↔ y Verticalmente ↕
+background-repeat: no-repeat; NO repetir el fondo
+background-size: 120px; tamaño del fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/sun.png") center / 120px no-repeat;
+
+    background-image: url("/assets/images/sun.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120px;
+}
+*/
+
+/* ------------------- */
+/*
+background-image: url("/assets/images/sun.png"); Ruta del fondo
+background-position-x: center; Centrar fondo HORIZONTALMENTE ↔
+background-size: 120px; Tamaño del fondo
+background-repeat: no-repeat; NO repetir fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background-image: url("/assets/images/sun.png");
+    background-position-x: center;
+    background-size: 120px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+background-image: url("/assets/images/sun.png"); Ruta del fondo
+background-position-y: center; Centrar fondo VERTICALMENTE ↕
+background-size: 120px; amaño del fondo
+background-repeat: no-repeat; NO repetir fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background-image: url("/assets/images/sun.png");
+    background-position-y: center;
+    background-size: 120px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+Esto...
+background: background-image background-position /  background-size background-repeat
+background: url("/assets/images/sun.png") center / 120px no-repeat;
+
+Es lo mismo q esto:
+background-image: url("/assets/images/sun.png"); Ruta del fondo
+background-position-x: center; Centrar fondo... HORIZONTALMENTE ↔
+background-position-y: center;                  VERTICALMENTE ↕
+background-size: 120px; Tamaño del fondo
+background-repeat: no-repeat; NO repetir fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background: url("/assets/images/sun.png") center / 120px no-repeat;
+
+    background-image: url("/assets/images/sun.png");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 120px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ------------------- */
+/*
+background-image: url("/assets/images/sun.png"); Ruta de la imagen
+background-position-x: -30px;  Posicionamiento del fondo ... HORIZONTAL ↔
+background-position-y: 20px;                                 VERTICAL ↕
+background-size: 120px; Tamaño del fondo
+background-repeat: no-repeat; NO repetir el fondo
+*/
+
+/*
+.contenedor {
+    width: 300px;
+    height: 300px;
+    border: 2px solid;
+
+    background-image: url("/assets/images/sun.png");
+    background-position-x: -30px;
+    background-position-y: 20px;
+    background-size: 120px;
+    background-repeat: no-repeat;
+}
+*/
+
+/* ----------------------------------------------------------------------------------------------- */
+/*
+
+Esto..
+
+
+Es lo mismo q esto:
+
+
+background: background-color
+            background-image
+            background-position / background-size
+            background-repeat
+            background-origin
+            background-clip
+            background-attachment
+*/
+
+
+

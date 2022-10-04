@@ -1,0 +1,104 @@
+/*
+TUTORIAL:
+https://www.youtube.com/watch?v=F1vIB8lf4Mk&list=PLggiJKmZtpaJXLWGjDgG6XfTFMvJdCuHd&index=113&pp=sAQB */
+
+
+
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+    font-family: "Lato", sans-serif;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.background {
+    width: 100%; /* ocupa el 100% del ancho del viewport,
+                    se debe usar en % y NO en vw,
+                    pero esto SOLAMENTE se hace cuando el padre mas cercan es el <body> */
+    height: 100vh;
+
+    background-repeat: no-repeat; /* NO repetir el fondo */
+    background-size: cover; /* ajustar fondo ampliandolo al tamaño del contenedor */
+    background-position: center; /* centrar fondo */
+    background-attachment: fixed; /*  Todos los Fondos se Mueven al Hacer Scroll por la Página Web y se Quedan Quietos al Hacer Scroll con el Contenedor  */
+}
+
+.section_1 {
+    background-image: url("../../../../assets/images/hero.jpg");
+    padding: 0.1px; /* solucion al Colapso (Fusión) de margin: de elementos hijos (internos) */
+}
+
+/*
+<element class="section_1">
+  <h2>
+*/
+.section_1 > h2 {
+    width: 300px;
+
+    background-color: #000;
+    color: #fff;
+
+    /* centrar el cuadro negro */
+    margin-left: auto; /* horizontalmente */
+    margin-right: auto;
+    height: 100px; /* (100px / 2) = 50px */
+    margin-top: calc(
+        50vh - 50px
+    ); /* verticalmente:
+                                     (50vh la mitad del alto del viewport) - (50px la mitad del height: del <h2>) */
+
+    /* centrar texto q dice "Desplaza hacia abajo"... */
+    text-align: center; /* horizontalmente */
+    line-height: 100px; /* verticalmente */
+}
+
+/* ------------------ */
+
+.text {
+    width: 100%;
+    text-align: center;
+    padding: 60px 30px; /* arriba abajo / izquierda derecha */
+}
+
+.text p {
+    padding: 20px 0;
+}
+
+/* ------------------ */
+
+.section_2 {
+    background-image: url("../../../../assets/images/fondo1.png");
+    color: white;
+    /* centrar texto... */
+    text-align: center; /* horizontalmente */
+    height: 600px; /* verticalmente */
+    line-height: 600px;
+}
+
+.background h3 {
+    font-size: 4rem; /* 4rem = 64px */
+}
+
+/* ------------------ */
+
+.section_3 {
+    background-image: url("../../../../assets/images/fondo2.png");
+    color: white;
+
+    /* centrar texto... */
+    text-align: center; /* horizontalmente */
+    line-height: 100vh; /* verticalmente */
+}

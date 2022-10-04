@@ -1,0 +1,64 @@
+/*
+Este ejemplo lo saq de este video de YouTube
+
+Dorian Designs - Contexto de Apilamiento (Stacking Context)
+https://www.youtube.com/watch?v=kSQeLmPwrt4
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+div {
+    font-size: 2rem;
+}
+
+.box_model {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+}
+
+.caja_1 {
+    background-color: lightcoral;
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor {
+    background-color: mediumslateblue;
+    margin-top: -80px;
+   /* opacity: 0.7; */
+    position: relative;
+}
+
+.texto {
+    margin-top: -50px;
+}
+
+.titulo {
+    background-color:darkgrey;
+    opacity: 0.7;
+    position: relative;
+    z-index: 10;
+}
+
+.caja_2 {
+    background-color: lightgreen;
+    margin-top: -50px;
+}
+
+.caja_3 {
+    background-color: lightseagreen;
+}

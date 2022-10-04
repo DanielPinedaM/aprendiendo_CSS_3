@@ -1,0 +1,57 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.lista {
+    padding-left: 28px; /* hacer q la lista este pegada (cerca) de la caja (contenedor) */
+}
+
+.contenedor {
+    width: 60%;
+    border: 1px solid black;
+    /* Insertar Salto de Línea (Renglón) Cada Vez que se Desborda la Palabra Sin Dejar Espacio en Blanco */
+    word-break: break-all;
+}
+
+.parrafo,
+.lista {
+    font-size: 2rem; /* tamaño de la letra */
+
+    /* CSS Multi-column Layout */
+    column-count: 3; /* numero de columnas */
+    column-gap: 4rem; /* distancia de separacion entre cada columna */
+    column-rule: 5px dotted red; /*Estilo de la Linea entre Cada columna:
+                                    Es una propiedad abreviada de
+                                    column-rule-width column-rule-style column-rule-color.
+                                    GrosorDeLaLinea estilo color */
+    column-width: 100px; /* ancho minimo q mide cada columna.
+                            Cuanto mas pequeño sea el viewport
+                            se disminuira el numero de columnas column-count
+                            hasta llegar a una */
+}
+
+/* -------------------- */
+
+h2 {
+    column-span: all; /* el <h2> esta en medio del texto q esta dividido en columnas */
+    text-align: center;
+    background-color: red;
+}
+
+.articulo {
+    font-size: 2rem; /* tamaño de la letra */
+
+    /* CSS Multi-column Layout */
+    column-count: 3; /* numero de columnas */
+    column-gap: 4rem; /* distancia de separacion entre cada columna */
+    column-rule: 5px dotted red; /*Estilo de la Linea entre Cada columna:
+                                    Es una propiedad abreviada de
+                                    column-rule-width column-rule-style column-rule-color.
+                                    GrosorDeLaLinea estilo color */
+    column-width: 100px; /* ancho minimo q mide cada columna.
+                            Cuanto mas pequeño sea el viewport
+                            se disminuira el numero de columnas column-count
+                            hasta llegar a una */
+}

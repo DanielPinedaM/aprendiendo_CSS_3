@@ -1,0 +1,46 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+
+seleccionar el boton q dice "Enviar archivo"
+
+<element class="enviar">
+Especificidad: (0, 1, 0) */
+.enviar {
+    margin-top: 1em; /* margen hacia arriba,
+                        esto deja un espacio entro  los 2 botones */
+    display: block; /* convertir elemento de linea a bloq */
+}
+
+
+
+/* seleccionar TODOS los <input type="file"> */
+
+::file-selector-button { /* esta es la forma estandar de escribirlo,
+                            sirve para navegadores modernos (nuevas versiones) */
+    /* aqui escribes los estilos del <input type="file"> */
+
+    border: 2px solid #6c5ce7; /* borde */
+    padding: 0.2em 0.4em; /* relleno */
+    border-radius: 0.2em; /* borde redondeado */
+    background-color: #a29bfe; /* color de fondo */
+}
+
+/* PREFIJOS CSS para dar compatibilidad a otros navegadores */
+::-ms-browse { /* compatibilidad con internet explorer */
+    border: 2px solid #6c5ce7;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    background-color: #a29bfe;
+}
+
+::-webkit-file-upload-button { /* versiones antiguas de Chrome, Opera y Safari */
+    border: 2px solid #6c5ce7;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    background-color: #a29bfe;
+}

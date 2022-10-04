@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+
+        <!-- La pseudo-clase de hijo unico :only-child NO funciona por q... -->
+        <div class="contenedor"> <!-- este <div> tiene dentro otros hermanos <div> -->
+            <div>
+                <h1>Div Child 1</h1> <!-- dentro de cada <div> hay elementos hermanos <h1> y <p> (NO son hijo unico) -->
+                <p>parrafo 1</p>
+                <p>parrafo 2</p>
+            </div>
+
+            <div>
+                <h1>Div Child 2</h1>
+                <p>parrafo 1</p>
+                <p>parrafo 2</p>
+            </div>
+
+            <div>
+                <h1>Div Child 3</h1>
+                <p>parrafo 1</p>
+                <p>parrafo 2</p>
+            </div>
+        </div>
+
+    </body>
+</html>

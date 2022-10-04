@@ -1,0 +1,53 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 2em;
+}
+
+/*
+seleccionar el PRIMER parrafo <p>
+q esta dentro del articulo <article>
+
+<article>
+  …
+    <p :first-of-type>
+Especificidad: (0, 1, 2) */
+article p:first-of-type {
+    color: red;
+}
+
+/*
+
+Si uso p:nth-child(1) no funciona
+Esto pasa porque p:nth-child(1)
+selecciona al primer párrafo <p>
+y antes del primer párrafo hay un título <h1>
+
+    <article>
+        <h1>Soy un titulo h1</h1> <!-- antes del parrafo esta este <h1> -->
+        <p>Soy el primer parrafo p, yo estoy seleccionado por :first-of-type</p>
+        <p>Parrafo 2</p>
+        <p>Parrafo 3</p>
+    </article>
+
+
+Seleccionar la primera POSICION
+entre el grupo de parrafos <p> (hermanos)
+
+<article>
+  …
+    <p :nth-child>
+Selector Specificity: (0, 1, 2)
+*/
+
+article p:nth-child(1) {
+    color: blue;
+}

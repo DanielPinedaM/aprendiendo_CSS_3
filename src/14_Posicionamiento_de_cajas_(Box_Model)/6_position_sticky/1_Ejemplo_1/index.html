@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Posicionamiento</title>
+    </head>
+
+    <body> <!-- dentro del <body> esta lo q el usuario ve en la pagina web-->
+        <img class="imagen" src="https://source.unsplash.com/1920x1080/?cats" alt="gato" /> <!-- imagen <img> -->
+        <!-- el padre DIRECTO del <header> es el <body>
+            porq el <header> NO esta dentro de ningun otro contenedor -->
+        <header class="encabezado"> <!-- yo <header> soy el PADRE DIRECTO del <nav> -->
+            <nav class="menu">MENU</nav> <!-- <nav> NO es HIJO DIRECTO del <body> porq esta dentro de otra etiqueta -->
+        </header>
+
+        <main> <!-- Contenido Principal <main>
+            texto de relleno. Este texto solo sirve para poder hacer scroll -->
+            <h1>Position Fixed</h1>
+            <section>
+                <h2>Titulo h2</h2>
+                <article class="articulo"> <!-- yo <article> soy el padre de los subtitulos <h3>   -->
+                    <h3 class="h3">Hola mundo 1 - TENGO UNA class=""</h3> <!-- subtitulos <h3> - hola mundo 1, 2, 3... -->
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 2</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 3</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 4</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 5</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 6</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 7</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 8</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 9</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 10</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 11</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+
+                <article class="articulo">
+                    <h3 class="h3">Hola mundo 12</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore provident
+                        perspiciatis in, vero accusantium incidunt, ad aperiam magni quam corporis
+                        molestiae blanditiis animi at iusto modi illum minus excepturi maiores fugit
+                        neque numquam. Iste placeat commodi repellat quaerat maxime porro odit fuga
+                        aliquid modi! Debitis, porro earum doloribus iusto dolorum autem quod rerum
+                        laboriosam aliquid alias cum enim quia? Distinctio libero ipsam reiciendis nam,
+                        doloremque numquam saepe autem sequi itaque rem exercitationem maxime aspernatur,
+                        laborum totam ducimus nulla doloribus provident inventore non! Enim perspiciatis
+                        corporis recusandae quidem error dicta dignissimos, suscipit necessitatibus
+                        repudiandae saepe eos unde veritatis provident. Magnam aliquam similique eligendi
+                        reprehenderit. Eveniet inventore iste fuga eum excepturi nostrum, nemo voluptas
+                        sed? Velit nisi aliquid enim sapiente animi. Maxime omnis dolores fugiat enim,
+                        sed quas earum officia molestiae nihil et facere ea reprehenderit ipsa dolor
+                    </p>
+                </article>
+            </section>
+        </main>
+
+    </body>
+</html>

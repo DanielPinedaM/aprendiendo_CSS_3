@@ -1,0 +1,79 @@
+/*
+Los colores en CSS 3 se pueden escribir de 3 formas:
+1. Usando su nombre:
+color: red;
+
+
+
+2. Usando los códigos de colores:
+* RGB con notación #hexadecimal:
+
+Tutorial:
+https://www.youtube.com/watch?v=Lrjxc-ae8Do&list=PLggiJKmZtpaJXLWGjDgG6XfTFMvJdCuHd&index=74
+
+color: #ff0000;
+
+* Con las notaciones funcionales rgb() y rgba():
+
+Tutorial:
+https://www.youtube.com/watch?v=gCPsRXytXYo&list=PLggiJKmZtpaJXLWGjDgG6XfTFMvJdCuHd&index=73
+
+color: rgb(255, 0 ,0);
+color: rgba(255, 0, 0, 1);
+
+
+
+3. Usando los códigos de colores HSL con las notaciones funcionales hsl() y hsla():
+
+Tutorial:
+https://www.youtube.com/watch?v=XiheFnUbIdQ&list=PLggiJKmZtpaJXLWGjDgG6XfTFMvJdCuHd&index=75
+
+color: hsl(0, 100%, 50%);
+color: hsla(356, 100%, 41%, 1 );
+
+
+
+Páginas Web para Elegir Colores (Generador de Colores, color CSS Generator)
+
+- Canva: Todas las otras páginas también son muy buenas, pero a mi parecer esta es la mejor
+https://www.canva.com/colors/
+
+- Color Hex Color Codes:
+https://www.color-hex.com/
+
+- Flat UI Colors 2:
+https://flatuicolors.com/
+
+- HTML Color Codes:
+https://htmlcolorcodes.com/es/
+https://htmlcolorcodes.com/es/nombres-de-los-colores/
+
+- Coolors:
+https://coolors.co/
+
+- ColourCode:
+https://colourco.de/
+
+- CSS Color Palettes:
+https://www.csscolorpalettes.com/
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 45px 0;
+    color: #fff;
+    background: rgba(78, 14, 138, 0.575);
+    background: #1b95aad5;
+    background: hsl(180, 40%, 20%);
+    background: #582660;
+}
+
+.title {
+    text-align: center;
+}

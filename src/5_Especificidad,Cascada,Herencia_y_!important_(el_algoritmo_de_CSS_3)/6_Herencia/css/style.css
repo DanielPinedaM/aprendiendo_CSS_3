@@ -1,0 +1,144 @@
+/* 
+HERENCIA:
+
+Los estilos del contenedor (padre) <div> 
+seran aplicados a las etiquetas <p> (hijos, nietos, bisnietos, etc) 
+que estan dentro.
+
+NO hace falta copiar muchas veces los mismos estilos para cada etiqueta, 
+basta con "encerrar" (meter) las etiquetas dentro de un contenedor
+*/
+
+/* 
+.contenedor {
+    width: 210px; 
+    height: 100px;
+
+    background: crimson;
+    color: white;
+
+    font-family: monospace;
+    font-size: 30px;
+}
+*/
+
+/* --------------------------------------------------------------------------------------- */
+/* 
+Heredar Propiedad Padre - 
+Obligar a que el Elemento Hijo Herede Propiedades del Elemento Padre (Contenedor) inherit;
+
+Hay propiedades que no se heredan, es decir, 
+que cuando escribo la propiedad en el contenedor (padre), 
+los estilos no se aplican a los elementos que están dentro (hijos, nietos, bisnietos, etc.), 
+entonces para obligar a que los elementos hijos hereden las propiedades del contenedor uso inherit;
+*/
+
+/* Estas propiedades NO se heredan: */
+/* 
+.contenedor {
+    width: 210px;
+    height: 100px;
+
+    padding: 30px;
+    border: 2px solid black;
+    outline: dashed red;
+    margin: 20px;
+}
+*/
+
+/* con inherit; heredo las propiedades: */
+/* 
+.parrafo {
+    width: inherit;
+    height: inherit;
+
+    padding: inherit;
+    border: inherit;
+    outline: inherit;
+    margin: inherit;
+}
+*/
+
+/* --------------------------------------------------------------------------------------- */
+/* 
+Desheredar Propiedad Padre - 
+Restablecer Estilos por Defecto del Elemento Hijo 
+para que no Herede las Propiedades del Elemento Padre (Contenedor) initial;
+*/
+
+/* estilos del contenedor (padre) 
+q por defecto son heredados por las etiquetas
+q estan dentro del contenedor (hijos, nietos, bisnietos, etc) */
+
+/* 
+.contenedor {
+    width: 210px;
+    height: 100px;
+
+    background: crimson;
+    color: white;
+
+    font-family: monospace;
+    font-size: 30px;
+}
+*/
+
+/* Restablecer estilos por defecto (desheredar) */
+
+/* 
+.parrafo {
+    color: initial;
+
+    font-family: initial;
+    font-size: initial;
+}
+*/
+
+/* --------------------------------------------------------------------------------------- */
+/* 
+Heredar o Desheredar Todas las Propiedades Padre (Contenedor) all:
+
+La propiedad all: sirve para modificar casi todas las propiedades 
+que los elementos hijos, nietos, bisnietos, etc. h
+eredan de la etiqueta contenedora (padre).
+
+Las propiedades que NO modifica all: son las siguientes:
+- nicode-bidi
+- direction
+- Variables (propiedades CSS personalizadas)
+
+
+all: puede tomar los siguientes valores:
+
+all: unset;
+all: initial;
+all: inherit;
+all: revert;
+all: unset;
+*/
+
+/* <p> hereda las propiedades del contenedor <div> */
+.contenedor {
+    width: 210px;
+    height: 100px;
+
+    background: crimson;
+    color: white;
+
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.parrafo {
+    /* En ves de copiar initial; para cada UNA de las propiedades: 
+
+    color: initial;
+    font-family: initial;
+    font-size: initial; 
+    */
+
+    /* Con la propiedad all: 
+    puedo aplicar initial; a TODAS las propiedades
+    para desheredar los estilos del .contenedor {...} */
+    all: initial;
+}

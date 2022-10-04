@@ -1,0 +1,43 @@
+/*
+Tutorial - Udemy - AlexCG Design - Media Queries
+https://youtu.be/-yE_BrbVPek
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* como MAXIMO 600px ó MENOS */
+@media screen and (max-width: 600px) { /* 600, 599, 598... 0 */
+    /* los selectores q estan fuera y dentro del @media tienen la misma especificidad */
+    p { color: steelblue; }
+    p::before { content: "max-width: 600px"; }
+}
+
+/* PERO como esto esta escrito mas abajo,
+entonces por cascada estos seran los estilos q se aplican
+SIN importar q se cumpla la condicion del @media,
+es por eso q para q los @media cambien los estilos
+TIENEN q estar escritos ABAJO */
+p {
+    font-size: 2.5rem; /* tamaño de la letra */
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    color: crimson; /* color del texto */
+}
+
+/* con el pseudo-elemento ::before muestro un mensaje en pantalla
+q me indica si se ha ejecutado o no la Media Query */
+p::before { content: "hasta el momento NO se han ejecutado Media Queries"; }

@@ -1,0 +1,44 @@
+/* Forma 2 - Centrar Imagen Usando Flex */
+
+html,
+body {
+    /* Hacer q el cuerpo ocupe toda la ventana grafica */
+    height: 100%;
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    align-items: center; /* centrar horizontalmete */
+    justify-content: center; /* centrar verticalmente */
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* REGLA DEL RELOJ PARA border-radius
+
+                                        Esquinas ...
+border-radius: 100px;                  Misma medida en todas las esquinas
+border-radius: 200px 20px;             superior izquierda inferior derecha / superior derecha inferior izquierda
+border-radius: 200px 20px 5px;         superior izquierda / superior derecha inferior izquierda / inferior derecha
+border-radius: 100px 200px 500px 50px; superior izquierda / superior derecha / inferior derecha / inferior izquierda
+*/
+
+.hijo {
+    width: 400px; /* ancho */
+    height: 250px; /* alto */
+
+    border: 30px solid tomato;
+
+    /* ESTO: */
+
+    /* Regla del reloj:
+    superior izquierda / superior derecha / inferior derecha / inferior izquierda */
+    /* border-radius: 100px 200px 500px 50px; */
+
+    /* ES LO MISMO Q ESTO: */
+    border-top-left-radius: 100px;      /* superior izquierda */
+    border-top-right-radius: 200px;     /* superior derecha */
+    border-bottom-right-radius: 500px;  /* inferior derecha */
+    border-bottom-left-radius: 50px;    /* inferior izquierda */
+}
+

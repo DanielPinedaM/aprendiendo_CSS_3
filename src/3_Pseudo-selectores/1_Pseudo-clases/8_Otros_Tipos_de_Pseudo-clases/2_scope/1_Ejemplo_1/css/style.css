@@ -1,0 +1,13 @@
+/*
+Documentacion oficial de :scope
+https://developer.mozilla.org/en-US/docs/Web/CSS/:scope */
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    font-size: 2em;
+}

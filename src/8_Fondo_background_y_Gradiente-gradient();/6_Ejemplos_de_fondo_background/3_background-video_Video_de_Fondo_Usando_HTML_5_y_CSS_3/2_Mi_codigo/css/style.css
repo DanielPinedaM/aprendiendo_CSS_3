@@ -1,0 +1,132 @@
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box !important;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+html { font-size: 16px; }
+
+html, body { overflow-x: hidden; }
+
+/* -------------------- background-video -------------------- */
+
+/*
+Este codigo lo saq de este tutorial de Fazt
+y lo modifiq para mejorarlo.
+https://youtu.be/bwHxGzHjLTU
+https://github.com/FaztWeb/html-video-background
+
+
+Videos:
+https://www.pexels.com/es-es/video/teclado-con-luz-led-negro-1821832/
+
+https://www.pexels.com/es-es/video/manos-teclear-teclado-informacion-5377274/ */
+
+.header {
+    width: 100%;
+    height: 100vh; /* alto de toda la pantalla */
+
+    color: #fff;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar horizontal y verticlamente toda la landing page */
+    align-items: center;
+    justify-content: center;
+}
+
+.header-video {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+    top: 0; /* arriba */
+    left: 0; /* izquierda */
+
+    overflow: hidden;
+}
+
+.header-overlay {
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Hacer q la Capa de color transparente este por encima del video */
+
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+    opacity: 0.7; /* Opacar (hacer transparente) el texto "Bienvenid@s a mi sitio" y "Contáctame" */
+    text-align: center;
+    z-index: 2; /* Hacer q el contenido de la pagina (texto) este por encima de la capa del video y del color */
+}
+
+.header-content h2 {
+    font-size: 8vw; /* texto Responsive */
+    font-family: "Klee One", cursive; /* Fuente (tipo) de letra */
+}
+
+/* Boton que redirige a un enlace */
+.btn {
+    max-width: 12.5rem;
+    display: block;
+
+    margin-top: 5vh; /* dar una distancia de separacion entre "Bienvenid@s a mi sitio" y el boton "Contáctame" */
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #c44569;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem; /* hacer mas grueso el boton */
+    text-decoration: none; /* quitar subrayado del enlace */
+}
+
+/* texto fuera del background-video */
+.fuera { background-color: red; }
+
+/* --------------------
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- Video Responsive -------------------- */
+/* https://stackoverflow.com/questions/66824131/media-max-width-or-min-width-for-video */
+
+@media screen and (min-width: 30em) { /* ancho viewport >= 480px = 30em hasta infinito */
+    .background_video_desktop {
+        /* Ajustar video al tamaño del viewport */
+        display: block;
+        height: 100vh;
+        width: 100%;
+
+        object-fit: cover !important;
+    }
+
+    .background_video_mobile { display: none; }
+}
+
+@media screen and (max-width: 30em) { /* ancho viewport <= 480px = 30em hasta 0 */
+    .background_video_desktop { display: none; }
+
+    .background_video_mobile {
+        display: block;
+        height: 100vh;
+        width: 100%;
+
+        object-fit: cover !important;
+    }
+}

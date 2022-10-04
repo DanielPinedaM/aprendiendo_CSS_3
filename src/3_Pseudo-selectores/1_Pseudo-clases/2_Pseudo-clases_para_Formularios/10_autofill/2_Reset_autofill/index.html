@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>PseudoClases</title>
+    </head>
+    <body>
+
+        <!-- Cuando el navegador autocompleta los campos :autofill pasan 2 cosas:
+        1. Si he cambiado la letra de los campos entonces el tamaño de la letra
+        cuando el navegador autocompleta el campo NO es el mismo q cuando el usuario digita el campo
+        2. El navegador da un color de fondo a los cuadros de texto que han diso autocompletados
+
+        Vamos a ver 2 soluciones a esto: -->
+        <h2>Iniciar sesion</h2> <!-- Solución 1 - Eliminar los Estilos del Navegador Usando CSS -->
+        <form>
+            <input type="email" name="correo" placeholder="correo" required />
+            <br>
+            <br>
+            <input type="password" name="contraseña" placeholder="contraseña" required />
+            <br>
+            <br>
+            <button type="submit">Aceptar</button>
+        </form>
+
+        <br>
+        <br>
+
+        <!--Solución 2 - Hacer que los Campos no se Puedan Autocompletar Usando HTML <form autocomplete="off" >
+            los campos dentro de este formulario <form>
+            NO podran ser autocompletados por el navegador
+        porq escribir el atributo autocomplete="off" -->
+        <form action="https://formsubmit.co/your@email.com" method="POST" autocomplete="off">
+            <input type="email" name="correo" placeholder="correo" required />
+            <br>
+            <br>
+            <input type="password" name="contraseña" placeholder="contraseña" required />
+            <br>
+            <br>
+            <button type="submit">Aceptar</button>
+        </form>
+
+    </body>
+</html>

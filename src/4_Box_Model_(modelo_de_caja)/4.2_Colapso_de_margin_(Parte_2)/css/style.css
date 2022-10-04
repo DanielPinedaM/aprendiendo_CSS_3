@@ -1,0 +1,50 @@
+/* 
+COLAPSO DE MARGIN:
+Cuando se encuentra el margin de 2 o mas elementos entonces el margin se fusiona formando un solo margin
+
+de tal forma en q...
+
+La distancia de separacion q haya entre los elementos sera el margin mayor.
+
+*/
+
+body {
+    margin: 0;
+}
+
+.box {
+    width: 200px; /* Ancho */
+    height: 100px; /* Alto */
+}
+
+.box1 {
+    width: 100%; /* Restablecer ancho por defecto del primer div */
+    background: steelblue;
+    /* padding-top: 45px; */
+    /* margin-bottom: 50px; */ /* abajo */
+    margin-bottom: 50px;
+
+    /* QUITAR EL COLAPSO DE MARGIN */
+    /* padding: 0.1px; */
+    border: 1px solid transparent; 
+}
+
+.header {
+    /* padding: 1px; */
+    background: gold;
+    height: 40px;
+    /* margin-top: 45px; */
+    /* padding-top: 45px; */
+}
+
+.box2 {
+    /* padding: 2px; */
+    background: tomato;
+    margin-top: 30px; /* arriba */
+    /* margin-bottom: 100px; */ /* abajo */
+}
+
+.box3 {
+    background: #dfaade;
+    margin-top: 1px; /* arriba */
+}

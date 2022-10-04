@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+.box {
+    border: 2px solid #000;
+    width: 200px; /* Ancho */
+    height: 60px; /* Alto */
+}
+
+.box1 {
+    background: steelblue;
+
+    /* 
+    Para centrar horizontalmente con margin: auto; se debe cumplir las siguientes condiciones:
+    1. Debe ser un elemento en bloque
+    2. Definir el ancho width 
+
+    Con CSS puedo convertir los elementos de linea a bloque y viceversa
+
+    Como margin: auto; a veces causa problemas con flexbox
+    */
+    /* margin: auto; */
+
+    /* Entonces lo recomendable es... */
+
+    /* FORMA 1: */
+    /* derecha */
+    /* margin-right: auto;  */
+
+    /* izquierda */
+    /* margin-left: auto;  */
+    
+    /* FORMA 2: */
+    /* arriba / derecha / abajo / izquierda */
+    /* margin: 0 auto 0 auto; */
+
+    /* FORMA 3: */
+    /* arriba abajo / izquierda derecha */
+    margin: 0 auto;
+}
+
+.box2 {
+    background: tomato;
+}

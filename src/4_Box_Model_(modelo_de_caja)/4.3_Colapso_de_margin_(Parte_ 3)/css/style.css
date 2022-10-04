@@ -1,0 +1,46 @@
+body {
+    /* margin: 0; */
+    background: black;
+}
+
+.header {
+    background-color: lightcoral;
+
+    height: 100px; /* Alto */
+    margin-bottom: 20px; /* Abajo */
+
+    /* Formas de quitar el colapsado de margin del elemento hijo */
+
+    /* FORMA 1 */
+    /* overflow: hidden;  */
+
+    /* FORMA 2:
+    para esta forma es NECESARIO definir el height */
+    /* padding-top: 0.1px; */
+
+    /* FORMA 3 */
+    border-top: 0.1px solid transparent;
+}
+
+.title {
+    color: blue;
+    /* margin: 0; */
+    margin-top: 50px;
+}
+
+.box-1,
+.box-2 {
+    background-color: lightcyan;
+
+    /* Centrar elemento */
+    margin-left: auto; /* Izquierda */
+    margin-right: auto; /* Derecha */
+
+    width: 300px; /* Ancho */
+    height: 300px; /* Alto */
+}
+
+.box-1 {
+    margin-bottom: 30px; /* Abajo */
+}
+

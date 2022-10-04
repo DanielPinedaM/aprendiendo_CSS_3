@@ -1,0 +1,23 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_float {
+    background-color: cornflowerblue;
+}
+
+.float_left {
+    background-color: crimson;
+    float: left;
+}

@@ -1,0 +1,66 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 2em;
+}
+
+/*
+ESTO...
+seleccionar el PRIMER elemento q esta dentro del articulo <article>
+
+<article>
+  …
+    <element :first-child>
+Especificidad: (0, 1, 1) */
+article :first-child {
+    color: red;
+}
+
+/* es lo mismo q esto:
+
+<article>
+  …
+    <element :nth-child>
+Especificidad: (0, 1, 1) */
+article :nth-child(1) {
+    color: red;
+}
+
+/* ---------------- */
+
+/*
+Si uso :first-of-type selecciona algo diferente a :first-child
+
+Me seleccionaría al primer elemento de cada tipo, es decir,
+solo hay un título <h1> entonces ese es el primero de su tipo
+y entre todos los párrafos <p>
+el que dice “párrafo - Elemento 2”
+es el primer párrafo pero de su tipo
+
+:first-child selecciona el primer hijo inmediato dentro del contenedor,
+en cambio :first-of-type selecciona la primera aparición del elemento especificado
+sin importar que no sea el primer elemento dentro del contenedor.
+
+:first-child selecciona un elemento con relación a todos sus hermanos, no solo a los hermanos del mismo tipo.
+
+
+article :first-of-type de cada TIPO de elementos q estan dentro del articulo <article>
+seleccionar el primero
+
+<article>
+  …
+    <element :first-of-type>
+Especificidad: (0, 1, 1) */
+/*
+article :first-of-type {
+    color: blue;
+}
+*/

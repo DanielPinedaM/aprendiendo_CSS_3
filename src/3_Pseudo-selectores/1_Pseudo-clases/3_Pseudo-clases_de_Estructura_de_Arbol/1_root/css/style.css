@@ -1,0 +1,25 @@
+/* ESTO...
+Especificidad (0, 1, 0) */
+:root {
+    background-color: indianred;
+}
+/* selecciona lo mismo q esto:
+
+Especificidad: (0, 0, 1)
+html {
+    background-color: indianred;
+}
+ambos selectores van a seleccionar el elemento raiz <html>
+la diferencia es q
+:root {...} tiene mas especificidad q html {...}
+*/
+
+body {
+    background-color: white;
+    padding: 2em;
+}
+
+.contenedor {
+    border: thick solid crimson;
+    background-color: darkturquoise;
+}

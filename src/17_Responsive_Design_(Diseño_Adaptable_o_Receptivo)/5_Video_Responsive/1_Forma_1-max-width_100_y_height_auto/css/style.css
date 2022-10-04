@@ -1,0 +1,49 @@
+/*
+Jon Mircha - YouTube - Videos Responsive
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=5825s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+/* hacer q el <body> ocupe todo el viewport */
+    width: 100%; /* esto evita q se generen barras de scroll */
+    min-height: 100vh; /* min-height = alto minimo - lo minimo min-height q se puede ENCOGER el <body> es TODO el viewport 100vh */
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* centrar usando flexbox */
+.centrar_flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    /* breakpoints */
+    min-width: 320px;
+    max-width: 1280px;
+    border: thick solid red;
+    border-radius: 100px; /* borde redondeado */
+    /* ocultar el contenido q se salga del contenedor, en otras palabras,
+    ocultar las puntas del video q se salen del contenedor 
+    cuando hago redondeadas las puntas del contenedor */
+    overflow: hidden;
+}
+
+/* multimedia responsive */
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

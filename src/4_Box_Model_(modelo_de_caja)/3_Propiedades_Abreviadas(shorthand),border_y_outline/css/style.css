@@ -1,0 +1,96 @@
+body {
+    /* margin: 0; */
+    margin-top: 30px;
+}
+
+.box {
+    /* Ancho width del contenido content */
+    /* width: 90px; */
+
+    /* Alto height del contenido content */
+    /* height: 80px; */
+
+    border: 2px solid #000;
+}
+
+/* 
+Sintaxis General:
+border: tamaño tipo_de_bordeado color 
+*/
+
+/* 
+Shorthand (Taquigrafía) o Propiedades Abreviadas para margin y padding   
+
+Documentación Oficial de Shorthand:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties
+
+Tutorial:
+https://www.youtube.com/watch?v=NQC9aE4d0ak&list=PLggiJKmZtpaJXLWGjDgG6XfTFMvJdCuHd&index=28
+
+/* 
+Resumen de Shorthand:
+
+    padding: 10px;                  Todas las direcciones
+    padding: 10px 20px;             arriba abajo / izquierda derecha
+    padding: 10px 20px 30px;        arriba / izquierda derecha / abajo
+    padding: 10px 20px 30px 40px;   arriba / derecha / abajo / izquierda 
+*/
+
+
+.box1 {
+    background: steelblue;
+
+    /* Misma medida en todas las direcciones */
+    /* padding: 10px; */
+
+    /*
+    Arriba y abajo = 10px
+    Izquierda y derecha = 20px
+    */
+    /* padding: 10px 20px; */
+
+    /* 
+    Arriba = 10px
+    Izquierda y derecha = 20px
+    Abajo = 30px
+    */
+    /* padding: 10px 20px 30px; */
+
+    /* 
+    Definir cada una de las medidas por separado.
+    
+    Recordatorio:
+    La longitud del margin y padding va en sentido de las manecillas del reloj
+    empezando desde arriba (las 12 horas):
+    
+    Arriba = 10px
+    Derecha = 20px
+    Abajo = 30px
+    Izquierda = 40px
+    */
+    padding: 10px 20px 30px 40px;
+}
+
+.box2 {
+    background: tomato;
+
+    /* Cuando el margin es negativo puedo situar un elemento encima de otro */
+    /* margin-top: -140px; */
+
+    /* Dar opacidad a un elemento, Sus valores van desde 0 hasta 1 */
+    /* opacity: 0.6; */
+
+    /* ------------------------------------------------ */
+
+        /* Línea Continua (Solida)  */
+    /* border: 3px solid #000; */
+
+    /* Línea Discontinua  */
+    /* border: 3px dashed #000;  */
+
+    /* Línea Doble border:  */
+    /* border: thick double; */
+
+    /* Línea Gruesa  */
+    /* border: 10px ridge red; */
+}

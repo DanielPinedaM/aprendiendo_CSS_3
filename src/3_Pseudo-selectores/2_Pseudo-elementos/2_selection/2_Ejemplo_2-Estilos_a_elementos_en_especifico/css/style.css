@@ -1,0 +1,37 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* he seleccionado elementos en especifico de mi pagina web
+cuando el usuario seleccione ::selection los elementos
+entonces cambiaran de estilo */
+.contenedor .color_texto::selection {
+    color: red;
+}
+.contenedor .color_fondo::selection {
+    /* ESTO... */
+    background-color: steelblue;
+    /* es lo mismo q esto
+    background: steelblue; */
+}
+.contenedor .color_texto_fondo::selection {
+    color: white;
+    background-color:salmon;
+}
+.contenedor .efecto_visual::selection {
+    color: #FFFFFF;
+    background: #232323;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+.contenedor .input {
+    width: 11.5rem;
+}
+.contenedor .input::selection {
+    background: #2ecc71;
+}
+.contenedor .textarea::selection {
+    background: #34495e;
+    color: white;
+}

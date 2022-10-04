@@ -1,0 +1,76 @@
+/*
+Este ejemplo lo saq de esta pagina web:
+http://vanseodesign.com/css/css-stack-z-index/
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.box_model {
+    width: 150px;
+    height: 150px;
+    border: thick solid black;
+}
+
+.fondo {
+    background-color: crimson;
+}
+
+.z-index_NEGATIVO {
+    background-color: lightgreen;
+    z-index: -1;
+    margin-top: -50px;
+    margin-left: 30px;
+}
+
+.bloque {
+    background-color: steelblue;
+    margin-top: -50px;
+    margin-left: 50px;
+}
+
+.flotante_NO_posicionado {
+    float: left;
+    margin-top: -50px;
+    margin-left: 70px;
+    background-color:blueviolet;
+}
+
+.linea {
+    margin-left: -120px;
+/* convertir elemento de Bloque a Línea
+Con las Propiedades
+ancho width: y alto height:
+del content */
+    display: inline-block;
+    background-color:chocolate;
+}
+
+.z_index_auto_cero {
+    margin-top: -50px;
+    margin-left: 130px;
+    position: relative;
+    /* z-index: auto; */
+    /* z-index: 0; */
+    background-color: brown;
+}
+
+.z-index_mayor_a_cero {
+    margin-top: -50px;
+    margin-left: 150px;
+    position: relative;
+    z-index: 1;
+    background-color: darkviolet;
+}

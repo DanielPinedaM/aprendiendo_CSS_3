@@ -1,0 +1,102 @@
+/*
+Bordes Redondeados border-radius:
+border-radius: redondea los bordes o esquinas de una caja (Box Model)
+
+
+Generador de Bordes Redondeados (border-radius CSS Generator)
+https://border-radius.com/
+https://html-css-js.com/css/generator/border-radius/
+*/
+
+/* ------------------------------------------------------------------------------------- */
+/* CENTRAR IMAGEN */
+
+/* Forma 1 - Centrar Imagen Usando las Medidas de la Caja (Box Model) */
+
+/*
+* {
+    padding: 0;
+    margin: 0;
+}
+*/
+
+/* Centrar horizontalmente */
+
+/*
+.contenedor {
+    width: 1366px;
+    height: 657px;
+
+    background: steelblue;
+    outline: 10px solid black;
+    text-align: center;
+}
+*/
+
+/* Centrar verticalmente:
+(height contenedor 657px) - (width hijo 350px) = 307px
+
+307px / 2 = 153.5px
+*/
+
+/*
+.hijo {
+    width: 350px;
+    height: 250px;
+
+    margin: 153.5px 0;
+}
+*/
+
+/* ------------------------------- */
+
+/* Forma 2 - Centrar Imagen Usando Flex */
+
+html,
+body {
+    /* Hacer q el cuerpo ocupe toda la ventana grafica */
+    height: 100%;
+}
+
+.contenedor {
+    height: 100%;
+    display: flex;
+    align-items: center;       /* centrar horizontalmete */
+    justify-content: center;  /* centrar verticalmente */
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* REGLA DEL RELOJ PARA border-radius
+
+                                        Esquinas ...
+border-radius: 100px;                  Misma medida en todas las esquinas
+border-radius: 200px 20px;             superior izquierda inferior derecha / superior derecha inferior izquierda
+border-radius: 200px 20px 5px;         superior izquierda / superior derecha inferior izquierda / inferior derecha
+border-radius: 100px 200px 500px 50px; superior izquierda / superior derecha / inferior derecha / inferior izquierda
+*/
+
+.hijo {
+    width: 400px; /* ancho */
+    height: 250px; /* alto */
+
+    border: 30px solid tomato;
+
+    /* Misma medida en todas las esquinas */
+    /* border-radius: 100px; */
+
+    /* Esquinas ... superior izquierda inferior derecha / superior derecha inferior izquierda  */
+    /* border-radius: 200px 20px; */
+
+    /* Esquinas ... superior izquierda / superior derecha inferior izquierda / inferior derecha */
+    /* border-radius: 200px 20px 5px; */
+
+    /* Definir cada una de las medidas por separado.
+    La longitud del border-radius
+    va en sentido de las manecillas del reloj
+    empezando desde la esquina superior izquierda (las 10 horas)
+
+    Esquina... superior izquierda / superior derecha / inferior derecha / inferior izquierda */
+    /* border-radius: 100px 200px 500px 50px; */
+
+}

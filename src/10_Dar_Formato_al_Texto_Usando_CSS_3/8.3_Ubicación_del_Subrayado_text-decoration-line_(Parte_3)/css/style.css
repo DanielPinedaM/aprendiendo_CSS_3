@@ -1,0 +1,170 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+}
+
+/* ----------------------------------------------------------------------------- */
+/*
+width: 200px; ancho
+height: 200px; alto
+*/
+
+/*
+.contenedor {
+    width: 200px;
+    height: 200px;
+
+    background: steelblue;
+    border: 2px solid black;
+}
+*/
+
+/* --------------------- */
+/*
+QUITAR el Subrayado (Valor por Defecto) text-decoration-line: none;
+
+.parrafo {
+    text-decoration-line: none;     Para las etiquetas HTML de texto que NO son enlaces <a>
+                                    NO importa si escribo o no none;
+                                    el resultado sera el mismo porq este es el valor por defecto
+}
+
+enlace {
+    Esto...
+    text-decoration: none;
+
+    Es lo mismo q esto:
+    text-decoration-line: none; A los enlaces <a> por defecto SI tienen subrayado
+                                entonces con este bloq de declaracion
+                                les puedo QUITAR el subrayado
+    color: black; el color del enlace por defecto es azul,
+                  lo puedo cambiar al q yo quiera
+}
+*/
+
+/*
+.parrafo {
+    text-decoration-line: none;
+}
+*/
+
+
+.enlace {
+    text-decoration: none;
+
+    text-decoration-line: none;
+    color: black;
+}
+
+
+/* --------------------- */
+/*
+Subrayar Texto en la Parte de ABAJO
+text-decoration-line: underline;
+
+Esto...
+text-decoration: underline;
+
+Es lo mismo q esto:
+text-decoration-line: underline;
+*/
+
+/*
+.parrafo {
+    text-decoration: underline;
+
+    text-decoration-line: underline;
+}
+*/
+
+/* --------------------- */
+/*
+Subrayar Texto en la Parte de ARRIBA
+text-decoration-line: overline;
+
+Esto...
+text-decoration: overline;
+
+Es lo mismo q esto:
+text-decoration-line: overline; */
+
+/*
+.parrafo {
+    text-decoration: overline;
+
+    text-decoration-line: overline;
+}
+*/
+
+/* --------------------- */
+/*
+Subrayar Texto en la Parte de Arriba y Abajo
+text-decoration-line: underline overline;
+
+Esto...
+text-decoration: underline overline;
+
+Es lo mismo q esto:
+text-decoration-line: underline overline;
+*/
+
+/*
+.parrafo {
+    text-decoration: underline overline;
+
+    text-decoration-line: underline overline;
+}
+*/
+
+/* --------------------- */
+/*
+Tachar Texto (Subrayar Texto en el Centro)
+text-decoration-line: line-through;
+
+Esto...
+text-decoration: line-through;
+
+Es lo mismo q esto:
+text-decoration-line: line-through;
+*/
+
+/*
+.parrafo {
+    text-decoration: line-through;
+
+    text-decoration-line: line-through;
+}
+*/
+
+/* --------------------- */
+/*
+Tachar Texto (Subrayar Texto en el Centro) y en la Parte de Abajo
+text-decoration-line: underline line-through;
+
+Esto...
+text-decoration: underline line-through;
+
+Es lo mismo q esto:
+text-decoration-line: underline line-through;
+*/
+
+.parrafo {
+    text-decoration: underline line-through;
+
+    text-decoration-line: underline line-through;
+}

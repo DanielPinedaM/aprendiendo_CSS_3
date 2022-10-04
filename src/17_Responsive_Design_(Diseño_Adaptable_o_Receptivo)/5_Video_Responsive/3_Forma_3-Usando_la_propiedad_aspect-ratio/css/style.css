@@ -1,0 +1,42 @@
+/*
+Jon Mircha - YouTube - iframe Responsive
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=6579s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* hacer q el <body> ocupe TODO el viewport */
+    width: 100%;
+    height: 100vh;
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    /* breakpoints - unidades de medida estandar para los media queries */
+    max-width: 80rem; /*80rem = 1280px - ancho maximo
+
+                        puedo limitar las medidas del <video>
+                        usando min-width: max-width: min-height: y max-height:
+                        en el .contenedor */
+}
+
+video {
+    max-width: 100%; /* hacer q el <video> ocupe todo 100% el ANCHO width: del .contenedor */
+    height: auto; /* esto hace q el <video> no se vea pixelado */
+    display: block; /* eliminar espacio en blanco que se forma en la parte de abajo
+                       cuando adapto el <video> al tamaño del .contenedor */
+    aspect-ratio: 16 / 9; /*Medidas del Viewport:
+                            16 = ancho ↔
+                            9 = alto ↕ */
+}

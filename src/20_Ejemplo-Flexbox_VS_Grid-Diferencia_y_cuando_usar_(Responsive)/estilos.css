@@ -1,0 +1,145 @@
+/*
+Este codigo lo saq de aqui:
+https://youtu.be/6qko7Nbe8YA
+https://github.com/falconmasters/grid-vs-flexbox/tree/master
+*/
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+html { font-size: 16px; }
+
+html, body { overflow-x: hidden; }
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+
+	/* FLEXBOX */
+/*
+	display: flex;
+	gap: 20px;
+*/
+
+	/* GRID */
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 20px;
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+	/* FLEXBOX */
+/*
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+*/
+
+	/* GRID */
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+
+
+	/* FLEXBOX */
+	/* width: calc(33.3333% - 20px); */
+
+}
+
+.card .textos {
+	height: 100%;
+
+    /* FLEXBOX */
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+
+	/* GRID */
+/*
+	display: grid;
+	grid-template-rows: 1fr auto;
+*/
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+
+	/* FLEXBOX */
+
+	/* width: 30%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+
+	/* GRID */
+/*  display: grid;
+	grid-template-rows: auto auto auto;
+	align-items: center;
+*/
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}

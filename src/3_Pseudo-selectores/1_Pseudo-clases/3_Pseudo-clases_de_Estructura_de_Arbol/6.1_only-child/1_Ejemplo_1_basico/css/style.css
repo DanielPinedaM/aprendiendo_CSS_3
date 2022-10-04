@@ -1,0 +1,50 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* :only-child selecciona lo mismo que esto de aqui abajo
+
+La única diferencia es que
+la especificidad de 20 de :first-child:last-child y :nth-child(1):nth-last-child(1)
+es mayor a la especificidad de 10 de :only-child */
+
+/*
+* :first-child:last-child {
+    color: red;
+}
+
+* :nth-child(1):nth-last-child(1) {
+    color: red;
+}
+*/
+
+/* -------------- */
+
+/*
+:only-child solamente selecciona
+a un elemento que esta dentro de un contenedor (padre)
+y q sea hijo unico (SIN hermanos)
+
+<element class="contenedor_unico">
+  …
+    <p :only-child>
+Especificidad: (0, 2, 1) */
+.contenedor_unico p:only-child {
+    /* este contenedor (padre) es hijo unico */
+    color: red;
+}
+
+/*
+Cuando tiene hermanos (NO es hijo unico) entonces :only-child
+NO selecciona los elementos dentro del contenedor
+
+<element class="contenedor_hermanos">
+  …
+    <p :only-child>
+Especificidad: (0, 2, 1) */
+.contenedor_hermanos p:only-child {
+    /* este contenedor (padre) tiene hermanos */
+    color: red;
+}

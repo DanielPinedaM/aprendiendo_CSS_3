@@ -1,0 +1,27 @@
+body {
+    background: #dfe6e9;
+}
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+
+    /* Para centrar cualquier elemento usando Grid 
+    al contenedor padre ponerle el siguiente codigo: */
+    display: grid;
+
+    /* FORMA 1: */
+    /* place-items: center; */
+
+    /* FORMA 2: */
+    justify-items: center;
+    align-items: center;
+}
+
+.hijo {
+    width: 200px;
+    height: 200px;
+}
+
+

@@ -1,0 +1,293 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+.position_sticky {
+    background-color: beige;
+    display: block;
+    position: sticky;
+    top: 0;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p,
+a {
+    font-size: 23px;
+}
+
+p,
+hr,
+.contenedor_flexbox {
+    /* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.contenedor_flexbox {
+    min-height: 65vh; /* alto minimo */
+    max-width: 563px; /* ancho width: de los Flex Container */
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91,
+        50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+
+    gap: 14px; /* distancia de separacion entre cada una de las cajas */
+
+    /* flex-direction: row; Flex Items en Fila →
+                            de Izquierda a Derecha (Valor por Defecto)
+
+    flex-wrap: wrap; Los Flex Items pueden ocupar
+                    varias lineas de Arriba Hacia Abajo ↓
+
+    Defino flex-wrap: wrap;
+    para q place-content: pueda funcionar,
+    porq align-content: solamente sirve para
+    flex-wrap: wrap; y flex-wrap: wrap-reverse;  */
+    flex-flow: row wrap; /* Propiedad abreviada (Shorthand)
+                            flex-flow: flex-direction flex-wrap; */
+
+
+
+    /* ------------------------- place-content: align-content justify-content; ------------------------- */
+
+    /*
+    place-content: es una propiedad abreviada (shorthand)
+    que define como están alineados los Flex Items
+    en el Eje Principal (Main Axis) con justify-content:
+    y Eje Transversal (Cross Axis) con align-content:
+
+    Su sintaxis es place-content: align-content justify-content;
+
+    Su valor por defecto es place-content: normal;
+
+    En la documentacion oficial de la MDN
+    estan TODOS los valores de place-content:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#placing_content_in_a_flex_container
+
+    Estos son los valores MAS USADOS de place-content:
+    No están todos,
+    pero con que conozcas estos
+    es suficiente para maquetar páginas web */
+
+    /* place-content: normal flex-start; */
+    /* place-content: normal flex-end; */
+    /* place-content: normal center; */
+    /* place-content: normal space-between; */
+    /* place-content: normal space-around; */
+    /* place-content: normal space-evenly; */
+
+    /* place-content: stretch flex-start; */
+    /* place-content: stretch flex-end; */
+    /* place-content: stretch center; */
+    /* place-content: stretch space-between; */
+    /* place-content: stretch space-around; */
+    /* place-content: stretch space-evenly; */
+
+    /* place-content: flex-start flex-start; */
+    /* place-content: flex-start flex-end; */
+    /* place-content: flex-start center; */
+    /* place-content: flex-start space-between; */
+    /* place-content: flex-start space-around; */
+    /* place-content: flex-start space-evenly; */
+
+    /* place-content: flex-end flex-start; */
+    /* place-content: flex-end flex-end; */
+    /* place-content: flex-end center; */
+    /* place-content: flex-end space-between; */
+    /* place-content: flex-end space-around; */
+    /* place-content: flex-end space-evenly; */
+
+    /* place-content: center flex-start; */
+    /* place-content: center flex-end; */
+    /* place-content: center center; */
+    /* place-content: center space-between; */
+    /* place-content: center space-around; */
+    /* place-content: center space-evenly; */
+
+    /* place-content: space-between flex-start; */
+    /* place-content: space-between flex-end; */
+    /* place-content: space-between center; */
+    /* place-content: space-between space-between; */
+    /* place-content: space-between space-around; */
+    /* place-content: space-between space-evenly; */
+
+    /* place-content: space-around flex-start; */
+    /* place-content: space-around flex-end; */
+    /* place-content: space-around center; */
+    /* place-content: space-around space-between; */
+    /* place-content: space-around space-around; */
+    /* place-content: space-around space-evenly; */
+
+    /* place-content: space-evenly flex-start; */
+    /* place-content: space-evenly flex-end; */
+    /* place-content: space-evenly center; */
+    /* place-content: space-evenly space-between; */
+    /* place-content: space-evenly space-around; */
+    /* place-content: space-evenly space-evenly; */
+}
+
+.contenedor_flexbox div {
+    flex-basis: 8rem; /*como al .contenedor_flexbox
+                        le defini flex-direction: row;
+                        entonces flex-basis es el ancho width: Responsive de los Flex Items */
+    min-height: 8rem; /* alto minimo de los Flex Items */
+    font-size: 5rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53,
+        50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* -------------------------------------------------- */
+
+.normal { place-content: normal; }
+
+.normal_flex_start { place-content: normal flex-start; }
+
+.normal_flex_end { place-content: normal flex-end; }
+
+.normal_center { place-content: normal center; }
+
+.normal_space_between { place-content: normal space-between; }
+
+.normal_space_around { place-content: normal space-around; }
+
+.normal_space_evenly { place-content: normal space-evenly; }
+
+.stretch_flex_start { place-content: stretch flex-start; }
+
+/* Restablecer el valor por defecto
+del alto height: de los Flex Items,
+esto lo hago para q
+los Flex Items se puedan estirar
+con align-content: stretch; */
+.stretch_flex_start div,
+.stretch_flex_end div,
+.stretch_center div,
+.stretch_space_between div,
+.stretch_space_around div,
+.stretch_space_evenly div { height: initial; }
+
+.stretch_flex_end { place-content: stretch flex-end; }
+
+.stretch_center { place-content: stretch center; }
+
+.stretch_space_between { place-content: stretch space-between; }
+
+.stretch_space_around { place-content: stretch space-around; }
+
+.stretch_space_evenly { place-content: stretch space-evenly; }
+
+.flex_start_flex_start { place-content: flex-start flex-start; }
+
+.flex_start_flex_end { place-content: flex-start flex-end; }
+
+.flex_start_center { place-content: flex-start center; }
+
+.flex_start_space_between { place-content: flex-start space-between; }
+
+.flex_start_space_around { place-content: flex-start space-around; }
+
+.flex_start_space_evenly { place-content: flex-start space-evenly; }
+
+.flex_end_flex_start { place-content: flex-end flex-start; }
+
+.flex_end_flex_end { place-content: flex-end flex-end; }
+
+.flex_end_center { place-content: flex-end center; }
+
+.flex_end_space_between { place-content: flex-end space-between; }
+
+.flex_end_space_around { place-content: flex-end space-around; }
+
+.flex_end_space_evenly { place-content: flex-end space-evenly; }
+
+.center_flex_start { place-content: center flex-start; }
+
+.center_flex_end { place-content: center flex-end; }
+
+/* Centrar cualquier elemento (Etiqueta) HTML en Flexbox */
+.center_center { place-content: center center; }
+
+.center_space_between { place-content: center space-between; }
+
+.center_space_around { place-content: center space-around; }
+
+.center_space_evenly { place-content: center space-evenly; }
+
+.space_between_flex_start { place-content: space-between flex-start; }
+
+.space_between_flex_end { place-content: space-between flex-end; }
+
+.space_between_center { place-content: space-between center; }
+
+.space_between_space_between { place-content: space-between space-between; }
+
+.space_between_space_around { place-content: space-between space-around; }
+
+.space_between_space_evenly { place-content: space-between space-evenly; }
+
+.space_around_flex_start { place-content: space-around flex-start; }
+
+.space_around_flex_end { place-content: space-around flex-end; }
+
+.space_around_center { place-content: space-around center; }
+
+.space_around_space_between { place-content: space-around space-between; }
+
+.space_around_space_around { place-content: space-around space-around; }
+
+.space_around_space_evenly { place-content: space-around space-evenly; }
+
+.space_evenly_flex_start { place-content: space-evenly flex-start; }
+
+.space_evenly_flex_end { place-content: space-evenly flex-end; }
+
+.space_evenly_center { place-content: space-evenly center; }
+
+.space_evenly_space_between { place-content: space-evenly space-between; }
+
+.space_evenly_space_around { place-content: space-evenly space-around; }
+
+.space_evenly_space_evenly { place-content: space-evenly space-evenly; }

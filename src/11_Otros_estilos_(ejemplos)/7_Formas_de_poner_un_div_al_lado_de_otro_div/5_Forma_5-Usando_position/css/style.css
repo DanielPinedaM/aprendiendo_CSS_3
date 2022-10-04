@@ -1,0 +1,30 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_general {
+    width: 480px; /* ancho 480px = 30rem */
+    height: 480px; /* alto */
+
+    border: thick solid red;
+}
+.contenedor_1 {
+    width: 192px;
+    height: 192px;
+
+    border: thick solid blue;
+
+    position: absolute;
+}
+.contenedor_2 {
+    width: 192px;
+    height: 192px;
+
+    border: thick solid green;
+
+    margin-left: 200px; /*margen hacia la izquierda
+                        esto hace q el contenedor_2 se separe del contenedor_1
+                        para q esten uno al lado del otro */
+}

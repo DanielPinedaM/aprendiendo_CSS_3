@@ -1,0 +1,34 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+ul,
+li {
+    font-size: 2rem;
+}
+
+/*
+ESTO...
+
+Seleccionar el PRIMER item <li> DE CADA lista
+
+<ul>
+  …
+    <li :first-child>
+Especificidad: (0, 1, 2) */
+ul li:first-child {
+    color: red;
+    border: thick solid red;
+}
+
+/* Es lo mismo q esto:
+<ul>
+  …
+    <li :nth-child>
+Especificidad: (0, 1, 2) */
+ul li:nth-child(1) {
+    color: red;
+    border: thick solid red;
+}

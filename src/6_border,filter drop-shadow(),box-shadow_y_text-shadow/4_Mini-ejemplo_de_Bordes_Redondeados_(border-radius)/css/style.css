@@ -1,0 +1,53 @@
+html,
+body {
+    /* Hacer q el cuerpo ocupe toda la ventana grafica */
+    height: 100%;
+}
+
+.contenedor {
+    height: 100%;
+
+    display: flex;
+    align-items: center; /* centrar horizontalmete */
+    justify-content: center; /* centrar verticalmente */
+
+    background: #ff7675;
+
+    border: 80px inset #eb3b5a;
+}
+
+.img {
+    height: 300px;
+    width: 300px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 20px double black;
+    outline: 30px ridge #63cdda;
+    outline-offset: 50px;
+}
+
+.hola_mundo {
+    text-align: center;
+}
+
+.div_enlace {
+    width: 100px;
+    height: 30px;
+
+    background: #d1d8e0;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.enlace {
+    color: black;
+    text-decoration: none;
+
+    /* Centrar... */
+    display: block;
+    text-align: center; /* horizontalmente */
+    line-height: 30px; /* verticalmente */
+}

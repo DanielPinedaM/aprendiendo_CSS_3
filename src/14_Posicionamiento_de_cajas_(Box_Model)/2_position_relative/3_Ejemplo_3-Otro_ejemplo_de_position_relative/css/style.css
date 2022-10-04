@@ -1,0 +1,73 @@
+/*
+Este ejemplo lo saq de este video de YouTube de Jon Mircha
+https://www.youtube.com/watch?v=K3xmRF8ab1o&t=28223s
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor_1 {
+    background-color: yellow;
+    /* position: static; */
+}
+
+.contenedor_2 {
+    width: 200px;
+    height: 200px;
+
+    background-color: turquoise;
+
+    position: relative;
+
+    /* ---------------- */
+
+/*
+    top: 50px;
+    left: 50px;
+*/
+
+    /* ---------------- */
+
+/*
+    bottom: -50px;
+*/
+
+    /* ---------------- */
+
+/*
+    bottom: 50px;
+    right: 50px;
+
+*/
+
+    /* ---------------- */
+
+    /* se IGNORA bottom: y el elemento se mueve la distancia de top: */
+/*
+    bottom: 999px;
+    top: 30px;
+
+    right: 50px;
+*/
+
+    /* ---------------- */
+
+    /* se IGNORA right: y el elemento se mueve la distancia de left: */
+
+    right: 999px;
+    left: 50px;
+
+    top: 30px;
+
+}

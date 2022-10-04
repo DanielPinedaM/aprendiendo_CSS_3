@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- estilos CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Google Fonts - font-family: 'Quicksand' - https://fonts.google.com/specimen/Quicksand#standard-styles -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+            rel="stylesheet"
+        />
+        <title>Contactame</title>
+    </head>
+    <body>
+        <div class="contenedor_general">
+            <div class="contenedor_contacto">
+                <div class="izquierda"></div>
+                <div class="derecha">
+                    <h2 class="contactame">Contáctame</h2>
+                    <form
+                        action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co"
+                        method="POST"
+                    >
+                        <input
+                            type="text"
+                            name="nombre"
+                            placeholder="Nombre"
+                            class="campo"
+                        />
+                        <input
+                            type="email"
+                            name="correo"
+                            placeholder="Correo"
+                            class="campo"
+                        />
+                        <input
+                            type="tel"
+                            name="celular"
+                            placeholder="Celular"
+                            class="campo"
+                        />
+                        <textarea
+                            name="mensaje"
+                            placeholder="Mensaje"
+                            class="campo mensaje"
+                        ></textarea>
+                        <!-- <textarea name="mensaje" placeholder="Mensaje" cols="30" rows="10"></textarea> -->
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

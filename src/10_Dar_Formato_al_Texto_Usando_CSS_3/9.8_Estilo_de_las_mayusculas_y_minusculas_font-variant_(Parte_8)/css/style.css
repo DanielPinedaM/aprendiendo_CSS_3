@@ -1,0 +1,49 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+p {
+    font-size: 29px; /* Tamaño de la letra */
+}
+
+/* --------------------- */
+
+/*
+Se conserva el estilo de la letra por defecto del navegador
+No importa si copio normal; o no
+el resultado sera el mismo porq es el valor por defecto */
+
+.font-variant_normal {
+    font-variant: normal;
+}
+
+/*
+Los bloques de declaracion de aqui abajo
+SI afectan el estilo de las mayusculas y minusculas */
+
+.font-variant_small-caps {
+    font-variant: small-caps; /* La letra que está en minúscula se convierte a mayúscula pero con un tamaño mas pequeño que la letra mayúscula normal */
+}
+
+.font-variant_all-small-caps {
+    font-variant: all-small-caps;
+}
+
+.font-variant_petite-caps {
+    font-variant: petite-caps;
+}
+
+.font-variant_all-petite-caps {
+    font-variant: all-petite-caps;
+}
+
+.font-variant_unicase {
+    font-variant: unicase;
+}

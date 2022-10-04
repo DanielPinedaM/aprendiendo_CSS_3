@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Pseudo-elementos</title>
+    </head>
+    <body>
+
+        <template id="person-template">
+            <div>
+                <h2>Personal ID Card</h2>
+                <slot name="person-name">NAME MISSING</slot>
+                <ul>
+                    <li><slot name="person-age">AGE MISSING</slot></li>
+                    <li><slot name="person-occupation">OCCUPATION MISSING</slot></li>
+                </ul>
+            </div>
+        </template>
+
+        <hr />
+
+        <person-details>
+            <p slot="person-name">Dr. Shazaam</p>
+            <span slot="person-age">Immortal</span>
+            <span slot="person-occupation">Superhero</span>
+        </person-details>
+
+        <script src="js/slotted.js"></script>
+    </body>
+</html>

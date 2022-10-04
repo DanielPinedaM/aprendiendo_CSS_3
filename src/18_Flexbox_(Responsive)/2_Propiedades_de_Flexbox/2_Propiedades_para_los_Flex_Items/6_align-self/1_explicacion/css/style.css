@@ -1,0 +1,304 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+.no_margin { margin: 0; }
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+    font-family: "Consolas", monospace;
+}
+
+p, a { font-size: 25px; }
+
+a { display: block; }
+
+p, hr, .contenedor_flexbox, a {
+/* margen hacia abajo margin-bottom:
+esto deja un espacio entre el texto
+y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.subrayar {
+    text-decoration-line: underline; /* Subrayar Texto en la Parte de Abajo */
+    text-decoration-style: solid; /* Estilo del Subrayado - Estilo del Subrayado */
+}
+
+.consolas { font-family: "Consolas", monospace; }
+
+.negrita { font-weight: 900; }
+
+.contenedor_flexbox div {
+    flex-basis: 15rem; /* ancho width: Responsive en Flexbox */
+    margin: 5px; /* distancia de separacion entre cada una de las cajas */
+    font-size: 3rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+    align-content: center;
+}
+
+.contenedor_flexbox {
+    /* padding: 20px; */ /* relleno padding: dar un espacio entre los Flex Items y el Flex Container */
+    width: 100%; /* ancho width: de los Flex Container */
+    min-height: 85vh;
+    border: thick solid black;
+    border-radius: 10px;
+    background-color: #995db5;
+    box-shadow: 1px 1px 10px 7px #7a4a91, inset 20px 20px 3px 0px #7a4a91, 50px -50px 50px 50px rgba(0, 0, 0, 0);
+
+    display: flex; /* usar flexbox */
+    flex-wrap: wrap; /* los Flex Items pueden ocupar varias lineas de Arriba Hacia Abajo ↓ */
+}
+
+.flex_direction_row {
+    width: 100%;
+    flex-direction: row; /* Fila → de Izquierda a Derecha (Valor por Defecto) */
+    flex-wrap: wrap; /* Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+}
+
+/*
+<element class="flex_direction_row">
+  …
+    <div :nth-child>
+*/
+.flex_direction_row div {
+    flex-grow: 1; /* ¿Qué tan Grandes Pueden ser los Flex Items? (Crecimiento Flexible) */
+}
+
+.flex_direction_row div:nth-child(1) { align-self: auto; }
+
+.flex_direction_row div:nth-child(2) { align-self: stretch; }
+
+.flex_direction_row div:nth-child(3) {
+    align-self: flex-start;
+    height: 127.9px;
+}
+
+.flex_direction_row div:nth-child(4) {
+    align-self: flex-end;
+    height: 127.9px;
+}
+
+.flex_direction_row div:nth-child(5) {
+    align-self: center;
+    height: 127.9px;
+}
+
+.flex_direction_row div:nth-child(6) {
+    align-self: baseline;
+    height: 127.9px;
+}
+
+.flex_direction_column {
+    width: 100%;
+    flex-direction: column; /* Columna ↓ de Arriba Hacia Abajo */
+    flex-wrap: wrap; /* Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+}
+
+/*
+.flex_direction_column div {
+    flex-grow: 1;
+}
+*/
+
+.flex_direction_column div:nth-child(1) { align-self: auto; }
+
+.flex_direction_column div:nth-child(2) { align-self: stretch; }
+
+.flex_direction_column div:nth-child(3) { align-self: flex-start; }
+
+.flex_direction_column div:nth-child(4) { align-self: flex-end; }
+
+.flex_direction_column div:nth-child(5) { align-self: center; }
+
+.flex_direction_column div:nth-child(6) { align-self: baseline; }
+
+
+/*
+<element class="auto_row">
+  …
+    <div :nth-child>
+*/
+.auto_row div:nth-child(2),
+.auto_row div:nth-child(4) { align-self: auto; }
+
+.auto_row { flex-direction: row; }
+
+
+.row_diferencia_entre_auto_y_stretch div:nth-child(1),
+.row_diferencia_entre_auto_y_stretch div:nth-child(3),
+.row_diferencia_entre_auto_y_stretch div:nth-child(5) { height: 10rem; }
+
+.row_diferencia_entre_auto_y_stretch {
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.row_diferencia_entre_auto_y_stretch div:nth-child(2) { align-self: auto; }
+
+.row_diferencia_entre_auto_y_stretch div:nth-child(4) { align-self: stretch; }
+
+
+
+.strech_row div:nth-child(2),
+.strech_row div:nth-child(4) { align-self: stretch; }
+
+.strech_row { flex-direction: row; }
+
+
+
+.flex_start_row div:nth-child(2),
+.flex_start_row div:nth-child(4) {
+    align-self: flex-start;
+    height: 11rem;
+}
+
+.flex_start_row { flex-direction: row; }
+
+
+
+.flex_end_row div:nth-child(2),
+.flex_end_row div:nth-child(4) {
+    align-self: flex-end;
+    height: 11rem;
+}
+
+.flex_end_row { flex-direction: row; }
+
+
+
+.center_row div:nth-child(2),
+.center_row div:nth-child(4) {
+    align-self: center;
+    height: 11rem;
+}
+
+.center_row { flex-direction: row; }
+
+
+
+.baseline_row div:nth-child(2),
+.baseline_row div:nth-child(4) {
+    align-self: baseline;
+    height: 10rem;
+}
+
+.baseline_row div:nth-child(2) {font-size: 190px;}
+
+.baseline_row div:nth-child(4) {font-size: 70px;}
+
+
+.baseline_row { flex-direction: row; }
+
+
+
+.auto_column div:nth-child(2),
+.auto_column div:nth-child(4) { align-self: auto; }
+
+.auto_column { flex-direction: column; }
+
+
+
+.column_diferencia_entre_auto_y_stretch div:nth-child(1),
+.column_diferencia_entre_auto_y_stretch div:nth-child(2),
+.column_diferencia_entre_auto_y_stretch div:nth-child(3),
+.column_diferencia_entre_auto_y_stretch div:nth-child(5) { width: 24.5rem; }
+
+.column_diferencia_entre_auto_y_stretch {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.column_diferencia_entre_auto_y_stretch div:nth-child(2) { align-self: auto; }
+
+.column_diferencia_entre_auto_y_stretch div:nth-child(4) { align-self: stretch; }
+
+
+
+.strech_column div:nth-child(2),
+.strech_column div:nth-child(4) { align-self: stretch; }
+
+.strech_column { flex-direction: column; }
+
+
+
+.flex_start_column div:nth-child(2),
+.flex_start_column div:nth-child(4) {
+    align-self: flex-start;
+    width: 14rem;
+}
+
+.flex_start_column { flex-direction: column; }
+
+
+
+.flex_end_column div:nth-child(2),
+.flex_end_column div:nth-child(4) {
+    align-self: flex-end;
+    width: 14rem;
+}
+
+.flex_end_column { flex-direction: column; }
+
+
+
+.center_column div:nth-child(2),
+.center_column div:nth-child(4) {
+    align-self: center;
+    width: 15rem;
+}
+
+.center_column { flex-direction: column; }
+
+
+
+.baseline_column div:nth-child(2),
+.baseline_column div:nth-child(4) {
+    align-self: baseline;
+    width: 10rem;
+}
+
+.baseline_column div:nth-child(2) {font-size: 190px;}
+
+.baseline_column div:nth-child(4) {font-size: 70px;}
+
+.baseline_column { flex-direction: column; }

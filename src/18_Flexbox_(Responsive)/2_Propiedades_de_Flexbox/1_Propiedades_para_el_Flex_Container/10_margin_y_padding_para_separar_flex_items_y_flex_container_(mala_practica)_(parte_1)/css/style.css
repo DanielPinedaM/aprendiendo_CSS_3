@@ -1,0 +1,169 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    text-align: center; /* centrar texto horizontalmente */
+    font-weight: 900; /* negrita (bold) */
+    font-size: 45px; /* tamaño de la letra */
+    font-family: "Consolas", monospace; /* tipo de letra (tipografia) */
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+p,
+a,
+ul {
+    font-size: 20px;
+}
+
+p,
+hr,
+.flex_container {
+    /* margen hacia abajo margin-bottom:
+    esto deja un espacio entre el texto
+    y los contenedores flexibles */
+    margin-bottom: 15px;
+}
+
+.flex_container {
+    display: flex; /* usar flexbox */
+    max-width: 33.5rem; /*ancho maximo: Es lo maximo q pueden estirarse el Flex Container
+                        le doy 32rem para q queden 2 filas de <div>
+                        cada fila con 3 Flex Items */
+    min-width: 3.4rem;/*ancho minimo: Es lo minimo q puede encogerse el Flex container
+                        esto lo hago para q los Flex Items no se desborden */
+    border: thick solid black;
+    border-radius: 10px; /* borde redondeado */
+    background-color: #995db5; /* color de fondo */
+    box-shadow: 1px 1px 10px 7px #7a4a91, /* Sombra de Caja  */
+                inset 20px 20px 3px 0px #7a4a91,
+                50px -50px 50px 50px rgba(0, 0, 0, 0);
+    flex-wrap: wrap; /* los Flex Items pueden ocupar Varias Líneas de Arriba Hacia Abajo ↓ */
+}
+
+.flex_container div {
+    height: 8rem; /* alto de los Flex Items */
+    flex-grow: 0; /* Los Flex Items ocupan el menor espacio posible dentro den Flex Container */
+    flex-shrink: 1; /* Los Flex Items SI pueden reducir (encoger) su tamaño */
+    flex-basis: 8rem; /* ancho width: Responsive de los Flex Items en Flexbox */
+    font-size: 4rem;
+    border: thick solid crimson; /* borde */
+    border-radius: 10px; /* borde redondeado */
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.801), inset 20px 20px 3px 0px #fbaa53,
+        50px -50px 50px 50px rgba(0, 0, 0, 0);
+    background-color: #f4941c; /* color de fondo */
+
+    /* centrar los numeros 1, 2, 3, 4, 5, 6 */
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+}
+
+/* ---------DISTANCIA DE SEPARACION
+            ENTRE LOS FLEX ITEMS Y FLEX CONTAINER
+            *** RESPONSIVE *** ---------- */
+
+/* seleccionar el Flex Container */
+.porcentaje {
+    padding: 2%; /* relleno padding:
+                    dar un espacio interno
+                    entre los Flex Items y el Flex Container*/
+}
+
+/* seleccionar los Flex Items */
+.porcentaje div {
+    margin: 3%;/*Margen margin:
+                distancia de separacion
+                entre cada una de los Flex Items */
+}
+
+/* --------- MARGEN margin: Y RELLENO padding:
+             ESTATICO (FIJO), ES DECIR, Q NO CAMBIA ---------- */
+.rem {
+    padding: .5rem;
+}
+
+/* seleccionar los Flex Items */
+.rem div {
+    margin: 1rem;
+}
+
+/* --------- DIFERENCIA ENTRE margin Y padding: CON gap: ---------- */
+
+.gap {
+    /* Esto... */
+    gap: 2rem 4rem; /* gap: row-gap column-gap; */
+
+    /* es lo mismo q esto: */
+    /*
+    row-gap: 2rem;
+    column-gap: 4rem;
+    */
+}
+
+/* --------- margin Y padding: A ELEMENTOS SELECCIONADOS EN ESPECIFICO ---------- */
+
+/* Seleccionar el Flex Container */
+.margin_y_padding_vs_gap {
+    /* padding: es INTERNO */
+    padding-bottom: 2rem; /*relleno hacia abajo
+
+                            esto va a dar un
+                            espacio en la parte de abajo
+                            del Flex Container */
+}
+
+/* seleccionar el Flex Item 2 */
+.margin_y_padding_vs_gap div:nth-child(2) {
+    /* margin: es EXTERNO */
+    margin-right: 4rem;/*margen hacia la derecha
+
+                        Esto ocasiona un espacio
+                        en la parte de la derecha
+                        del Flex Item 2 */
+}
+
+/* ---------Usando todas las propiedades juntas (mala practica)
+            MARGEN margin:
+            RELLENO padding:
+            gap: ---------- */
+
+/* cuando uso juntos margin: y gap:
+la distancia de separacion de los Flex Items se suma
+
+gap: 30px; + margin: 30px; = los Flex Items estan separados por 60px */
+
+.margin_padding_gap {
+    max-width: 100%;
+    gap: 30px;
+}
+
+.margin_padding_gap div {
+    margin: 30px;
+    padding: 10px;
+}

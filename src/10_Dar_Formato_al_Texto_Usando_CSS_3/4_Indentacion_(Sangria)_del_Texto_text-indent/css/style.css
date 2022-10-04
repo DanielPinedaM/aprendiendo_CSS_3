@@ -1,0 +1,46 @@
+/* eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%; /* Hacer q el cuerpo <body> ocupe toda la ventana grafica (viewport) */
+    background: #eeede7;
+
+    display: flex; /* Usar flexbox */
+    /* Centrar caja ...       */
+    justify-content: center; /* Horizontalmente   */
+    align-items: center; /* Verticalmente     */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.contenedor {
+    width: 200px; /* ancho */
+    height: 200px; /* alto */
+
+    background: steelblue;
+    border: 2px solid black;
+}
+
+/* --------------------- */
+/* No importa si escribo o no 0,
+el resultado sera el mismo porq este es el valor por defecto */
+
+/*
+.parrafo {
+    text-indent: 0;
+}
+*/
+
+/* --------------------- */
+/* La indentación text-indent: se define con unidades de medida de CSS: */
+
+.parrafo {
+    text-indent: 30px; /* Aqui puedo escribir cualquier otra unidad de medida de CSS */
+}

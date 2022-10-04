@@ -1,0 +1,519 @@
+/*
+Jon Mircha - Curso de Flexbox en YouTube
+https://www.youtube.com/playlist?list=PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys
+
+CSS-Tricks (Trucos CSS) - La Guia Completa de Flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+*/
+
+body {
+    margin: 10px;
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* ******************** Fluid Reset - Texto Responsive ******************** */
+/* https://utopia.fyi/ */
+
+:root {
+    --fluid-min-width: 320;
+    --fluid-max-width: 1500;
+    --fluid-min-size: 17;
+    --fluid-max-size: 20;
+    --fluid-min-ratio: 1.2;
+    --fluid-max-ratio: 1.33;
+
+    --fluid-screen: 100vw;
+    --fluid-bp: calc(
+        (var(--fluid-screen) - ((var(--fluid-min-width) / 16) * 1rem)) /
+            ((var(--fluid-max-width) / 16) - (var(--fluid-min-width) / 16))
+    );
+}
+
+@media screen and (min-width: 1500px) {
+    :root {
+        --fluid-screen: calc(var(--fluid-max-width) * 1px);
+    }
+}
+
+:root {
+    --fluid-min-scale-0: var(--fluid-min-ratio);
+    --fluid-min-scale-1: var(--fluid-min-scale-0) * var(--fluid-min-ratio);
+    --fluid-min-scale-2: var(--fluid-min-scale-1) * var(--fluid-min-ratio);
+    --fluid-min-scale-3: var(--fluid-min-scale-2) * var(--fluid-min-ratio);
+    --fluid-min-scale-4: var(--fluid-min-scale-3) * var(--fluid-min-ratio);
+    --fluid-min-scale-5: var(--fluid-min-scale-4) * var(--fluid-min-ratio);
+
+    --fluid-max-scale-0: var(--fluid-max-ratio);
+    --fluid-max-scale-1: var(--fluid-max-scale-0) * var(--fluid-max-ratio);
+    --fluid-max-scale-2: var(--fluid-max-scale-1) * var(--fluid-max-ratio);
+    --fluid-max-scale-3: var(--fluid-max-scale-2) * var(--fluid-max-ratio);
+    --fluid-max-scale-4: var(--fluid-max-scale-3) * var(--fluid-max-ratio);
+    --fluid-max-scale-5: var(--fluid-max-scale-4) * var(--fluid-max-ratio);
+
+    --fluid-min-size-0: (var(--fluid-min-size)) / 16;
+    --fluid-min-size-1: (var(--fluid-min-size) * var(--fluid-min-scale-0)) / 16;
+    --fluid-min-size-2: (var(--fluid-min-size) * var(--fluid-min-scale-1)) / 16;
+    --fluid-min-size-3: (var(--fluid-min-size) * var(--fluid-min-scale-2)) / 16;
+    --fluid-min-size-4: (var(--fluid-min-size) * var(--fluid-min-scale-3)) / 16;
+    --fluid-min-size-5: (var(--fluid-min-size) * var(--fluid-min-scale-4)) / 16;
+
+    --fluid-max-size-0: (var(--fluid-max-size)) / 16;
+    --fluid-max-size-1: (var(--fluid-max-size) * var(--fluid-max-scale-0)) / 16;
+    --fluid-max-size-2: (var(--fluid-max-size) * var(--fluid-max-scale-1)) / 16;
+    --fluid-max-size-3: (var(--fluid-max-size) * var(--fluid-max-scale-2)) / 16;
+    --fluid-max-size-4: (var(--fluid-max-size) * var(--fluid-max-scale-3)) / 16;
+    --fluid-max-size-5: (var(--fluid-max-size) * var(--fluid-max-scale-4)) / 16;
+
+    --fluid-0: calc(
+        (
+            (var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) *
+                var(--fluid-bp)
+        )
+    );
+    --fluid-1: calc(
+        (
+            (var(--fluid-min-size-1) * 1rem) + (var(--fluid-max-size-1) - var(--fluid-min-size-1)) *
+                var(--fluid-bp)
+        )
+    );
+    --fluid-2: calc(
+        (
+            (var(--fluid-min-size-2) * 1rem) + (var(--fluid-max-size-2) - var(--fluid-min-size-2)) *
+                var(--fluid-bp)
+        )
+    );
+    --fluid-3: calc(
+        (
+            (var(--fluid-min-size-3) * 1rem) + (var(--fluid-max-size-3) - var(--fluid-min-size-3)) *
+                var(--fluid-bp)
+        )
+    );
+    --fluid-4: calc(
+        (
+            (var(--fluid-min-size-4) * 1rem) + (var(--fluid-max-size-4) - var(--fluid-min-size-4)) *
+                var(--fluid-bp)
+        )
+    );
+    --fluid-5: calc(
+        (
+            (var(--fluid-min-size-5) * 1rem) + (var(--fluid-max-size-5) - var(--fluid-min-size-5)) *
+                var(--fluid-bp)
+        )
+    );
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.flex_container {
+    min-height: 30vh;
+    width: 800px;
+    /* padding: 1rem; */
+    margin-bottom: 5rem; /* margen hacia abajo, esto separa los Flex Container */
+    outline: #666 solid thick;
+    background-color: #995db5;
+
+    /* usar Flexbox
+
+    display: flex;         hace q el Flex Container sea un elemento EN BLOQ
+    display: inline-flex;    "                                      " EN LINEA */
+
+    display: flex;
+    /* display: inline-flex; */
+
+    /* ------------------------- flex-direction: ------------------------- */
+
+    /* flex-direction: define si los Flex Items
+    están ubicados en filas (horizontal ↔) o
+    columnas (vertical ↕),
+    es la dirección hacia la cual están ubicados los Flex Items
+
+    Sirve para cambiar la orientación
+    del eje principal (Main Axis)
+    y eje transversal (Cross Axis): */
+
+    /* flex-direction: row; */              /* Fila → de Izquierda a Derecha (Valor por Defecto) */
+    /* flex-direction: row-reverse; */      /* Fila ← al Revés de Derecha a Izquierda */
+    /* flex-direction: column; */           /* Columna ↓ de Arriba Hacia Abajo */
+    /* flex-direction: column-reverse; */   /* Columna ↑ al Revés de Abajo Hacia Arriba */
+
+    /* ------------------------- flex-wrap: ------------------------- */
+
+    /* flex-wrap: define si los Flex Items están
+    ubicados en una misma línea o en varias líneas. */
+
+    /* flex-wrap: nowrap; */          /* En una Sola Línea (Valor por Defecto) */
+    /* flex-wrap: wrap; */            /* En Varias Líneas de Arriba Hacia Abajo ↓ */
+    /* flex-wrap: wrap-reverse; */    /* En Varias Líneas al Revés de Abajo Hacia Arriba ↑ */
+
+    /* ------------------------- flex-flow: flex-direction flex-wrap; ------------------------- */
+
+    /* flex-flow: es una propiedad abreviada (shorthand).
+    El orden de los Flex Items cambia dependiendo del flex-flow: flex-direction flex-wrap; */
+
+    /* flex-flow: row nowrap; */
+    /* flex-flow: row wrap; */
+    /* flex-flow: row wrap-reverse; */
+    /* flex-flow: row-reverse nowrap; */
+    /* flex-flow: row-reverse wrap; */
+    /* flex-flow: row-reverse wrap-reverse; */
+    /* flex-flow: column nowrap; */
+    /* flex-flow: column wrap; */
+    /* flex-flow: column wrap-reverse; */
+    /* flex-flow: column-reverse nowrap; */
+    /* flex-flow: column-reverse wrap; */
+    /* flex-flow: column-reverse wrap-reverse; */
+
+    /* ------------------------- justify-content: ------------------------- */
+
+    /* justify-content: define en que parte
+    del eje principal (Main Axis)
+    están ubicados los Flex Items.  */
+
+    /* justify-content: flex-start; */       /* A la Izquierda ← en Fila ↔ y Arriba ↑ en Columna ↕ (Valor por Defecto) */
+    /* justify-content: flex-end; */         /* A la Derecha → en Fila ↔ y Abajo ↓ en Columna ↕ */
+    /* justify-content: center; */           /* Centrar Horizontalmente ↔ en Fila ↔ y Verticalmente ↕ en Columna ↕ */
+    /* justify-content: space-between; */    /* Primer Flex Item al Inicio y Ultimo Flex Item al Final */
+    /* justify-content: space-around; */     /* Espacio Entre los Flex Items es Igual pero el Espacio al Principio y Final de los Flex Items no es Igual  */
+    /* justify-content: space-evenly; */     /* Todos los Espacios Entre los Flex Items son Iguales */
+
+    /* -------------------------Alineación del Eje Transversal (Cross Axis)
+                                Diferencias y Similitudes Entre
+                                align-items: y align-content: ------------------------- */
+
+    /*
+    SIMILITUDES:
+    Ambos align-items: y align-content:
+    definen en q parte de Cross Axis
+    están ubicados los Flex Items (esto se llama “alineación”).
+
+    Para ambos align-items: y align-content: se aplica esta regla:
+    Dependiendo del flex-direction: es decir,
+    si los Flex Items están en filas ↔ o columnas ↕ la alineación es diferente
+
+    DIFERENCIAS:
+    Cuando los Flex Items ocupan una sola línea flex-wrap: nowrap; entonces usar align-items:
+    en cambio
+    si los Flex Items ocupan varias líneas flex-wrap: wrap; ó flex-wrap: wrap-reverse; usar align-content: */
+
+    /* ------------------------- align-items: ------------------------- */
+
+    /* align-items: Alinear Todos los Flex Items
+    en Una Sola Línea
+    (Sirve para flex-wrap: nowrap; )
+    (Alinear Elementos) */
+
+    /* align-items: stretch; */       /* Los Flex Items Ocupan Todo el Espacio Disponible del Flex Container (Valor por Defecto) */
+    /* align-items: flex-start; */    /* Arriba ↑ en Fila ↔ e Izquierda ← en Columna ↕ */
+    /* align-items: flex-end; */      /* Abajo ↓ en Fila ↔ y a la Derecha → en Columna  ↕ */
+    /* align-items: center; */        /* Centrar Verticalmente ↕ en Fila ↔ y Horizontalmente ↔ en Columna ↕ */
+    /* align-items: baseline; */      /* Alinear Flex Items en el Renglón Donde se Escribe el Texto */
+
+
+    /* ------------------------- align-content: ------------------------- */
+
+    /* align-content:
+    Alinear Todos los Flex Items
+    en Varias Líneas
+    (Sirve para flex-wrap: wrap; y flex-wrap: wrap-reverse; )
+    (Alinear Contenido) */
+
+    /* align-content: normal; */           /* Conservar la Posición Original de los Flex Items (Valor por Defecto)  */
+    /* align-content: stretch; */          /* Los Flex Items Ocupan Todo el Espacio Disponible del Flex Container */
+    /* align-content: flex-start; */       /* Esquina Superior Izquierda  */
+    /* align-content: flex-end; */         /* Esquina Inferior Izquierda   en Fila y Esquina Superior Derecha   en Columna */
+    /* align-content: center; */           /* Centrar Verticalmente ↕ en Fila ↔ y Horizontalmente ↔ en Columna ↕ */
+    /* align-content: baseline; */         /* Alinear Flex Items en el Renglón Donde se Escribe el Texto */
+    /* align-content: space-between; */    /* Primer Flex Item al Inicio y Ultimo Flex Item al Final */
+    /* align-content: space-around; */     /* Espacio Entre los Flex Items es Igual pero el Espacio al Principio y Final de los Flex Items no es Igual */
+    /* align-content: space-evenly; */     /* Todos los Espacios Entre los Flex Items son Iguales */
+
+    /* ------------------------- place-content: align-content justify-content; ------------------------- */
+
+    /*
+    place-content: es una propiedad abreviada (shorthand)
+    que define como están alineados los Flex Items
+    en el Eje Principal (Main Axis) con justify-content:
+    y Eje Transversal (Cross Axis) con align-content:
+
+    Su sintaxis es place-content: align-content justify-content;
+
+    Su valor por defecto es place-content: normal;
+
+    En la documentacion oficial de la MDN
+    estan TODOS los valores de place-content:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/place-content#placing_content_in_a_flex_container
+
+    Estos son los valores MAS USADOS de place-content:
+    No están todos,
+    pero con que conozcas estos
+    es suficiente para maquetar páginas web */
+
+    /* place-content: normal flex-start; */
+    /* place-content: normal flex-end; */
+    /* place-content: normal center; */
+    /* place-content: normal space-between; */
+    /* place-content: normal space-around; */
+    /* place-content: normal space-evenly; */
+
+    /* place-content: stretch flex-start; */
+    /* place-content: stretch flex-end; */
+    /* place-content: stretch center; */
+    /* place-content: stretch space-between; */
+    /* place-content: stretch space-around; */
+    /* place-content: stretch space-evenly; */
+
+    /* place-content: flex-start flex-start; */
+    /* place-content: flex-start flex-end; */
+    /* place-content: flex-start center; */
+    /* place-content: flex-start space-between; */
+    /* place-content: flex-start space-around; */
+    /* place-content: flex-start space-evenly; */
+
+    /* place-content: flex-end flex-start; */
+    /* place-content: flex-end flex-end; */
+    /* place-content: flex-end center; */
+    /* place-content: flex-end space-between; */
+    /* place-content: flex-end space-around; */
+    /* place-content: flex-end space-evenly; */
+
+    /* place-content: center flex-start; */
+    /* place-content: center flex-end; */
+    /* place-content: center center; */
+    /* place-content: center space-between; */
+    /* place-content: center space-around; */
+    /* place-content: center space-evenly; */
+
+    /* place-content: space-between flex-start; */
+    /* place-content: space-between flex-end; */
+    /* place-content: space-between center; */
+    /* place-content: space-between space-between; */
+    /* place-content: space-between space-around; */
+    /* place-content: space-between space-evenly; */
+
+    /* place-content: space-around flex-start; */
+    /* place-content: space-around flex-end; */
+    /* place-content: space-around center; */
+    /* place-content: space-around space-between; */
+    /* place-content: space-around space-around; */
+    /* place-content: space-around space-evenly; */
+
+    /* place-content: space-evenly flex-start; */
+    /* place-content: space-evenly flex-end; */
+    /* place-content: space-evenly center; */
+    /* place-content: space-evenly space-between; */
+    /* place-content: space-evenly space-around; */
+    /* place-content: space-evenly space-evenly; */
+}
+
+.item {
+    /* ADVERTENCIA:
+    cuando tengo definido el width: o height: a los Flex Items
+    una de estas 2 propiedades
+    pueden hacer q NO funcione el align-content: y align-items:
+    para q SI funcionen NO puedo definir el width: o height: */
+    /* height: 20%; */
+
+    /* cuando NO escribo esto width: 100% entonces max-width: NO funciona
+    https://stackoverflow.com/questions/43705866/max-width-not-working-on-flex-item */
+    width: 300px;
+    display: flex;
+    justify-content: center; /* centrar HORIZONTALMENTE ↔ */
+    align-items: center; /* centrar VERTICALMENTE ↕ */
+
+    /* width: 20%; */ /* el ancho width: de cada uno de los Flex Items es del 20%
+                         eso significa q (20% width: ) * (5 Flex Items) = 100%
+                         por lo tanto dentro del Flex Container hay 5 columnas */
+    /* margin: 0.313rem;*/ /*PERO cuando le doy margin: a los Flex Items
+                            debido a q estos tienen una distancia de separacion
+                            entonces ya NO son 5 columnas */
+    outline: black solid thick;
+    background-color: #f4941c;
+    /* font-size: var(--fluid-2); */ /* texto Responsive */
+    font-size: 17.4px;
+    /* font-weight: 900; */
+
+
+    /* ------------------------- flex: flex-grow flex-shrink flex-basis;  ------------------------- */
+
+    /* flex: es una propiedad abreviada (shorthand)
+    q sirve para definir el tamaño de los Flex Items
+
+    Su sintaxis es            flex: flex-grow flex-shrink flex-basis;
+    Su valor por defecto es   flex: 0 1 auto; */
+
+    /* flex: 0 1 auto; */ /*flex-grow:     0;     Los Flex Items NO crecen            (aumentar   su tamaño)
+                            flex-shrink:   1;     "            " SI pueden encogerse  (disminuir  "       ")
+                            flex-basis:    auto;  "            " toman el espacio de su contenido */
+
+    /* flex: 1 1 auto; */ /* flex-grow: 1; Los Flex Items SI crecen (aumentar su tamaño) */
+
+    /* flex: 1 0 auto; */ /* flex-shrink: 0; "Los Flex Items NO pueden encogerse (disminuir su tamaño) */
+
+    /* flex: 0 1 200px; */
+    /* flex: 0 1 150px; */ /* flex-basis: 150px; Cuando el tamaño del Flex Container lo permita,
+                            es decir, si hay espacio suficiente dependiendo del tamaño del viewport
+                            entonces el tamaño de los Flex Items (ancho ó alto) es de 150px
+
+                            Si el tamaño es ancho o alto,
+                            esto depende de flex-direction:
+                            (la explicacion de esto ya la escribi antes) */
+
+    /* Dependiendo del numero de valores q se definan y
+    de si los números se han escrito o no con unidades de medida de CSS, entonces
+    se define una propiedad diferente
+    https://www.samanthaming.com/flexbox30/27-flex/ */
+
+    /* ---------------------------------------
+        flex: flex-grow flex-shrink flex-basis;
+        TRES valores, sintaxis completa */
+
+    /* flex: 2 3 10rem; */
+
+/*
+    flex-grow: 2;
+    flex-shrink: 3;
+    flex-basis: 10rem;
+*/
+
+    /* ---------------------------------------
+        flex: flex-grow;
+        UN valor, SIN unidades */
+
+    /* flex: 2; */
+
+    /* flex: 2 1 0; */
+
+/*
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 0;
+*/
+
+    /* ---------------------------------------
+        flex: flex-basis;
+        UN valor, CON unidades */
+
+    /* flex: 10rem; */
+
+    /* flex: 1 1 10rem; */
+
+/*
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 10rem;
+*/
+
+    /* ---------------------------------------
+    flex: flex-grow flex-basis;
+    DOS valores,
+    SIN unidades
+    y
+    CON unidades */
+
+    /* flex: 2 30px; */
+
+    /* flex: 2 1 30px; */
+
+/*
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 30px;
+*/
+
+    /* ---------------------------------------
+    flex: flex-grow flex-shrink;
+    DOS valores,
+    SIN unidades
+    y
+    SIN unidades */
+
+    /* flex: 2 3; */
+
+    /* flex: 2 3 0; */
+
+/*
+    flex-grow: 2;
+    flex-shrink: 3;
+    flex-basis: 0;
+*/
+
+    /* ------------------------- flex-grow:  ------------------------- */
+
+    /* flex-grow: y flex-shrink toman como valor un numero solo SIN unidades de medida,
+    este número NO puede ser negativo.
+    Puede ser un numero entero o decimal mayor o igual que cero (0, 1, 2, 3.5…)
+
+    flex-grow: Cuando el Flex Container SI tenga espacio sobrante (disponible),
+    los Flex Items podrán AUMENTAR su tamaño dependiendo del valor de flex-grow:
+
+    su valor por defecto es flex-grow: 0; */
+
+    /* flex-grow: 0; */ /* los Flex Items ocupan el minimo espacio posible dentro del Flex Container */
+    /* flex-grow: 1; */ /* todos los Flex Items ocupan el mismo espacio porq el valor de flex-grow es el mismo para todos */
+
+    /* ------------------------- flex-shrink:  ------------------------- */
+
+    /* flex-shrink: Cuando el Flex Container NO tenga espacio sobrante (disponible),
+    los Flex Items podrán DISMINUIR su tamaño dependiendo del valor de flex-shrink:
+
+    su valor por defecto es flex-shrink: 1; */
+
+    /* flex-shrink: 1; */ /* Los Flex Items SI pueden encogerse (reducir su tamaño) cuando el tamaño del Flex Container sea mas pequeño (valor por defecto) */
+    /* flex-shrink: 0; */  /* Los Flex Items NO se encogen (NO reducen su tamaño) */
+    /* flex-shrink: 0.1; */
+    /* flex-shrink: 2; */ /* cuanto mas grande (mas mayor q 1) sea el numero de flex-shrink: significa el Flex Item se puede encoger mas */
+
+    /* ------------------------- flex-basis:  ------------------------- */
+
+    /* flex-basis: Es el tamaño del elemento hijo (Flex Item) dentro de la linea de la caja flexbox (Flex Container)
+
+    Si el contenedor padre (Flex Container) tiene dirección de fila     flex-direction: row;     entonces flex-basis: representa el ancho width:  /  flex-basis: NO es lo mismo q width:
+    "                                                        " columna  flex-direction: column;  "                                " alto height:  /  "                          " height:
+
+    Su valor por defecto es flex-basis: auto;
+    esto signfica q el tamaño (ancho o alto)
+    de los Flex Items depende de su contenido (se ajusta a su contenido)
+
+    cuanto MAS contenido tengan los Flex Items mas GRANDES seran
+    y cuanto MENOS contenido tengan mas PEQUEÑOS seran
+
+    Ejemplo: Si hay mucho texto dentro de los Flex Items entonces seran grandes y
+             si hay poco texto entonces seran pequeños */
+
+    /* flex-basis: auto; */
+    /* flex-basis: 100px; */ /* en un principio (inicialmente) los Flex Items miden 100px pero esta medida cambia dependiendo de si el viewport se encoge o ancha (Responsive) */
+    /* width: 200px !important; */ /* Como flex-basis tiene mas especificidad q width: y height: entonces la propiedad q se aplica es la de flex-basis: sin importar q width: ó height: este mas abajo (algoritmo de CSS)
+                                      Si le escribo !important a width: ó height: sigue pasando lo mismo: flex-basis: es la medida q toman los Flex Items porq flex-basis tiene mayor prioridad q width: y height:
+                                      SIEMPRE flex-basis tiene mayor prioridad q width: y height: */
+    /* height: 50px !important; */
+    /* flex-basis: calc(5% - 10px); */ /* tambien puedo usar la funcion calc()
+                                          como valor de la propiedad flex-basis:
+                                          https://stackoverflow.com/questions/44869583/flex-basis-calculation-possible */
+}
+
+.item:nth-child(2) {
+    width: 600px;
+    flex-shrink: 6; /* cuanto MAS grande sea el numero de flex-shrink: entonces mas se encogera el Flex Item */
+}
+
+pre {
+    font-size: 2em;
+}

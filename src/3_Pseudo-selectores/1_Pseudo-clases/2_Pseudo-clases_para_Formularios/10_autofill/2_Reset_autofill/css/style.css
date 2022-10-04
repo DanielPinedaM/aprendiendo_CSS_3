@@ -1,0 +1,51 @@
+html,
+body {
+    background-color: #eeede7;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* reset :autofill
+https://gist.github.com/Menma27/49f2decc039c8c34f99f3aca8da7c17e */
+
+input:-webkit-autofill,
+input:-webkit-autofill::first-line,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:indeterminate,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:indeterminate,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus select:-webkit-autofill:indeterminate {
+    /* estos son los estilos q quiero activar en el estado :autofill,
+los puedes cambiar como desees */
+    color: black !important; /* color de la letra */
+    font-weight: normal; /* negrita (bold) */
+    font-size: 20px; /* tamaño de letra */
+    font-family: "Open Sans", sans-serif !important; /* tipo (fuente) de letra */
+
+    /* eliminar estilos por defecto del estado :autofill,
+    si quisieras tambien podrias cambiar el color de fondo
+    del estado :autofill */
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset;
+    border-color: rgba(255, 255, 255, 0);
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+    -o-transition: background-color 5000s ease-in-out 0s;
+    /* esto quita el fondo amarillo en Mozilla Firefox */
+    filter: none;
+    -webkit-filter: none;
+}
+
+input,
+textarea,
+select,
+button {
+    /* este font-size: TIENE q ser el mismo q haya en el codigo anterior */
+    font-size: 20px;
+}

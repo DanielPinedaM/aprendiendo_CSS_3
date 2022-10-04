@@ -1,0 +1,46 @@
+/* empty-cells: hide; NO funciona con border-collapse: collapse; 
+pero esto se puede solucionar asi:
+https://stackoverflow.com/questions/18758373/why-do-the-css-property-border-collapse-and-empty-cells-conflict/18758436#18758436 */
+
+body {
+    background-color: aqua; /* color de fondo de toda la pagina web */
+}
+table {
+    text-align: left; /* alinear texto de la tabla a la izquierda */
+
+    empty-cells: hide; /* ocultar las casillas en las q no he escrito nada */
+    border-collapse: collapse; /* juntar los bordes border: de las casillas */
+}
+th:empty, td:empty {
+    border: 0; /* la casilla sigue estando presente (existe) en la pagina web pero NO se ve */
+}
+th, td, caption { /* SOLAMENTE le pones borde a estos elementos, NO al <table> */
+    border: thin solid black; /* bordes de toda la tabla */
+}
+table, caption {
+    background-color: crimson; /* color de fondo de toda la tabla */
+}
+caption {
+    border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------- */
+
+/*
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th,
+td
+{
+    empty-cells: hide;
+    border: solid 1px black;
+    padding: 2px 4px;
+}
+
+th:empty, td:empty {
+    border: 0;
+}
+*/

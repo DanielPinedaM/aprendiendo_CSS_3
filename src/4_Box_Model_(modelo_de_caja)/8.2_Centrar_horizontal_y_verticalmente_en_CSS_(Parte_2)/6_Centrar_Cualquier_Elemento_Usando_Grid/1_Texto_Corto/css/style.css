@@ -1,0 +1,47 @@
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    box-sizing: border-box !important;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden;
+}
+
+html, body {
+    background-color: #dfe6e9;
+    line-height: 1.2;
+}
+
+
+
+.contenedor {
+    background: steelblue;
+    width: 50%; /* ancho */
+    height: 500px; /* alto */
+
+    /* Para centrar cualquier elemento usando Grid
+    al contenedor padre ponerle el siguiente codigo: */
+    display: grid;
+
+    /* FORMA 1: */
+    /* place-items: center; */
+
+    /* FORMA 2: */
+    justify-items: center;
+    align-items: center;
+}

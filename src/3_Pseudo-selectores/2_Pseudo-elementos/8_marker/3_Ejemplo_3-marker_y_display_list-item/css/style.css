@@ -1,0 +1,26 @@
+body { /* seleccionar el <body> q es la parte visible de la pagina web */
+  background-color: #eeede7; /* color de fondo */
+  counter-reset: h3; /* restablecer el contador */
+  line-height: 1.4;
+  font-family: system-ui; /* Fuente (Tipografía) del Texto */
+  margin: 3rem; /* margen: distancia de separacion entre los elementos */
+}
+
+/* seleccionar los subtitulos <h3> */
+h3 {
+    counter-increment: h3; /* contar la cantidad de subtitulos <h3< */
+    display: list-item; /* convertir los subtitulos <h3> en item <li> de la lista */
+}
+
+/* ::marker Dar Estilos (Seleccionar)
+al Ítem <li> de la Lista
+q sean subtitulos <h3> display: list-item;
+
+<h3 ::marker>
+Especificidad: (0, 0, 2) */
+h3::marker {
+    display: list-item;
+    content: "#" counter(h3) " "; /* el contenido de los <h3> es #1, #2, #3 */
+    color: lightsalmon; /* color de los subtitulos <h3> */
+    font-weight: bold; /* Negrita (Bold)  */
+}

@@ -1,0 +1,147 @@
+/*
+Jon Mircha - Layout CON Media Queries + Flexbox (Responsive) (FORMA 1 - flex: flex-grow flex-shrink flex-basis; )
+https://www.youtube.com/watch?v=KoLOOETh0f4&t=793s */
+
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -------------------- titulo principal <h1> -------------------- */
+
+h1 {
+    /* centrar texto horizontalmente */
+    text-align: center;
+}
+
+/* -------------------- tamaño de letra -------------------- */
+
+h2 { font-size: 1.9rem; }
+
+p { font-size: 1.5rem; }
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    outline: thick solid lightcoral;
+    max-width: min(90%, 1332px); /* el ancho maximo max-width: de la pagina web es
+                                    el valor (numero) minimo min() entre
+                                    el 90% del ancho del viewport
+                                    y 1332px */
+
+    /* Centrar horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------- Layout CON Media Queries + Flexbox -------------------- */
+
+.flex_container {
+    border: thick solid black; /* borde */
+
+    display: flex; /* usar Flexbox */
+
+    /* gap: distancia de separacion ENTRE los Flex Items
+
+    column-gap: 5px; es lo q se le resta
+    al flex-basis: q esta en los Media Queries */
+    gap: 40px 5px; /* gap: row-gap column-gap; */
+
+    /* flex-flow:          Propiedad abreviada (shorthand) para el flujo de Flexbox
+    flex-direction: row;   Flex Items en Fila → de Izquierda a Derecha
+    flex-wrap: wrap;       Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+    flex-flow: row wrap;
+
+    /* centrar los Flex Items */
+    justify-content: center;   /* centrar HORIZONTALMENTE ↔ */
+    align-items: center;       /* centrar VERTICALMENTE ↕ */
+}
+
+/* Dispositivos X-Small (telefonos verticales, desde 0 hasta 575px)
+No hay Media Queries para "xs"
+porq este es el valor predeterminado en Bootstrap */
+.flex_item {
+    border: thick solid crimson;
+
+    /* flex:            Tamaño de los Flex Items
+
+    flex-grow: 0;       Los Flex Items NO crecen (aumentan) su tamaño
+
+    flex-shrink: 0;     Los Flex Items NO reducen (encogen) su tamaño.
+
+    flex-basis: 100%;   Cada Flex Item ocupa TODO el ancho del Flex Container */
+    flex: 0 0 100%;
+}
+
+/* --------------------
+Generador de texto grande en muchos reglones: https://fsymbols.com/es/letras/
+
+                ○                            ○
+█▀▄▀█ █▀▀ █▀▄ █ ▄▀█    █▀█ █░█ █▀▀ █▀█ █ █▀▀ █▀
+█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ █ ██▄ ▄█
+█   █                      █
+-------------------- */
+
+/* -------------------- Dar un Numero de columnas
+                        al Flex Container
+                        dependiendo del ancho del viewport -------------------- */
+
+/*
+Esta tabla es de Bootstrap 5:
+https://getbootstrap.com/docs/5.2/layout/breakpoints/#available-breakpoints
+
+Nombre Clase de CSS   Significado   Desde (Breakpoint)   Hasta    Media Qurie
+(Abreviacion)
+...	                  Extra small   0                    575px    ...
+sm	                  Small         576px     = 36em     767px    @media screen and (min-width: 36em) {...}
+md	                  Medium        768px     = 48em     991px    @media screen and (min-width: 48em) {...}
+lg	                  Large         992px     = 62em     1199px   @media screen and (min-width: 62em) {...}
+xl	                  Extra large   >=1200px  = 75em     ∞        @media screen and (min-width: 75em) {...}
+*/
+
+@media screen and (min-width: 36em) { /* Small desde 576px = 36em hasta 767px */
+    .flex_item {
+        /* (100% ancho del Flex Container) / (2 columnas de Flex Items) = 50%
+            Uso la funcion calc()
+            para restarle al porcentaje
+            lo q mide la propiedad column-gap:
+            (50%) - (5px de la propiedad column-gap: ) */
+        flex: 0 0 calc(50% - 5px);
+    }
+}
+
+@media screen and (min-width: 48em) { /* Medium desde 768px = 48em hasta 991px */
+    .flex_item {
+        /* (100% ancho del Flex Container) / (3 columnas de Flex Items) = 33.33333333333333%
+        (33.33333333333333%) - (5px de la propiedad column-gap: ) */
+        flex: 0 0 calc(33.33333333333333% - 5px);
+    }
+}
+
+@media screen and (min-width: 62em) { /* Large desde 992px = 62em hasta 1199px */
+    .flex_item {
+        /* (100% ancho del Flex Container) / (4 columnas de Flex Items) = 25%
+         (25%) - (5px de la propiedad column-gap: ) */
+        flex: 0 0 calc(25% - 5px);
+    }
+}
+
+@media screen and (min-width: 75em) { /* Extra large: ancho viewport >=1200px = 75em, desde 1200px hasta infinito ∞ */
+    .flex_item {
+        /* (100% ancho del Flex Container) / (6 columnas de Flex Items) = 16.6666666667%
+        (16.6666666667%) - (5px de la propiedad column-gap: ) */
+        flex: 0 0 calc(16.6666666667% - 5px);
+    }
+}

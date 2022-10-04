@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- estilos CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- google fonts https://fonts.google.com/specimen/Poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="contenedor_login">
+            <div class="contenedor_informacion_login">
+                <h1 class="titulo">Iniciar con...</h1>
+                <div class="contenedor_redes">
+                    <div class="contenedor_redes_elemento">
+                        <img src="assets/image/google.svg" alt="google.svg" />
+                        <span><a href="#">Google</a></span>
+                    </div>
+                    <div class="contenedor_redes_elemento">
+                        <img src="assets/image/facebook.svg" alt="facebook.svg" />
+                        <span><a href="#">Facebook</a></span>
+                    </div>
+                </div>
+                <p>O</p>
+                <form
+                    action="https://formsubmit.co/daniel.pinedamo@amigo.edu.co"
+                    method="POST"
+                    class="contenedor_inputs"
+                >
+                    <input
+                        type="email"
+                        name="correo"
+                        required
+                        autofocus
+                        placeholder="Correo"
+                        class="input"
+                    />
+                    <input
+                        type="password"
+                        name="contraseña"
+                        required
+                        placeholder="Contraseña"
+                        class="input"
+                    />
+                    <p>
+                        ¿Olvido su contraseña?
+                        <span class="span"><a href="#">Click aqui</a></span>
+                    </p>
+                    <button type="submit" class="btn">Iniciar</button>
+                    <p>
+                        ¿No tienes una cuenta? <span class="span"
+                            ><a href="#">Registrarse</a></span
+                        >
+                    </p>
+                </form>
+            </div>
+            <!-- imagen q esta al lado del formulario -->
+            <img src="assets/image/login.svg" alt="login.svg" class="imagen" />
+        </div>
+    </body>
+</html>

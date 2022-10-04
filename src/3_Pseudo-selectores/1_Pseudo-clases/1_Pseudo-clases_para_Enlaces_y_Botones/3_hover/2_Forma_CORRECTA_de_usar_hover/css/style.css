@@ -1,0 +1,46 @@
+/*
+¿Cómo usar :hover CORRECTAMENTE?...
+
+Smashing Magazine:
+https://www.smashingmagazine.com/2022/03/guide-hover-pointer-media-queries/
+
+Stack Overflow:
+https://stackoverflow.com/questions/59206624/disable-hover-on-mobile-and-tablet-devices
+*/
+
+/* ----------------------------------------------------------------------------- */
+
+/* ERROR - FORMA INCORRECTA DE USAR :hover
+cuando el cursor pase :hover sobre el enlace o boton se aplicaran estos estilos
+
+si lo escribo asi me va a generar problemas en dispositivos tactiles */
+
+/*
+.enlace:hover,
+.boton:hover {
+    background-color: lightsalmon;
+    transition: background-color .5s;
+}
+*/
+
+/* ------------ */
+
+/* SOLUCION - FORMA CORRECTA DE USAR :hover
+
+para dispositivos q SI tengan cursor (computadores) */
+@media screen and (hover: hover) and (pointer: fine) {
+    .enlace:hover,
+    .boton:hover { background-color: red; }
+}
+
+/* para dispositivos con pantalla tactil (tablets y celulares)
+en CSS la coma , es un OR */
+@media screen and (pointer: coarse), (pointer: none), (hover: none) {
+    /* En dispositivos tactiles pasa esto:
+    :active solamente se activa en el INSTANTE en q el usuario toca la pantalla,
+    también podría usar :active para ambos dispositivos (pantalla tactil y cursor). Depende de lo q quieras hacer.
+
+    :hover PERMANECE ACTIVADO hasta q el usuario toque otra parte diferente de la pantalla (ese es el problema) */
+    .enlace:active,
+    .boton:active { background-color: green; }
+}

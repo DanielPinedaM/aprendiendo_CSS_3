@@ -1,0 +1,144 @@
+/*
+Este ejemplo lo saq de aqui
+
+Jon Mircha - YouTube...
+
+- Contenedores Flexibles:
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=2433s
+
+- Limitar el Ancho width: y Alto height: Mínimo y Máximo del Contenido min-width: max-width: min-height: y max-height:
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=2939s
+
+- Tamaños fijos VS Tamaños máximos y mínimos
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=3351s
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* hacer q el <body> ocupe todo el viewport */
+    width: 100%;
+    min-height: 100vh;
+    /* color de fondo */
+    background-color: #eeede7;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+h1 {
+    /* separar el titulo <h1> de las cajas <div> */
+    margin-top: 3rem; /* arriba */
+    margin-bottom: 3rem; /* abajo */
+    text-align: center; /* centrar texto horizontalmente */
+}
+
+[class^="contenedor"] {
+    margin-bottom: 3rem; /* abajo - distancia de separacion entre las cajas: (16px * 3rem) = 48px */
+
+    /* centrar <div> horizontalmente */
+    margin-right: auto;
+    margin-left: auto;
+
+    display: flex; /* usar Flexbox */
+
+    font-size: 2em; /* tamaño de la letra */
+
+    background-color: orangered;
+}
+
+
+/* centrar texto
+q esta dentro de los <div>
+horizontal y verticalmente
+usando Flexbox */
+div span {
+    margin: auto;
+}
+
+/* el tamaño de esta caja (contenedor) <div>
+NO cambia porq estoy usando el px
+q es una unidad e medida ABSOLUTA
+
+por lo tanto
+cuando el viewport se hace mas pequeño
+se genera una barra de scroll en la parte de abajo
+para desplazarme horizontalmente */
+.contenedor_estatico {
+    width: 300px; /* los px NO cambian, siempre son iguales */
+    height: 300px;
+}
+
+.contenedor_flexible_1 {
+/* debido a q el contendor padre mas cercano al
+.contenedor_flexible es el <body>
+entonces los porcentajes se sacan asi...
+
+width: 50%;
+50% del ANCHO width: del viewport */
+    width: 50%;
+
+    height: 20vh; /*20vh; = 20% del ALTO del viewport
+                    vh = 1% del Alto de la Pantalla. Toma Valores de 1 a 100
+
+                    EN ESTE CASO EN ESPECIFICO
+                    (en otros casos esto puede cambiar)
+                    obtendria el mismo resultado copiandolo en
+                    height: 20vh; = height: 20%;
+                    esto pasa porq el padre del .contenedor_flexible es el <body> */
+    word-break: break-word; /* Desbordamiento overflow: de content - Insertar Salto de Línea (Renglón) por Completo Dejando un Espacio en Blanco */
+}
+
+.contenedor_flexible_2 {
+    max-width: 960px;
+    min-width: 280px;
+
+    max-height: 480px;
+    min-height: 280px;
+
+    overflow: hidden; /* Desbordamiento overflow: de content - Ocultar el content que se Desborde */
+}
+
+
+.contenedor_flexible_3 {
+/* cuando uso los px en ancho y alto maximo y minimo
+entonces las medidas SI cambian
+a pesar de q los px son una unidad de medida absoluta */
+    max-width: 969px;
+    min-width: 280px;
+
+    max-height: 480px;
+    min-height: 280px;
+
+/* se IGNORA el ancho y alto maximo y minimo
+porq width: y height:
+tienen mayor prioridad q min-width: max-width: min-height: y max-height:
+
+esto SOLAMENTE pasa cuando el width: y height: estan en unidades de medida ABSOLUTA*/
+    width: 300px; /* como estoy usando px q es una unidad de medida absoluta entonces las medidas NO cambian */
+    height: 300px;
+}
+
+.contenedor_flexible_4 {
+    max-width: 960px;
+    min-width: 280px;
+
+    max-height: 480px;
+    min-height: 280px;
+
+/* PERO cuando defino el ancho y alto maximo y minimo
+y el width: y height: los defino en unidades de medida RELATIVAS
+
+en un principio se aplica el width: y height:
+pero despues cuando el viewport se encoge o estira
+se aplican las medidas del min-width: max-width: min-height: y max-height: */
+    width: 50%;
+    height: 20vh;
+}

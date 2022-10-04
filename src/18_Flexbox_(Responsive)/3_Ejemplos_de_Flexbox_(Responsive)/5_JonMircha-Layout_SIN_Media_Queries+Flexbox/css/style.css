@@ -1,0 +1,130 @@
+/*
+Jon Mircha - Layout SIN Media Queries + Flexbox (Responsive)
+https://www.youtube.com/watch?v=po9V3IoxbJc&t=648s */
+
+/* -------------------- Reset CSS -------------------- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* -------------------- Enlace <a> con link del tutorial con el q hice este codigo -------------------- */
+
+a {
+    font-size: 2rem;
+
+    /* Centrar horizontalmente enlaces <a>
+    https://stackoverflow.com/questions/14299602/how-to-center-anchor-tag-horizontally-css */
+    display: block;
+    text-align: center;
+}
+
+h1 { text-align: center; }
+
+/* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
+
+.page_wrap {
+    outline: thick solid salmon; /* borde para poder ver el <div class="page_wrap"> */
+    max-width: min(90%, 1332px); /* el ancho maximo max-width: de la pagina web es
+                                    el valor (numero) minimo min() entre
+                                    el 90% del ancho del viewport
+                                    y 1332px */
+
+    /* Centrar horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------- Layout CON Media Queries + Flexbox -------------------- */
+
+.flex_container {
+    border: thick solid black; /* borde */
+
+    display: flex; /* usar Flexbox */
+
+    /* flex-flow:          Propiedad abreviada (shorthand) para el flujo de Flexbox
+    flex-direction: row;   Flex Items en Fila → de Izquierda a Derecha
+    flex-wrap: wrap;       Flex Items En Varias Líneas de Arriba Hacia Abajo ↓ */
+    flex-flow: row wrap;
+
+    justify-content: center;   /* centrar HORIZONTALMENTE ↔ los Flex Items */
+    align-items: stretch; /* estirar los Flex Items para q ocupen todo el espacio disponible del Flex Container */
+}
+
+.flex_container div { border: thick solid crimson; }
+
+.flex_1_1_200 {
+    /*
+    flex:            Tamaño de los Flex Items
+
+    flex-grow: 1;       Los Flex Items SI crecen (aumentan) su tamaño
+
+    flex-shrink: 1;     Los Flex Items SI pueden reducir (encoger) su tamaño.
+
+    flex-basis: 200px;  los Flex Items TRATAN de medir 200px de ancho,
+                        si el ancho del viewport es muy grande
+                        como flex-grow: 1;
+                        entonces los Flex Items
+                        creceran mas de 200px
+                        para ocupar TODO el espacio (ancho) del Flex Container */
+
+    flex: 1 1 200px; /* flex: flex-grow flex-shrink flex-basis; */
+}
+
+.flex_0_1_200 {
+    /*
+    flex:            Tamaño de los Flex Items
+
+    flex-grow: 0;       Los Flex Items NO crecen (aumentan) su tamaño
+
+    flex-shrink: 1;     Los Flex Items SI reducen (encogen) su tamaño
+
+    flex-basis: 200px;  cuando el viewport es pequeño
+                        entonces los Flex Items se encogen debido a flex-shrink: 1;
+                        pero cuando hay espacio disponible (sobrante)
+                        en el Flex Container,
+                        entonces los Flex Items miden exactamente 200px de ancho */
+
+    flex: 0 1 200px; /* flex: flex-grow flex-shrink flex-basis; */
+}
+
+.flex_clamp {
+    /*
+    Promedio del ancho de todos los Breakpoints
+    (320px celular)
+    + (768px tablet vertical)
+    + (1024px tablet horizontal)
+    + (1280px computador portatil)
+    + (1680px monitor) / 5 = 1014px
+
+    valor minimo  = 320px   / 2 = 160px
+    valor ideal   = 1014px  / 2 = 507px
+    valor maximo  = 1332px  / 2 = 666px
+
+    1332px porq ese es el numero maximo q puede tomar
+    .page_wrap {
+        ...
+        max-width: min(90%, 1332px);
+    }
+
+    Dividido entre / 2
+    porq son 2 columnas de Flex Items */
+
+
+    /* clamp(valor minimo, valor ideal, valor maximo);
+       clamp(min-height, valor ideal, max-height); */
+    flex: 1 1 clamp(160px, 507px, 666px);
+}

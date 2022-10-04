@@ -1,0 +1,54 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* el color de fondo del boton cambia en el instante en q se hace click sobre el */
+.boton:active {
+    background-color: red;
+}
+
+/* en el instante en q se haga click sobre el enlace se movera un poco hacia abajo
+este efecto es muy usado en enlaces */
+.enlace:active {
+    position: relative;
+    top: 1.5px;
+}
+
+/* ---------------- */
+/*
+El orden en que se deben escribir las pseudo-clases
+para enlaces y botones es el siguiente,
+si se escribe en otro orden distinto
+los estilos no se verían
+porque una pseudo-clase anularía a la otra:
+*/
+
+/* Cambiar Estilo de un Elemento al que NO se le ha Dado click */
+/*
+a:link {
+    color: blue;
+}
+*/
+
+/* Cambiar Estilo DESPUÉS de que el Usuario Hizo Click en el Elemento */
+/*
+a:visited {
+    color: purple;
+}
+*/
+
+/* Cambiar Estilo Cuando el Usuario PASE el Cursor Sobre el Elemento */
+/*
+a:hover {
+    color: green;
+}
+*/
+
+/* Cambiar Estilo en el INSTANTE en que el Usuario ESTE HACIENDO CLICK Sobre el Elemento */
+/*
+a:active {
+    color: red;
+}
+*/

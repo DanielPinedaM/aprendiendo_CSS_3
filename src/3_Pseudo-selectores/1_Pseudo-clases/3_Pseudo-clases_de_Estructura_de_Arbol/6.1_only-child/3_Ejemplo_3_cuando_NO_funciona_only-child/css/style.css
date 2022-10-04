@@ -1,0 +1,16 @@
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/*
+:only-child solamente funciona si tengo un solo elemento (hijo único sin hermanos)
+dentro de un contenedor (padre),
+cuando hay más de uno no funciona.
+
+:only-child NO funciona por q
+los elementos tienen hermanos (NO son hijo unico) */
+div.contenedor div:only-child {
+    color: red;
+}

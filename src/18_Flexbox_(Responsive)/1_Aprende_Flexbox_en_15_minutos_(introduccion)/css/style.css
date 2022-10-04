@@ -1,0 +1,142 @@
+/*
+Tutorial - Aprende FlexBox en 15 Minutos:
+https://youtu.be/QFXSgGg-HWo
+
+
+
+eliminar estilos por defecto del navegador usando el selector universal */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: beige; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+.centrar_flexbox {
+    display: flex;          /* Usar Flexbox */
+    justify-content: center;  /* centrar HORIZONTALMENTE ↔ */
+    align-items: center;      /* centrar VERTICALMENTE ↕ */
+}
+
+.contenedor_flexbox {
+    width: 80%;
+    min-height: 30em;
+    background-color: darkgray;
+    border: thick solid crimson;
+    padding: 20px; /* distancia interna entre el .contenedor_flexbox y las .caja */
+
+    /* ------------------------- flex-direction: ------------------------- */
+
+    /* flex-direction: define si los Flex Items
+    están ubicados en filas (horizontal ↔) o
+    columnas (vertical ↕),
+    es la dirección hacia la cual están ubicados los Flex Items
+
+    Sirve para cambiar la orientación
+    del eje principal (Main Axis)s
+    y eje transversal (Cross Axis): */
+
+    /* flex-direction: row; */   /* Fila → de Izquierda a Derecha (Valor por Defecto) */
+    /* flex-wrap: wrap; */       /* En Varias Líneas de Arriba Hacia Abajo ↓ */
+    flex-flow: row wrap;   /* flex-flow: flex-direction flex-wrap;
+                                     Propiedad Abreviada (Shorthand) */
+
+    /* ------------------------- justify-content: ------------------------- */
+
+    /* justify-content: define en que parte
+    del eje principal (Main Axis)
+    están ubicados los Flex Items.  */
+
+    /* justify-content: flex-start; */       /* A la Izquierda ← en Fila ↔ y Arriba ↑ en Columna ↕ (Valor por Defecto) */
+    /* justify-content: flex-end; */         /* A la Derecha → en Fila ↔ y Abajo ↓ en Columna ↕ */
+    justify-content: center;           /* Centrar Horizontalmente ↔ en Fila ↔ y Verticalmente ↕ en Columna ↕ */
+    /* justify-content: space-between; */    /* Primer Flex Item al Inicio y Ultimo Flex Item al Final */
+    /* justify-content: space-around; */     /* Espacio Entre los Flex Items es Igual pero el Espacio al Principio y Final de los Flex Items no es Igual  */
+    /* justify-content: space-evenly; */     /* Todos los Espacios Entre los Flex Items son Iguales */
+
+    /* -------------------------Alineación del Eje Transversal (Cross Axis)
+                                Diferencias y Similitudes Entre
+                                align-items: y align-content: ------------------------- */
+
+    /*
+    SIMILITUDES:
+    Ambos align-items: y align-content:
+    definen en q parte de Cross Axis
+    están ubicados los Flex Items (esto se llama “alineación”).
+
+    Para ambos align-items: y align-content: se aplica esta regla:
+    Dependiendo del flex-direction: es decir,
+    si los Flex Items están en filas ↔ o columnas ↕ la alineación es diferente
+
+    DIFERENCIAS:
+    Cuando los Flex Items ocupan una sola línea flex-wrap: nowrap; entonces usar align-items:
+    en cambio
+    si los Flex Items ocupan varias líneas flex-wrap: wrap; ó flex-wrap: wrap-reverse; usar align-content: */
+
+    /* ------------------------- align-items: ------------------------- */
+
+    /* align-items: Alinear Todos los Flex Items
+    en Una Sola Línea
+    (Sirve para flex-wrap: nowrap; )
+    (Alinear Elementos) */
+
+    /* align-items: flex-start; */    /* Arriba ↑ en Fila ↔ e Izquierda ← en Columna ↕ */
+    /* align-items: flex-end; */      /* Abajo ↓ en Fila ↔ y a la Derecha → en Columna  ↕ */
+    /* align-items: center; */        /* Centrar Verticalmente ↕ en Fila ↔ y Horizontalmente ↔ en Columna ↕ */
+
+    /* ------------------------- align-content: ------------------------- */
+
+    /* align-content:
+    Alinear Todos los Flex Items
+    en Varias Líneas
+    (Sirve para flex-wrap: wrap; y flex-wrap: wrap-reverse; )
+    (Alinear Contenido) */
+
+    /* align-content: flex-start; */       /* Esquina Superior Izquierda */
+    align-content: center;           /* Centrar Verticalmente ↕ en Fila ↔ y Horizontalmente ↔ en Columna ↕ */
+    /* align-content: space-between; */    /* Primer Flex Item al Inicio y Ultimo Flex Item al Final */
+    /* align-content: space-around; */     /* Espacio Entre los Flex Items es Igual pero el Espacio al Principio y Final de los Flex Items no es Igual */
+}
+
+.caja {
+    width: 120px;
+    height: 120px;
+
+    margin: 5px; /* distancia de separacion entre cada una de las cajas */
+    border: thick solid black;
+    background-color: steelblue;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 900;
+}
+
+.contenedor_flexbox div:nth-child(1) {
+    background-color: blueviolet;
+    order: 3; /* Tiene como valor un # con esto puedo darle el orden q quiera a los <div> */
+    /* flex-grow: 20; */
+}
+
+.contenedor_flexbox div:nth-child(2) {
+    background-color: lightcoral;
+    order: 2;
+    /* flex-grow: 1; */      /* flex-grow: ¿Qué tan Grandes Pueden ser los Flex Items? (Crecimiento Flexible) */
+    flex-basis: 50%;   /* flex-basis: Ancho (Cuando flex-direction: row; Entonces width:) ó Alto (Cuando flex-direction: column; Entonces height:) Inicial de los Flex Items (Base Flexible) */
+}
+
+.contenedor_flexbox div:nth-child(3) {
+    background-color: crimson;
+    order: 1;        /* Orden de los Elementos Hijos (Flex Items)  */
+    /* flex-grow: 10; */
+}

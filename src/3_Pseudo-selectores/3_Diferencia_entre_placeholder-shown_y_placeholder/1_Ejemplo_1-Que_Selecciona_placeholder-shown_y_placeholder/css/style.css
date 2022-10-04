@@ -1,0 +1,38 @@
+/*
+CSS-Tricks (Trucos CSS) - Diferencia entre :placeholder-shown y ::placeholder
+https://css-tricks.com/almanac/selectors/p/placeholder/#the-difference-between-placeholder-shown-and-placeholder
+*/
+
+body {
+    background-color: #eeede7; /* color de fondo */
+}
+
+/* ----------------------------------------------------------------------------- */
+
+
+/*
+
+Seleccionar los controles interactivos <input>
+de tipo texto .input_text
+
+<element class="input_text">
+Especificidad: (0, 1, 0) */
+.input_text {
+    width: 16rem; /* ancho */
+    margin-bottom: 5px; /* margen hacia abajo para separar los elementos */
+    display: block; /* convertir de linea a bloq */
+}
+/* Seleccionar los controles interactivos <input>
+q tienen el atributo HTML placeholder=""
+y la clase .input_text
+
+<element class="input_text" :placeholder-shown>
+Especificidad: (0, 2, 0) */
+.input_text:placeholder-shown {
+    border: thick solid red;
+}
+/* <element class="input_text" ::placeholder>
+Especificidad: (0, 1, 1) */
+.input_text::placeholder {
+    border: thick solid black;
+}
