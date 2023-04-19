@@ -1,10 +1,10 @@
-/* -------------------- Reset CSS -------------------- */
-
 /*
 Este codigo esta basado en el Reset CSS de:
 - Meyer Web:    https://meyerweb.com/eric/tools/css/reset/
 - Jon Mircha:   https://jonmircha.com/assets/style.css
 */
+
+/* -------------------- Reset CSS -------------------- */
 
 *,         /* El asterisco * significa seleccionar todos los elemento (etiquetas) HTML */
 *::before, /* Insertar Contenido content: antes ::before */
@@ -16,6 +16,7 @@ Este codigo esta basado en el Reset CSS de:
     outline: 0;
 
     font: inherit; /* eliminar los estilos CSS de la fuente por defecto del navegador */
+    font-family: Georgia, serif; /* : Cambiar la Fuente (Tipografía) del Texto (Familia Tipográfica) */
 
     box-sizing: border-box !important;/*Hacer q el tamaño total de la caja (Box Model)
                                         siempre sea el
@@ -26,6 +27,11 @@ Este codigo esta basado en el Reset CSS de:
 
 html {
     font-size: 16px; /* asegurarme de q 1rem = 16px */
+
+    text-size-adjust: 100% !important;/*Hacer q el texto NO se redimensione
+                                        NI tampoco cambie su tamaño font-size automaticamente
+                                        al aumentar el zoom de la pagina web en
+                                        en dispositivos moviles (tablet y celular) */
 
     scroll-behavior: smooth !important;/*animacion de scroll
                                         al dar click en enlaces <a>
@@ -44,6 +50,8 @@ body {
                                     entonces el <body> tambien crecera (Responsive),
                                     por eso es min-height: y NO height:  */
 
+    text-rendering: optimizeLegibility !important; /* aumentar calidad (legibilidad) del texto */
+
     overflow-x: hidden;/*ocultar el contenido hidden;
                         q se desborde overflow
                         del ancho -x del viewport (pantalla) */
@@ -55,6 +63,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#values */
 html, body { line-height: 1.2; }
 
 table {
-    border-collapse: collapse !important;  /* juntar los bordes (casillas) de las tablas */
-    border-spacing: 0 !important;          /* eliminar espacio de las tablas entre cada una de las casillas */
+    width: 100%;                          /*Para q <table> sea Responsive debe:
+                                            1) estar dentro de un contenedor <div> padre
+                                            2) width: 100%; */
+    border-collapse: collapse !important; /* juntar los bordes (casillas) de las tablas */
+    border-spacing: 0 !important;         /* eliminar espacio de las tablas entre cada una de las casillas */
 }
