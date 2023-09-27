@@ -43,12 +43,14 @@ html {
 body {
     width: 100% !important; /* el <body> siempre tendra el mismo ancho width: q el ancho del viewport */
 
-    min-height: 100vh !important;/* alto minimo min-height: es el 100% del alto del viewport (pantalla) 100vh,
-                                    esto va hacer q la altura del <body>
-                                    sea igual a la altura de la pantalla (viewport)
-                                    y en caso de q el contenido se estire (cresca en altura),
-                                    entonces el <body> tambien crecera (Responsive),
-                                    por eso es min-height: y NO height:  */
+    /* alto minimo min-height: es el 100% del alto del viewport (pantalla) 100vh,
+       esto va hacer q la altura del <body>
+       sea igual a la altura de la pantalla (viewport)
+       y en caso de q el contenido se estire (cresca en altura),
+       entonces el <body> tambien crecera (Responsive),
+       por eso es min-height: y NO height:  */
+    min-height: 100vh;
+    min-height: 100dvh;
 
     text-rendering: optimizeLegibility !important; /* aumentar calidad (legibilidad) del texto */
 
@@ -76,5 +78,8 @@ img {
     max-width: 100%;   /* adaptar imagen al ancho del contenedor padre (Responsive) */
     height: auto;
     margin: 0 auto;    /* centrar horizontalmente <-> */
-    object-fit: cover; /* Ajustar Imagen o Video Ampliándolo y Conservando su Calidad. Es Probable que la Imagen o Video si se Recorte  */
+    object-fit: cover; /* Ajustar Imagen o Video Ampliándolo y Conservando su Calidad. 
+                          Es Probable que la Imagen o Video si se Recorte */
 }
+
+
