@@ -64,6 +64,16 @@ Es 1.2 porq es el valor recomendado por la documentacion oficial de la MDN
 https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#values */
 html, body { line-height: 1.2; }
 
+/* Mejorar proporsion de los saltos de linea del texto
+https://www.youtube.com/watch?v=66ky3Dopcq0&t=282s */
+h1, h2, h3, h4 {
+    text-wrap: balance;
+}
+  
+p, h5, h6 {
+    text-wrap: pretty;
+}
+
 table {
     width: 100%;                          /*Para q <table> sea Responsive debe:
                                             1) estar dentro de un contenedor <div> padre
