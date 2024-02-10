@@ -82,7 +82,25 @@ table {
     border-spacing: 0 !important;         /* eliminar espacio de las tablas entre cada una de las casillas */
 }
 
-/* Imagenes Responsive */
+/* Eliminar color de fondo azul cuando se hace click en los enlaces <a>
+https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
+a { -webkit-tap-highlight-color: transparent !important; }
+
+/* Estilos de etiquetas desactivadas
+https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled */
+button:disabled,
+fieldset:disabled,
+optgroup:disabled,
+option:disabled,
+select:disabled,
+textarea:disabled,
+input:disabled {
+    cursor: not-allowed; /* cursor con 🚫 */
+    opacity: 0.5;        /* opacar (aclarar) color */
+}
+
+/* Imagenes Responsive
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4090s */
 img {
     display: block;    /* eliminar espacio en blanco de la imagen q se ve en la parte de abajo del contendor padre */
     max-width: 100%;   /* adaptar imagen al ancho del contenedor padre (Responsive) */
@@ -91,5 +109,3 @@ img {
     object-fit: cover; /* Ajustar Imagen o Video Ampliándolo y Conservando su Calidad. 
                           Es Probable que la Imagen o Video si se Recorte */
 }
-
-

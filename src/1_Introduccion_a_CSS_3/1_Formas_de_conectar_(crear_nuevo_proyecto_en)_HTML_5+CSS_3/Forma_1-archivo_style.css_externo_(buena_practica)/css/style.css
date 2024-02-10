@@ -1,42 +1,113 @@
+/*
+Este codigo esta basado en el Reset CSS de:
+- Meyer Web:    https://meyerweb.com/eric/tools/css/reset/
+- Jon Mircha:   https://jonmircha.com/assets/style.css
+*/
+
 /* -------------------- Reset CSS -------------------- */
 
-*,
-*::before,
-*::after {
-    padding: 0;
-    margin: 0;
-    border: 0;
+*,         /* El asterisco * significa seleccionar todos los elemento (etiquetas) HTML */
+*::before, /* Insertar Contenido content: antes ::before */
+*::after { /* y despues ::after del elemento (etiqueta) HTML */
+    padding: 0; /* eliminar relleno: Espacio q hay ALREDEDOR del elemento, esta DENTRO del mismo */
+    margin: 0;  /* eliminar margen: Espacio q hay ENTRE los elementos, esta AFUERA */
+
+    border: 0;  /* eliminar linea q bordea (rodea) los elementos (etiquetas) HTML */
     outline: 0;
-    font: inherit;
-    font-family: Georgia, serif;
-    box-sizing: border-box !important;
+
+    font: inherit; /* eliminar los estilos CSS de la fuente por defecto del navegador */
+    font-family: Georgia, serif; /* : Cambiar la Fuente (Tipografía) del Texto (Familia Tipográfica) */
+
+    box-sizing: border-box !important;/*Hacer q el tamaño total de la caja (Box Model)
+                                        siempre sea el
+                                        ancho width: y alto height:
+                                        del content
+                                        (modelo de caja alternativo) */
 }
 
 html {
-    font-size: 16px;
-    text-size-adjust: 100% !important;
-    scroll-behavior: smooth !important;
+    font-size: 16px; /* asegurarme de q 1rem = 16px */
+
+    text-size-adjust: 100% !important;/*Hacer q el texto NO se redimensione
+                                        NI tampoco cambie su tamaño font-size automaticamente
+                                        al aumentar el zoom de la pagina web en
+                                        en dispositivos moviles (tablet y celular) */
+
+    scroll-behavior: smooth !important;/*animacion de scroll
+                                        al dar click en enlaces <a>
+                                        q redirigen a secciones (partes)
+                                        dentro de la misma pagina web
+                                        https://css-tricks.com/almanac/properties/s/scroll-behavior/#aa-deeper-explanation */
 }
 
 body {
-    width: 100% !important;
-    min-height: 100vh !important;
-    text-rendering: optimizeLegibility !important;
-    overflow-x: hidden;
+    width: 100% !important; /* el <body> siempre tendra el mismo ancho width: q el ancho del viewport */
+
+    /* alto minimo min-height: es el 100% del alto del viewport (pantalla) 100vh,
+       esto va hacer q la altura del <body>
+       sea igual a la altura de la pantalla (viewport)
+       y en caso de q el contenido se estire (cresca en altura),
+       entonces el <body> tambien crecera (Responsive),
+       por eso es min-height: y NO height:  */
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    text-rendering: optimizeLegibility !important; /* aumentar calidad (legibilidad) del texto */
+
+    overflow-x: hidden;/*ocultar el contenido hidden;
+                        q se desborde overflow
+                        del ancho -x del viewport (pantalla) */
 }
 
+/* todos los textos tienen el mismo espacio entre renglones o lineas (interlineado)
+Es 1.2 porq es el valor recomendado por la documentacion oficial de la MDN
+https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#values */
 html, body { line-height: 1.2; }
 
-table {
-    width: 100%;
-    border-collapse: collapse !important;
-    border-spacing: 0 !important;
+/* Mejorar proporsion de los saltos de linea del texto
+https://www.youtube.com/watch?v=66ky3Dopcq0&t=282s */
+h1, h2, h3, h4 {
+    text-wrap: balance;
+}
+  
+p, h5, h6 {
+    text-wrap: pretty;
 }
 
-/* -------------------- Eliminar color de fondo azul cuando se hace click en los enlaces <a> -------------------- */
+table {
+    width: 100%;                          /*Para q <table> sea Responsive debe:
+                                            1) estar dentro de un contenedor <div> padre
+                                            2) width: 100%; */
+    border-collapse: collapse !important; /* juntar los bordes (casillas) de las tablas */
+    border-spacing: 0 !important;         /* eliminar espacio de las tablas entre cada una de las casillas */
+}
 
-/* https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
-a { -webkit-tap-highlight-color: transparent; }
+/* Eliminar color de fondo azul cuando se hace click en los enlaces <a>
+https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic */
+a { -webkit-tap-highlight-color: transparent !important; }
+
+/* Estilos de etiquetas desactivadas */
+button:disabled,
+fieldset:disabled,
+optgroup:disabled,
+option:disabled,
+select:disabled,
+textarea:disabled,
+input:disabled {
+    cursor: not-allowed; /* cursor con 🚫 */
+    opacity: 0.5;        /* opacar (aclarar) color */
+}
+
+/* Imagenes Responsive
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4090s */
+img {
+    display: block;    /* eliminar espacio en blanco de la imagen q se ve en la parte de abajo del contendor padre */
+    max-width: 100%;   /* adaptar imagen al ancho del contenedor padre (Responsive) */
+    height: auto;
+    margin: 0 auto;    /* centrar horizontalmente <-> */
+    object-fit: cover; /* Ajustar Imagen o Video Ampliándolo y Conservando su Calidad. 
+                          Es Probable que la Imagen o Video si se Recorte */
+}
 
 /* -------------------- Variables (custom properties) -------------------- */
 
@@ -53,21 +124,6 @@ a { -webkit-tap-highlight-color: transparent; }
     --step-6: clamp(3.17rem, calc(2.13rem + 5.21vw), 7.01rem);
     --step-7: clamp(3.81rem, calc(2.30rem + 7.51vw), 9.35rem);
     --step-8: clamp(4.57rem, calc(2.43rem + 10.70vw), 12.46rem);
-}
-
-/* -------------------- Contenido multimedia (embebido) Responsive -------------------- */
-/* https://www.youtube.com/watch?v=udGrXWeJp1Y&t=4090s */
-
-img {
-    display: block;
-
-    max-width: 100%;
-    height: auto;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    object-fit: cover;
 }
 
 /* -------------------- Centrar contenido principal de la pagina web (Responsive) -------------------- */
