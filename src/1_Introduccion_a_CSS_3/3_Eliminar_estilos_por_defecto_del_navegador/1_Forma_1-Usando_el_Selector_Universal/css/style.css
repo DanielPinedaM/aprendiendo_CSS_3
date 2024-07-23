@@ -114,3 +114,23 @@ picture {
     object-fit: cover; /* Ajustar Imagen o Video Ampliándolo y Conservando su Calidad. 
                           Es Probable que la Imagen o Video si se Recorte */
 }
+
+/* 
+Para q funcione este tiene q ser el HTML:
+<div class="auto-size">
+  <textarea>
+          hola mundo
+  </textarea>
+</div> */
+div.auto-size {
+    max-width: 200px; /* ancho Responsive de <div> padre */
+}
+div.auto-size textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+    max-height: 6.25rem;       /* Genera barra de scroll vertical cuando el alto del texto es mayor a 100px */
+    resize: none;              /* NO permitir q el usuario final re-dimensione manualmente el <textarea> */
+    field-sizing: content;     /* Re-dimensionar (ajustar) automaticamente la alto del <textarea>
+                                  https://youtu.be/8aryHZ8Z9WY?si=V15e9h7p4HXDbuEO */
+}
