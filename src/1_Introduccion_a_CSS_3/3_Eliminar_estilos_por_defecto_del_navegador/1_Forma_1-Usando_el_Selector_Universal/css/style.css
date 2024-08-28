@@ -121,7 +121,8 @@ Para q funcione este tiene q ser el HTML:
   <textarea>
           hola mundo
   </textarea>
-</div> */
+</div> 
+https://www.youtube.com/watch?v=4Ke32mrb2qo&t=57s */
 div.auto-size {
     max-width: 200px; /* ancho Responsive de <div> padre */
 }
@@ -131,6 +132,51 @@ div.auto-size textarea {
     border: 1px solid black;
     max-height: 6.25rem;       /* Genera barra de scroll vertical cuando el alto del texto es mayor a 100px */
     resize: none;              /* NO permitir q el usuario final re-dimensione manualmente el <textarea> */
-    field-sizing: content;     /* Re-dimensionar (ajustar) automaticamente la alto del <textarea>
-                                  https://youtu.be/8aryHZ8Z9WY?si=V15e9h7p4HXDbuEO */
+    field-sizing: content;     /* Re-dimensionar (ajustar) automaticamente la alto del <textarea> */
+}
+
+/* Texto Responsive - Utopia Fluid Responsive Design
+https://www.youtube.com/watch?v=udGrXWeJp1Y&t=18750s
+@link https://utopia.fyi/type/calculator?c=320,17,1.2,1500,20,1.333,8,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+:root {
+    --step--1: clamp(0.89rem, calc(0.87rem + 0.07vw), 0.94rem);
+    --step-0: clamp(1.06rem, calc(1.01rem + 0.25vw), 1.25rem);
+    --step-1: clamp(1.28rem, calc(1.17rem + 0.53vw), 1.67rem);
+    --step-2: clamp(1.53rem, calc(1.34rem + 0.94vw), 2.22rem);
+    --step-3: clamp(1.84rem, calc(1.53rem + 1.52vw), 2.96rem);
+    --step-4: clamp(2.20rem, calc(1.73rem + 2.36vw), 3.95rem);
+    --step-5: clamp(2.64rem, calc(1.93rem + 3.55vw), 5.26rem);
+    --step-6: clamp(3.17rem, calc(2.13rem + 5.21vw), 7.01rem);
+    --step-7: clamp(3.81rem, calc(2.30rem + 7.51vw), 9.35rem);
+    --step-8: clamp(4.57rem, calc(2.43rem + 10.70vw), 12.46rem);
+}
+
+p,
+h5,
+h6,
+button,
+select,
+textarea,
+input,
+table,
+th,
+td,
+thead,
+tbody,
+a,
+label {
+  font-size: var(--step--1);
+}
+
+p span {
+  font-size: var(--step--1);
+}
+
+h1 {
+  font-size: var(--step-1);
+}
+
+h1 span {
+  font-size: var(--step-1);
 }
