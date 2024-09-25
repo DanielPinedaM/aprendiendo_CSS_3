@@ -85,10 +85,10 @@ h6 {
 
 table {
   width: 100%; /*Para q <table> sea Responsive debe:
-                                            1) estar dentro de un contenedor <div> padre
-                                            2) width: 100%; */
+                 1) estar dentro de un contenedor <div> padre
+                 2) width: 100%; */
   border-collapse: collapse !important; /* juntar los bordes (casillas) de las tablas */
-  border-spacing: 0 !important; /* eliminar espacio de las tablas entre cada una de las casillas */
+  border-spacing: 0 !important;         /* eliminar espacio de las tablas entre cada una de las casillas */
 }
 
 /* Eliminar color de fondo azul cuando se hace click en los enlaces <a>
@@ -136,10 +136,10 @@ video,
 canvas,
 svg,
 picture {
-  display: block; /* eliminar espacio en blanco de la imagen q se ve en la parte de abajo del contendor padre */
+  display: block;  /* eliminar espacio en blanco de la imagen q se ve en la parte de abajo del contendor padre */
   height: auto;
   max-width: 100%; /* adaptar imagen al ancho del contenedor padre (Responsive) */
-  margin: 0 auto; /* centrar horizontalmente <-> */
+  margin: 0 auto;  /* centrar horizontalmente <-> */
 }
 
 /* Ajustar Imagen o Video Ampliándolo y Conservando su Calidad.
